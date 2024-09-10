@@ -6,6 +6,7 @@ import MenusPage from '../pages/menus-page/menus-page';
 import AboutPage from '../pages/about-page/about-page';
 import LocationPage from '../pages/location-page/location-page';
 import MerchPage from '../pages/merch-page/merch-page';
+import CartPage from '../pages/cart-page/cart-page';
 
 import './app.sass';
 
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="location" element={<LocationPage />} />
           <Route path="merch" element={<MerchPage />} />
           <Route path="something-else" element={<div />} />
+          <Route path="cart" element={<CartPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

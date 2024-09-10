@@ -11,32 +11,56 @@
             display: flex
             font-family: Grid Paper, playbill, sans-serif
             font-size: 2em
-            a
+            &_link
                 display: flex
                 justify-content: center
                 align-items: center
-                position: relative
-                color: #551A8B
-                margin-right: 1em
-                text-decoration: none     
-                &:before
-                    position: absolute
-                    top: 100%
-                    width: 0
-                    height: 4px
-                    background-color: #F7F49D
-                    border-radius: 10px
-                    content: ''
-                    transition: all 0.3s ease-out
+                a
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    position: relative
+                    color: #551A8B
+                    margin-right: 1em
+                    text-decoration: none     
+                    &:before
+                        position: absolute
+                        top: 100%
+                        width: 0
+                        height: 4px
+                        background-color: #F7F49D
+                        border-radius: 10px
+                        content: ''
+                        transition: all 0.3s ease-out
         
-                &:hover:before, &.active:before
-                    width: 1.5em    
+                    &:hover:before, &.active:before
+                        width: 1.5em    
         &_cart-icon
+            position: relative
             display: flex
             justify-content: center
             align-items: center
-            margin: 0 5em 0 3em
-            width: 3.5em
+            margin: 0 4em 0 2em
+            width: 3em
             svg
                 width: 100%
                 height: auto
+            &_counter
+                display: flex
+                justify-content: center
+                align-items: center
+                position: absolute
+                width: 1.5em
+                height: 1.5em
+                border: 2px solid #551A8B
+                background: #F7F49D
+                border-radius: 50%
+                top: 60%
+                right: -5%
+                span
+                    font-family: Verdana, Geneva, Tahoma, sans-serif
+                    font-size: 0.5em
+                    font-weight: 600
+                    color: #551A8B
+
+                    

@@ -1,0 +1,42 @@
+.header
+    height: 6em
+    display: flex
+    align-items: center
+    justify-content: space-between
+    background: #ffaed7
+    
+    &_right-side
+        display: flex
+        &_navbar
+            display: flex
+            font-family: Grid Paper, playbill, sans-serif
+            font-size: 2em
+            a
+                display: flex
+                justify-content: center
+                align-items: center
+                position: relative
+                color: #551A8B
+                margin-right: 1em
+                text-decoration: none     
+                &:before
+                    position: absolute
+                    top: 100%
+                    width: 0
+                    height: 4px
+                    background-color: #F7F49D
+                    border-radius: 10px
+                    content: ''
+                    transition: all 0.3s ease-out
+        
+                &:hover:before, &.active:before
+                    width: 1.5em    
+        &_cart-icon
+            display: flex
+            justify-content: center
+            align-items: center
+            margin: 0 5em 0 3em
+            width: 3.5em
+            svg
+                width: 100%
+                height: auto

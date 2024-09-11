@@ -1,9 +1,23 @@
+.header-container
+    position: fixed
+    width: 100%
+    top: 0%
+    
 .header
+    position: relative
     height: 6em
     display: flex
     align-items: center
     justify-content: space-between
     background: #ffaed7
+    z-index: 1
+    
+    &_logo
+        margin-left: 2em
+        width: 16em
+        
+        img
+            width: 100%
     
     &_right-side
         display: flex
@@ -40,7 +54,7 @@
             display: flex
             justify-content: center
             align-items: center
-            margin: 0 4em 0 2em
+            margin: 0 2em 0 2em
             width: 3em
             svg
                 width: 100%
@@ -63,4 +77,14 @@
                     font-weight: 600
                     color: #551A8B
 
-                    
+.header-drip
+    position: absolute
+    left: -1.25em
+    top: calc( 100% - 5px )
+    width: 22em
+    z-index: 0
+    transition: all 0.7s ease-out
+    &.shown
+        transform: scale(1, 1) translateY(1)
+    &.hidden
+        transform: scale(0.5, 0.75) translateY(-8em)

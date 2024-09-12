@@ -1,0 +1,32 @@
+.menus-page
+.menu
+    margin: 1em 0 0 0 
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    &_nav
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: center
+        padding: 1em 0
+        max-width: 60%
+        a
+            text-decoration: none
+            color: #481E5C
+            background: #C5B7FF
+            margin:0.5em 1em
+            padding: 1em
+            border: 0.2em solid #551A8B
+            border-radius: 2em
+            box-shadow: 0.2em 0.2em 0 #551A8B
+            font-family: Grid Paper 
+            font-size: 1.2em
+            transition: all 0.2s ease-out
+            &.active
+                color: #551A8B
+                background: #F7F49D
+            &:hover
+                background: #F7F49D
+    &_items

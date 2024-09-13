@@ -2,7 +2,6 @@
     position: fixed
     width: 100vw
     top: 0%
-    
 .header
     position: relative
     height: 6em
@@ -10,8 +9,8 @@
     align-items: center
     justify-content: space-between
     background: #ffaed7
-    z-index: 1
-    
+    user-select: none
+    z-index: 10
     &_logo
         margin-left: 2em
         width: 16em
@@ -82,7 +81,6 @@
     left: -1.25em
     top: calc( 100% - 5px )
     width: 22em
-    z-index: 0
     transform-origin: 50% 0%
     transition: all 0.8s ease-out
     &.shown

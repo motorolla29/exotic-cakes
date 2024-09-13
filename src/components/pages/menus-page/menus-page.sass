@@ -1,10 +1,9 @@
-.menus-page
-.menu
-    margin: 1em 0 0 0 
+.menus-page 
     display: flex
     flex-direction: column
     align-items: center
     justify-content: center
+    user-select: none
     &_nav
         display: flex
         flex-wrap: wrap
@@ -14,19 +13,20 @@
         max-width: 60%
         a
             text-decoration: none
-            color: #481E5C
+            color: #551A8B
             background: #C5B7FF
-            margin:0.5em 1em
-            padding: 1em
-            border: 0.2em solid #551A8B
-            border-radius: 2em
+            margin: 0.5em 1em
+            padding: 0.75em
+            border: 0.1em solid #551A8B
+            border-radius: 5em
             box-shadow: 0.2em 0.2em 0 #551A8B
             font-family: Grid Paper 
-            font-size: 1.2em
+            font-size: 1.25em
             transition: all 0.2s ease-out
+            
             &.active
-                color: #551A8B
-                background: #F7F49D
+                background: #f7f49d
+                box-shadow: 0 0 0 #551A8B
+                transform: translateX(0.2em) translateY(0.2em)
             &:hover
                 background: #F7F49D
-    &_items

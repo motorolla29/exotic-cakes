@@ -1,21 +1,24 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import './menus-page.sass';
+import MenuItems from '../../menu-items/menu-items';
 
 const MenusPage = () => {
+  const { category } = useParams();
+
   return (
     <div className="menus-page">
-      <div className="menu">
-        <div className="menu_nav">
-          <NavLink to="all">All Menu</NavLink>
-          <NavLink to="classic-cakes">Classic Cakes</NavLink>
-          <NavLink to="cheesecakes">Cheesecakes</NavLink>
-          <NavLink to="wedding-cakes">Wedding Cakes</NavLink>
-          <NavLink to="mini-cakes">Mini Cakes</NavLink>
-          <NavLink to="cupcakes">Cupcakes</NavLink>
-          <NavLink to="cookies">Sugar Cookies</NavLink>
-        </div>
-        <Outlet />
+      <div className="menus-page_nav">
+        <NavLink className={`${category ? '' : 'active'}`} to="/menus/all">
+          All Menu
+        </NavLink>
+        <NavLink to="/menus/classic-cakes">Classic Cakes</NavLink>
+        <NavLink to="/menus/cheesecakes">Cheesecakes</NavLink>
+        <NavLink to="/menus/wedding-cakes">Wedding Cakes</NavLink>
+        <NavLink to="/menus/mini-cakes">Mini Cakes</NavLink>
+        <NavLink to="/menus/cupcakes">Cupcakes</NavLink>
+        <NavLink to="/menus/cookies">Sugar Cookies</NavLink>
       </div>
+      <MenuItems category={category} />
     </div>
   );
 };

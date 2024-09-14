@@ -24,12 +24,6 @@ const MENU = {
     { id: 22, title: 'cupcake2', price: 30 },
     { id: 23, title: 'cupcake3', price: 30 },
     { id: 24, title: 'cupcake4', price: 30 },
-    { id: 25, title: 'cupcake5', price: 20 },
-    { id: 26, title: 'cookie', price: 10 },
-    { id: 27, title: 'cookie', price: 40 },
-    { id: 28, title: 'cookie', price: 30 },
-    { id: 29, title: 'cookie', price: 50 },
-    { id: 30, title: 'cookie', price: 10 },
   ],
   'classic-cakes': [
     { id: 1, title: 'classicCake1', price: 800 },

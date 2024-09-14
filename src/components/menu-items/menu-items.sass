@@ -1,3 +1,12 @@
 .menu-items
-    width: 100%
+    position: relative
+    display: grid // Автоматически заполняем на всю ширину grid-контейнера
+    grid-template-columns: repeat(6, calc(16.66667% - 25px))
+    width: calc(100% - 4em)
+    max-width: 100% // Ширина grid-контейнера
+    justify-content: center
+    justify-items: center // Размещаем карточку по центру
+    column-gap: 30px // Отступ между колонками
+    row-gap: 40px // Отступ между рядами
+    margin: 0 auto
     

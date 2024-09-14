@@ -3,7 +3,34 @@
     flex-direction: column
     height: 100vh
     padding-top: 6em
+    background: #ff4646
     
 .content
     flex-grow: 1
-    background: #FFFBE8
+    background: #fffbe8
+
+.header-drip
+    position: fixed
+    font-size: 16px
+    left: -1.25em
+    top: calc(6em - 5px)
+    width: 22em
+    transform-origin: 50% 0%
+    transition: transform 0.8s ease-out
+    z-index: 8
+
+    &.shown
+        transform: scale(1, 1)
+    &.hidden
+        transform: scale(0.8, 0)
+
+@media (max-width: 1200px)
+    .layout
+        font-size: 15px
+    .header-drip
+        font-size: 15px
+@media (max-width: 1000px)
+    .layout
+        font-size: 14px
+    .header-drip
+        font-size: 14px

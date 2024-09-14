@@ -1,4 +1,5 @@
 .menus-page 
+    font-size: 16px
     display: flex
     flex-direction: column
     align-items: center
@@ -17,16 +18,27 @@
             background: #C5B7FF
             margin: 0.5em 1em
             padding: 0.75em
-            border: 0.1em solid #551A8B
+            border: 2px solid #551A8B
             border-radius: 5em
             box-shadow: 0.2em 0.2em 0 #551A8B
             font-family: Grid Paper 
             font-size: 1.25em
             transition: all 0.2s ease-out
-            
+            z-index: 9
+
             &.active
                 background: #f7f49d
                 box-shadow: 0 0 0 #551A8B
                 transform: translateX(0.2em) translateY(0.2em)
             &:hover
                 background: #F7F49D
+
+@media (max-width: 1200px)
+    .menus-page
+        font-size: 15px
+@media (max-width: 1000px)
+    .menus-page
+        font-size: 14px
+        &_nav
+            a
+                border: 1px solid #551A8B

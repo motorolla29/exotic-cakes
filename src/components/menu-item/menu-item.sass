@@ -1,36 +1,65 @@
 .menu-item
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1)
+    position: relative
     display: flex
     flex-direction: column
     border-radius: 1em
     transition: 0.2s
     overflow: hidden
+    text-decoration: none
+    background: #ffffff6e
+    box-shadow: 1px 2px 4px #541a8b1d
     &:hover
         box-shadow: 4px 8px 16px #541a8b1d
 
-
     &_slider
-        display: block
-        position: relative
-        top: 0
-        left: 0
+        max-width: 100%
         overflow: hidden
+        border-top-radius: 1em
         &_img
+            display: flex
             width: 100%
             height: 100%
             object-fit: contain
 
 
     &_info
+        position: relative
+        width: 100%
         display: flex
         flex-direction: column
-        flex: 1 0 auto /* Занимаем всю оставшуюся высоту карточки */
-        padding: 10px
+       
         &_title
-            display: block
-            margin-bottom: 10px
-            font-weight: 400
-            font-size: 17px
-            line-height: 150%
-            color: #414141
+            font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
+            width: 100%
+            font-size: 1.2em
+            text-align: center
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            overflow: hidden
+            margin: 0.5em 0
+            color: #551A8B
+            transition: 0.4s
+            &:hover
+                color: #C5B7FF
         &_price
+            font-family: Slime Box, Arial, sans-serif
+            display: flex
+            font-size: 1em
+            justify-content: center
+            margin-top: 0.5em
+            margin-bottom: 1em
+            color: #505050
+    & .slick-slider
+        & .slick-dots
+            bottom: 5px
+            & li
+                margin: 0
+                & button 
+                        &::before
+                            color: #C5B7FF
+                            opacity: 1
+                &.slick-active
+                    & button 
+                        &::before
+                            color: #F7F49D

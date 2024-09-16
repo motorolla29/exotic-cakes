@@ -1,6 +1,11 @@
 const MENU = {
   all: [
-    { id: 1, title: 'classicCake1', price: 800 },
+    {
+      id: 1,
+      title:
+        'classicCake1 classicCake1 classicCake1 classicCake1 classicCake1 classicCake1 classicCake1  classicCake1  classicCake1  classicCake1',
+      price: 800,
+    },
     { id: 2, title: 'classicCake2', price: 400 },
     { id: 3, title: 'classicCake3', price: 3100 },
     { id: 4, title: 'classicCake4', price: 500 },

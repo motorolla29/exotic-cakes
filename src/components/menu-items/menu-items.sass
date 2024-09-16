@@ -2,11 +2,17 @@
     position: relative
     display: grid // Автоматически заполняем на всю ширину grid-контейнера
     grid-template-columns: repeat(6, calc(16.66667% - 25px))
-    width: calc(100% - 4em)
     max-width: 100% // Ширина grid-контейнера
-    justify-content: center
-    justify-items: center // Размещаем карточку по центру
+    padding: 0 2em
     column-gap: 30px // Отступ между колонками
     row-gap: 40px // Отступ между рядами
     margin: 0 auto
-    
+
+@media (max-width: 1280px)
+    .menu-items
+        grid-template-columns: repeat(4, calc(25% - 6px))
+        column-gap: 8px
+
+@media (max-width: 768px)
+    .menu-items
+        grid-template-columns: repeat(2, calc(50% - 4px))

@@ -6,8 +6,14 @@ import './menu-items.sass';
 const MenuItems = ({ category }) => {
   return (
     <div className="menu-items">
-      {menu[category || 'all'].map((it) => (
-        <MenuItem key={it.id} id={it.id} title={it.title} price={it.price} />
+      {menu[category].map((it) => (
+        <MenuItem
+          key={it.id}
+          category={category}
+          id={it.id}
+          title={it.title}
+          price={it.price}
+        />
       ))}
     </div>
   );

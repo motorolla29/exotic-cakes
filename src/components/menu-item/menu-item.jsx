@@ -9,7 +9,7 @@ import './menu-item.sass';
 const MenuItem = ({ category, id, title, price }) => {
   return (
     <Link className="menu-item" to={`/menus/${category}/${id}`}>
-      <Slider dots={true} className="menu-item_slider">
+      <Slider arrows={false} dots={true} className="menu-item_slider">
         <img
           className="menu-item_slider_img"
           src="/images/catalog/OIG1 (1).jpg"

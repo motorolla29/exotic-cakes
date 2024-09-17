@@ -21,20 +21,6 @@
   font-display: swap;
   src: url('/public/fonts/Fredoka-SemiBold.ttf') format('truetype');
 }
-@font-face {
-  font-family: 'Fredoka Bold';
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-  src: url('/public/fonts/Fredoka-Bold.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Fredoka Variable';
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-  src: url('/public/fonts/Fredoka-VariableFont.ttf') format('truetype');
-}
 
 @font-face {
   font-family: 'Slime Box';
@@ -42,20 +28,4 @@
   font-style: normal;
   font-display: swap;
   src: url('/public/fonts/SlimeBox.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Simply Rounded';
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-  src: url('/public/fonts/Simply Rounded.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Simply Rounded Bold';
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-  src: url('/public/fonts/Simply Rounded Bold.ttf') format('truetype');
 }

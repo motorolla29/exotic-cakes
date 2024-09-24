@@ -1,3 +1,45 @@
 .home-page
     font-size: 16px
-    height: 2000px
+
+    & .player-wrapper
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        overflow: hidden
+    & .react-player
+        display: flex
+        justify-content: center
+        align-items: center
+        
+    & .play-icon
+        cursor: pointer
+        position: absolute
+        font-size: 16px
+        fill: #C5B7FF
+        filter: drop-shadow(0 0 1em #000000)
+        width: 4em
+        height: auto
+        bottom: 5em
+        left: calc( 50% - 2em )
+        transition: 0.2s
+        &:hover
+            fill: #F7F49D
+        
+@media (max-width: 1280px)
+    .home-page
+        & .play-icon
+            font-size: 14px
+@media (max-width: 1024px)
+    .home-page
+        & .play-icon
+            font-size: 12px
+@media (max-width: 768px)
+    .home-page
+        & .react-player
+            video
+                width: auto!important
+                max-width: 250vw
+        & .play-icon
+            font-size: 10px
+            

@@ -25,6 +25,60 @@
         transition: 0.2s
         &:hover
             fill: #F7F49D
+    
+    & .merch-promo-wrapper
+        display: flex
+        justify-content: center
+        align-items: center
+        background: no-repeat url(/public/images/logo-background.png)
+        background-size: cover
+        background-position: center
+    & .merch-promo
+        font-size: 16px
+        user-select: none
+        display: flex
+        justify-content: space-between
+        width: 100%
+        max-width: 850px
+        height: fit-content
+        margin: 2em 4em
+        border-radius: 1em
+        background: #fffbe8
+        -webkit-box-shadow: 0 0 3em -1em rgba(0, 0, 0, 0.5)
+        -moz-box-shadow: 0 0 3em -1em rgba(0, 0, 0, 0.5)
+        box-shadow: 0 0 3em -1em rgba(0, 0, 0, 0.5)
+        &_image
+            object-fit: cover
+            width: 50%
+        &_info
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            text-align: center
+            padding: 2em 2em 2em 0
+            &_title
+                color: #551A8B
+                font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
+                text-decoration: underline
+                font-size: 2em
+                padding: 0.5em 0
+            &_description
+                font-family: Slime Box, Arial, sans-serif
+                font-size: 1.25em
+                padding-bottom: 1em
+            &_link
+                font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
+                font-size: 1em
+                background: #F7F49D
+                margin-bottom: 1em
+                padding: 0.5em 1em 
+                border: 2px solid 
+                border-radius: 12px
+                text-transform: uppercase
+                transition: 0.2s
+                &:hover
+                    background: #C5B7FF
         
 @media (max-width: 1280px)
     .home-page
@@ -34,6 +88,10 @@
     .home-page
         & .play-icon
             font-size: 12px
+        & .merch-promo
+            font-size: 14px
+            margin: 2em
+            
 @media (max-width: 768px)
     .home-page
         & .react-player
@@ -42,4 +100,12 @@
                 max-width: 250vw
         & .play-icon
             font-size: 10px
-            
+        & .merch-promo
+            flex-direction: column
+            &_image
+                width: 100%
+            &_info
+                padding: 0 2em 2em 2em
+                &_title
+                    padding-top: 0
+        

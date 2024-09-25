@@ -9,6 +9,8 @@
     background: #ffaed7
     user-select: none
     z-index: 10
+    &_burger
+        margin-left: 2em
     &_logo
         margin-left: 2em
         width: 16em
@@ -50,8 +52,7 @@
             display: flex
             justify-content: center
             align-items: center
-            margin-right: calc(2em + 20px)
-            margin-left: 2em
+            margin: 0 2em 0 2em
             width: 3em
             svg
                 width: 100%
@@ -81,4 +82,12 @@
 @media (max-width: 1024px)
     .header
         font-size: 14px
-    
+@media (max-width: 992px)
+    .header
+        &_logo
+            margin-left: 0
+        &_right-side_cart-icon
+            margin-left: 0
+@media (max-width: 480px)
+    .header
+        font-size: 12px

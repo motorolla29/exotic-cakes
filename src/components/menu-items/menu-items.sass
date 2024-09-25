@@ -1,9 +1,10 @@
 .menu-items
+    width: 100vw
     position: relative
     display: grid // Автоматически заполняем на всю ширину grid-контейнера
     grid-template-columns: repeat(6, calc(16.66667% - 25px))
     max-width: calc(1855px + 4em)  // Ширина grid-контейнера
-    padding: 0 calc(2em + 20px) 0 2em
+    padding: 0 2em 0 2em
     column-gap: 30px // Отступ между колонками
     row-gap: 40px // Отступ между рядами
     margin: 0 auto
@@ -12,7 +13,14 @@
     .menu-items
         grid-template-columns: repeat(4, calc(25% - 6px))
         column-gap: 8px
+        row-gap: 35px
 
 @media (max-width: 768px)
     .menu-items
         grid-template-columns: repeat(2, calc(50% - 4px))
+        row-gap: 30px
+
+@media (max-width: 480px)
+    .menu-items
+        row-gap: 20px
+        

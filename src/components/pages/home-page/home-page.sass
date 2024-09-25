@@ -42,8 +42,8 @@
         max-width: 850px
         height: fit-content
         margin: 2em 4em
-        border-radius: 1em
-        background: #fffbe8
+        border-radius: 2em
+        background: #ffaed680
         -webkit-box-shadow: 0 0 3em -1em rgba(0, 0, 0, 0.5)
         -moz-box-shadow: 0 0 3em -1em rgba(0, 0, 0, 0.5)
         box-shadow: 0 0 3em -1em rgba(0, 0, 0, 0.5)
@@ -51,6 +51,7 @@
             object-fit: cover
             pointer-events: none
             width: 50%
+            padding: 2em
         &_info
             display: flex
             flex-direction: column
@@ -62,7 +63,13 @@
                 color: #551A8B
                 font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
                 font-size: 2em
-                padding: 0.5em 0
+                padding: 0.25em 0.5em
+                margin: 0.5em 0
+                border-radius: 1em
+                -webkit-box-shadow: inset 0 0 0.5em 0 #fffbe8
+                -moz-box-shadow: inset 0 0 0.5em 0 #fffbe8
+                box-shadow: inset 0 0 0.5em 0 #fffbe8
+
             &_description
                 font-family: Slime Box, Arial, sans-serif
                 font-size: 1.25em
@@ -101,11 +108,13 @@
         & .play-icon
             font-size: 10px
         & .merch-promo
+            border-radius: 1em
             flex-direction: column
             &_image
                 width: 100%
+                padding: 1em
             &_info
                 padding: 0 2em 2em 2em
                 &_title
-                    padding-top: 0
+                    margin-top: 0
         

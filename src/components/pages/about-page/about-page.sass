@@ -21,9 +21,74 @@
             span:first-child
                 color: #F7F49D
     &_history
+        font-size: 16px
         &_block
             display: flex
             div
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-content: center
+                background: no-repeat url(/public/images/logo-background.png)
+                background-size: cover
+                background-position: center
                 width: 50%
+                padding: 0 6em
+                transition: all 0.4s
+                h1
+                    display: flex
+                    color: #551A8B
+                    padding: 0.5em 1em
+                    font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
+                p
+                    font-family: Slime Box, Arial, sans-serif
+                    font-size: 1.5em
+                    padding: 1em
+                    border-radius: 1em
+                    background: #fffbe880
+                    -webkit-box-shadow: 0 0 3em -1em rgba(0, 0, 0, 0.5)
+                    -moz-box-shadow: 0 0 3em -1em rgba(0, 0, 0, 0.5)
+                    box-shadow: 0 0 3em -1em rgba(0, 0, 0, 0.5)
             img
+                object-fit: cover
+                pointer-events: none
                 width: 50%
+
+@media (max-width: 1440px)
+    .about-page
+        &_history
+            font-size: 14px
+            &_block
+                div
+                    padding: 0 4em
+@media (max-width: 1200px)
+    .about-page
+        &_history
+            font-size: 12px
+            &_block
+                div
+                    padding: 0 1em
+@media (max-width: 930px)
+    .about-page
+        &_history
+            font-size: 14px
+            &_block
+                div, img
+                    width: 100%
+                div
+                    padding: 10vh 10vw
+                &:nth-child(odd)
+                    flex-direction: column
+                &:nth-child(even)
+                    flex-direction: column-reverse
+@media (max-width: 600px)
+    .about-page
+        &_history
+            &_block
+                div
+                    padding: 5vh 5vw
+@media (max-width: 480px)
+    .about-page
+        &_history
+            font-size: 12px
+                    

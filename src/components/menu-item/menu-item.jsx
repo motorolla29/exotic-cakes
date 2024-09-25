@@ -25,6 +25,11 @@ const MenuItem = ({ category, id, title, price }) => {
           src="/images/catalog/OIG1 (3).jpg"
           alt="product_image"
         />
+        <img
+          className="menu-item_slider_img"
+          src="/images/catalog/OIG1 (3).jpg"
+          alt="product_image"
+        />
       </Slider>
       <div className="menu-item_info">
         <p className="menu-item_info_title">{title}</p>

@@ -12,6 +12,9 @@ const Header = () => {
       <div className="header_right-side">
         <div className="header_right-side_navbar">
           <div className="header_right-side_navbar_link">
+            <div className="header_right-side_navbar_link">
+              <NavLink to={'/'}>Home</NavLink>
+            </div>
             <NavLink to={'/menus'}>Menus</NavLink>
           </div>
           <div className="header_right-side_navbar_link">
@@ -22,9 +25,6 @@ const Header = () => {
           </div>
           <div className="header_right-side_navbar_link">
             <NavLink to={'/merch'}>Merch</NavLink>
-          </div>
-          <div className="header_right-side_navbar_link">
-            <NavLink to={'/something-else'}>Something Else</NavLink>
           </div>
         </div>
         <Link to="/cart" className="header_right-side_cart-icon">

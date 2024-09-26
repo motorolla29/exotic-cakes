@@ -1,35 +1,108 @@
 .footer
-    &_first-floor
+    border-top: 1px solid #3a3a3a54
+    background: #fffbe8
+    &_top
         display: flex
+        flex-direction: row
         justify-content: space-between
-        background: #fffbe8
-        height: 80px
-        &_social
-            margin-left: 2em
-            display: flex
-            flex-direction: row
-            align-items: center
-            &_icon-container
-                cursor: pointer
-                background: #3a3a3ac0
-                width: 2em
-                padding: 0.5em
-                margin-right: 1em
-                border-radius: 50%
-                transition: 0.2s
-                svg
-                    display: flex
-                    width: 100%
-                    height: auto
-                    fill: #e3e3e3
-                &:hover
-                    background: #C5B7FF
-                    svg
-                        fill: #3a3a3ac0
-                    
+        margin: 2em 4em
+        h3
+            font-size: 1.5em
+            margin-bottom: 0.5em
+            opacity: 0.9
+        h3, p, a
+            font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
+            text-transform: uppercase
             
+        p, a
+            opacity: 0.8
+            
+            
+        &_first
+            display: flex
+            flex-direction: column
+            svg
+                margin: 0 0.5em 1em 0.5em
+                width: 10em
+            p
+                padding-bottom: 0.5em
+        &_second
+            display: flex
+            flex-direction: column
+            p, a
+                cursor: pointer
+                padding-bottom: 1em
+                transition: 0.2s
+                &:hover
+                    opacity: 1
+        &_third
+            display: flex
+            flex-direction: column
+            a
+                opacity: 1
+            &_social
+                display: flex
+                flex-direction: column
+                margin-bottom: 1em    
+                &_link
+                    user-select: none
+                    width: fit-content
+                    cursor: pointer
+                    margin-bottom: 0.5em
+                    display: flex
+                    flex-direction: row
+                    align-items: center
+                    span
+                        font-family: Slime Box, Arial, sans-serif 
+                        text-transform: none
+                        opacity: 0.9
+                        color: #551A8B
+                    &:hover
+                        div
+                            background: #C5B7FF
+                        span
+                            opacity: 1
+                        svg
+                            fill: #3a3a3a
 
-    &_second-floor
+                    &_icon-container
+                        background: #3a3a3ac0
+                        width: 2em
+                        padding: 0.5em
+                        margin-right: 0.5em
+                        border-radius: 50%
+                        transition: 0.2s
+                        &.facebook
+                            background: #3B5998
+                        &.twitter
+                            background: #1DA1F2
+                        &.instagram
+                            background: #F935B2
+                        &.youtube
+                            background: #FE0000
+                        svg
+                            display: flex
+                            width: 100%
+                            height: auto
+                            fill: #e3e3e3
+                                
+            &_pay-methods
+                display: flex
+                flex-direction: column
+                &_icons
+                    display: flex
+                    flex-wrap: wrap
+                    &_icon-container
+                        width: 2.5em
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        margin-right: 0.5em
+                        svg
+                            width: 100%
+                            height: auto
+                        
+    &_basement
         display: flex
         align-items: center
         justify-content: center
@@ -38,5 +111,36 @@
         a
             font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
             color: #4b4153
+            transition: 0.2s
             &:hover
                 opacity: 0.8
+
+@media (max-width: 1280px)
+    .footer_top_third_pay-methods_icons
+        width: 20em
+@media (max-width: 1024px)
+    .footer_top_third_pay-methods_icons
+        width: 12em
+@media (max-width: 768px)
+    .footer
+        text-align: center
+        &_top
+            flex-direction: column
+            align-items: center
+            &_first
+                padding-bottom: 0.5em
+            &_first, &_second, &_third
+                align-items: center
+            &_second, &_third
+                padding-top: 2em
+                border-top: 1px solid
+            &_third
+                &_social
+                    margin-bottom: 1em
+                    &_link
+                        padding-left: 15%
+                &_pay-methods
+                    align-items: center
+                    &_icons
+                        justify-content: center
+                        width: 100%

@@ -3,9 +3,11 @@ import Slider from 'react-slick';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
 
 import './image-gallery.sass';
+import { useState } from 'react';
 
 const ImageGallery = ({ item: { images } }) => {
   const baseUrl = '/images/catalog';
+  const [hovered, setHovered] = useState(false);
 
   function CustomNextArrow(props) {
     const { onClick } = props;
@@ -46,7 +48,11 @@ const ImageGallery = ({ item: { images } }) => {
 
   return (
     <div className="image-gallery">
-      <Slider {...settings}>
+      <Slider
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        {...settings}
+      >
         {images.map((image) => (
           <div>
             <img src={`${baseUrl}/${image}`}></img>

@@ -1,0 +1,84 @@
+.image-gallery
+    display: flex
+    margin: 0 2em
+    width: 50%
+    & .slick-slider
+        position: sticky
+        top: 7em
+        width: 100%
+        height: auto
+
+        & .custom-arrow-next, & .custom-arrow-prev
+            cursor: pointer
+            position: absolute
+            width: 4em
+            height: 4em
+            display: flex
+            align-items: center
+            justify-content: center
+            border: 1px solid #551A8B
+            border-radius: 50%
+            z-index: 1
+            top: calc(50% - 2em)
+            background:#fffbe8
+            transition: 0.2s
+            &:hover
+                background: #551A8B
+                border: none
+                svg
+                    fill: #fffbe8
+            svg
+                width: 2em
+                height: auto
+                fill: #551A8B
+
+        & .custom-arrow-next
+            right: -2em
+
+        & .custom-arrow-prev
+            left: -2em
+
+            
+
+            
+
+        & .slick-dots
+            top: 100%
+            height: fit-content
+            text-align: start
+            li
+                width: 11.625%
+                height: auto
+                margin: 1% 1% 0 0
+                opacity: 0.75
+                border-radius: 5px
+                transition: 0.2s
+                &:last-child
+                    margin-right: 0
+                &.slick-active
+                    opacity: 1
+                    outline: 1px solid #481E5C
+                img
+                    display: flex
+                    width: 100%
+                    border-radius: 5px
+
+        & .slick-track
+            &:hover
+                cursor: grab
+            &:active
+                cursor: grabbing
+            & .slick-slide
+                
+                div
+                    display: flex
+                    
+                    img
+                        width: 100%
+                        
+                            
+
+
+// @media (max-width: 1280px)
+//     .image-gallery
+//         font-size: 12px

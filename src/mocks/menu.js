@@ -5,6 +5,16 @@ const MENU = {
       title:
         'classicCake1 classicCake1 classicCake1 classicCake1 classicCake1 classicCake1 classicCake1  classicCake1  classicCake1  classicCake1',
       price: 800,
+      images: [
+        'OIG1 (1).jpg',
+        'OIG1 (2).jpg',
+        'OIG1 (3).jpg',
+        'OIG1 (1).jpg',
+        'OIG1 (2).jpg',
+        'OIG1 (3).jpg',
+        'OIG1 (1).jpg',
+        'OIG1 (2).jpg',
+      ],
     },
     { id: 2, title: 'classicCake2', price: 400 },
     { id: 3, title: 'classicCake3', price: 3100 },

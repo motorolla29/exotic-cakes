@@ -12,7 +12,6 @@ import {
   DinersClub,
   Discover,
   Googlepay,
-  Maestro,
   Mastercard,
   Paypal,
   Visa,
@@ -75,16 +74,16 @@ const Footer = () => {
                 <Amex />
               </div>
               <div className="footer_top_third_pay-methods_icons_icon-container">
-                <Applepay />
-              </div>
-              <div className="footer_top_third_pay-methods_icons_icon-container">
-                <Googlepay />
-              </div>
-              <div className="footer_top_third_pay-methods_icons_icon-container">
                 <Visa />
               </div>
               <div className="footer_top_third_pay-methods_icons_icon-container">
                 <Mastercard />
+              </div>
+              <div className="footer_top_third_pay-methods_icons_icon-container">
+                <Applepay />
+              </div>
+              <div className="footer_top_third_pay-methods_icons_icon-container">
+                <Googlepay />
               </div>
               <div className="footer_top_third_pay-methods_icons_icon-container">
                 <DinersClub />

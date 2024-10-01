@@ -1,7 +1,8 @@
 .image-gallery
-    display: flex
+    display: inline-block
     width: 50%
     padding: 0 2em
+
     & .slick-slider
         position: sticky
         top: 7em
@@ -23,21 +24,17 @@
             display: flex
             align-items: center
             justify-content: center
-            border: 1px solid #551A8B
+            border: 1px solid
             border-radius: 50%
             z-index: 1
             top: calc(50% - 2em)
-            background:#fffbe8
+            background:#fff
             transition: 0.2s
             &:hover
-                background: #551A8B
-                border: none
-                svg
-                    fill: #fffbe8
+                background: #C5B7FF
             svg
                 width: 2em
                 height: auto
-                fill: #551A8B
 
         & .custom-arrow-next
             right: -2em
@@ -54,6 +51,7 @@
             height: fit-content
             text-align: start
             li
+                vertical-align: top
                 width: 11.625%
                 height: auto
                 margin: 1% 1% 0 0
@@ -65,7 +63,7 @@
                     margin-right: 0
                 &.slick-active
                     opacity: 1
-                    outline: 1px solid #481E5C
+                    outline: 1px solid
                     
                 img
                     display: flex
@@ -79,13 +77,11 @@
             &:active
                 cursor: grabbing
             & .slick-slide
-                
                 div
                     display: flex
-                    
                     img
+                        border-radius: 5px
                         width: 100%
-                        
                             
 
 

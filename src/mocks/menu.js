@@ -5,18 +5,26 @@ const MENU = {
       title:
         'classicCake1 classicCake1 classicCake1 classicCake1 classicCake1 classicCake1 classicCake1  classicCake1  classicCake1  classicCake1',
       price: 800,
-      images: [
-        'OIG1 (1).jpg',
-        'OIG1 (2).jpg',
-        'OIG1 (3).jpg',
-        'OIG1 (1).jpg',
-        'OIG1 (2).jpg',
-        'OIG1 (3).jpg',
-        'OIG1 (1).jpg',
-        'OIG1 (2).jpg',
-      ],
+      images: ['OIG1 (1).jpg', 'OIG1 (2).jpg'],
+      options: {
+        Size: [
+          {
+            name: 'Mini Size',
+            price: 400,
+          },
+          {
+            name: 'Big Size',
+            price: 600,
+          },
+        ],
+      },
+      variants: {
+        Sponge: ['Marble', 'Lemon'],
+        'Filling Icing': ['Blue Vanilla Buttercream', 'Cream Cheese Icing'],
+      },
+      abilities: ['cake-sign', 'card-message'],
     },
-    { id: 2, title: 'classicCake2', price: 400 },
+    { id: 2, title: 'classicCake2', price: 400, images: ['OIG1 (1).jpg'] },
     { id: 3, title: 'classicCake3', price: 3100 },
     { id: 4, title: 'classicCake4', price: 500 },
     { id: 5, title: 'classicCake5', price: 1000 },

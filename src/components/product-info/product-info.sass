@@ -1,4 +1,5 @@
 .product-info
+    display: inline-block
     font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
     width: 50%
     display: flex
@@ -16,19 +17,135 @@
     &_description
         border-top: 1px solid #ffaed680
         font-size: 1.25em
-        padding: 1em 0
+        padding: 1em 0 0 0
         font-family: Slime Box, Arial, sans-serif
-    &_options-container
+    &_options-container, &_variants-container
         display: flex
         flex-direction: column
-    &_options-title
-        font-size: 1.25em
-        margin-bottom: 0.5em
-    &_options
+    &_options-container
+        padding: 1em 0 0 0
+    &_variants-container > div
+        margin-top: 1.5em
+    &_options-title, &_variants-title
+        color: #551A8B
+        font-size: 1em
+    &_options, &_variants
+        user-select: none
         display: flex
         flex-direction: row
-    &_option
+        flex-wrap: wrap
+        &_option, &_variant
+            display: flex
+            input
+                display: none
+            label
+                cursor: pointer
+                padding: 1em
+                border: 1px solid
+                border-radius: 1em
+                margin: 0.75em 1em 0 0
+                box-shadow: 0.2em 0.2em 0 
+                transition: all 0.2s ease-out
+
+            input:checked + label
+                background: #C5B7FF
+                box-shadow: 0 0 0
+                transform: translateX(0.2em) translateY(0.2em)
+        &_variant
+            font-family: Slime Box, Arial, sans-serif
+            label
+                padding: 0.5em
+                border-radius: 0.5em
+            input:checked + label
+                background: #ffaed7
+            
+
+    &_abilities
+        margin: 1em 0 0 0
+        &_ability:first-child
+            border-top: 1px solid #ffaed680
+        &_ability
+            border-bottom: 1px solid #ffaed680
+            padding-bottom: 1em
+            &_title
+                display: flex
+                align-items: center
+                margin-top: 1em
+                padding-bottom: 1em
+                svg
+                    margin-right: 0.25em
+                    width: 1em
+                    height: auto
+            &_inputs
+                display: flex
+                flex-direction: column
+                div
+                    display: flex
+                    align-items: center
+                    padding-bottom: 0.5em
+                    input
+                        display: none
+                    label
+                        cursor: pointer
+                        width: 1.5em
+                        height: 1.5em
+                        border: 1px solid #481e5c65
+                        border-radius: 2px
+                        margin-right: 0.5em
+                        transition: 0.2s ease
+
+                    input:checked + label
+                        background: #C5B7FF
+
+            &_details
+                max-height: 10em
+                overflow: hidden
+                transition: max-height 0.6s ease-out
+                &_title
+                    padding-bottom: 0.5em
+                &_textarea
+                    padding: 0.25em 0.5em
+                    font-size: 1em
+                    font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
+                    width: 100%
+                    height: 2.2em
+                    resize: none
+                    border-radius: 5px
+                    border: 1px solid #C5B7FF
+                    outline: none
+                    &.card
+                        height: 5.6em
+                    &:active, &:focus
+                        border: 2px solid #C5B7FF
+                &_characters-count
+                    font-family: Slime Box, Arial, sans-serif
+                    font-size: 1em
+                &.hidden
+                    max-height: 0
+            
+    &_add-to-cart-btn
+        cursor: pointer
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 2em 0
         padding: 1em
-        border: 1px solid
-        border-radius: 1em
-        margin-right: 1em
+        width: 100%
+        max-width: 18em
+        align-self: center
+        font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
+        background: #C5B7FF
+        border: 1px solid 
+        border-radius: 4em
+        box-shadow: 0.2em 0.2em 0 
+        transition: all 0.2s ease, background 0.4s ease
+        svg
+            margin-right: 0.5em
+            width: 2em
+            height: auto
+        &:hover
+            background: #F7F49D
+        &:active
+            background: #ffaed7
+            box-shadow: 0 0 0
+            transform: translateX(0.2em) translateY(0.2em)

@@ -1,9 +1,9 @@
+import { useState } from 'react';
 import Slider from 'react-slick';
 
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
 
 import './image-gallery.sass';
-import { useState } from 'react';
 
 const ImageGallery = ({ item: { images } }) => {
   const baseUrl = '/images/catalog';
@@ -37,8 +37,7 @@ const ImageGallery = ({ item: { images } }) => {
     },
 
     dots: true,
-    dotsClass: 'slick-dots slick-thumb',
-    infinite: true,
+    infinite: images.length > 1 ? true : false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -54,7 +53,7 @@ const ImageGallery = ({ item: { images } }) => {
         {...settings}
       >
         {images.map((image) => (
-          <div>
+          <div key={image}>
             <img src={`${baseUrl}/${image}`}></img>
           </div>
         ))}

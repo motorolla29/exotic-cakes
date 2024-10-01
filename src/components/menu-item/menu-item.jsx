@@ -6,10 +6,15 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import './menu-item.sass';
 
-const MenuItem = ({ category, id, title, price }) => {
+const MenuItem = ({ category, id, title, price, images }) => {
   return (
     <Link className="menu-item" to={`/menus/${category}/${id}`}>
-      <Slider arrows={false} dots={true} className="menu-item_slider">
+      <Slider
+        infinite={0 > 1 ? true : false}
+        arrows={false}
+        dots={true}
+        className="menu-item_slider"
+      >
         <img
           className="menu-item_slider_img"
           src="/images/catalog/OIG1 (1).jpg"
@@ -18,11 +23,6 @@ const MenuItem = ({ category, id, title, price }) => {
         <img
           className="menu-item_slider_img"
           src="/images/catalog/OIG1 (2).jpg"
-          alt="product_image"
-        />
-        <img
-          className="menu-item_slider_img"
-          src="/images/catalog/OIG1 (3).jpg"
           alt="product_image"
         />
         <img

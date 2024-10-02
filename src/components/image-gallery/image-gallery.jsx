@@ -1,13 +1,13 @@
-import { useState } from 'react';
 import Slider from 'react-slick';
-
+import useWindowSize from '../../hooks/use-window-size';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
 
 import './image-gallery.sass';
 
 const ImageGallery = ({ item: { images } }) => {
   const baseUrl = '/images/catalog';
-  const [hovered, setHovered] = useState(false);
+
+  const [ww] = useWindowSize();
 
   function CustomNextArrow(props) {
     const { onClick } = props;
@@ -35,7 +35,6 @@ const ImageGallery = ({ item: { images } }) => {
         </a>
       );
     },
-
     dots: true,
     infinite: images.length > 1 ? true : false,
     speed: 500,
@@ -47,11 +46,7 @@ const ImageGallery = ({ item: { images } }) => {
 
   return (
     <div className="image-gallery">
-      <Slider
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        {...settings}
-      >
+      <Slider {...settings}>
         {images.map((image) => (
           <div key={image}>
             <img src={`${baseUrl}/${image}`}></img>

@@ -4,7 +4,8 @@
     width: 50%
     display: flex
     flex-direction: column
-    padding: 0 2em
+    margin: 0 2em
+    transition: 0.2s ease
     &_title
         color: #551A8B
         font-size: 2em
@@ -149,3 +150,12 @@
             background: #ffaed7
             box-shadow: 0 0 0
             transform: translateX(0.2em) translateY(0.2em)
+
+@media (max-width: 1024px)
+    .product-info
+        display: flex
+        width: 100%
+        margin: 8em 0 0 0
+@media (max-width: 768px)
+    .product-info
+        padding: 0 1em

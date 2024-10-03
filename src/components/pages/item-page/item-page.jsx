@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom';
 
-import MENU from '../../../mocks/menu';
+import MENU from '../../../mocks/menu.json';
 import ImageGallery from '../../image-gallery/image-gallery';
+import ProductInfo from '../../product-info/product-info';
 
 import './item-page.sass';
-import ProductInfo from '../../product-info/product-info';
 
 const ItemPage = () => {
   const { category } = useParams(category);

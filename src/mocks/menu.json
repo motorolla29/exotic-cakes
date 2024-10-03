@@ -1,0 +1,330 @@
+[
+  {
+    "id": 1,
+    "category": "classic-cakes",
+    "title": "Cake of the Soviet Parlament House 1984",
+    "description": "A house in the form of the USSR government building. This will definitely turn your grandparents on, causing nostalgia for Soviet times",
+    "images": ["OIG1.6kJ4kvTL.jpg"],
+    "options": {
+      "Size": [
+        {
+          "name": "Mini Size",
+          "price": 80
+        },
+        {
+          "name": "Big Size",
+          "price": 120
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Marble", "Lemon"],
+      "Filling Icing": ["Blue Vanilla Buttercream", "Cream Cheese Icing"]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": 1,
+    "category": "classic-cakes",
+    "title": "Old Slavic Palace Cake",
+    "description": "Сake in the form of a rich Slavic country house",
+    "images": ["OIG1.jpg", "OIG1 (1).jpg", "OIG1 (2).jpg", "OIG1.Y.jpg"],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 69
+        },
+        {
+          "name": "8-inch",
+          "price": 89
+        },
+        {
+          "name": "10-inch",
+          "price": 119
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Chocolate", "Rainbow", "Neapolitan"],
+      "Filling Icing": [
+        "White Vanilla Buttercream",
+        "Lemon Buttercream",
+        "Oreo Buttercream"
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": 1,
+    "category": "classic-cakes",
+    "title": "Bike Lover Cake",
+    "description": "Do you love cycling or want to give a cake to a cyclist? We can make one in the best possible way",
+    "images": [
+      "OIG1 (3).jpg",
+      "OIG1 (4).jpg",
+      "OIG1.LfYInJVlj..jpg",
+      "OIG1.47XKfwRue_pxe_l.jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 39
+        },
+        {
+          "name": "8-inch",
+          "price": 69
+        },
+        {
+          "name": "10-inch",
+          "price": 99
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Red Velvet", "Chocolate"],
+      "Filling Icing": ["Cream Cheese Icing", "Chocolate Buttercream"]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+
+  {
+    "id": 1,
+    "category": "classic-cakes",
+    "title": "Mouse Cheese Fest Cake",
+    "description": "Cheese shaped cake with a cluster of edible mastic mice",
+    "images": [
+      "OIG3 (2).jpg",
+      "OIG3 (3).jpg",
+      "OIG3 (4).jpg",
+      "OIG3.cE9xxfayoeDOq1NXm.jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 39
+        },
+        {
+          "name": "8-inch",
+          "price": 69
+        },
+        {
+          "name": "10-inch",
+          "price": 99
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Funfetti", "Vanilla", "Lemon"],
+      "Filling Icing": [
+        "Cream Cheese Icing",
+        "Lemon Buttercream",
+        "Yellow Vanilla Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+
+  {
+    "id": 1,
+    "category": "classic-cakes",
+    "title": "Lavender Dreams Cake",
+    "description": "Cake in the shape of French lavender fields",
+    "images": ["OIG1.RDb9vYqFs1Lw7W95xH.jpg", "OIG1 (5).jpg"],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 49
+        },
+        {
+          "name": "8-inch",
+          "price": 79
+        },
+        {
+          "name": "10-inch",
+          "price": 109
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Salted Caramel", "Neapolitan", "Burnt Butter Choc Chip"],
+      "Filling Icing": ["Blue Vanilla Buttercream", "Cream Cheese Icing"]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+
+  {
+    "id": 1,
+    "category": "classic-cakes",
+    "title": "Winni Pie",
+    "description": "Winnie the Pooh, Honey the Pie",
+    "images": ["OIG2.jpg", "OIG2.njocvyUL.jpg"],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 29
+        },
+        {
+          "name": "8-inch",
+          "price": 49
+        },
+        {
+          "name": "10-inch",
+          "price": 69
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Funfetti", "Lemon"],
+      "Filling Icing": [
+        "Honey Icing",
+        "Lemon Buttercream",
+        "Yellow Vanilla Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+
+  {
+    "id": 1,
+    "category": "classic-cakes",
+    "title": "Winni Cake on a barrel",
+    "description": "Cake in the shape of Winnie the Pooh sitting on a huge barrel of honey",
+    "images": ["OIG4.jpg", "OIG4 (1).jpg", "OIG4 (2).jpg"],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 39
+        },
+        {
+          "name": "8-inch",
+          "price": 59
+        },
+        {
+          "name": "10-inch",
+          "price": 79
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Funfetti", "Lemon"],
+      "Filling Icing": [
+        "Honey Icing",
+        "Lemon Buttercream",
+        "Yellow Vanilla Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+
+  {
+    "id": 1,
+    "category": "classic-cakes",
+    "title": "Strawberry Dream Tram",
+    "description": "Strawberry cake in the form of a tram will take you to a sweet world of delights",
+    "images": [
+      "OIG2 (7).jpg",
+      "OIG2 (8).jpg",
+      "OIG2 (9).jpg",
+      "OIG2.91c3C.jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 59
+        },
+        {
+          "name": "8-inch",
+          "price": 79
+        },
+        {
+          "name": "10-inch",
+          "price": 109
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Strawberry Ripple", "Chocolate", "Neapolitan"],
+      "Filling Icing": ["Strawberry Buttercream", "Cream Cheese Icing"]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+
+  {
+    "id": 1,
+    "category": "classic-cakes",
+    "title": "White House Cake",
+    "description": "For true patriots of the united states. Cake in the form of the white house",
+    "images": [
+      "OIG1 (13).jpg",
+      "OIG1 (14).jpg",
+      "OIG1.4vbLEn.jpg",
+      "OIG1 (15).jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 69
+        },
+        {
+          "name": "8-inch",
+          "price": 89
+        },
+        {
+          "name": "10-inch",
+          "price": 119
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Marble"],
+      "Filling Icing": [
+        "White Chocolate Cream",
+        "Cream Cheese Icing",
+        "White Vanilla Buttercream"
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+
+  {
+    "id": 1,
+    "category": "classic-cakes",
+    "title": "Drum'n'Cake",
+    "description": "Drum shaped cake. A great gift for any musician",
+    "images": [
+      "OIG1 (16).jpg",
+      "OIG1 (17).jpg",
+      "OIG1.p2qLZp0wNWnqZ.jpg",
+      "OIG1 (18).jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 39
+        },
+        {
+          "name": "8-inch",
+          "price": 59
+        },
+        {
+          "name": "10-inch",
+          "price": 89
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Chocolate", "Red Velvet"],
+      "Filling Icing": ["Chocolate Buttercream", "Cream Cheese Icing"]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  }
+]

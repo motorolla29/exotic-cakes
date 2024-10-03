@@ -91,11 +91,14 @@
                             
 @media (max-width: 1024px)
     .image-gallery
+        padding-bottom: 15%
         margin: 0
         display: flex
         width: 100%
 @media (max-width: 768px)
     .image-gallery
+        padding-bottom: 4em
+        
         & .slick-slider
             & .custom-arrow-next, & .custom-arrow-prev
                 display: none
@@ -106,6 +109,39 @@
                     div
                         img
                             border-radius: 0
-            // & .slick-dots
-            //     text-align: center
+            & .slick-dots
+                text-align: center
+                padding: 14px 0 8px 0
+                border-bottom: 1px solid #9d46ee40
+                li
+                    opacity: 1
+                    width: auto
+                    margin: 0 auto
+                    border-radius: 0
+                    width: 6px
+                    height: 6px
+                    margin: 0 5px
+                    button
+                        width: 6px
+                        height: 6px
+                        &:hover
+                            &::before
+                                opacity: 1
+                        &::before
+                            opacity: 0.5
+                            width: 6px
+                            height: 6px
+                            line-height: 6px
+                            border: 2px solid #9d46ee
+                            border-radius: 50%
+                            content: ''
+                    &.slick-active
+                        opacity: 1
+                        outline: 0
+                        button
+                            &::before
+                                opacity: 1
+                                background: #9d46ee
+                    
+                
     

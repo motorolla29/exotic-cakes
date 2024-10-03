@@ -29,10 +29,12 @@ const ImageGallery = ({ item: { images } }) => {
 
   const settings = {
     customPaging: function (i) {
-      return (
+      return ww >= 768 ? (
         <a>
           <img src={`${baseUrl}/${images[0 + i]}`} />
         </a>
+      ) : (
+        <button></button>
       );
     },
     dots: true,

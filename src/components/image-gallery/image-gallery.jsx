@@ -1,12 +1,11 @@
 import Slider from 'react-slick';
 import useWindowSize from '../../hooks/use-window-size';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
+import { baseImagesURL } from '../../const';
 
 import './image-gallery.sass';
 
 const ImageGallery = ({ item: { images } }) => {
-  const baseUrl = '/images/catalog';
-
   const [ww] = useWindowSize();
 
   function CustomNextArrow(props) {
@@ -31,29 +30,36 @@ const ImageGallery = ({ item: { images } }) => {
     customPaging: function (i) {
       return ww >= 768 ? (
         <a>
-          <img src={`${baseUrl}/${images[0 + i]}`} />
+          <img
+            src={`${baseImagesURL}/${images ? images[0 + i] : 'no-photo.png'}`}
+          />
         </a>
       ) : (
         <button></button>
       );
     },
     dots: true,
-    infinite: images.length > 1 ? true : false,
+    infinite: images?.length > 1 ? true : false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <CustomNextArrow />,
-    prevArrow: <CustomPrevArrow />,
+    adaptiveHeight: true,
+    nextArrow: images && images.length > 1 ? <CustomNextArrow /> : null,
+    prevArrow: images && images.length > 1 ? <CustomPrevArrow /> : null,
   };
 
   return (
     <div className="image-gallery">
       <Slider {...settings}>
-        {images.map((image) => (
-          <div key={image}>
-            <img src={`${baseUrl}/${image}`}></img>
+        {images ? (
+          images.map((image) => (
+            <img key={image} src={`${baseImagesURL}/${image}`} />
+          ))
+        ) : (
+          <div>
+            <img src={`${baseImagesURL}/no-photo.png`} />
           </div>
-        ))}
+        )}
       </Slider>
     </div>
   );

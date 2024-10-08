@@ -1,62 +1,6 @@
 [
   {
-    "id": 1,
-    "category": "classic-cakes",
-    "title": "Cake of the Soviet Parlament House 1984",
-    "description": "A house in the form of the USSR government building. This will definitely turn your grandparents on, causing nostalgia for Soviet times",
-    "images": ["OIG1.6kJ4kvTL.jpg"],
-    "options": {
-      "Size": [
-        {
-          "name": "Mini Size",
-          "price": 80
-        },
-        {
-          "name": "Big Size",
-          "price": 120
-        }
-      ]
-    },
-    "variants": {
-      "Sponge": ["Marble", "Lemon"],
-      "Filling Icing": ["Blue Vanilla Buttercream", "Cream Cheese Icing"]
-    },
-    "abilities": ["card-message"]
-  },
-  {
-    "id": 1,
-    "category": "classic-cakes",
-    "title": "Old Slavic Palace Cake",
-    "description": "Сake in the form of a rich Slavic country house",
-    "images": ["OIG1.jpg", "OIG1 (1).jpg", "OIG1 (2).jpg", "OIG1.Y.jpg"],
-    "options": {
-      "Size": [
-        {
-          "name": "6-inch",
-          "price": 69
-        },
-        {
-          "name": "8-inch",
-          "price": 89
-        },
-        {
-          "name": "10-inch",
-          "price": 119
-        }
-      ]
-    },
-    "variants": {
-      "Sponge": ["Vanilla", "Chocolate", "Rainbow", "Neapolitan"],
-      "Filling Icing": [
-        "White Vanilla Buttercream",
-        "Lemon Buttercream",
-        "Oreo Buttercream"
-      ]
-    },
-    "abilities": ["card-message"]
-  },
-  {
-    "id": 1,
+    "id": "608504ca-34b2-42e8-aac8-583cd712b652",
     "category": "classic-cakes",
     "title": "Bike Lover Cake",
     "description": "Do you love cycling or want to give a cake to a cyclist? We can make one in the best possible way",
@@ -88,12 +32,11 @@
     },
     "abilities": ["card-message", "cake-sign"]
   },
-
   {
-    "id": 1,
+    "id": "ea3a67dc-abe4-4c12-a3ee-aaadb84f7643",
     "category": "classic-cakes",
     "title": "Mouse Cheese Fest Cake",
-    "description": "Cheese shaped cake with a cluster of edible mastic mice",
+    "description": "Cheese shaped cake with a cluster of edible fondant mice",
     "images": [
       "OIG3 (2).jpg",
       "OIG3 (3).jpg",
@@ -126,9 +69,8 @@
     },
     "abilities": ["card-message", "cake-sign"]
   },
-
   {
-    "id": 1,
+    "id": "e55c690c-2acd-456f-998d-0a78c5fb2eaf",
     "category": "classic-cakes",
     "title": "Lavender Dreams Cake",
     "description": "Cake in the shape of French lavender fields",
@@ -155,25 +97,24 @@
     },
     "abilities": ["card-message", "cake-sign"]
   },
-
   {
-    "id": 1,
+    "id": "84548659-df73-4f9f-8233-3554b9de4b32",
     "category": "classic-cakes",
     "title": "Winni Pie",
     "description": "Winnie the Pooh, Honey the Pie",
     "images": ["OIG2.jpg", "OIG2.njocvyUL.jpg"],
     "options": {
-      "Size": [
+      "Weight": [
         {
-          "name": "6-inch",
+          "name": "1.2 kg",
           "price": 29
         },
         {
-          "name": "8-inch",
+          "name": "2 kg",
           "price": 49
         },
         {
-          "name": "10-inch",
+          "name": "2.8 kg",
           "price": 69
         }
       ]
@@ -188,11 +129,10 @@
     },
     "abilities": ["card-message", "cake-sign"]
   },
-
   {
-    "id": 1,
+    "id": "7b48155d-4b18-419b-9c5f-fdbb18343a04",
     "category": "classic-cakes",
-    "title": "Winni Cake on a barrel",
+    "title": "Winni's Barrel Cake",
     "description": "Cake in the shape of Winnie the Pooh sitting on a huge barrel of honey",
     "images": ["OIG4.jpg", "OIG4 (1).jpg", "OIG4 (2).jpg"],
     "options": {
@@ -221,9 +161,8 @@
     },
     "abilities": ["card-message", "cake-sign"]
   },
-
   {
-    "id": 1,
+    "id": "bfc8c3cc-da2b-45bb-9c54-f22f8df42368",
     "category": "classic-cakes",
     "title": "Strawberry Dream Tram",
     "description": "Strawberry cake in the form of a tram will take you to a sweet world of delights",
@@ -255,9 +194,8 @@
     },
     "abilities": ["card-message", "cake-sign"]
   },
-
   {
-    "id": 1,
+    "id": "6b4ebbe4-abbb-44f8-bdf5-66b6530fb231",
     "category": "classic-cakes",
     "title": "White House Cake",
     "description": "For true patriots of the united states. Cake in the form of the white house",
@@ -293,9 +231,32 @@
     },
     "abilities": ["card-message"]
   },
-
   {
-    "id": 1,
+    "id": "189503b8-6332-4160-ba9b-902125c13bca",
+    "category": "classic-cakes",
+    "title": "Cake of the Soviet Parlament House 1984",
+    "description": "A house in the form of the USSR government building. This will definitely turn your grandparents on, causing nostalgia for Soviet times",
+    "images": ["OIG1.6kJ4kvTL.jpg"],
+    "options": {
+      "Size": [
+        {
+          "name": "Mini Size",
+          "price": 80
+        },
+        {
+          "name": "Big Size",
+          "price": 120
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Marble", "Lemon"],
+      "Filling Icing": ["Blue Vanilla Buttercream", "Cream Cheese Icing"]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "0e5cdbe9-8f68-492f-a68e-b947011f45ce",
     "category": "classic-cakes",
     "title": "Drum'n'Cake",
     "description": "Drum shaped cake. A great gift for any musician",
@@ -326,5 +287,1726 @@
       "Filling Icing": ["Chocolate Buttercream", "Cream Cheese Icing"]
     },
     "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "c99da0d9-8ea5-46f3-bfa8-95a887774cf8",
+    "category": "classic-cakes",
+    "title": "Cubic Magic Cake",
+    "description": "Mystery cake in the form of a luxurious cube with various decorations",
+    "images": ["OIG3.P0RwufWoEx.mXODs32.jpg", "OIG3 (17).jpg", "OIG3 (18).jpg"],
+    "options": {
+      "Size": [
+        {
+          "name": "Small Size",
+          "price": 39
+        },
+        {
+          "name": "Medium Size",
+          "price": 49
+        },
+        {
+          "name": "Big Size",
+          "price": 69
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": [
+        "Chocolate",
+        "Red Velvet",
+        "Vanilla",
+        "Funfetti",
+        "Marble",
+        "Salted Caramel"
+      ],
+      "Filling Icing": [
+        "Chocolate Buttercream",
+        "Cream Cheese Icing",
+        "Raspberry Buttercream",
+        "Blue Vanilla Buttercream",
+        "Pink Vanilla Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "9af3d073-23af-41ed-a1de-1ccbcb6424ca",
+    "category": "classic-cakes",
+    "title": "Sea Themed Cake",
+    "description": "A sea-themed cake with decorations in the form of shells, starfish, seaweed, etc.",
+    "images": [
+      "OIG2 (15).jpg",
+      "OIG2 (16).jpg",
+      "OIG2 (17).jpg",
+      "OIG2 (18).jpg"
+    ],
+    "options": {
+      "Weight": [
+        {
+          "name": "1.2 kg",
+          "price": 39
+        },
+        {
+          "name": "2 kg",
+          "price": 59
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Marble", "Rainbow"],
+      "Filling Icing": [
+        "Lemon Buttercream",
+        "Cream Cheese Icing",
+        "Blue Vanilla Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "17234a92-a525-4222-96dc-f61f4c96e11c",
+    "category": "classic-cakes",
+    "title": "Romantic Heart Cake",
+    "description": "Decorated heart shaped cake for any romantic occasion",
+    "images": [
+      "6218354347_upscale (23).png",
+      "6218354347_upscale (21).png",
+      "6218354347_upscale (19).png",
+      "6218354347_upscale (20).png",
+      "6218354347_upscale (22).png"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "Small",
+          "price": 29
+        },
+        {
+          "name": "Big",
+          "price": 49
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Raspberry Ripple", "Burnt Butter Choc Chip"],
+      "Filling Icing": ["Neapolitan", "Cream Cheese Icing"]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "acb6bb8c-cbf2-4e57-aa46-2bf89e918232",
+    "category": "classic-cakes",
+    "title": "Mushroom Trip Heart",
+    "description": "Cake in the style of a not-so-bad mushroom trip",
+    "images": ["6218354347_upscale (24).png"],
+    "options": {
+      "Weight": [
+        {
+          "name": "1.2 kg",
+          "price": 29
+        },
+        {
+          "name": "2 kg",
+          "price": 59
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Raspberry Ripple", "Burnt Butter Choc Chip"],
+      "Filling Icing": ["Neapolitan", "Cream Cheese Icing"]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "66ccda04-2d25-465a-98f2-d5f5d8a17332",
+    "category": "classic-cakes",
+    "title": "[Blue/Black]berry Lux",
+    "description": "Luxurious cake with blueberries and blackberries with gold leaf",
+    "images": ["6218354347_upscale (30).png"],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 35
+        },
+        {
+          "name": "8-inch",
+          "price": 55
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Funfetti"],
+      "Filling Icing": [
+        "Pink Vanilla Buttercream",
+        "Blue Vanilla Buttercream",
+        "Cream Cheese Icing"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "66d272d9-67f6-48ab-b0bc-7a500bffc004",
+    "category": "classic-cakes",
+    "title": "New Balance Shoe Cake",
+    "description": "True fans of this brand will be delighted with this cake of the highest detail work from our confectionery company",
+    "images": [
+      "6218354347_upscale (47).png",
+      "6218354347_upscale (46).png",
+      "6218354347_upscale (86).png"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "35 EUR",
+          "price": 35
+        },
+        {
+          "name": "45 EUR",
+          "price": 50
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Chocolate", "Red Velvet"],
+      "Filling Icing": [
+        "Chocolate Buttercream",
+        "Neapolitan",
+        "Salted Caramel Buttercream",
+        "Cream Cheese Icing"
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "dd92879f-aa0c-49b0-a5a5-2708eb3bfb78",
+    "category": "classic-cakes",
+    "title": "Confetti Pastry Burger",
+    "description": "A real sweet pastry layered burger made by Exotic Cakes",
+    "images": ["6218354347_upscale (58).png"],
+    "options": {
+      "Weight": [
+        {
+          "name": "1 kg",
+          "price": 20
+        },
+        {
+          "name": "2 kg",
+          "price": 40
+        },
+        {
+          "name": "3 kg",
+          "price": 60
+        },
+        {
+          "name": "4 kg",
+          "price": 80
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Rainbow", "Funfetti"],
+      "Filling Icing": [
+        "Pink Vanilla Buttercream",
+        "Blue Vanilla Buttercream",
+        "Cream Cheese Icing"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "a8740f7c-7c11-4989-8132-4b2225780830",
+    "category": "classic-cakes",
+    "title": "Burger Styled Cake",
+    "description": "For burger lovers and those with a sweet tooth. Cake in the form of a large burger with vanilla layers covered in chocolate",
+    "images": ["6218354347_upscale (57).png", "6218354347_upscale (55).png"],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 39
+        },
+        {
+          "name": "10-inch",
+          "price": 59
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla"],
+      "Filling Icing": ["Chocolate Buttercream", "Cream Cheese Icing"]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "e880efcb-0faa-4c67-ae4d-6ca32ea061e2",
+    "category": "classic-cakes",
+    "title": "Ruined Biscuit Building",
+    "description": "A cake made in the form of a collapsing five-story building made of biscuit and white chocolate",
+    "images": ["6218354347_upscale (78).png"],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 49
+        },
+        {
+          "name": "8-inch",
+          "price": 69
+        },
+        {
+          "name": "10-inch",
+          "price": 99
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Burnt Butter Choc Chip"],
+      "Filling Icing": ["White Chocolate Buttercream", "Cream Cheese Icing"]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "d0ea885c-2802-4781-8469-a9e3b06d4d71",
+    "category": "classic-cakes",
+    "title": "Old Slavic Palace Cake",
+    "description": "Cake in the form of a rich Slavic country house",
+    "images": ["OIG1.jpg", "OIG1 (1).jpg", "OIG1 (2).jpg", "OIG1.Y.jpg"],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 69
+        },
+        {
+          "name": "8-inch",
+          "price": 89
+        },
+        {
+          "name": "10-inch",
+          "price": 119
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Chocolate", "Rainbow", "Neapolitan"],
+      "Filling Icing": [
+        "White Vanilla Buttercream",
+        "Lemon Buttercream",
+        "Oreo Buttercream"
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "7e30797c-a165-4494-be24-76f1423e3013",
+    "category": "classic-cakes",
+    "title": "Blue Whale Cake",
+    "description": "Cake with a big whale on top with a filling of your choice, the filling in the whale is the same as in the cake itself",
+    "images": [
+      "6218354347_upscale (74).png",
+      "6218354347_upscale (73).png",
+      "6218354347_upscale (79).png"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 39
+        },
+        {
+          "name": "8-inch",
+          "price": 49
+        },
+        {
+          "name": "10-inch",
+          "price": 59
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Lemon", "Marble", "Chocolate"],
+      "Filling Icing": [
+        "Neapolitan",
+        "Chocolate Buttercream",
+        "Cream Cheese Icing",
+        "Oreo Buttercream"
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "79fbbf43-cb01-4dbe-838b-1109b836e29e",
+    "category": "classic-cakes",
+    "title": "Nike Shoe Cake",
+    "description": "If you want a cake shaped like a Nike sneaker, no problem. We'll just do it.",
+    "images": [
+      "6218354347_upscale (65).png",
+      "6218354347_upscale (80).png",
+      "6218354347_upscale (81).png"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "35 EUR",
+          "price": 39
+        },
+        {
+          "name": "40 EUR",
+          "price": 49
+        },
+        {
+          "name": "45 EUR",
+          "price": 69
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Lemon"],
+      "Filling Icing": [
+        "Blue Vanilla Buttercream",
+        "Pink Vanilla Buttercream",
+        "Cream Cheese Icing"
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "f47a6c93-a5d0-475e-bff0-ca0c49eb18b1",
+    "category": "classic-cakes",
+    "title": "Children's Party Cake",
+    "description": "The brightest and most colorful cake that will please any child",
+    "images": [
+      "6218354347_upscale (28).png",
+      "6218354347_upscale (27).png",
+      "6218354347_upscale (91).png",
+      "6218354347_upscale (92).png"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 25
+        },
+        {
+          "name": "8-inch",
+          "price": 35
+        },
+        {
+          "name": "10-inch",
+          "price": 45
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Funfetti", "Rainbow", "Neapolitan"],
+      "Filling Icing": [
+        "Cream Cheese Icing",
+        "Oreo Buttercream",
+        "Blue Vanilla Buttercream",
+        "Pink Vanilla Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "2dee590b-4ae5-4449-97ba-affb62dd69d6",
+    "category": "classic-cakes",
+    "title": "Children's Party Sea Styled Cake",
+    "description": "Children's party cake in a sea style with confectionery decorations in the form of shells, starfish and other small things in a sea theme",
+    "images": [
+      "6218354347_upscale (26).png",
+      "6218354347_upscale (25).png",
+      "6218354347_upscale (93).png"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 29
+        },
+        {
+          "name": "8-inch",
+          "price": 39
+        },
+        {
+          "name": "10-inch",
+          "price": 49
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Funfetti", "Rainbow", "Neapolitan"],
+      "Filling Icing": [
+        "Cream Cheese Icing",
+        "Oreo Buttercream",
+        "Blue Vanilla Buttercream",
+        "Pink Vanilla Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "ad3bb10d-8714-4500-9e01-67534a5ec874",
+    "category": "classic-cakes",
+    "title": "Exotic Beds Brand Bed-Cake",
+    "description": "A Bed-Cake made with classic design by our sister company ©Exotic Beds",
+    "images": [
+      "HzEhCGrxq_x9gofxElYO-.jpg",
+      "nMLzcHrUDHm8xBNjLjPEi.jpg",
+      "V-LRteKuH33IqhHa8d-C5.jpg",
+      "KhB4LUso5f6tuoA4pK1xq.jpg",
+      "v3ZvgEAF1qJg7Ut6z7rxn.jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 39
+        },
+        {
+          "name": "8-inch",
+          "price": 59
+        },
+        {
+          "name": "10-inch",
+          "price": 79
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Funfetti", "Neapolitan", "Lemon"],
+      "Filling Icing": [
+        "Cream Cheese Icing",
+        "Blue Vanilla Buttercream",
+        "Pink Vanilla Buttercream",
+        "Lemon Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "4cf84c79-939a-40f9-99b1-c84ce5663d0a",
+    "category": "classic-cakes",
+    "title": "Exotic Beds Brand Bed-Cake (Rounded Headboard)",
+    "description": "A Bed-Cake made with classic design by our sister company ©Exotic Beds. This is made with rounded headboard in the form of a recognizable cat's face, which is on the company's corporate logo",
+    "images": [
+      "sWIZ_s9a1HCaCixC4gQr9.jpg",
+      "bTvhDBvpLnCJcUseg75DR.jpg",
+      "Q5qwztYu2Kxxb5JTnIp0w.jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 39
+        },
+        {
+          "name": "8-inch",
+          "price": 59
+        },
+        {
+          "name": "10-inch",
+          "price": 79
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Funfetti", "Neapolitan", "Lemon"],
+      "Filling Icing": [
+        "Cream Cheese Icing",
+        "Blue Vanilla Buttercream",
+        "Pink Vanilla Buttercream",
+        "Lemon Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "53fb34e7-5444-425b-956c-7fdb45bf3d92",
+    "category": "classic-cakes",
+    "title": "Exotic Fruits Cake",
+    "description": "Cake with exotic fruits with our company's brand name",
+    "images": [
+      "JKQJD3kwYrVu_4Q-DY_Lh.jpg",
+      "cxkwc_B9DLTn1nHvznOX6.jpg",
+      "QuS1ZxxEDKQFDWfcYL-bJ.jpg"
+    ],
+    "options": {
+      "Weight": [
+        {
+          "name": "1.2 kg",
+          "price": 29
+        },
+        {
+          "name": "2 kg",
+          "price": 59
+        },
+        {
+          "name": "3.4 kg",
+          "price": 99
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Chocolate", "Rainbow"],
+      "Filling Icing": [
+        "Pink Vanilla Buttercream",
+        "Blue Vanilla Buttercream",
+        "Cream Cheese Icing",
+        "Raspberry Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "a57eac46-bd04-463d-a202-e7b8eb9e18c0",
+    "category": "cheesecakes",
+    "title": "[Blue/Straw]berry Italy",
+    "description": "Classic strawberry and blueberry cheesecake with a top crust in the shape of Italy",
+    "images": [
+      "OIG4 (7).jpg",
+      "OIG4.NuRGl.jpg",
+      "OIG4 (8).jpg",
+      "OIG4 (9).jpg"
+    ],
+    "options": {
+      "Weight": [
+        {
+          "name": "1.4 kg",
+          "price": 30
+        },
+        {
+          "name": "2.2 kg",
+          "price": 45
+        },
+        {
+          "name": "3 kg",
+          "price": 60
+        }
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "584b1895-97d7-4d9e-98a1-73fb3dc44e82",
+    "category": "cheesecakes",
+    "title": "Airy Mood Cheesecake",
+    "description": "Cheesecake with balloons floating in the air. Truly magical and unusual appearance",
+    "images": [
+      "OIG4 (10).jpg",
+      "OIG4 (11).jpg",
+      "OIG4 (12).jpg",
+      "OIG4 (13).jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 29
+        },
+        {
+          "name": "8-inch",
+          "price": 39
+        },
+        {
+          "name": "10-inch",
+          "price": 49
+        }
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "f91a3c1a-8c0c-47a8-ac9d-7baa1b80521d",
+    "category": "cheesecakes",
+    "title": "Tropical Vacation Cheesecake",
+    "description": "Cheesecake decorated to look like the most wonderful tropical island from your dream vacation",
+    "images": [
+      "6218354347_upscale (50).png",
+      "6218354347_upscale (49).png",
+      "6218354347_upscale (48).png",
+      "6218354347_upscale (85).png"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 30
+        },
+        {
+          "name": "8-inch",
+          "price": 40
+        },
+        {
+          "name": "10-inch",
+          "price": 50
+        }
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "c1cfa99a-8b8a-42da-9481-d7ad6fab5a7f",
+    "category": "cheesecakes",
+    "title": "Exotic Beds Creamy Bed-Cheesecake",
+    "description": "Special edition bed-styled cheesecake with design from our sister company ©Exotic Beds",
+    "images": [
+      "V5adKL8FY-h25mWbPRhOP.jpg",
+      "5HWg-SwZd4fmRE7VhAba6.jpg",
+      "iiNiFiKPK6mGeo0hc6E9M.jpg",
+      "lVav1_Qhnwi8_opCOLsHV.jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "6-inch",
+          "price": 39
+        },
+        {
+          "name": "8-inch",
+          "price": 49
+        },
+        {
+          "name": "10-inch",
+          "price": 59
+        }
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "a70ef83d-f767-44d4-824b-179600b3ddbf",
+    "category": "cheesecakes",
+    "title": "Australian Trip Cheesecake",
+    "description": "Classic cream cheese on a biscuit crust and shaped like the continent of australia, meet our new version of cheesecake - Australian Trip",
+    "images": [
+      "7VNZmYXMeGn0Ez7AyM2Hl.jpg",
+      "TsQD2schfznFwF0TX2NL2.jpg",
+      "WLdAg-Gmtq8GcZUaLm-q2.jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "Medium Size",
+          "price": 39
+        },
+        {
+          "name": "Big Size",
+          "price": 49
+        }
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "08c8f675-6798-43b9-8ba7-b6638a2c2a68",
+    "category": "cheesecakes",
+    "title": "Brand Logo Signed Cheesecake",
+    "description": "If you don't need anything extremely exotic and unusual from what you could find on our website, we offer you a regular cheesecake with the signature of our confectionery",
+    "images": [
+      "Og_eHxB3uShOvjl5nAaXx.jpg",
+      "49Z3jhHLg0N9eOikx--6V.jpg",
+      "9m8FoNTdHDmeX9BOj_1vj.jpg",
+      "Fyn0gaolVDpt7_55rcg59.jpg"
+    ],
+    "options": {
+      "Weight": [
+        {
+          "name": "1.2 kg",
+          "price": 25
+        },
+        {
+          "name": "2 kg",
+          "price": 35
+        }
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "65d3e0b6-4ba9-4365-9b96-3910be602a2f",
+    "category": "cheesecakes",
+    "title": "Sport Car Cheesecake",
+    "description": "Classic cheesecake with cheese cream topped with caramel topping for speed lovers. Made in the form of a sports car",
+    "images": [
+      "k1DyyfOeMHJwGXZYwP_h2.jpg",
+      "7T1XDyScJNutCCXqEX2c9.jpg",
+      "3p0_piFYvq1zi7hzo73Fj.jpg",
+      "zMVtYGa0hOB_FSU3KCpo3.jpg",
+      "sJMEhrFgzJGB6vhTLeKhp.jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "4-inch",
+          "price": 19
+        },
+        {
+          "name": "6-inch",
+          "price": 29
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "011235f2-8083-4a9f-bfc0-cce25cef41cf",
+    "category": "cheesecakes",
+    "title": "Mini Submarine Cheesecake",
+    "description": "Cheesecake in the form of a small submarine. As always unusual and still delicious",
+    "images": [
+      "IODE1oPrJ-9l909gN1eI8.jpg",
+      "UzDyX3Bixtu2mfqyzkdxP.jpg",
+      "82MwhBbavu5IJoAXhKgRh.jpg"
+    ],
+    "options": {
+      "Quantity": [
+        {
+          "name": "4-inch",
+          "price": 19
+        },
+        {
+          "name": "6-inch",
+          "price": 29
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "be6c0c1a-c4c0-40ff-b4fd-84918893dd2a",
+    "category": "cupcakes",
+    "title": "Zodiac Cupcakes",
+    "description": "Random set of zodiac cupcakes",
+    "images": [
+      "6218354347_upscale (59).png",
+      "6218354347_upscale (60).png",
+      "6218354347_upscale (61).png",
+      "6218354347_upscale (82).png"
+    ],
+    "options": {
+      "Quantity": [
+        {
+          "name": "4-BOX",
+          "price": 8
+        },
+        {
+          "name": "12-BOX",
+          "price": 22
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "31f89137-f0c6-462d-acbb-3d9845d19e52",
+    "category": "cupcakes",
+    "title": "Sweet Tooth Coder Cupcakes",
+    "description": "Cupcakes in the shape of keyboard keys. It doesn't matter if you're a gamer or a programmer, we guarantee you'll love them",
+    "images": ["OIG4 (3).jpg", "OIG4 (4).jpg", "OIG4 (5).jpg", "OIG4 (6).jpg"],
+    "options": {
+      "Size": [
+        {
+          "name": "12-Mini",
+          "price": 12
+        },
+        {
+          "name": "12-Big",
+          "price": 24
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "a3801201-8623-47f6-9784-3bd722606af3",
+    "category": "cupcakes",
+    "title": "Patrick Star Cupcakes",
+    "description": "Cupcakes in the form of Patrick Star from the Spongebob cartoon",
+    "images": [
+      "0HhYqakFbG-epPa7L5-pd.jpg",
+      "feLPWy7vK-pE3eIGjwfYT.jpg",
+      "HAdAGSXCRvbgZ9XjiMcy1.jpg",
+      "VSvZcsXvpoqanJRdwEgtd.jpg"
+    ],
+    "options": {
+      "Quantity": [
+        {
+          "name": "4-BOX",
+          "price": 12
+        },
+        {
+          "name": "8-BOX",
+          "price": 24
+        },
+        {
+          "name": "12-BOX",
+          "price": 36
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "70c975d1-ce26-4bec-bd09-a281d69b0ee2",
+    "category": "cupcakes",
+    "title": "Grinning Monsters Cupcakes",
+    "description": "Cupcakes in the form of grinning but very cute monsters",
+    "images": [
+      "6218354347_upscale (69).png",
+      "6218354347_upscale (70).png",
+      "6218354347_upscale (71).png",
+      "6218354347_upscale (72).png",
+      "6218354347_upscale (62).png"
+    ],
+    "options": {
+      "Quantity": [
+        {
+          "name": "8-BOX",
+          "price": 16
+        },
+        {
+          "name": "12-BOX",
+          "price": 24
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "139b0585-a397-478f-a3fc-75f50d1198cb",
+    "category": "cupcakes",
+    "title": "Pokemon Cupcakes",
+    "description": "Random pokemon set. There will always be a surprise",
+    "images": ["6218354347_upscale (64).png"],
+    "options": {
+      "Quantity": [
+        {
+          "name": "8-BOX",
+          "price": 16
+        },
+        {
+          "name": "12-BOX",
+          "price": 24
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "857ba22b-85b6-46cf-9b57-37ac309383b3",
+    "category": "cupcakes",
+    "title": "Teletubbies Cupcakes",
+    "description": "Random assortment of teletubbies cupcakes. Available for orders of 8 pieces or more",
+    "images": [
+      "6218354347_upscale (66).png",
+      "6218354347_upscale (67).png",
+      "6218354347_upscale (68).png"
+    ],
+    "options": {
+      "Quantity": [
+        {
+          "name": "8-BOX",
+          "price": 16
+        },
+        {
+          "name": "12-BOX",
+          "price": 24
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "8cafd14a-82a3-4515-a0d1-828c7727b832",
+    "category": "cupcakes",
+    "title": "Spongebob Squarepants Cupcake",
+    "description": "Cupcakes with cream cheese filling in the shape of a character from a popular cartoon",
+    "images": [
+      "OIG3 (19).jpg",
+      "OIG3 (20).jpg",
+      "OIG3.8Pd.jpg",
+      "OIG3.eLsDDDHQF.jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "4-Mini",
+          "price": 16
+        },
+        {
+          "name": "8-Mini",
+          "price": 32
+        },
+        {
+          "name": "4-Big",
+          "price": 32
+        },
+        {
+          "name": "8-Big",
+          "price": 64
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "ea2dd9bb-3689-417c-8ad1-2342116828b7",
+    "category": "cupcakes",
+    "title": "Christmas Houses Cupcakes",
+    "description": "Cupcakes with buttercream in the shape of Christmas houses",
+    "images": [
+      "OIG3 (8).jpg",
+      "OIG3 (9).jpg",
+      "OIG3.lpxE09jH4DrI5kTas.jpg",
+      "OIG3.qPdMO8MZ.jpg"
+    ],
+    "options": {
+      "Quantity": [
+        {
+          "name": "4-BOX",
+          "price": 12
+        },
+        {
+          "name": "12-BOX",
+          "price": 36
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "6c895d0c-c66b-42d3-9284-9f46e45790dd",
+    "category": "mini-cakes",
+    "title": "Retro Car Bento Cake",
+    "description": "Mini cake in the form of a small cute retro car",
+    "images": [
+      "OIG1 (11).jpg",
+      "OIG1.QpCj.jpg",
+      "OIG1.p1JbeXlW.G.jpg",
+      "OIG1 (12).jpg"
+    ],
+    "price": 10,
+    "variants": {
+      "Sponge": [
+        "Vanilla",
+        "Burnt Butter Choc Chip",
+        "Chocolate",
+        "Neapolitan"
+      ],
+      "Filling Icing": [
+        "Cream Cheese Icing",
+        "Neapolitan",
+        "Raspberry Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "00bef163-41f9-4349-9f04-63c4ffb4ccb2",
+    "category": "mini-cakes",
+    "title": "Spongebob Squarepants Bento Cake",
+    "description": "Mini cake in the form of the main character from the cartoon spongebob squarepants",
+    "images": [
+      "6218354347_upscale (41).png",
+      "6218354347_upscale (38).png",
+      "6218354347_upscale (37).png",
+      "6218354347_upscale (36).png",
+      "6218354347_upscale (89).png",
+      "6218354347_upscale (90).png"
+    ],
+    "price": 12,
+    "variants": {
+      "Sponge": ["Vanilla", "Rainbow", "Funfetti", "Lemon"],
+      "Filling Icing": [
+        "Cream Cheese Icing",
+        "Blue Vanilla Buttercream",
+        "Pink Vanilla Buttercream",
+        "Lemon Buttercream"
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "cd527a9c-24b3-4a8e-84d4-1f3303cf00f6",
+    "category": "mini-cakes",
+    "title": "Mini Gift Box Bento Cake",
+    "description": "Small cake in the form of a gift box. excellent and original choice if you do not know what to give a person",
+    "images": [
+      "6218354347_upscale (99).png",
+      "6218354347_upscale (100).png",
+      "6218354347_upscale (101).png",
+      "6218354347_upscale (102).png"
+    ],
+    "price": 10,
+    "variants": {
+      "Sponge": ["Vanilla", "Chocolate", "Neapolitan"],
+      "Filling Icing": [
+        "Cream Cheese Icing",
+        "Lemon Buttercream",
+        "Neapolitan",
+        "Raspberry Buttercream"
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "6819ef0f-28fe-4c56-9e57-f80dbb43b655",
+    "category": "mini-cakes",
+    "title": "Exotic Beds Mini Bed-Cake",
+    "description": "A mini cake made with design by ©Exotic Beds company",
+    "images": [
+      "efcfc77e-164e-48da-afe8-5359bc23bf2f.png",
+      "6b9d09b9-63cf-4061-8321-2fff03ef4340.png",
+      "mzl1-9Mmy1ayM-KUeiK_i.png",
+      "Oohymh888MI2ByjQQlr44.jpg"
+    ],
+    "price": 16,
+    "variants": {
+      "Sponge": ["Vanilla", "Funfetti", "Neapolitan"],
+      "Filling Icing": [
+        "Cream Cheese Icing",
+        "Lemon Buttercream",
+        "Neapolitan",
+        "Raspberry Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "2c610034-8433-4b25-9a8d-46df9de61452",
+    "category": "mini-cakes",
+    "title": "Tropic Flowers Mini Cake",
+    "description": "This cake is in a small form in a floral tropical style",
+    "images": [
+      "Q0GBmdtN_RMsj52O9rP99.jpg",
+      "UVl5kr415rPYAPV9phetF.jpg",
+      "6DzdVM_UGNK6uGH1aftEj.jpg",
+      "4zGq1Lb9NIcYZhyE4OvjK.jpg"
+    ],
+    "price": 10,
+    "variants": {
+      "Sponge": ["Vanilla", "Chocolate", "Lemon"],
+      "Filling Icing": [
+        "Blue Vanilla Buttercream",
+        "Pink Vanilla Buttercream",
+        "Lemon Buttercream"
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "2d446555-bdb4-44fa-b03f-9bcfbde03f5e",
+    "category": "mini-cakes",
+    "title": "Sea Styled Mini Cake",
+    "description": "This cake in a small form in a sea style with confectionery decoration in the form of seaweed, shells and everything else that emphasizes the theme of the sea",
+    "images": [
+      "6eBGA9Vv5_B94FwomUUyi.jpg",
+      "azjpBMXPpf7TgHB8_aXaB.jpg",
+      "eCOWOu0m8lPJymomnHMno.jpg",
+      "tQQLmQwAhDAxjf9Bo2rSa.jpg"
+    ],
+    "price": 12,
+    "variants": {
+      "Sponge": ["Vanilla", "Chocolate", "Lemon"],
+      "Filling Icing": [
+        "Cream Cheese Icing",
+        "Neapolitan",
+        "Raspberry Buttercream"
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "a2403661-bc37-446f-82c9-1ff5d9b2ccfd",
+    "category": "mini-cakes",
+    "title": "Wagon Bento Cake",
+    "description": "Mini cake in the shape of a small cute train wagon with vanilla sponge and filling of your choice",
+    "images": [
+      "SK5jcHk-ddVR3J2Y3yZKq.jpg",
+      "EUNn4Rnk3VaJTlZWVCC7B.jpg",
+      "rlcTeoW9rTTnonTSo15jP.jpg",
+      "aFyIVo7X1p5DUrlkkjENI.jpg"
+    ],
+    "price": 8,
+    "variants": {
+      "Filling Icing": [
+        "Blue Vanilla Buttercream",
+        "Pink Vanilla Buttercream",
+        "Lemon Buttercream",
+        "Raspberry Buttercream"
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "d03a77d6-9b1a-4265-98bb-1c43045b2996",
+    "category": "mini-cakes",
+    "title": "Confetti Mini Cake",
+    "description": "A small cake with vanilla sponge, funfetti icing and confectionery sprinkles",
+    "images": ["zMz_BQuGyvIVO-gZr9sh0.jpg", "_suC-AIp7wjAQLy9uWhHO.jpg"],
+    "price": 7,
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "86d026d0-4898-4d62-bb4f-8a6e6621ab61",
+    "category": "mini-cakes",
+    "title": "Bright Fun Bento Cake",
+    "description": "Mini cake with marmalade and soufflé with bright streaks",
+    "images": [
+      "i6ezIgAm0BQBD8xS_bFoD.jpg",
+      "bA4xr40YsZGuD1XgdPfmF.jpg",
+      "b1piZN5yznZ3VZ29kJYTL.jpg"
+    ],
+    "price": 8,
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "edf93331-8aac-46c9-8495-aa849a3f7286",
+    "category": "sugar-cookies",
+    "title": "Easter Bunny Cookies",
+    "description": "Easter bunny and egg shaped sugar cookies..",
+    "images": [
+      "6218354347_upscale (32).png",
+      "6218354347_upscale (33).png",
+      "6218354347_upscale (34).png",
+      "6218354347_upscale (35).png"
+    ],
+    "options": {
+      "Quantity": [
+        {
+          "name": "8 pcs",
+          "price": 8
+        },
+        {
+          "name": "16 pcs",
+          "price": 16
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "3dfb6a2e-c6c4-42c1-a133-fcc50bcbfec4",
+    "category": "sugar-cookies",
+    "title": "Bright Pokemon Cookies with Marmelade",
+    "description": "Pokemon glazed cookies in a bowl (4 pcs) with assorted gummies",
+    "images": [
+      "6218354347_upscale (39).png",
+      "6218354347_upscale (40).png",
+      "6218354347_upscale (42).png",
+      "6218354347_upscale (88).png"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "4 pcs (Big)",
+          "price": 16
+        },
+        {
+          "name": "6 pcs (Mini)",
+          "price": 16
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "3468237b-c19f-4a5d-8da0-15642c06e136",
+    "category": "sugar-cookies",
+    "title": "Hearts Cookies",
+    "description": "Sugar heart cookies with icing",
+    "images": [
+      "6218354347_upscale (43).png",
+      "6218354347_upscale (44).png",
+      "6218354347_upscale (45).png",
+      "6218354347_upscale (87).png"
+    ],
+    "options": {
+      "Quantity": [
+        {
+          "name": "8 pcs",
+          "price": 8
+        },
+        {
+          "name": "16 pcs",
+          "price": 16
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "b4d6b962-1b33-46e7-b569-edf8715b0afd",
+    "category": "sugar-cookies",
+    "title": "Sea Themed Cookies",
+    "description": "Seashell and star shaped cookies",
+    "images": [
+      "6218354347_upscale (51).png",
+      "6218354347_upscale (52).png",
+      "6218354347_upscale (84).png"
+    ],
+    "options": {
+      "Quantity": [
+        {
+          "name": "8 pcs",
+          "price": 8
+        },
+        {
+          "name": "16 pcs",
+          "price": 16
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "338f1069-f0b9-48ad-9d5d-4364134b9419",
+    "category": "sugar-cookies",
+    "title": "Cartoon Princess Cookies",
+    "description": "Random set of princesses",
+    "images": [
+      "6218354347_upscale (53).png",
+      "6218354347_upscale (54).png",
+      "6218354347_upscale (83).png"
+    ],
+    "options": {
+      "Quantity": [
+        {
+          "name": "6 pcs",
+          "price": 9
+        },
+        {
+          "name": "12 pcs",
+          "price": 18
+        },
+        {
+          "name": "18 pcs",
+          "price": 27
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "62be8037-5b64-4c98-ab1f-f11d3ac0a187",
+    "category": "sugar-cookies",
+    "title": "Bears Cookies",
+    "description": "Gingerbread cookies in the shape of cute bears",
+    "images": ["OIG1 (8).jpg", "OIG1 (9).jpg", "OIG1.UDWg8xJNPy34.jpg"],
+    "options": {
+      "Quantity": [
+        {
+          "name": "4 pcs",
+          "price": 6
+        },
+        {
+          "name": "8 pcs",
+          "price": 12
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "eb6399c0-d450-4d52-96dc-c7522bfe4f0a",
+    "category": "sugar-cookies",
+    "title": "Hagi Wagi Cookies",
+    "description": "Cookies in the shape of children's favorite hagi wagi",
+    "images": ["OIG2 (2).jpg", "OIG2 (3).jpg", "OIG2 (4).jpg"],
+    "options": {
+      "Quantity": [
+        {
+          "name": "8 pcs",
+          "price": 16
+        },
+        {
+          "name": "16 pcs",
+          "price": 32
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "e208ef95-1cd4-431f-a9ab-d090d9f1ebc2",
+    "category": "sugar-cookies",
+    "title": "Kangaroo Cookies",
+    "description": "Brightly glazed sugar cookies in the shape of kangaroos",
+    "images": ["OIG2 (5).jpg", "OIG2 (6).jpg", "OIG2.u.jpg"],
+    "options": {
+      "Quantity": [
+        {
+          "name": "8 pcs",
+          "price": 12
+        },
+        {
+          "name": "16 pcs",
+          "price": 24
+        }
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "07433516-eb01-4d2e-b29c-1ebb031b1d95",
+    "category": "wedding-cakes",
+    "title": "Flower Tower",
+    "description": "A wedding is an important day in your life and we can decorate it to the maximum, this unusual but beautiful bright and huge cake decorated with flowers will make your celebration truly unique and unlike any other",
+    "images": [
+      "6218354347_upscale (9).png",
+      "6218354347_upscale (10).png",
+      "6218354347_upscale (11).png",
+      "6218354347_upscale (12).png",
+      "6218354347_upscale (13).png"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "20-inch",
+          "price": 99
+        },
+        {
+          "name": "40-inch",
+          "price": 179
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Chocolate", "Funfetti", "Rainbow"],
+      "Filling Icing": [
+        "Pink Vanilla Buttercream",
+        "Blue Vanilla Buttercream",
+        "Neapolitan",
+        "Oreo Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "9f5eb85f-6442-425f-8ebf-001b95fcf794",
+    "category": "wedding-cakes",
+    "title": "Berry Fruit Tower",
+    "description": "A wedding is an important day in your life and we can decorate it to the maximum, this unusual but beautiful bright and huge cake decorated with variety of different berries and exotic fruits will make your celebration truly unique and unlike any other",
+    "images": [
+      "6218354347_upscale (14).png",
+      "6218354347_upscale (15).png",
+      "6218354347_upscale (16).png",
+      "6218354347_upscale (17).png",
+      "6218354347_upscale (18).png"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "20-inch",
+          "price": 119
+        },
+        {
+          "name": "40-inch",
+          "price": 199
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Chocolate", "Funfetti", "Rainbow"],
+      "Filling Icing": [
+        "Pink Vanilla Buttercream",
+        "Blue Vanilla Buttercream",
+        "Neapolitan",
+        "Oreo Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "5e88845a-1c47-454d-b6bf-0aaf996c9104",
+    "category": "wedding-cakes",
+    "title": "Brand & Wishes Wedding Cake",
+    "description": "Cake with wedding wishes from our brand and corporate design and signature",
+    "images": [
+      "4N04xl4iMpCEmcJzL76Ku.jpg",
+      "4y8pkQXIZXWzxD-mO2wif.jpg",
+      "Brrx90xYGwoaMmBZu5aOv.jpg",
+      "JBGqZoekWUUeRoN94iA2K.jpg",
+      "-kFpzThIlLbS5ssr-gvcU.jpg",
+      "oF-ZsWjB9UDsn41Urcai4.jpg",
+      "rcmt-VutQUcKXAgt9P5Tl.jpg",
+      "SEVCMlyghwqwryCy9UBHD.jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "20-inch",
+          "price": 89
+        },
+        {
+          "name": "40-inch",
+          "price": 169
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Chocolate"],
+      "Filling Icing": [
+        "Pink Vanilla Buttercream",
+        "Blue Vanilla Buttercream",
+        "Cream Cheese Icing",
+        "Neapolitan"
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "0c62e328-cdc2-4353-bc6d-12be25a801cb",
+    "category": "wedding-cakes",
+    "title": "Retro Car Wedding Cake",
+    "description": "Wedding cake for those who love something unusual. This one is made in the form of a retro car (one or two to choose from)",
+    "images": ["OIG1 (6).jpg", "OIG1 (7).jpg"],
+    "options": {
+      "Size": [
+        {
+          "name": "Single",
+          "price": 69
+        },
+        {
+          "name": "Double",
+          "price": 159
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Chocolate", "Lemon"],
+      "Filling Icing": [
+        "Pink Vanilla Buttercream",
+        "Blue Vanilla Buttercream",
+        "Lemon Buttercream",
+        "Cream Cheese Icing"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "1785c4ee-2921-4d6b-98ad-2036010e126b",
+    "category": "wedding-cakes",
+    "title": "Marvel Wedding Cake",
+    "description": "Cake with heroes from the Marvel universe..",
+    "images": ["OIG1 (19).jpg", "OIG1 (20).jpg", "OIG1.GDlKCoZw9knuq0.jpg"],
+    "options": {
+      "Size": [
+        {
+          "name": "16-inch",
+          "price": 69
+        },
+        {
+          "name": "32-inch",
+          "price": 139
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": [
+        "Vanilla",
+        "Chocolate",
+        "Burnt Butter Choc Chip",
+        "Neapolitan"
+      ],
+      "Filling Icing": [
+        "Salted Caramel Buttercream",
+        "Neapolitan",
+        "Oreo Buttercream",
+        "Raspberry Buttercream"
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "9a543ea4-0e62-47cb-9dd5-c1e2ce53f8a5",
+    "category": "wedding-cakes",
+    "title": "Cuban Style Wedding Cake",
+    "description": "A cake for lovers and admirers of Cuba. Simply imbued with the spirit of this Caribbean country",
+    "images": ["OIG2 (10).jpg"],
+    "options": {
+      "Size": [
+        {
+          "name": "16-inch",
+          "price": 69
+        },
+        {
+          "name": "32-inch",
+          "price": 139
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Chocolate", "Lemon"],
+      "Filling Icing": [
+        "Pink Vanilla Buttercream",
+        "Blue Vanilla Buttercream",
+        "Oreo Buttercream",
+        "Raspberry Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "3dd9e7cd-8d33-44d1-b59b-fe6672a10f81",
+    "category": "wedding-cakes",
+    "title": "Hawaiian Wedding Cake",
+    "description": "Hawaiian style cake decorated with flowers with 2 figures of newlyweds made of fondant, available in mini and regular two-tier size",
+    "images": [
+      "OIG2 (11).jpg",
+      "OIG2 (12).jpg",
+      "OIG2 (13).jpg",
+      "OIG2 (14).jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "Mini",
+          "price": 59
+        },
+        {
+          "name": "Two-tier",
+          "price": 99
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Funfetti", "Lemon"],
+      "Filling Icing": [
+        "Pink Vanilla Buttercream",
+        "Blue Vanilla Buttercream",
+        "Lemon Buttercream",
+        "Raspberry Buttercream"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "53d4c51c-b55e-49a4-92ec-19fd8f24c80c",
+    "category": "wedding-cakes",
+    "title": "Huggy Wuggy Wedding Cake",
+    "description": "Cake made with Huggy Wuggy cute toys",
+    "images": ["OIG3 (5).jpg", "OIG3 (6).jpg", "OIG3 (7).jpg"],
+    "options": {
+      "Size": [
+        {
+          "name": "12-inch",
+          "price": 49
+        },
+        {
+          "name": "24-inch",
+          "price": 99
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Chocolate", "Burnt Butter Choc Chip"],
+      "Filling Icing": [
+        "Pink Vanilla Buttercream",
+        "Blue Vanilla Buttercream",
+        "Lemon Buttercream",
+        "Neapolitan"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "6de6e773-7fb6-4f31-acec-a2a7c09c0276",
+    "category": "wedding-cakes",
+    "title": "Pokemon Wedding Cake",
+    "description": "Wedding cake with different random pokemons. Filling and sponge cake of your choice",
+    "images": [
+      "OIG3 (10).jpg",
+      "OIG3 (11).jpg",
+      "OIG3 (12).jpg",
+      "OIG3 (13).jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "18-inch",
+          "price": 89
+        },
+        {
+          "name": "38-inch",
+          "price": 159
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Chocolate", "Lemon", "Marble", "Neapolitan"],
+      "Filling Icing": [
+        "Pink Vanilla Buttercream",
+        "Blue Vanilla Buttercream",
+        "Lemon Buttercream",
+        "Cream Cheese Icing",
+        "Neapolitan"
+      ]
+    },
+    "abilities": ["card-message"]
+  },
+  {
+    "id": "9a438071-04ed-4964-89a5-8debddb494a5",
+    "category": "wedding-cakes",
+    "title": "Cyberpunk Wedding Cake",
+    "description": "Wedding cake for people who love cyberpunk themes",
+    "images": ["OIG3 (14).jpg", "OIG3 (15).jpg", "OIG3 (16).jpg"],
+    "options": {
+      "Size": [
+        {
+          "name": "20-inch",
+          "price": 99
+        },
+        {
+          "name": "40-inch",
+          "price": 179
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Burnt Butter Choc Chip", "Lemon", "Rainbow"],
+      "Filling Icing": [
+        "Pink Vanilla Buttercream",
+        "Blue Vanilla Buttercream",
+        "Lemon Buttercream",
+        "Cream Cheese Icing"
+      ]
+    },
+    "abilities": ["card-message", "cake-sign"]
+  },
+  {
+    "id": "9d64b641-2ecf-43a4-b7b5-e95192ebe0f7",
+    "category": "wedding-cakes",
+    "title": "Finest Matte Lace Wedding Cake",
+    "description": "Matte wedding cake made with the finest pastry lace as thin and perfect as possible",
+    "images": [
+      "OIG4 (16).jpg",
+      "OIG4 (17).jpg",
+      "OIG4 (18).jpg",
+      "OIG4.ZW9UTV0u980G4LNNNy.jpg"
+    ],
+    "options": {
+      "Size": [
+        {
+          "name": "20-inch",
+          "price": 89
+        },
+        {
+          "name": "40-inch",
+          "price": 169
+        }
+      ]
+    },
+    "variants": {
+      "Sponge": ["Vanilla", "Rainbow", "Neapolitan"],
+      "Filling Icing": [
+        "Pink Vanilla Buttercream",
+        "Blue Vanilla Buttercream",
+        "Cream Cheese Icing",
+        "Neapolitan"
+      ]
+    },
+    "abilities": ["card-message"]
   }
 ]

@@ -11,12 +11,12 @@ const Header = () => {
 
   return (
     <div className="header">
-      {ww <= 992 ? <div className="header_burger">Burger</div> : null}
+      {ww <= 1024 ? <div className="header_burger">Burger</div> : null}
       <Link to="/" className="header_logo">
         <img src="/images/EC-logo-8bit.png" alt="logo" />
       </Link>
       <div className="header_right-side">
-        {ww > 992 ? (
+        {ww > 1024 ? (
           <div className="header_right-side_navbar">
             <div className="header_right-side_navbar_link">
               <div className="header_right-side_navbar_link">

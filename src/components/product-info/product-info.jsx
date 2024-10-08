@@ -10,22 +10,28 @@ const ProductInfo = ({ item }) => {
   let [searchParams, setSearchParams] = useSearchParams();
   const optionsName = item.options ? Object.entries(item.options)[0][0] : null;
   const options = item.options ? Object.entries(item.options)[0][1] : null;
-  const spongeVariants = item.variants.Sponge;
-  const fillVariants = item.variants['Filling Icing'];
+  const variants = item.variants;
+  const spongeVariants = variants ? variants.Sponge : null;
+  const fillVariants = variants ? variants['Filling Icing'] : null;
 
   const [currentOption, setCurrentOption] = useState(
-    item.options
+    options
       ? options.find((option) => option.name === searchParams.get('option')) ||
           options[0]
       : null
   );
   const [currentSpongeVariant, setCurrentSpongeVariant] = useState(
-    spongeVariants.find((variant) => variant === searchParams.get('sponge')) ||
-      spongeVariants[0]
+    spongeVariants
+      ? spongeVariants.find(
+          (variant) => variant === searchParams.get('sponge')
+        ) || spongeVariants[0]
+      : null
   );
   const [currentFillVariant, setCurrentFillVariant] = useState(
-    fillVariants.find((variant) => variant === searchParams.get('fill')) ||
-      fillVariants[0]
+    fillVariants
+      ? fillVariants.find((variant) => variant === searchParams.get('fill')) ||
+          fillVariants[0]
+      : null
   );
 
   const [cakeSignOption, setCakeSignOption] = useState(false);
@@ -37,14 +43,11 @@ const ProductInfo = ({ item }) => {
     <div className="product-info">
       <h1 className="product-info_title">{item.title}</h1>
       <div className="product-info_price">
-        {currentOption ? currentOption.price : item.price}$
+        ${currentOption ? currentOption.price : item.price}
       </div>
-      <div className="product-info_description">
-        Limited Edition Exotic Cake including Vanilla, Red Velvet, Oreo, and
-        Chocolate flavours. Available to order in Big (regular size) and Mini.
-      </div>
+      <div className="product-info_description">{item.description}</div>
 
-      {item.options && (
+      {options && (
         <div className="product-info_options-container">
           <div className="product-info_options-title">
             {optionsName}: {currentOption.name}
@@ -73,9 +76,9 @@ const ProductInfo = ({ item }) => {
         </div>
       )}
 
-      {item.variants && (
+      {variants && (
         <div className="product-info_variants-container">
-          {item.variants.Sponge && (
+          {spongeVariants && (
             <div>
               <div className="product-info_variants-title">
                 Sponge: {currentSpongeVariant}
@@ -102,7 +105,7 @@ const ProductInfo = ({ item }) => {
               </div>
             </div>
           )}
-          {item.variants['Filling Icing'] && (
+          {fillVariants && (
             <div>
               <div className="product-info_variants-title">
                 Filling Icing: {currentFillVariant}

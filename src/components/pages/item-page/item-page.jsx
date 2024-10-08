@@ -5,11 +5,14 @@ import ImageGallery from '../../image-gallery/image-gallery';
 import ProductInfo from '../../product-info/product-info';
 
 import './item-page.sass';
+import { useEffect } from 'react';
 
 const ItemPage = () => {
   const { category } = useParams(category);
   const { id } = useParams(id);
-  const item = MENU[category].find((it) => it.id == id);
+  const item = MENU.find((it) => it.id == id);
+
+  useEffect(() => window.scrollTo(0, 0), []);
 
   return (
     <div className="item-page">

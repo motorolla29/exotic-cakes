@@ -1,3 +1,8 @@
+.menu-items-container
+    display: flex
+    flex-direction: column
+    margin-bottom: 6em
+    
 .menu-items
     width: 100vw
     position: relative
@@ -7,7 +12,26 @@
     padding: 0 2em 0 2em
     column-gap: 30px // Отступ между колонками
     row-gap: 40px // Отступ между рядами
-    margin: 0 auto
+    margin: 1em auto 2em auto
+
+.see-more-button
+    align-self: center
+    cursor: pointer
+    width: 50%
+    max-width: 16em
+    margin: 2em 0 
+    padding: 1.5em
+    outline: none
+    border: 2px solid 
+    font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
+    font-size: 1em
+    background: #ffaed7
+    border-radius: 4em
+    box-shadow: 0.2em 0.2em 0 
+    transition: all 0.2s ease, background 0.4s ease
+    &:active
+        box-shadow: 0 0 0 
+        transform: translateX(0.2em) translateY(0.2em)
 
 @media (max-width: 1280px)
     .menu-items

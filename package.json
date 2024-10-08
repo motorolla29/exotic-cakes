@@ -11,6 +11,8 @@
   "author": "motorolla29",
   "license": "ISC",
   "dependencies": {
+    "framer-motion": "11.11.4",
+    "hamburger-react": "2.5.1",
     "mobx": "6.13.3",
     "mobx-react-lite": "4.0.7",
     "react": "18.3.1",
@@ -24,6 +26,7 @@
     "react-spinners-kit": "1.9.1",
     "sass": "1.78.0",
     "sass-loader": "16.0.1",
+    "scroll-lock": "2.1.5",
     "slick-carousel": "1.8.1"
   },
   "devDependencies": {

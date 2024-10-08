@@ -1,17 +1,26 @@
 import { NavLink, Link } from 'react-router-dom';
+import { Squash as Hamburger } from 'hamburger-react';
+import { observer } from 'mobx-react-lite';
+import store from '../store/store';
 
 import useWindowSize from '../../hooks/use-window-size';
-
 import CartIcon from '../../icons/cart-icon.svg';
 
 import './header.sass';
 
-const Header = () => {
+const Header = observer(() => {
   const [ww] = useWindowSize();
-
   return (
     <div className="header">
-      {ww <= 1024 ? <div className="header_burger">Burger</div> : null}
+      {ww <= 1024 ? (
+        <Hamburger
+          toggled={store.hamburgerMenu}
+          toggle={() => store.toggleHamburgerMenu(!store.hamburgerMenu)}
+          size={ww > 480 ? 30 : 26}
+          color="#551A8B"
+          rounded
+        />
+      ) : null}
       <Link to="/" className="header_logo">
         <img src="/images/EC-logo-8bit.png" alt="logo" />
       </Link>
@@ -44,6 +53,6 @@ const Header = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Header;

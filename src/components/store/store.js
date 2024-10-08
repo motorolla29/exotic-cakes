@@ -1,12 +1,25 @@
 import { makeAutoObservable } from 'mobx';
 
 class Store {
-  productItems = [];
+  menuItems = [];
   cartItems = [];
-  productItemsLoaded = false;
+  overlaySpinner = false;
+  hamburgerMenu = false;
 
   constructor() {
     makeAutoObservable(this);
+  }
+
+  setMenuItems(items) {
+    this.menuItems = items;
+  }
+
+  setOverlaySpinner(bool) {
+    this.overlaySpinner = bool;
+  }
+
+  toggleHamburgerMenu(bool) {
+    this.hamburgerMenu = bool;
   }
 
   addItemToCart(item) {

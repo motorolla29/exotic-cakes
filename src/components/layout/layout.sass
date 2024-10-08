@@ -18,8 +18,7 @@
     width: 22em
     transform-origin: 50% 0%
     transition: transform 0.8s ease-out
-    z-index: 8
-
+    z-index: 9
     &.shown
         transform: scale(1, 1)
     &.hidden
@@ -35,10 +34,20 @@
         font-size: 14px
     .header-drip
         font-size: 14px
-        left: calc(50% - 11em)
-@media (max-width: 480px)
+        left: calc(50vw - 11em)
+@media (max-width: 768px)
     .layout
         font-size: 12px
     .header-drip
         font-size: 12px
+@media (max-width: 480px)
+    .layout
+        font-size: 10px
+    .header-drip
+        font-size: 10px
+@media (max-width: 360px)
+    .layout
+        font-size: 8px
+    .header-drip
+        font-size: 8px
         

@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
 
 import Header from '../header/header';
 import Footer from '../footer/footer';
 
 import './layout.sass';
+import HamburgerMenu from '../hamburger-menu/hamburger-menu';
+import store from '../store/store';
+import { AnimatePresence } from 'framer-motion';
 
-const Layout = () => {
+const Layout = observer(() => {
   const [scroll, setScroll] = useState(0);
   const onScrollHandler = (e) => {
     setScroll(window.scrollY);
@@ -35,11 +39,14 @@ const Layout = () => {
             strokeWidth="0"
           />
         </svg>
+        <AnimatePresence>
+          {store.hamburgerMenu && <HamburgerMenu />}
+        </AnimatePresence>
         <Outlet />
       </div>
       <Footer />
     </div>
   );
-};
+});
 
 export default Layout;

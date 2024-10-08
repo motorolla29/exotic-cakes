@@ -1,20 +1,19 @@
 import { useEffect } from 'react';
+import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 
 import { ImpulseSpinner } from 'react-spinners-kit';
 import CakeLogo from '../../icons/cake-svg.svg';
-
-import { scrollController } from '../../utils';
 
 import './overlay-logo-spinner.sass';
 
 const OverlayLogoSpinner = ({ loading }) => {
   useEffect(() => {
     if (loading) {
-      scrollController.disabledScroll();
+      disablePageScroll();
     } else {
-      scrollController.enabledScroll();
+      enablePageScroll();
     }
-    return () => scrollController.enabledScroll();
+    return () => enablePageScroll();
   }, [loading]);
 
   return (

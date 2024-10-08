@@ -9,8 +9,8 @@
     background: #ffaed7
     user-select: none
     z-index: 10
-    &_burger
-        margin-left: 2em
+    & .hamburger-react
+        margin-left: 1.5em
     &_logo
         margin-left: 2em
         width: 16em
@@ -88,6 +88,18 @@
             margin-left: 0
         &_right-side_cart-icon
             margin-left: 0
-@media (max-width: 480px)
+@media (max-width: 768px)
     .header
         font-size: 12px
+        &_right-side, & .hamburger-react
+            font-size: 14px
+@media (max-width: 480px)
+    .header
+        font-size: 10px
+        &_right-side, & .hamburger-react
+            font-size: 12px
+@media (max-width: 360px)
+    .header
+        font-size: 8px
+        &_right-side, & .hamburger-react
+            font-size: 10px

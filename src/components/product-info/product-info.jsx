@@ -1,10 +1,12 @@
-import { CiShoppingCart } from 'react-icons/ci';
-
-import './product-info.sass';
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { LuCake } from 'react-icons/lu';
 import { TbPencilHeart } from 'react-icons/tb';
+import { CiShoppingCart } from 'react-icons/ci';
+
+import store from '../store/store';
+
+import './product-info.sass';
 
 const ProductInfo = ({ item }) => {
   let [searchParams, setSearchParams] = useSearchParams();
@@ -37,7 +39,22 @@ const ProductInfo = ({ item }) => {
   const [cakeSignOption, setCakeSignOption] = useState(false);
   const [cardSignOption, setCardSignOption] = useState(false);
   const [cakeSignText, setCakeSignText] = useState('');
-  const [cardSignText, setCardSignText] = useState('');
+  const [cardMessageText, setCardMessageText] = useState('');
+
+  const onAddToCartButtonClick = () => {
+    store.addItemToCart({
+      id: item.id,
+      title: item.title,
+      price: currentOption ? currentOption.price : item.price,
+      option: `${optionsName}: ${currentOption.name}`,
+      spongeVariant: currentSpongeVariant || null,
+      fillVariant: currentFillVariant || null,
+      cartMessage:
+        cardSignOption && cardMessageText.length > 0 ? cardMessageText : null,
+      cakeSign: cakeSignOption && cakeSignText.length > 0 ? cakeSignText : null,
+      quantity: 1,
+    });
+  };
 
   return (
     <div className="product-info">
@@ -229,21 +246,24 @@ const ProductInfo = ({ item }) => {
               </p>
               <textarea
                 className="product-info_abilities_ability_details_textarea card"
-                onChange={(e) => setCardSignText(e.target.value)}
-                value={cardSignText}
+                onChange={(e) => setCardMessageText(e.target.value)}
+                value={cardMessageText}
                 id="card-text"
                 name="card-text"
                 maxLength="180"
                 required
               />
               <div className="product-info_abilities_ability_details_characters-count">
-                {cardSignText.length}/180 characters used
+                {cardMessageText.length}/180 characters used
               </div>
             </div>
           </div>
         )}
       </div>
-      <button className="product-info_add-to-cart-btn">
+      <button
+        onClick={onAddToCartButtonClick}
+        className="product-info_add-to-cart-btn"
+      >
         <CiShoppingCart />
         ADD TO CART
       </button>

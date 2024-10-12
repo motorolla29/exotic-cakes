@@ -1,17 +1,14 @@
 import { makeAutoObservable } from 'mobx';
 
+var _ = require('lodash');
+
 class Store {
-  menuItems = [];
   cartItems = [];
   overlaySpinner = false;
   hamburgerMenu = false;
 
   constructor() {
     makeAutoObservable(this);
-  }
-
-  setMenuItems(items) {
-    this.menuItems = items;
   }
 
   setOverlaySpinner(bool) {
@@ -23,19 +20,21 @@ class Store {
   }
 
   addItemToCart(item) {
-    const cartItem = this.cartItems.find((it) => it === item);
+    const cartItem = this.cartItems.find((it) =>
+      _.isEqualWith(_.omit(it, ['quantity']), _.omit(item, ['quantity']))
+    );
     if (cartItem) {
-      cartItem.quality += 1;
+      cartItem.quantity += 1;
     } else {
       this.cartItems.push(item);
-      cartItem.quality = 1;
     }
+    console.log(this.cartItems);
   }
 
   removeItemFromCart(item) {
     const cartItem = this.cartItems.find((it) => it === item);
-    cartItem.quality > 1
-      ? (cartItem.quality -= 1)
+    cartItem.quantity > 1
+      ? (cartItem.quantity -= 1)
       : this.cartItems.filter((it) => it !== item);
   }
 

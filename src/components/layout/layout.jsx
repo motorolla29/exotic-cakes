@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 
@@ -12,8 +12,13 @@ import { AnimatePresence } from 'framer-motion';
 
 const Layout = observer(() => {
   const [scroll, setScroll] = useState(0);
+  const headerDripRef = useRef();
   const onScrollHandler = (e) => {
     setScroll(window.scrollY);
+    if (scroll !== 0) {
+      headerDripRef.current.classList.remove('shown');
+      headerDripRef.current.classList.add('hidden');
+    }
   };
   useEffect(() => {
     window.addEventListener('scroll', onScrollHandler);
@@ -27,6 +32,7 @@ const Layout = observer(() => {
       <Header />
       <div className="content">
         <svg
+          ref={headerDripRef}
           id="_Слой_1"
           className={`header-drip ${scroll === 0 ? 'shown' : 'hidden'}`}
           data-name="Слой 1"

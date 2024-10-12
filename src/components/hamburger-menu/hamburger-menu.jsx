@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
-import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import { motion } from 'framer-motion';
 
 import { TbArrowBigRightLines } from 'react-icons/tb';
+import { customScrollController } from '../../utils';
+
 import store from '../store/store';
 
 import './hamburger-menu.sass';
@@ -22,16 +23,9 @@ const HamburgerMenu = observer(() => {
   };
 
   useEffect(() => {
-    //const scrollY = window.scrollY || document.documentElement.scrollTop;
-    //window.scrollTo(0, 0);
-    document.querySelector('.header-drip').classList.remove('hidden');
-    document.querySelector('.header-drip').classList.add('shown');
-    disablePageScroll();
+    customScrollController.disableScroll();
     return () => {
-      //window.scrollTo(0, parseInt(scrollY || '0'));
-      document.querySelector('.header-drip').classList.remove('shown');
-      document.querySelector('.header-drip').classList.add('hidden');
-      enablePageScroll();
+      customScrollController.enableScroll();
     };
   });
 

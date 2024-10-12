@@ -8,10 +8,12 @@
 body
     color: #481E5C
     scroll-behavior: smooth
-body.no-scroll
+    width: 100%
     overflow-y: scroll
+body.no-scroll
     position: fixed
-    
+    top: calc(-1 * var(--scroll-position))
+
 a
     text-decoration: none
     color: #481E5C

@@ -1,6 +1,7 @@
 import { NavLink, useParams } from 'react-router-dom';
-import './menus-page.sass';
 import MenuItems from '../../menu-items/menu-items';
+
+import './menus-page.sass';
 
 const MenusPage = () => {
   const { category } = useParams();

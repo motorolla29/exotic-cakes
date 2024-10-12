@@ -11,7 +11,7 @@ const MenuItem = ({ category, id, title, minPrice, price, images }) => {
   return (
     <Link className="menu-item" to={`/menus/${category}/${id}`}>
       <Slider
-        infinite={0 > 1 ? true : false}
+        infinite={images.length > 1 ? true : false}
         arrows={false}
         dots={true}
         className="menu-item_slider"

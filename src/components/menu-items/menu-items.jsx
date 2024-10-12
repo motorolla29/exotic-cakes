@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
+import store from '../store/store';
 import MenuItem from '../menu-item/menu-item';
 import MenuItemSkeleton from '../menu-item-skeleton/menu-item-skeleton';
 import OverlayLogoSpinner from '../overlay-logo-spinner/overlay-logo-spinner';
 
 import './menu-items.sass';
+import { observer } from 'mobx-react-lite';
 
-const MenuItems = ({ category }) => {
+const MenuItems = observer(({ category }) => {
   const [items, setItems] = useState([]);
   const [firstLoading, setFirstLoading] = useState(false);
-  const [overlayLoading, setIsOverlayLoading] = useState(false);
   const [limit, setLimit] = useState(24);
-  const [itemsTotal, setItemsTotal] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
 
   useEffect(() => {
     setFirstLoading(true);
@@ -23,7 +24,7 @@ const MenuItems = ({ category }) => {
         return res.json();
       })
       .then((arr) => {
-        setItemsTotal(arr.length);
+        setTotalItems(arr.length);
         setLimit(24);
         arr.length > 24 ? (arr.length = 24) : null;
         setItems(arr);
@@ -32,7 +33,7 @@ const MenuItems = ({ category }) => {
   }, [category]);
 
   const onSeeMoreButtonClickHandler = () => {
-    setIsOverlayLoading(true);
+    store.setOverlaySpinner(true);
     fetch(
       `https://66e43448d2405277ed137dfc.mockapi.io/items${
         category === 'all' ? '' : `?category=${category}`
@@ -42,14 +43,13 @@ const MenuItems = ({ category }) => {
         return res.json();
       })
       .then((arr) => {
-        setItemsTotal(arr.length);
-        limit > itemsTotal
-          ? (arr.length = itemsTotal)
-          : (arr.length = limit + 24);
+        setTotalItems(arr.length);
+        if (totalItems > limit + 24) {
+          arr.length = limit + 24;
+        }
         setItems(arr);
-        itemsTotal > limit ? setLimit(limit + 24) : null;
-        setIsOverlayLoading(false);
-        console.log(arr.length);
+        store.setOverlaySpinner(false);
+        setLimit(limit + 24);
       });
   };
 
@@ -74,17 +74,17 @@ const MenuItems = ({ category }) => {
               />
             ))}
       </div>
-      {itemsTotal > limit ? (
+      {totalItems > limit && (
         <button
           onClick={onSeeMoreButtonClickHandler}
           className="see-more-button"
         >
           SEE MORE
         </button>
-      ) : null}
-      {overlayLoading && <OverlayLogoSpinner loading />}
+      )}
+      {store.overlaySpinner && <OverlayLogoSpinner />}
     </div>
   );
-};
+});
 
 export default MenuItems;

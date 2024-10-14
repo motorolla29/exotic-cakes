@@ -1,6 +1,6 @@
 import ContentLoader from 'react-content-loader';
 
-import './menu-item-skeleton.sass';
+import './skeletons.sass';
 
 const MenuItemSkeleton = (props) => (
   <ContentLoader

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 
 import LogoSpinner from '../../logo-spinner/logo-spinner';
@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const [videoPlaying, setVideoPlaying] = useState(true);
+
+  window.scrollTo(0, 0);
 
   return (
     <div className="home-page">

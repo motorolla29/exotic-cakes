@@ -1,0 +1,23 @@
+.item-page-skeletons
+    display: flex
+    justify-content: flex-start
+    align-items: flex-start
+    width: 100%
+    margin-bottom: -5em
+    &.image-gallery-skeleton
+    &.product-info-skeleton
+
+.menu-item-skeleton
+    position: relative
+
+@media (max-width: 1024px) 
+    .item-page-skeletons
+        margin-bottom: 0
+        flex-direction: column
+        .image-gallery-skeleton
+            padding-bottom: 2em
+@media (max-width: 768px) 
+    .item-page-skeletons
+        margin-bottom: 2em
+        .image-gallery-skeleton
+            padding-bottom: 1em

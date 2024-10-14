@@ -1,6 +1,7 @@
 import './about-page.sass';
 
 const AboutPage = () => {
+  window.scrollTo(0, 0);
   return (
     <div className="about-page">
       <img

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import store from '../store/store';
 import MenuItem from '../menu-item/menu-item';
-import MenuItemSkeleton from '../menu-item-skeleton/menu-item-skeleton';
+import MenuItemSkeleton from '../skeletons/menu-item-skeleton';
 import OverlayLogoSpinner from '../overlay-logo-spinner/overlay-logo-spinner';
 
 import './menu-items.sass';
@@ -9,7 +9,7 @@ import { observer } from 'mobx-react-lite';
 
 const MenuItems = observer(({ category }) => {
   const [items, setItems] = useState([]);
-  const [firstLoading, setFirstLoading] = useState(false);
+  const [firstLoading, setFirstLoading] = useState(true);
   const [limit, setLimit] = useState(24);
   const [totalItems, setTotalItems] = useState(0);
 

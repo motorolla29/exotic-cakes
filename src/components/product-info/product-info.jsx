@@ -82,7 +82,7 @@ const ProductInfo = ({ item }) => {
                     onChange={(e) => {
                       setCurrentOption(it);
                       searchParams.set('option', it.name);
-                      setSearchParams(searchParams);
+                      setSearchParams(searchParams, { replace: true });
                     }}
                   />
                   <label htmlFor={name}>{name}</label>
@@ -112,7 +112,7 @@ const ProductInfo = ({ item }) => {
                         onChange={(e) => {
                           setCurrentSpongeVariant(it);
                           searchParams.set('sponge', it);
-                          setSearchParams(searchParams);
+                          setSearchParams(searchParams, { replace: true });
                         }}
                       />
                       <label htmlFor={it}>{it}</label>
@@ -139,7 +139,7 @@ const ProductInfo = ({ item }) => {
                         onChange={(e) => {
                           setCurrentFillVariant(it);
                           searchParams.set('fill', it);
-                          setSearchParams(searchParams);
+                          setSearchParams(searchParams, { replace: true });
                         }}
                       />
                       <label htmlFor={it}>{it}</label>

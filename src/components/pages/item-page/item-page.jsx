@@ -38,7 +38,7 @@ const ItemPage = () => {
       ) : (
         <>
           <ImageGallery item={item} />
-          <ProductInfo item={item} />
+          <ProductInfo category={category} item={item} />
         </>
       )}
     </div>

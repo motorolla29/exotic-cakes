@@ -4,11 +4,12 @@ import { LuCake } from 'react-icons/lu';
 import { TbPencilHeart } from 'react-icons/tb';
 import { CiShoppingCart } from 'react-icons/ci';
 
+import { baseImagesURL } from '../../const';
 import store from '../store/store';
 
 import './product-info.sass';
 
-const ProductInfo = ({ item }) => {
+const ProductInfo = ({ item, category }) => {
   let [searchParams, setSearchParams] = useSearchParams();
   const optionsName = item.options ? Object.entries(item.options)[0][0] : null;
   const options = item.options ? Object.entries(item.options)[0][1] : null;
@@ -44,9 +45,12 @@ const ProductInfo = ({ item }) => {
   const onAddToCartButtonClick = () => {
     store.addItemToCart({
       id: item.id,
+      category: category,
       title: item.title,
+      image: `${baseImagesURL}/${item.images[0]}`,
       price: currentOption ? currentOption.price : item.price,
-      option: `${optionsName}: ${currentOption.name}`,
+      optionName: optionsName,
+      option: currentOption.name,
       spongeVariant: currentSpongeVariant || null,
       fillVariant: currentFillVariant || null,
       cartMessage:

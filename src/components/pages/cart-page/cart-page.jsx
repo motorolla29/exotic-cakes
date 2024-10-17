@@ -1,33 +1,34 @@
+import { observer } from 'mobx-react-lite';
+import useWindowSize from '../../../hooks/use-window-size';
+import CartItem from '../../cart-item/cart-item';
 import store from '../../store/store';
 
 import './cart-page.sass';
 
-const CartPage = () => {
+const CartPage = observer(() => {
+  window.scrollTo(0, 0);
+  const [ww] = useWindowSize();
+
   return (
     <div className="cart-page">
       <h1 className="cart-page_title">YOUR ORDER</h1>
       <div className="cart-page_heading">
-        <span>Item</span>
-        <span>Price</span>
-        <span>Quantity</span>
-        <span>Total</span>
+        <span className="cart-page_heading_item">Item</span>
+        {ww > 768 ? (
+          <>
+            <span className="cart-page_heading_price">Price</span>
+            <span className="cart-page_heading_quantity">Quantity</span>
+          </>
+        ) : null}
+        <span className="cart-page_heading_total">Total</span>
       </div>
-      {store.cartItems.map((it) => {
-        const { title, price, quantity } = it;
-        return (
-          <div key={JSON.stringify(it)} className="cart-item">
-            <div className="cart-item_main">{title}</div>
-            <p className="cart-item_price">${price}</p>
-            <div className="cart-item_counter">
-              <input />
-              <label></label>
-            </div>
-            <p className="cart-item_total">${price * quantity}</p>
-          </div>
-        );
-      })}
+      <div className="cart-page_items">
+        {store.cartItems.map((it) => (
+          <CartItem key={it.id} item={it} />
+        ))}
+      </div>
     </div>
   );
-};
+});
 
 export default CartPage;

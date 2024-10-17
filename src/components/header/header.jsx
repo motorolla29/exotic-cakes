@@ -45,10 +45,16 @@ const Header = observer(() => {
           </div>
         ) : null}
         <Link to="/cart" className="header_right-side_cart-icon">
-          <CartIcon />
-          <div className="header_right-side_cart-icon_counter">
-            <span>0</span>
-          </div>
+          <CartIcon
+            onClick={() =>
+              store.hamburgerMenu ? store.toggleHamburgerMenu(false) : null
+            }
+          />
+          {store.cartItems.length ? (
+            <div className="header_right-side_cart-icon_counter">
+              <span>{store.cartItems.length}</span>
+            </div>
+          ) : null}
         </Link>
       </div>
     </div>

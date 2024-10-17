@@ -1,13 +1,55 @@
 .cart-page
+    display: flex
+    flex-direction: column
+    justify-content: center
     font-size: 16px
-    margin: 0 2em
+    margin: 0 auto
+    padding: 0 4em
+    max-width: 1420px
+    font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
     &_title
         text-align: center
         font-size: 3em
         margin: 0.5em 0
-        font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
+        font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif    
     &_heading
         display: flex
         justify-content: space-between
-        span
-            width: 20%
+        margin-bottom: 2em
+        &_item, &_price, &_quantity, &_total
+            display: flex
+            justify-content: flex-start
+        &_item
+            width: 50%
+        &_price
+            width: 5% 
+        &_quantity 
+            justify-content: center    
+            width: 40% 
+        &_total
+            justify-content: flex-end
+            width: 5%
+            
+    &_items
+        display: flex
+        flex-direction: column
+        border-top: 1px solid
+        
+@media (max-width: 1024px) 
+    .cart-page
+        &_title
+            margin-top: 1.5em
+@media (max-width: 768px)
+    .cart-page
+        padding: 0 2em
+        &_title
+            font-size: 2em    
+            margin-top: 2em
+            margin-bottom: 0.25em
+        &_heading
+            &_item, &_total
+                width: auto 
+
+@media (max-width: 410px)
+    .cart-page
+        font-size: 14px

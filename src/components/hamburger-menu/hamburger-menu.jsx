@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { TbArrowBigRightLines } from 'react-icons/tb';
 import { customScrollController } from '../../utils';
 
-import store from '../store/store';
+import store from '../../store/store';
 
 import './hamburger-menu.sass';
 

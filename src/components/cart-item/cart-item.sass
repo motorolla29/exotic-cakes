@@ -86,7 +86,7 @@
                     font-family: Slime Box, Arial, sans-serif
                     opacity: 0.8
     &_sm-price-quantity
-        margin-bottom: 1em
+        margin-bottom: 0.75em
                     
 
 @media (max-width: 768px) 
@@ -95,10 +95,13 @@
             width: auto
         &_main
             flex-grow: 1
+            &_info
+                &_title
+                    margin-bottom: 0.5em
         &_counter
             justify-content: flex-start
             align-items: center
-            padding-top: 0.5em
+            padding-top: 0em
             &_input
                 padding-left: 0.5em
                 font-size: 0.9em
@@ -123,6 +126,7 @@
 @media (max-width: 360px)
     .cart-item
         &_counter
+            padding: 0.5em 0 0 0
             flex-wrap: wrap
             &_input
                 padding: 0.5em 0 0 0

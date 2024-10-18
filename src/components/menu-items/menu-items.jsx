@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import store from '../store/store';
+import store from '../../store/store';
 import MenuItem from '../menu-item/menu-item';
 import MenuItemSkeleton from '../skeletons/menu-item-skeleton';
 import OverlayLogoSpinner from '../overlay-logo-spinner/overlay-logo-spinner';

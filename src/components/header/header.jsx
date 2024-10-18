@@ -1,7 +1,7 @@
 import { NavLink, Link } from 'react-router-dom';
 import { Squash as Hamburger } from 'hamburger-react';
 import { observer } from 'mobx-react-lite';
-import store from '../store/store';
+import store from '../../store/store';
 
 import useWindowSize from '../../hooks/use-window-size';
 import CartIcon from '../../icons/cart-icon.svg';

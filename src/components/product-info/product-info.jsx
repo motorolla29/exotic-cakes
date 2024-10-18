@@ -5,7 +5,7 @@ import { TbPencilHeart } from 'react-icons/tb';
 import { CiShoppingCart } from 'react-icons/ci';
 
 import { baseImagesURL } from '../../const';
-import store from '../store/store';
+import store from '../../store/store';
 
 import './product-info.sass';
 
@@ -47,10 +47,10 @@ const ProductInfo = ({ item, category }) => {
       id: item.id,
       category: category,
       title: item.title,
-      image: `${baseImagesURL}/${item.images[0]}`,
+      image: item.images[0],
       price: currentOption ? currentOption.price : item.price,
       optionName: optionsName,
-      option: currentOption.name,
+      option: currentOption ? currentOption.name : null,
       spongeVariant: currentSpongeVariant || null,
       fillVariant: currentFillVariant || null,
       cartMessage:

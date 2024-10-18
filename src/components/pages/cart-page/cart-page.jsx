@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import useWindowSize from '../../../hooks/use-window-size';
 import CartItem from '../../cart-item/cart-item';
-import store from '../../store/store';
+import store from '../../../store/store';
 
 import './cart-page.sass';
 

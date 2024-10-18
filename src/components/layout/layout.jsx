@@ -7,7 +7,7 @@ import Footer from '../footer/footer';
 
 import './layout.sass';
 import HamburgerMenu from '../hamburger-menu/hamburger-menu';
-import store from '../store/store';
+import store from '../../store/store';
 import { AnimatePresence } from 'framer-motion';
 
 const Layout = observer(() => {

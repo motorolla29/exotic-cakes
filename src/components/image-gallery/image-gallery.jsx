@@ -4,8 +4,11 @@ import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
 import { baseImagesURL } from '../../const';
 
 import './image-gallery.sass';
+import { asyncImageLoader, loadImagePromise } from '../../utils';
+import { useEffect, useState } from 'react';
 
 const ImageGallery = ({ item: { images } }) => {
+  const [loadedImagesUrls, setLoadedImagesUrls] = useState([]);
   const [ww] = useWindowSize();
 
   function CustomNextArrow(props) {
@@ -31,7 +34,11 @@ const ImageGallery = ({ item: { images } }) => {
       return ww >= 768 ? (
         <a>
           <img
-            src={`${baseImagesURL}/${images ? images[0 + i] : 'no-photo.png'}`}
+            src={`${baseImagesURL}/${
+              loadedImagesUrls || images
+                ? loadedImagesUrls[0 + i]
+                : 'no-photo.png'
+            }`}
           />
         </a>
       ) : (
@@ -48,13 +55,34 @@ const ImageGallery = ({ item: { images } }) => {
     prevArrow: images && images.length > 1 ? <CustomPrevArrow /> : null,
   };
 
+  useEffect(() => {
+    Promise.all(
+      images.map((image) => {
+        return loadImagePromise(baseImagesURL, image)
+          .then((url) => {
+            return url;
+          })
+          .catch((defaultUrl) => {
+            return defaultUrl;
+          });
+      })
+    ).then((arr) => {
+      setLoadedImagesUrls(arr);
+    });
+  }, []);
+
   return (
-    <div className="image-gallery">
+    <div
+      onClick={() => {
+        console.log(loadedImagesUrls);
+      }}
+      className="image-gallery"
+    >
       <Slider {...settings}>
-        {images ? (
-          images.map((image) => (
-            <img key={image} src={`${baseImagesURL}/${image}`} />
-          ))
+        {images || loadedImagesUrls ? (
+          loadedImagesUrls.map((image) => {
+            return <img key={image} src={`${baseImagesURL}/${image}`} />;
+          })
         ) : (
           <div>
             <img src={`${baseImagesURL}/no-photo.png`} />

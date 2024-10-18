@@ -6,8 +6,26 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import './menu-item.sass';
+import { useEffect, useState } from 'react';
+import { loadImagePromise } from '../../utils';
 
 const MenuItem = ({ category, id, title, minPrice, price, images }) => {
+  const [loadedImagesUrls, setLoadedImagesUrls] = useState([]);
+  useEffect(() => {
+    Promise.all(
+      images.map((image) => {
+        return loadImagePromise(baseImagesURL, image)
+          .then((url) => {
+            return url;
+          })
+          .catch((defaultUrl) => {
+            return defaultUrl;
+          });
+      })
+    ).then((arr) => {
+      setLoadedImagesUrls(arr);
+    });
+  }, []);
   return (
     <Link className="menu-item" to={`/menus/${category}/${id}`}>
       <Slider
@@ -16,8 +34,8 @@ const MenuItem = ({ category, id, title, minPrice, price, images }) => {
         dots={true}
         className="menu-item_slider"
       >
-        {images ? (
-          images.map((image) => (
+        {images || loadedImagesUrls ? (
+          loadedImagesUrls.map((image) => (
             <img
               key={image}
               className="menu-item_slider_img"

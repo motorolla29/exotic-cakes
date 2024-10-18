@@ -16,3 +16,16 @@ export const customScrollController = {
     window.scrollTo(0, customScrollController.scroll);
   },
 };
+
+export const loadImagePromise = (baseUrl, url) => {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => {
+      resolve(url);
+    };
+    image.onerror = () => {
+      reject('default.png');
+    };
+    image.src = `${baseUrl}/${url}`;
+  });
+};

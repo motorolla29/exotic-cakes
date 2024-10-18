@@ -10,7 +10,8 @@
     &_title
         text-align: center
         font-size: 3em
-        margin: 0.5em 0
+        margin-top: 0.5em
+        margin-bottom: 1.5em
         font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif    
     &_heading
         display: flex
@@ -34,11 +35,83 @@
         display: flex
         flex-direction: column
         border-top: 1px solid
+    &_order-summary
+        margin: 2em 0 4em 65%
+        display: flex
+        flex-direction: column
         
+        &_title
+            font-size: 2em
+            margin-bottom: 0.5em
+            padding-bottom: 0.5em
+            border-bottom: 1px solid #481e5c51
+        &_notes
+            width: 100%
+            position: relative
+            display: flex
+            flex-direction: column
+            margin-bottom: 1em
+            span
+                font-size: 1em
+                padding-bottom: 0.5em
+                opacity: 0.8
+            textarea
+                padding: 0.25em
+                font-family: Slime Box, Arial, sans-serif
+                font-size: 1em
+                resize: none
+                height: 6em
+                width: 100%
+                opacity: 0.8
+                outline: none
+                border-radius: 3px
+                border: 1px solid
+                &:active, &:focus, &:hover
+                    opacity: 1
+        &_count
+            display: flex
+            justify-content: space-between
+            padding-bottom: 1em
+            border-bottom: 1px solid #481e5c51
+            span
+                &:first-child
+                    opacity: 0.8
+                &:last-child
+                    text-decoration: underline
+        &_checkout-btn
+            cursor: pointer
+            font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif 
+            margin-bottom: 0.5em
+            border-radius: 0.5em
+            padding: 1em
+            font-size: 1em
+            align-self: center
+            width: 100%
+            margin-top: 2em
+            outline: none
+            border: none
+            background: #481E5C
+            color: #fffbe8
+            transition: all 0.2s ease
+            &:hover
+                opacity: 0.8
+            &:active
+                transform: scale(0.98)
+            
+        &_description       
+            user-select: none 
+            opacity: 0.8
+            font-size: 0.8em
+            span
+                text-decoration: underline
+                &:hover
+                    cursor: pointer
+                    opacity: 0.8
 @media (max-width: 1024px) 
     .cart-page
         &_title
             margin-top: 1.5em
+            margin-bottom: 0.5em
 @media (max-width: 768px)
     .cart-page
         padding: 0 2em

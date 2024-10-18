@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 
@@ -8,12 +9,11 @@ import { TiPlusOutline } from 'react-icons/ti';
 import { TiMinusOutline } from 'react-icons/ti';
 
 import useWindowSize from '../../hooks/use-window-size';
+import { loadImagePromise } from '../../utils';
 import store from '../../store/store';
+import { baseImagesURL } from '../../const';
 
 import './cart-item.sass';
-import { useEffect, useState } from 'react';
-import { baseImagesURL } from '../../const';
-import { loadImagePromise } from '../../utils';
 
 const CartItem = observer(({ item }) => {
   const {
@@ -32,7 +32,7 @@ const CartItem = observer(({ item }) => {
   } = item;
 
   const [ww] = useWindowSize();
-  const [productImage, setProductImageUrl] = useState('');
+  const [productImageUrl, setProductImageUrl] = useState('');
 
   useEffect(() => {
     loadImagePromise(baseImagesURL, image)
@@ -42,7 +42,7 @@ const CartItem = observer(({ item }) => {
       .catch((defaultUrl) => {
         setProductImageUrl(defaultUrl);
       });
-  });
+  }, []);
 
   const onQuantityInputHandler = (e) => {
     e.target.value = ~~e.target.value;
@@ -58,7 +58,10 @@ const CartItem = observer(({ item }) => {
     <div key={JSON.stringify(item)} className="cart-item">
       <div className="cart-item_main">
         <Link to={`/menus/${category}/${id}`} className="cart-item_main_img">
-          <img src={`${baseImagesURL}/${productImage}`} alt="product-image" />
+          <img
+            src={`${baseImagesURL}/${productImageUrl}`}
+            alt="product-image"
+          />
         </Link>
         <div className="cart-item_main_info">
           <Link to={`/menus/${category}/${id}`}>

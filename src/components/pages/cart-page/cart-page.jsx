@@ -27,6 +27,23 @@ const CartPage = observer(() => {
           <CartItem key={it.id} item={it} />
         ))}
       </div>
+      <div className="cart-page_order-summary">
+        <h2 className="cart-page_order-summary_title">ORDER SUMMARY</h2>
+        <div className="cart-page_order-summary_notes">
+          <span>NOTES</span>
+          <textarea />
+        </div>
+        <div className="cart-page_order-summary_count">
+          <span>SUBTOTAL</span>
+          <span>$1500</span>
+        </div>
+        <button className="cart-page_order-summary_checkout-btn">
+          CHECKOUT
+        </button>
+        <p className="cart-page_order-summary_description">
+          Tax included. <span>Shipping</span> calculated at checkout.
+        </p>
+      </div>
     </div>
   );
 });

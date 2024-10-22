@@ -5,6 +5,7 @@ import CartItem from '../../cart-item/cart-item';
 import store from '../../../store/store';
 
 import './cart-page.sass';
+import { Link } from 'react-router-dom';
 
 const CartPage = observer(() => {
   useEffect(() => {
@@ -12,7 +13,7 @@ const CartPage = observer(() => {
   }, []);
   const [ww] = useWindowSize();
 
-  return (
+  return store.cartItems.length ? (
     <div className="cart-page">
       <h1 className="cart-page_title">YOUR ORDER</h1>
       <div className="cart-page_heading">
@@ -38,7 +39,12 @@ const CartPage = observer(() => {
         </div>
         <div className="cart-page_order-summary_count">
           <span>SUBTOTAL</span>
-          <span>$1500</span>
+          <span>
+            $
+            {store.cartItems.reduce((acc, it) => {
+              return acc + it.quantity;
+            }, 0)}
+          </span>
         </div>
         <button className="cart-page_order-summary_checkout-btn">
           CHECKOUT
@@ -47,6 +53,17 @@ const CartPage = observer(() => {
           Tax included. <span>Shipping</span> calculated at checkout.
         </p>
       </div>
+    </div>
+  ) : (
+    <div className="empty-cart">
+      <img className="empty-cart_image" src="/images/empty-cart.png" />
+      <h1 className="empty-cart_title">YOUR CART IS EMPTY</h1>
+      <p className="empty-cart_subtitle">
+        Ready to look for something incredibly tasty?
+      </p>
+      <Link to="/menus" className="empty-cart_link">
+        CONTINUE SHOPPING
+      </Link>
     </div>
   );
 });

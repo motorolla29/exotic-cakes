@@ -3,8 +3,8 @@ import { useSearchParams } from 'react-router-dom';
 import { LuCake } from 'react-icons/lu';
 import { TbPencilHeart } from 'react-icons/tb';
 import { CiShoppingCart } from 'react-icons/ci';
+import { animate } from 'framer-motion';
 
-import { baseImagesURL } from '../../const';
 import store from '../../store/store';
 
 import './product-info.sass';
@@ -43,6 +43,23 @@ const ProductInfo = ({ item, category }) => {
   const [cardMessageText, setCardMessageText] = useState('');
 
   const onAddToCartButtonClick = () => {
+    const snackbarRef = document.querySelector('.cart-snackbar');
+    const counterRef = document.querySelector(
+      '.header_right-side_cart-icon_counter'
+    );
+    const sequence = [
+      [
+        snackbarRef,
+        {
+          transform: ['translateY(0)', 'translateY(-2em)', 'translateY(0)'],
+        },
+      ],
+      [counterRef, { transform: ['scale(1)', 'scale(1.25)', 'scale(1)'] }],
+    ];
+    if (store.snackbar.open && snackbarRef) {
+      animate(sequence);
+    }
+
     store.addItemToCart({
       id: item.id,
       category: category,

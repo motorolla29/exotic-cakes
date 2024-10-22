@@ -1,11 +1,12 @@
+import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
+
 import useWindowSize from '../../hooks/use-window-size';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
 import { baseImagesURL } from '../../const';
+import { loadImagePromise } from '../../utils';
 
 import './image-gallery.sass';
-import { asyncImageLoader, loadImagePromise } from '../../utils';
-import { useEffect, useState } from 'react';
 
 const ImageGallery = ({ item: { images } }) => {
   const [loadedImagesUrls, setLoadedImagesUrls] = useState([]);
@@ -72,14 +73,9 @@ const ImageGallery = ({ item: { images } }) => {
   }, []);
 
   return (
-    <div
-      onClick={() => {
-        console.log(loadedImagesUrls);
-      }}
-      className="image-gallery"
-    >
+    <div className="image-gallery">
       <Slider {...settings}>
-        {images || loadedImagesUrls ? (
+        {images ? (
           loadedImagesUrls.map((image) => {
             return <img key={image} src={`${baseImagesURL}/${image}`} />;
           })

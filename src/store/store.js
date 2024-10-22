@@ -3,38 +3,10 @@ import { makeAutoObservable } from 'mobx';
 var _ = require('lodash');
 
 class Store {
-  cartItems = [
-    {
-      id: '608504ca-34b2-42e8-aac8-583cd712b652',
-      category: 'all',
-      title: 'Bike Lover Cake',
-      image: 'OIG1 (ewfr).jpg',
-      price: 39,
-      optionName: 'Size',
-      option: '6-inch',
-      spongeVariant: 'Red Velvet',
-      fillVariant: 'Cream Cheese Icing',
-      cartMessage: 'tsejgfdjjftg',
-      cakeSign: 'dsfsdf',
-      quantity: 1,
-    },
-    {
-      id: 'ea3a67dc-abe4-4c12-a3ee-aaadb84f7643',
-      category: 'all',
-      title: 'Mouse Cheese Fest Cake',
-      image: 'OIG3 (2).jpg',
-      price: 99,
-      optionName: 'Size',
-      option: '10-inch',
-      spongeVariant: 'Funfetti',
-      fillVariant: 'Cream Cheese Icing',
-      cartMessage: null,
-      cakeSign: null,
-      quantity: 1,
-    },
-  ];
+  cartItems = JSON.parse(localStorage.getItem('cart')) || [];
   overlaySpinner = false;
   hamburgerMenu = false;
+  snackbar = {};
 
   constructor() {
     makeAutoObservable(this);
@@ -57,11 +29,13 @@ class Store {
     } else {
       this.cartItems.push(item);
     }
-    console.log(this.cartItems);
+    localStorage.setItem('cart', JSON.stringify(this.cartItems));
+    this.setSnackbar({ open: true, item: item });
   }
 
   removeItemFromCart(item) {
     this.cartItems = this.cartItems.filter((it) => it !== item);
+    localStorage.setItem('cart', JSON.stringify(this.cartItems));
   }
 
   setItemCountInCart(item, count) {
@@ -69,6 +43,7 @@ class Store {
       _.isEqualWith(_.omit(it, ['quantity']), _.omit(item, ['quantity']))
     );
     cartItem.quantity = +count;
+    localStorage.setItem('cart', JSON.stringify(this.cartItems));
   }
 
   incrementItemCountInCart(item) {
@@ -78,6 +53,7 @@ class Store {
     cartItem.quantity < 99
       ? (cartItem.quantity = cartItem.quantity += 1)
       : null;
+    localStorage.setItem('cart', JSON.stringify(this.cartItems));
   }
 
   decrementItemCountInCart(item) {
@@ -85,6 +61,11 @@ class Store {
       _.isEqualWith(_.omit(it, ['quantity']), _.omit(item, ['quantity']))
     );
     cartItem.quantity > 1 ? (cartItem.quantity = cartItem.quantity -= 1) : null;
+    localStorage.setItem('cart', JSON.stringify(this.cartItems));
+  }
+
+  setSnackbar(config) {
+    this.snackbar = config;
   }
 }
 

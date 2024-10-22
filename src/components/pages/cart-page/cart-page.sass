@@ -7,6 +7,7 @@
     padding: 0 4em
     max-width: 1420px
     font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
+    
     &_title
         text-align: center
         font-size: 3em
@@ -36,10 +37,10 @@
         flex-direction: column
         border-top: 1px solid
     &_order-summary
-        margin: 2em 0 4em 65%
+        margin: 2em 0 4em 60%
         display: flex
         flex-direction: column
-        
+        transition: all 0.2s ease
         &_title
             font-size: 2em
             margin-bottom: 0.5em
@@ -56,18 +57,20 @@
                 padding-bottom: 0.5em
                 opacity: 0.8
             textarea
-                padding: 0.25em
-                font-family: Slime Box, Arial, sans-serif
+                padding: 0.25em 0.5em
+                font-family: Klyakson, Arial, sans-serif
                 font-size: 1em
                 resize: none
                 height: 6em
                 width: 100%
                 opacity: 0.8
                 outline: none
-                border-radius: 3px
+                border-radius: 5px
                 border: 1px solid
+                color: #481E5C
                 &:active, &:focus, &:hover
                     opacity: 1
+                    
         &_count
             display: flex
             justify-content: space-between
@@ -112,6 +115,9 @@
         &_title
             margin-top: 1.5em
             margin-bottom: 0.5em
+        &_order-summary
+            margin-left: 40%
+
 @media (max-width: 768px)
     .cart-page
         padding: 0 2em
@@ -122,7 +128,8 @@
         &_heading
             &_item, &_total
                 width: auto 
-
+        &_order-summary
+            margin-left: 0
 @media (max-width: 410px)
     .cart-page
         font-size: 14px

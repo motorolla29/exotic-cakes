@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
+import { AnimatePresence } from 'framer-motion';
 
+import CartSnackbar from '../cart-snackbar/cart-snackbar';
+import HamburgerMenu from '../hamburger-menu/hamburger-menu';
 import Header from '../header/header';
 import Footer from '../footer/footer';
+import store from '../../store/store';
 
 import './layout.sass';
-import HamburgerMenu from '../hamburger-menu/hamburger-menu';
-import store from '../../store/store';
-import { AnimatePresence } from 'framer-motion';
 
 const Layout = observer(() => {
   const [scroll, setScroll] = useState(0);
@@ -48,6 +49,7 @@ const Layout = observer(() => {
         <AnimatePresence>
           {store.hamburgerMenu && <HamburgerMenu />}
         </AnimatePresence>
+        <CartSnackbar />
         <Outlet />
       </div>
       <Footer />

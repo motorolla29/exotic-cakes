@@ -52,7 +52,11 @@ const Header = observer(() => {
           />
           {store.cartItems.length ? (
             <div className="header_right-side_cart-icon_counter">
-              <span>{store.cartItems.length}</span>
+              <span>
+                {store.cartItems.reduce((acc, it) => {
+                  return acc + it.quantity;
+                }, 0)}
+              </span>
             </div>
           ) : null}
         </Link>

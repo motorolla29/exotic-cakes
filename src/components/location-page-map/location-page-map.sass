@@ -1,0 +1,44 @@
+
+#location-page-map
+    & .map-marker
+        cursor: pointer
+        width: 7em
+    & .maplibregl-popup
+        animation: 0.4s ease-in-out popup-slide
+        .maplibregl-popup-tip
+            border-bottom-color: #fffbe8
+        .maplibregl-popup-content
+            background: #fffbe8
+            padding: 5px 20px 5px 20px
+            border-radius: 10px
+            & .maplibregl-popup-close-button
+                color: #551A8B
+                font-size: 1.5em
+                top: 2px
+                right: 5px
+                &:focus, &:active
+                    outline: none
+                &:hover
+                    background: none
+                    opacity: 0.5
+            & .popup-inner
+                text-align: center
+                font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif 
+                &_title
+                    color: #551A8B
+                    font-family: Slime Box, Arial, sans-serif
+                &_address
+                    color: #454545
+
+@keyframes popup-slide 
+    0% 
+        opacity: 0
+        margin-top: -12px
+    50%
+        margin-top: 8px
+    80%
+        margin-top: -4px
+    100%
+        margin-top: 0px
+        opacity: 1
+  

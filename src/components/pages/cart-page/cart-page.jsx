@@ -42,7 +42,7 @@ const CartPage = observer(() => {
           <span>
             $
             {store.cartItems.reduce((acc, it) => {
-              return acc + it.quantity;
+              return acc + it.quantity * it.price;
             }, 0)}
           </span>
         </div>

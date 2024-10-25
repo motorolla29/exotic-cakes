@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
+import { observer } from 'mobx-react-lite';
+import MenuItemSkeleton from '../skeletons/menu-item-skeleton';
+
 import store from '../../store/store';
 import MenuItem from '../menu-item/menu-item';
-import MenuItemSkeleton from '../skeletons/menu-item-skeleton';
 import OverlayLogoSpinner from '../overlay-logo-spinner/overlay-logo-spinner';
 
 import './menu-items.sass';
-import { observer } from 'mobx-react-lite';
 
 const MenuItems = observer(({ category }) => {
   const [items, setItems] = useState([]);

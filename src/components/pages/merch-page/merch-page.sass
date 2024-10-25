@@ -1,2 +1,35 @@
 .merch-page
+    max-width: 100%
+    overflow-x: hidden
     font-size: 16px
+    display: flex
+    min-height: 100vh
+    flex-direction: column
+    align-items: center
+    background: no-repeat url(/public/images/logo-background.png)
+    background-size: cover
+    background-position: center
+    user-select: none
+    &_title
+        align-self: center
+        width: fit-content
+        font-size: 3em
+        color: #551A8B
+        margin-top: 0.5em
+        font-family: Slime Box, Arial, sans-serif
+.merch-items
+    width: 100%
+    position: relative
+    padding: 0 2em
+    display: grid
+    grid-template-columns: repeat(4, calc(25% - 24px))
+    max-width: 1320px
+    margin: 0 auto
+    column-gap: 32px
+    row-gap: 40px
+
+@media (max-width: 1024px)
+    .merch-page
+        
+        &_title
+            margin-top: 1.5em

@@ -9,8 +9,8 @@ import ProductInfoSkeleton from '../../skeletons/product-info-skeleton';
 import './item-page.sass';
 
 const ItemPage = () => {
-  const { category } = useParams(category);
-  const { id } = useParams(id);
+  const { category } = useParams();
+  const { id } = useParams();
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
 

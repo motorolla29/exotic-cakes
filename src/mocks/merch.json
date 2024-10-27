@@ -9,7 +9,7 @@
     "id": "brand-logo-cap",
     "title": "Brand Logo Cap",
     "images": ["ECcap.png", "ECfullLogocap.png", "ECflat-peaked-cap.png"],
-    "Options": {
+    "options": {
       "Type": [
         { "option": "Regular White with Cake Logo", "price": 20 },
         { "option": "Regular White with Full Logo", "price": 20 },

@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom';
+import { baseMerchImagesURL } from '../../const';
 import './merch-item.sass';
 
-const MerchItem = ({ name }) => {
+const MerchItem = ({ id, title, minPrice, price, images }) => {
   return (
-    <Link className="merch-item">
+    <Link to={`/merch/${id}`} className="merch-item">
       <div className="merch-item_image">
-        <img
-          src="/images/merch/ea18b41bef7d659ddeb1e30ab5b41facdc6e63e2.png"
-          alt="merch_img"
-        />
+        <img src={`${baseMerchImagesURL}/${images[0]}`} alt="merch_img" />
       </div>
       <div className="merch-item_info">
-        <p className="merch-item_info_name">{name}</p>
-        <p className="merch-item_info_price">$500</p>
+        <p className="merch-item_info_name">{title}</p>
+        <p className="merch-item_info_price">
+          {minPrice ? `From $${minPrice}` : `$${price}`}
+        </p>
       </div>
     </Link>
   );

@@ -10,6 +10,7 @@ import CartPage from '../pages/cart-page/cart-page';
 
 import './app.sass';
 import ItemPage from '../pages/item-page/item-page';
+import MerchItemPage from '../pages/merch-item-page/merch-item-page';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="about" element={<AboutPage />} />
           <Route path="location" element={<LocationPage />} />
           <Route path="merch" element={<MerchPage />} />
+          <Route path="merch/:merchItemId" element={<MerchItemPage />} />
           <Route path="something-else" element={<div />} />
           <Route path="cart" element={<CartPage />} />
         </Route>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './merch-item.sass';
 
-const MerchItem = () => {
+const MerchItem = ({ name }) => {
   return (
     <Link className="merch-item">
       <div className="merch-item_image">
@@ -11,7 +11,7 @@ const MerchItem = () => {
         />
       </div>
       <div className="merch-item_info">
-        <p className="merch-item_info_name">Merch Name</p>
+        <p className="merch-item_info_name">{name}</p>
         <p className="merch-item_info_price">$500</p>
       </div>
     </Link>

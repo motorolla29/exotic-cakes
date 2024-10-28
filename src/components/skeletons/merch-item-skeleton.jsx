@@ -7,38 +7,34 @@ const MerchItemSkeleton = (props) => {
   return (
     <ContentLoader
       speed={1.5}
-      //viewBox="0 0 430 450"
-      viewBox={`0 0 430 ${ww > 480 ? 450 : 580}`}
+      viewBox={`0 0 430 ${ww > 480 ? 410 : 550}`}
       backgroundColor="#e6e0ff"
       foregroundColor="#ece7ff"
       {...props}
     >
-      {/* <rect x="0" y="0" rx="20" ry="20" width="430" height="340" />
-      <rect x="20%" y="350" rx="20" ry="20" width="60%" height="40" />
-      <rect x="40%" y="400" rx="20" ry="20" width="20%" height="40" /> */}
       <rect
         x="0"
         y="0"
         rx="20"
         ry="20"
         width="430"
-        height={`${ww > 480 ? 340 : 470}`}
+        height={`${ww > 480 ? 320 : 420}`}
       />
       <rect
         x="20%"
-        y={`${ww > 480 ? 350 : 480}`}
-        rx="20"
-        ry="20"
+        y={`${ww > 480 ? 330 : 435}`}
+        rx={`${ww > 480 ? 10 : 15}`}
+        ry={`${ww > 480 ? 10 : 15}`}
         width="60%"
-        height="40"
+        height={`${ww > 480 ? 25 : 35}`}
       />
       <rect
-        x="40%"
-        y={`${ww > 480 ? 400 : 530}`}
-        rx="20"
-        ry="20"
-        width="20%"
-        height="40"
+        x="42.5%"
+        y={`${ww > 480 ? 365 : 485}`}
+        rx={`${ww > 480 ? 10 : 15}`}
+        ry={`${ww > 480 ? 10 : 15}`}
+        width="15%"
+        height={`${ww > 480 ? 25 : 35}`}
       />
     </ContentLoader>
   );

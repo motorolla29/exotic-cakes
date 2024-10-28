@@ -1,0 +1,79 @@
+.merch-item-page-image-gallery
+    display: inline-block
+    width: 50%
+    &_sliders-block
+        position: sticky
+        top: 7em
+        width: 100%
+        height: auto
+    & .main-slider
+        margin-bottom: 0.5em
+        
+        & .slick-list
+            overflow: hidden
+            border-radius: 5px
+            & .slick-track
+                
+                & .slick-slide
+                    
+                    // & .image-container
+                    //     position: relative
+                    //     background: #000
+                    //     aspect-ratio: 1/1
+                    //     text-align: center
+                    div
+                        display: flex
+                        img
+                            aspect-ratio: 1/1
+                            background: #fff
+                            object-fit: contain
+
+
+    & .nav-slider
+        & .slick-list
+            margin: 0 5em
+            & .slick-track
+                & .slick-slide
+                    cursor: pointer
+                    width: 6em
+                    padding: 1em
+                    opacity: 0.75
+                    div
+                        display: flex
+                        img
+                            display: flex
+                            width: fit-content
+                            border-radius: 5px
+                            aspect-ratio: 1/1
+                            background: #fff
+                            object-fit: contain
+                            width: 20%
+                    &.slick-current
+                        opacity: 1
+                        img
+                            border: 1px solid #481E5C
+                    &:hover
+                        opacity: 1
+        & .next-arrow, & .prev-arrow
+            opacity: 0.75
+            cursor: pointer
+            position: absolute
+            top: 1em
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 4em
+            height: calc(100% - 2em)
+            border-radius: 5px
+            background:#fff
+            svg
+                font-size: 1.5em
+                fill: #C5B7FF
+        & .next-arrow
+            right: 0
+            &:hover
+                opacity: 1
+        & .prev-arrow
+            left: 0
+            &:hover
+                opacity: 1

@@ -22,7 +22,7 @@ const MerchPage = () => {
     <div className="merch-page">
       <h1 className="merch-page_title">Merch Shop</h1>
       <div className="merch-items">
-        {firstLoading || 1
+        {firstLoading
           ? [...new Array(12)].map((_, index) => (
               <MerchItemSkeleton className="merch-item-skeleton" key={index} />
             ))

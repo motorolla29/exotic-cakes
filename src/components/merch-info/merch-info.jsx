@@ -68,7 +68,8 @@ const MerchInfo = ({ item }) => {
       {options && (
         <div className="merch-info_options-container">
           <div className="merch-info_options-title">
-            {optionsName}: {currentOption.name}
+            {`${optionsName}: `}
+            <span>{currentOption.name}</span>
           </div>
           <div className="merch-info_options">
             {options.map((it) => {
@@ -94,11 +95,14 @@ const MerchInfo = ({ item }) => {
         </div>
       )}
       {variants && (
-        <div className="merch-info-variants-container">
+        <div className="merch-info_variants-container">
           {Object.entries(variants).map((variant) => {
             return (
               <div key={variant}>
-                <div className="merch-info_variants-title">{variant[0]}</div>
+                <div className="merch-info_variants-title">
+                  {`${variant[0]}: `}
+                  <span>{currentVariants[variant[0]]}</span>
+                </div>
                 <div className="merch-info_variants">
                   {variant[1].map((it) => {
                     return (

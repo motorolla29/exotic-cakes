@@ -8,7 +8,9 @@
         height: auto
     & .main-slider
         margin-bottom: 0.5em
-        
+        -webkit-box-shadow: 0 0 2em -1em #551A8B
+        -moz-box-shadow: 0 0 2em -1em #551A8B
+        box-shadow: 0 0 2em -1em #541a8b
         & .slick-list
             overflow: hidden
             border-radius: 5px
@@ -47,7 +49,6 @@
                             aspect-ratio: 1/1
                             background: #fff
                             object-fit: contain
-                            width: 20%
                     &.slick-current
                         opacity: 1
                         img
@@ -77,3 +78,50 @@
             left: 0
             &:hover
                 opacity: 1
+
+@media (max-width: 1024px)
+    .merch-item-page-image-gallery
+        display: flex
+        width: 100%
+        margin-bottom: 2em
+@media (max-width: 768px)
+    .merch-item-page-image-gallery
+        & .main-slider
+            margin-bottom: 5px
+            & .slick-list
+                border-radius: 0
+        & .nav-slider
+            position: relative
+            width: 100%
+            & .slick-list
+                margin: 0 70px
+                & .slick-track
+                    
+                    & .slick-slide
+                        padding: 5px
+                        div
+                            img
+                        &.slick-current
+                            img
+                        &:hover
+            & .next-arrow, & .prev-arrow
+                top: 5px
+                width: 50px
+                height: calc(100% - 10px)
+                svg
+                    //font-size: 1.5em
+            & .next-arrow
+                right: 10px
+                &:hover
+            & .prev-arrow
+                left: 10px
+                &:hover
+@media (max-width: 480px)
+    .merch-item-page-image-gallery
+        & .nav-slider
+            & .slick-list
+                margin: 0 50px
+            & .next-arrow, & .prev-arrow
+                width: 30px
+                svg
+                    font-size: 1em

@@ -1,2 +1,116 @@
 .merch-info
+    display: inline-block
+    font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
     width: 50%
+    display: flex
+    flex-direction: column
+    margin: 0 2em
+    transition: 0.2s ease
+    &_title, &_price, &_options-title, &_variants-title, &_options, &_variants
+        -webkit-box-shadow: 0 0 1em 0.5em #DCCAEC
+        -moz-box-shadow: 0 0 1em 0.5em #DCCAEC
+        box-shadow: 0 0 1em 0.5em #DCCAEC  
+        width: fit-content 
+        background:#DCCAEC
+
+    &_title    
+        border-radius: 1em
+        padding: 0.25em 0.375em
+        color: #551A8B
+        font-size: 2em
+        margin-bottom: 0.25em
+    &_price
+        padding: 0.25em 0.5em
+        border-radius: 1em
+        font-size: 1.5em
+        margin-bottom: 0.5em
+        font-family: Slime Box, Arial, sans-serif
+    &_options-container, &_variants-container
+        display: flex
+        flex-direction: column
+    &_variants-container > div
+        margin: 0 0 1em 0
+    &_options-container
+        margin: 0 0 1em 0
+    &_options-title, &_variants-title
+        border-top-left-radius: 0.5em
+        border-top-right-radius: 0.5em
+        padding: 0 0.75em
+        color: #551A8B
+        font-size: 1em
+        z-index: 1
+        span
+            text-decoration: underline
+    &_options, &_variants
+        padding: 0 0.75em 0.75em 0.75em
+        border-bottom-left-radius: 1em
+        border-bottom-right-radius: 1em
+        border-top-right-radius: 1em
+        user-select: none
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        z-index: 0
+        &_option, &_variant
+            display: flex
+            &:last-child
+                label
+                    margin-right: 0
+            input
+                display: none
+            label
+                font-family: Slime Box, Arial, sans-serif
+                cursor: pointer
+                padding: 0.5em
+                border: 1px solid
+                border-radius: 0.5em
+                margin: 0.75em 1em 0 0
+                box-shadow: 0.2em 0.2em 0 
+                transition: all 0.2s ease-out
+            input:checked + label
+                background: #C5B7FF
+                box-shadow: 0 0 0
+                transform: translateX(0.2em) translateY(0.2em)
+        &_variant
+            input:checked + label
+                background: #ffffffcc
+        &_option
+            input:checked + label
+                color: #fffbe8
+                border-color: #481E5C
+                background: #481E5C
+    &_add-to-cart-btn
+        user-select: none
+        cursor: pointer
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 1em
+        margin: 1em 0
+        width: 100%
+        max-width: 18em
+        align-self: center
+        font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
+        background: #F7F49D
+        border: 1px solid 
+        border-radius: 4em
+        box-shadow: 0.2em 0.2em 0 
+        transition: all 0.2s ease, background 0.4s ease
+        svg
+            margin-right: 0.5em
+            width: 2em
+            height: auto
+        &:hover
+            background: #C5B7FF
+        &:active
+            box-shadow: 0 0 0
+            transform: translateX(0.2em) translateY(0.2em)
+@media (max-width: 1024px)
+    .merch-info
+        display: flex
+        width: 100%
+        margin: 0
+        padding: 0
+@media (max-width: 768px)
+    .merch-info
+        padding: 0 0.5em

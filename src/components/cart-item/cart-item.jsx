@@ -11,12 +11,13 @@ import { TiMinusOutline } from 'react-icons/ti';
 import useWindowSize from '../../hooks/use-window-size';
 import { loadImagePromise } from '../../utils';
 import store from '../../store/store';
-import { baseImagesURL } from '../../const';
+import { baseImagesURL, baseMerchImagesURL } from '../../const';
 
 import './cart-item.sass';
 
 const CartItem = observer(({ item }) => {
   const {
+    type,
     id,
     category,
     title,
@@ -29,14 +30,19 @@ const CartItem = observer(({ item }) => {
     fillVariant,
     cakeSign,
     cartMessage,
+    merchVariants,
   } = item;
 
   const [ww] = useWindowSize();
   const [productImageUrl, setProductImageUrl] = useState('');
 
   useEffect(() => {
-    loadImagePromise(baseImagesURL, image)
+    loadImagePromise(
+      type === 'merch' ? baseMerchImagesURL : baseImagesURL,
+      image
+    )
       .then((url) => {
+        console.log(url);
         setProductImageUrl(url);
       })
       .catch((defaultUrl) => {
@@ -57,14 +63,21 @@ const CartItem = observer(({ item }) => {
   return (
     <div key={JSON.stringify(item)} className="cart-item">
       <div className="cart-item_main">
-        <Link to={`/menus/${category}/${id}`} className="cart-item_main_img">
+        <Link
+          to={type === 'merch' ? `/merch/${id}` : `/menus/${category}/${id}`}
+          className="cart-item_main_img"
+        >
           <img
-            src={`${baseImagesURL}/${productImageUrl}`}
+            src={`${
+              type === 'merch' ? baseMerchImagesURL : baseImagesURL
+            }/${productImageUrl}`}
             alt="product-image"
           />
         </Link>
         <div className="cart-item_main_info">
-          <Link to={`/menus/${category}/${id}`}>
+          <Link
+            to={type === 'merch' ? `/merch/${id}` : `/menus/${category}/${id}`}
+          >
             <p className="cart-item_main_info_title">{title}</p>
           </Link>
           {ww <= 768 ? (
@@ -116,6 +129,15 @@ const CartItem = observer(({ item }) => {
               Filling Icing: <span>{fillVariant}</span>
             </p>
           ) : null}
+          {merchVariants
+            ? Object.entries(merchVariants).map((it) => {
+                return (
+                  <p key={it} className="cart-item_main_info_filling">
+                    {it[0]}: <span>{it[1]}</span>
+                  </p>
+                );
+              })
+            : null}
           {cakeSign ? (
             <div className="cart-item_main_info_cake-sign">
               <span>

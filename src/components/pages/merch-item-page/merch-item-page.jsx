@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import './merch-item-page.sass';
 import MerchItemPageImageGallery from '../../merch-item-page-image-gallery/merch-item-page-image-gallery';
 import MerchInfo from '../../merch-info/merch-info';
+import MerchItemPageImageGallerySkeleton from '../../skeletons/merch-item-page-image-gallery-skeleton';
+import MerchInfoSkeleton from '../../skeletons/merch-info-skeleton';
 
 const MerchItemPage = () => {
   const { merchItemId } = useParams();
@@ -27,8 +29,11 @@ const MerchItemPage = () => {
   return (
     <div className="merch-item-page-cover">
       <div className="merch-item-page">
-        {loading ? (
-          <>loading</>
+        {loading || 1 ? (
+          <div className="merch-item-page-skeletons">
+            <MerchItemPageImageGallerySkeleton className="merch-item-page-image-gallery merch-item-page-image-gallery-skeleton" />
+            <MerchInfoSkeleton className="merch-info merch-info-skeleton" />
+          </div>
         ) : (
           <>
             <MerchItemPageImageGallery item={item} />

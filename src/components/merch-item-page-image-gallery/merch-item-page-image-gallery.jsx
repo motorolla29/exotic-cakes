@@ -5,8 +5,9 @@ import { BiSolidLeftArrow } from 'react-icons/bi';
 import { BiSolidRightArrow } from 'react-icons/bi';
 
 import './merch-item-page-image-gallery.sass';
+import { baseMerchImagesURL } from '../../const';
 
-const MerchItemPageImageGallery = () => {
+const MerchItemPageImageGallery = ({ item }) => {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   let sliderRef1 = useRef(null);
@@ -42,13 +43,18 @@ const MerchItemPageImageGallery = () => {
           asNavFor={nav2}
           ref={(slider) => (sliderRef1 = slider)}
           arrows={false}
+          infinite={item.images.length > 1}
           adaptiveHeight
         >
-          <img src="/images/merch/ECcap.png"></img>
-
-          <img src="/images/merch/ECfullLogocap.png"></img>
-
-          <img src="/images/merch/ECflat-peaked-cap.png"></img>
+          {item.images.map((it) => {
+            return (
+              <img
+                key={it}
+                src={`${baseMerchImagesURL}/${it}`}
+                alt="merch_image"
+              />
+            );
+          })}
         </Slider>
         <Slider
           className="nav-slider"
@@ -56,15 +62,20 @@ const MerchItemPageImageGallery = () => {
           ref={(slider) => (sliderRef2 = slider)}
           nextArrow={<NextArrow />}
           prevArrow={<PrevArrow />}
-          slidesToShow={3}
+          slidesToShow={item.images.length === 2 ? 2 : 3} //item.images.length < 3 ? item.images.length : 3
           swipeToSlide={true}
           focusOnSelect={true}
+          infinite={item.images.length > 1}
         >
-          <img src="/images/merch/ECcap.png"></img>
-
-          <img src="/images/merch/ECfullLogocap.png"></img>
-
-          <img src="/images/merch/ECflat-peaked-cap.png"></img>
+          {item.images.map((it) => {
+            return (
+              <img
+                key={it}
+                src={`${baseMerchImagesURL}/${it}`}
+                alt="merch_image"
+              />
+            );
+          })}
         </Slider>
       </div>
     </div>

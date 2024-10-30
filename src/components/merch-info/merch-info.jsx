@@ -48,13 +48,14 @@ const MerchInfo = ({ item }) => {
     }
 
     store.addItemToCart({
+      type: 'merch',
       id: item.id,
       title: item.title,
       image: item.images[0],
       price: currentOption ? currentOption.price : item.price,
       optionName: optionsName,
       option: currentOption ? currentOption.name : null,
-      variant: variant,
+      merchVariants: currentVariants,
       quantity: 1,
     });
   };

@@ -1,10 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { observer } from 'mobx-react-lite';
-import { animate, AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import store from '../../store/store';
-import { baseImagesURL } from '../../const';
+import { baseImagesURL, baseMerchImagesURL } from '../../const';
 import { loadImagePromise } from '../../utils';
 
 import './cart-snackbar.sass';
@@ -52,7 +52,10 @@ const CartSnackbar = observer(() => {
 
   useEffect(() => {
     reset();
-    loadImagePromise(baseImagesURL, snackbar.item?.image)
+    loadImagePromise(
+      snackbar.item?.type === 'merch' ? baseMerchImagesURL : baseImagesURL,
+      snackbar.item?.image
+    )
       .then((url) => {
         setProductImageUrl(url);
       })
@@ -75,7 +78,13 @@ const CartSnackbar = observer(() => {
         >
           <div className="cart-snackbar_inner">
             <div className="cart-snackbar_inner_info">
-              <img src={`${baseImagesURL}/${productImageUrl}`} />
+              <img
+                src={`${
+                  snackbar.item.type === 'merch'
+                    ? baseMerchImagesURL
+                    : baseImagesURL
+                }/${productImageUrl}`}
+              />
               <div>
                 <span>ADDED TO CART</span>
                 <p>1 x {snackbar.item.title}</p>

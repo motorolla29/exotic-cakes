@@ -36,7 +36,7 @@
   {
     "id": "brand-tea-mug",
     "title": "Brand Tea Mug",
-    "images": ["tea-mug-side.png", "tea-mug-front.png", "tea-mug-side2.png"],
+    "images": ["tea-mug-side.png", "tea-mug-front.jpg", "tea-mug-side2.jpg"],
     "price": 10
   },
   {

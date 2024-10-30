@@ -29,7 +29,7 @@ const MerchItemPage = () => {
   return (
     <div className="merch-item-page-cover">
       <div className="merch-item-page">
-        {loading || 1 ? (
+        {loading ? (
           <div className="merch-item-page-skeletons">
             <MerchItemPageImageGallerySkeleton className="merch-item-page-image-gallery merch-item-page-image-gallery-skeleton" />
             <MerchInfoSkeleton className="merch-info merch-info-skeleton" />

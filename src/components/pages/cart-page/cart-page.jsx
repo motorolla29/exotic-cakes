@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import useWindowSize from '../../../hooks/use-window-size';
 import CartItem from '../../cart-item/cart-item';
 import store from '../../../store/store';
 
 import './cart-page.sass';
-import { Link } from 'react-router-dom';
 
 const CartPage = observer(() => {
   useEffect(() => {
@@ -28,7 +28,7 @@ const CartPage = observer(() => {
       </div>
       <div className="cart-page_items">
         {store.cartItems.map((it) => (
-          <CartItem key={it.id} item={it} />
+          <CartItem key={JSON.stringify(it)} item={it} />
         ))}
       </div>
       <div className="cart-page_order-summary">

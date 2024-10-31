@@ -4,12 +4,10 @@ import Slider from 'react-slick';
 import useWindowSize from '../../hooks/use-window-size';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
 import { baseImagesURL } from '../../const';
-import { loadImagePromise } from '../../utils';
 
 import './image-gallery.sass';
 
-const ImageGallery = ({ item: { images } }) => {
-  const [loadedImagesUrls, setLoadedImagesUrls] = useState([]);
+const ImageGallery = ({ item, images }) => {
   const [ww] = useWindowSize();
 
   function CustomNextArrow(props) {
@@ -35,11 +33,7 @@ const ImageGallery = ({ item: { images } }) => {
       return ww >= 768 ? (
         <a>
           <img
-            src={`${baseImagesURL}/${
-              loadedImagesUrls || images
-                ? loadedImagesUrls[0 + i]
-                : 'no-photo.png'
-            }`}
+            src={`${baseImagesURL}/${images ? images[0 + i] : 'no-photo.png'}`}
           />
         </a>
       ) : (
@@ -56,27 +50,11 @@ const ImageGallery = ({ item: { images } }) => {
     prevArrow: images && images.length > 1 ? <CustomPrevArrow /> : null,
   };
 
-  useEffect(() => {
-    Promise.all(
-      images.map((image) => {
-        return loadImagePromise(baseImagesURL, image)
-          .then((url) => {
-            return url;
-          })
-          .catch((defaultUrl) => {
-            return defaultUrl;
-          });
-      })
-    ).then((arr) => {
-      setLoadedImagesUrls(arr);
-    });
-  }, []);
-
   return (
     <div className="image-gallery">
       <Slider {...settings}>
         {images ? (
-          loadedImagesUrls.map((image) => {
+          images.map((image) => {
             return <img key={image} src={`${baseImagesURL}/${image}`} />;
           })
         ) : (

@@ -34,7 +34,7 @@ const MenuItem = ({ category, id, title, minPrice, price, images }) => {
         dots={true}
         className="menu-item_slider"
       >
-        {images || loadedImagesUrls ? (
+        {images ? (
           loadedImagesUrls.map((image) => (
             <img
               key={image}

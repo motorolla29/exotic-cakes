@@ -7,7 +7,7 @@ import store from '../../store/store';
 
 import './merch-info.sass';
 
-const MerchInfo = ({ item }) => {
+const MerchInfo = ({ item, images }) => {
   let [searchParams, setSearchParams] = useSearchParams();
   const optionsName = item.options ? Object.entries(item.options)[0][0] : null;
   const options = item.options ? Object.entries(item.options)[0][1] : null;
@@ -51,7 +51,7 @@ const MerchInfo = ({ item }) => {
       type: 'merch',
       id: item.id,
       title: item.title,
-      image: item.images[0],
+      image: images[currentOption.photoIndex || 0],
       price: currentOption ? currentOption.price : item.price,
       optionName: optionsName,
       option: currentOption ? currentOption.name : null,

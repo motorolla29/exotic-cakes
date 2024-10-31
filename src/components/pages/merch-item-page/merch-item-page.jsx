@@ -1,15 +1,20 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import './merch-item-page.sass';
 import MerchItemPageImageGallery from '../../merch-item-page-image-gallery/merch-item-page-image-gallery';
 import MerchInfo from '../../merch-info/merch-info';
 import MerchItemPageImageGallerySkeleton from '../../skeletons/merch-item-page-image-gallery-skeleton';
 import MerchInfoSkeleton from '../../skeletons/merch-info-skeleton';
 
+import { loadImagePromise } from '../../../utils';
+import { baseMerchImagesURL } from '../../../const';
+
+import './merch-item-page.sass';
+
 const MerchItemPage = () => {
   const { merchItemId } = useParams();
   const [item, setItem] = useState({});
+  const [loadedImagesUrls, setLoadedImagesUrls] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => window.scrollTo(0, 0), []);
@@ -22,6 +27,23 @@ const MerchItemPage = () => {
       })
       .then((item) => {
         setItem(item);
+        return item;
+      })
+      .then((item) => {
+        return Promise.all(
+          item.images.map((image) => {
+            return loadImagePromise(baseMerchImagesURL, image)
+              .then((url) => {
+                return url;
+              })
+              .catch((defaultUrl) => {
+                return defaultUrl;
+              });
+          })
+        );
+      })
+      .then((arr) => {
+        setLoadedImagesUrls(arr);
         setLoading(false);
       });
   }, []);
@@ -36,8 +58,8 @@ const MerchItemPage = () => {
           </div>
         ) : (
           <>
-            <MerchItemPageImageGallery item={item} />
-            <MerchInfo item={item} />
+            <MerchItemPageImageGallery item={item} images={loadedImagesUrls} />
+            <MerchInfo item={item} images={loadedImagesUrls} />
           </>
         )}
       </div>

@@ -6,12 +6,16 @@ import ProductInfo from '../../product-info/product-info';
 import ImageGallerySkeleton from '../../skeletons/image-gallery-skeleton';
 import ProductInfoSkeleton from '../../skeletons/product-info-skeleton';
 
+import { loadImagePromise } from '../../../utils';
+import { baseImagesURL } from '../../../const';
+
 import './item-page.sass';
 
 const ItemPage = () => {
   const { category } = useParams();
   const { id } = useParams();
   const [item, setItem] = useState({});
+  const [loadedImagesUrls, setLoadedImagesUrls] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => window.scrollTo(0, 0), []);
@@ -24,6 +28,23 @@ const ItemPage = () => {
       })
       .then((item) => {
         setItem(item);
+        return item;
+      })
+      .then((item) => {
+        return Promise.all(
+          item.images.map((image) => {
+            return loadImagePromise(baseImagesURL, image)
+              .then((url) => {
+                return url;
+              })
+              .catch((defaultUrl) => {
+                return defaultUrl;
+              });
+          })
+        );
+      })
+      .then((arr) => {
+        setLoadedImagesUrls(arr);
         setLoading(false);
       });
   }, []);
@@ -37,8 +58,12 @@ const ItemPage = () => {
         </div>
       ) : (
         <>
-          <ImageGallery item={item} />
-          <ProductInfo category={category} item={item} />
+          <ImageGallery item={item} images={loadedImagesUrls} />
+          <ProductInfo
+            category={category}
+            item={item}
+            images={loadedImagesUrls}
+          />
         </>
       )}
     </div>

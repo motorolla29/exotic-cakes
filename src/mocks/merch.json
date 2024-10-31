@@ -11,9 +11,22 @@
     "images": ["ECcap.png", "ECfullLogocap.png", "ECflat-peaked-cap.png"],
     "options": {
       "Type": [
-        { "name": "Regular White with Cake Logo", "price": 20 },
-        { "name": "Regular White with Full Logo", "price": 20 },
-        { "name": "Black Flat Peaked with Full Logo", "price": 25 }
+        {
+          "name": "Regular White with Cake Logo",
+          "price": 20,
+          "photoIndex": 0
+        },
+        {
+          "name": "Regular White with Full Logo",
+          "price": 20,
+          "photoIndex": 1
+        },
+
+        {
+          "name": "Black Flat Peaked with Full Logo",
+          "price": 25,
+          "photoIndex": 2
+        }
       ]
     }
   },

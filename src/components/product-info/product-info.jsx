@@ -9,7 +9,7 @@ import store from '../../store/store';
 
 import './product-info.sass';
 
-const ProductInfo = ({ item, category }) => {
+const ProductInfo = ({ item, images, category }) => {
   let [searchParams, setSearchParams] = useSearchParams();
   const optionsName = item.options ? Object.entries(item.options)[0][0] : null;
   const options = item.options ? Object.entries(item.options)[0][1] : null;
@@ -64,7 +64,7 @@ const ProductInfo = ({ item, category }) => {
       id: item.id,
       category: category,
       title: item.title,
-      image: item.images[0],
+      image: images[0],
       price: currentOption ? currentOption.price : item.price,
       optionName: optionsName,
       option: currentOption ? currentOption.name : null,

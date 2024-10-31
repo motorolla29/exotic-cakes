@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 
@@ -9,7 +8,6 @@ import { TiPlusOutline } from 'react-icons/ti';
 import { TiMinusOutline } from 'react-icons/ti';
 
 import useWindowSize from '../../hooks/use-window-size';
-import { loadImagePromise } from '../../utils';
 import store from '../../store/store';
 import { baseImagesURL, baseMerchImagesURL } from '../../const';
 
@@ -32,23 +30,7 @@ const CartItem = observer(({ item }) => {
     cartMessage,
     merchVariants,
   } = item;
-
   const [ww] = useWindowSize();
-  const [productImageUrl, setProductImageUrl] = useState('');
-
-  useEffect(() => {
-    loadImagePromise(
-      type === 'merch' ? baseMerchImagesURL : baseImagesURL,
-      image
-    )
-      .then((url) => {
-        console.log(url);
-        setProductImageUrl(url);
-      })
-      .catch((defaultUrl) => {
-        setProductImageUrl(defaultUrl);
-      });
-  }, []);
 
   const onQuantityInputHandler = (e) => {
     e.target.value = ~~e.target.value;
@@ -61,7 +43,7 @@ const CartItem = observer(({ item }) => {
   };
 
   return (
-    <div key={JSON.stringify(item)} className="cart-item">
+    <div className="cart-item">
       <div className="cart-item_main">
         <Link
           to={type === 'merch' ? `/merch/${id}` : `/menus/${category}/${id}`}
@@ -70,7 +52,7 @@ const CartItem = observer(({ item }) => {
           <img
             src={`${
               type === 'merch' ? baseMerchImagesURL : baseImagesURL
-            }/${productImageUrl}`}
+            }/${image}`}
             alt="product-image"
           />
         </Link>
@@ -188,11 +170,14 @@ const CartItem = observer(({ item }) => {
           </div>
         </>
       ) : null}
-
       <div className="cart-item_total">
         <div>
           ${price * quantity}
-          <RiDeleteBin5Line onClick={() => store.removeItemFromCart(item)} />
+          <RiDeleteBin5Line
+            onClick={() => {
+              store.removeItemFromCart(item);
+            }}
+          />
         </div>
       </div>
     </div>

@@ -16,6 +16,7 @@ import './cart-item.sass';
 const CartItem = observer(({ item }) => {
   const {
     type,
+    stringParams,
     id,
     category,
     title,
@@ -46,7 +47,11 @@ const CartItem = observer(({ item }) => {
     <div className="cart-item">
       <div className="cart-item_main">
         <Link
-          to={type === 'merch' ? `/merch/${id}` : `/menus/${category}/${id}`}
+          to={
+            type === 'merch'
+              ? `/merch/${id}?${stringParams ? stringParams : ''}`
+              : `/menus/${category}/${id}?${stringParams ? stringParams : ''}`
+          }
           className="cart-item_main_img"
         >
           <img

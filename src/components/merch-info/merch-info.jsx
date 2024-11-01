@@ -6,8 +6,9 @@ import { CiShoppingCart } from 'react-icons/ci';
 import store from '../../store/store';
 
 import './merch-info.sass';
+import { object } from 'framer-motion/client';
 
-const MerchInfo = ({ item, images }) => {
+const MerchInfo = ({ item, images, setPhotoIndex }) => {
   let [searchParams, setSearchParams] = useSearchParams();
   const optionsName = item.options ? Object.entries(item.options)[0][0] : null;
   const options = item.options ? Object.entries(item.options)[0][1] : null;
@@ -23,7 +24,7 @@ const MerchInfo = ({ item, images }) => {
       ? JSON.parse(searchParams.get('variants')) ||
           Object.fromEntries(
             Object.entries(variants).map((variant) => {
-              return [variant[0], variant[1][0]];
+              return [variant[0], variant[1][0].name || variant[1][0]];
             })
           )
       : null
@@ -49,9 +50,10 @@ const MerchInfo = ({ item, images }) => {
 
     store.addItemToCart({
       type: 'merch',
+      stringParams: searchParams.toString(),
       id: item.id,
       title: item.title,
-      image: images[currentOption.photoIndex || 0],
+      image: images[currentOption?.photoIndex || 0],
       price: currentOption ? currentOption.price : item.price,
       optionName: optionsName,
       option: currentOption ? currentOption.name : null,
@@ -86,6 +88,7 @@ const MerchInfo = ({ item, images }) => {
                       setCurrentOption(it);
                       searchParams.set('option', it.name);
                       setSearchParams(searchParams, { replace: true });
+                      setPhotoIndex(it.photoIndex);
                     }}
                   />
                   <label htmlFor={name}>{name}</label>
@@ -106,32 +109,34 @@ const MerchInfo = ({ item, images }) => {
                 </div>
                 <div className="merch-info_variants">
                   {variant[1].map((it) => {
+                    const item = it.name || it;
                     return (
-                      <div className="merch-info_variants_variant" key={it}>
+                      <div className="merch-info_variants_variant" key={item}>
                         <input
                           type="radio"
-                          id={it}
+                          id={item}
                           name={variant[0]}
                           checked={
                             currentVariants[variant[0]] &&
-                            currentVariants[variant[0]] === it
+                            currentVariants[variant[0]] === item
                           }
                           onChange={(e) => {
                             setCurrentVariants({
                               ...currentVariants,
-                              [variant[0]]: it,
+                              [variant[0]]: item,
                             });
                             searchParams.set(
                               'variants',
                               JSON.stringify({
                                 ...currentVariants,
-                                [variant[0]]: it,
+                                [variant[0]]: item,
                               })
                             );
                             setSearchParams(searchParams, { replace: true });
+                            setPhotoIndex(it.photoIndex);
                           }}
                         />
-                        <label htmlFor={it}>{it}</label>
+                        <label htmlFor={item}>{item}</label>
                       </div>
                     );
                   })}

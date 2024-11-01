@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import MerchItem from '../../merch-item/merch-item';
 import MerchItemSkeleton from '../../skeletons/merch-item-skeleton';
+
 import './merch-page.sass';
 
 const MerchPage = () => {

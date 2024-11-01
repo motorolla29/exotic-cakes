@@ -9,7 +9,7 @@ import store from '../../store/store';
 
 import './product-info.sass';
 
-const ProductInfo = ({ item, images, category }) => {
+const ProductInfo = ({ item, images, category, setPhotoIndex }) => {
   let [searchParams, setSearchParams] = useSearchParams();
   const optionsName = item.options ? Object.entries(item.options)[0][0] : null;
   const options = item.options ? Object.entries(item.options)[0][1] : null;
@@ -61,10 +61,11 @@ const ProductInfo = ({ item, images, category }) => {
     }
 
     store.addItemToCart({
+      stringParams: searchParams.toString(),
       id: item.id,
       category: category,
       title: item.title,
-      image: images[0],
+      image: images[currentOption?.photoIndex || 0],
       price: currentOption ? currentOption.price : item.price,
       optionName: optionsName,
       option: currentOption ? currentOption.name : null,
@@ -104,6 +105,7 @@ const ProductInfo = ({ item, images, category }) => {
                       setCurrentOption(it);
                       searchParams.set('option', it.name);
                       setSearchParams(searchParams, { replace: true });
+                      setPhotoIndex(it.photoIndex);
                     }}
                   />
                   <label htmlFor={name}>{name}</label>

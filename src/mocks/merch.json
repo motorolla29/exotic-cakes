@@ -21,7 +21,6 @@
           "price": 20,
           "photoIndex": 1
         },
-
         {
           "name": "Black Flat Peaked with Full Logo",
           "price": 25,
@@ -41,8 +40,16 @@
     ],
     "options": {
       "Color": [
-        { "name": "Yellow", "price": 10 },
-        { "name": "Biscuit Black", "price": 12 }
+        {
+          "name": "Yellow",
+          "price": 10,
+          "photoIndex": 0
+        },
+        {
+          "name": "Biscuit Black",
+          "price": 12,
+          "photoIndex": 2
+        }
       ]
     }
   },
@@ -116,7 +123,16 @@
     "price": 25,
     "variants": {
       "Size": ["XS", "S", "M", "L", "XL"],
-      "Color": ["White with Full Logo", "Pink with Cake Logo"]
+      "Color": [
+        {
+          "name": "White with Full Logo",
+          "photoIndex": 2
+        },
+        {
+          "name": "Pink with Cake Logo",
+          "photoIndex": 0
+        }
+      ]
     }
   },
   {

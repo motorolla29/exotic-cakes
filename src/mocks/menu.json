@@ -1956,11 +1956,13 @@
       "Size": [
         {
           "name": "20-inch",
-          "price": 99
+          "price": 99,
+          "photoIndex": 0
         },
         {
           "name": "40-inch",
-          "price": 179
+          "price": 179,
+          "photoIndex": 1
         }
       ]
     },

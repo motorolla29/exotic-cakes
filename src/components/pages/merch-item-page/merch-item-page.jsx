@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 
 import MerchItemPageImageGallery from '../../merch-item-page-image-gallery/merch-item-page-image-gallery';
 import MerchInfo from '../../merch-info/merch-info';
@@ -14,6 +14,8 @@ import './merch-item-page.sass';
 const MerchItemPage = () => {
   const { merchItemId } = useParams();
   const [item, setItem] = useState({});
+  const [gallerySlideImageIndex, setGallerySlideImageIndex] =
+    useState(undefined);
   const [loadedImagesUrls, setLoadedImagesUrls] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -58,8 +60,17 @@ const MerchItemPage = () => {
           </div>
         ) : (
           <>
-            <MerchItemPageImageGallery item={item} images={loadedImagesUrls} />
-            <MerchInfo item={item} images={loadedImagesUrls} />
+            <MerchItemPageImageGallery
+              item={item}
+              images={loadedImagesUrls}
+              slideIndex={gallerySlideImageIndex}
+              setSlideIndex={setGallerySlideImageIndex}
+            />
+            <MerchInfo
+              item={item}
+              images={loadedImagesUrls}
+              setPhotoIndex={setGallerySlideImageIndex}
+            />
           </>
         )}
       </div>

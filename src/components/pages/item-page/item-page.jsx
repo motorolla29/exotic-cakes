@@ -15,6 +15,8 @@ const ItemPage = () => {
   const { category } = useParams();
   const { id } = useParams();
   const [item, setItem] = useState({});
+  const [gallerySlideImageIndex, setGallerySlideImageIndex] =
+    useState(undefined);
   const [loadedImagesUrls, setLoadedImagesUrls] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -58,11 +60,17 @@ const ItemPage = () => {
         </div>
       ) : (
         <>
-          <ImageGallery item={item} images={loadedImagesUrls} />
+          <ImageGallery
+            item={item}
+            images={loadedImagesUrls}
+            slideIndex={gallerySlideImageIndex}
+            setSlideIndex={setGallerySlideImageIndex}
+          />
           <ProductInfo
             category={category}
             item={item}
             images={loadedImagesUrls}
+            setPhotoIndex={setGallerySlideImageIndex}
           />
         </>
       )}

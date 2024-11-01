@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import MenuItemSkeleton from '../skeletons/menu-item-skeleton';
 
@@ -11,10 +12,15 @@ import './menu-items.sass';
 const MenuItems = observer(({ category }) => {
   const [items, setItems] = useState([]);
   const [firstLoading, setFirstLoading] = useState(true);
-  const [limit, setLimit] = useState(24);
   const [totalItems, setTotalItems] = useState(0);
 
+  const location = useLocation();
+
   useEffect(() => {
+    if (store.locationKey !== location.key) {
+      store.setMenuItemsLimit(24);
+      store.setLocationKey(location.key);
+    }
     setFirstLoading(true);
     fetch(
       `https://66e43448d2405277ed137dfc.mockapi.io/items${
@@ -26,8 +32,9 @@ const MenuItems = observer(({ category }) => {
       })
       .then((arr) => {
         setTotalItems(arr.length);
-        setLimit(24);
-        arr.length > 24 ? (arr.length = 24) : null;
+        arr.length > store.menuItemsLimit
+          ? (arr.length = store.menuItemsLimit)
+          : null;
         setItems(arr);
         setFirstLoading(false);
       });
@@ -45,12 +52,12 @@ const MenuItems = observer(({ category }) => {
       })
       .then((arr) => {
         setTotalItems(arr.length);
-        if (totalItems > limit + 24) {
-          arr.length = limit + 24;
+        if (totalItems > store.menuItemsLimit + 24) {
+          arr.length = store.menuItemsLimit + 24;
         }
         setItems(arr);
         store.setOverlaySpinner(false);
-        setLimit(limit + 24);
+        store.setMenuItemsLimit(store.menuItemsLimit + 24);
       });
   };
 
@@ -58,7 +65,7 @@ const MenuItems = observer(({ category }) => {
     <div className="menu-items-container">
       <div className="menu-items">
         {firstLoading
-          ? [...new Array(24)].map((_, index) => (
+          ? [...new Array(store.menuItemsLimit)].map((_, index) => (
               <MenuItemSkeleton key={index} />
             ))
           : items.map((it) => (
@@ -75,7 +82,7 @@ const MenuItems = observer(({ category }) => {
               />
             ))}
       </div>
-      {totalItems > limit && (
+      {totalItems > store.menuItemsLimit && (
         <button
           onClick={onSeeMoreButtonClickHandler}
           className="see-more-button"

@@ -4,12 +4,21 @@ var _ = require('lodash');
 
 class Store {
   cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  menuItemsLimit = 24;
   overlaySpinner = false;
   hamburgerMenu = false;
   snackbar = {};
+  locationKey = null;
 
   constructor() {
     makeAutoObservable(this);
+  }
+
+  setLocationKey(key) {
+    this.locationKey = key;
+  }
+  setMenuItemsLimit(limit) {
+    this.menuItemsLimit = limit;
   }
 
   setOverlaySpinner(bool) {

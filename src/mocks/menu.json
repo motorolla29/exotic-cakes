@@ -47,15 +47,18 @@
       "Size": [
         {
           "name": "6-inch",
-          "price": 39
+          "price": 39,
+          "photoIndex": 3
         },
         {
           "name": "8-inch",
-          "price": 69
+          "price": 69,
+          "photoIndex": 2
         },
         {
           "name": "10-inch",
-          "price": 99
+          "price": 99,
+          "photoIndex": 0
         }
       ]
     },
@@ -176,15 +179,18 @@
       "Size": [
         {
           "name": "6-inch",
-          "price": 59
+          "price": 59,
+          "photoIndex": 0
         },
         {
           "name": "8-inch",
-          "price": 79
+          "price": 79,
+          "photoIndex": 2
         },
         {
           "name": "10-inch",
-          "price": 109
+          "price": 109,
+          "photoIndex": 1
         }
       ]
     },
@@ -209,15 +215,18 @@
       "Size": [
         {
           "name": "6-inch",
-          "price": 69
+          "price": 69,
+          "photoIndex": 3
         },
         {
           "name": "8-inch",
-          "price": 89
+          "price": 89,
+          "photoIndex": 1
         },
         {
           "name": "10-inch",
-          "price": 119
+          "price": 119,
+          "photoIndex": 2
         }
       ]
     },
@@ -960,15 +969,18 @@
       "Size": [
         {
           "name": "6-inch",
-          "price": 39
+          "price": 39,
+          "photoIndex": 1
         },
         {
           "name": "8-inch",
-          "price": 49
+          "price": 49,
+          "photoIndex": 0
         },
         {
           "name": "10-inch",
-          "price": 59
+          "price": 59,
+          "photoIndex": 2
         }
       ]
     },

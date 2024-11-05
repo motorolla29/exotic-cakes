@@ -9,14 +9,23 @@ $sliderDotSize: 14px
     transition: 0.2s
     overflow: hidden
     text-decoration: none
-    background: #ffffff6e
+    background: #FFFDF2
     box-shadow: 1px 2px 4px #551A8B1d
     &:hover
         box-shadow: 4px 8px 16px #551A8B1d
 
+    &_slider-container
+        width: 100%
+        aspect-ratio: 1/1
+        background: no-repeat url(/public/images/catalog/default.png)
+        background-size: cover
+        background-position: center
+
+
     &_slider
         max-width: 100%
         border-top-radius: 1em
+        background: #FFFDF2
         & .slick-slide
             div
                 display: flex
@@ -70,4 +79,18 @@ $sliderDotSize: 14px
             justify-content: center
             margin: 1em 0
             color: #505050
-        
+@media (max-width: 1280px)
+    .menu-item
+        font-size: 15px
+@media (max-width: 1024px)
+    .menu-item
+        font-size: 14px
+@media (max-width: 768px)
+    .menu-item
+        font-size: 13px
+@media (max-width: 480px)
+    .menu-item
+        font-size: 12px
+@media (max-width: 360px)
+    .menu-item
+        font-size: 11px

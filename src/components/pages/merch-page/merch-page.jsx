@@ -7,6 +7,7 @@ import './merch-page.sass';
 const MerchPage = () => {
   const [items, setItems] = useState([]);
   const [firstLoading, setFirstLoading] = useState(true);
+  window.scrollTo(0, 0);
 
   useEffect(() => {
     setFirstLoading(true);

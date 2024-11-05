@@ -28,29 +28,31 @@ const MenuItem = ({ category, id, title, minPrice, price, images }) => {
   }, []);
   return (
     <Link className="menu-item" to={`/menus/${category}/${id}`}>
-      <Slider
-        infinite={images.length > 1 ? true : false}
-        arrows={false}
-        dots={true}
-        className="menu-item_slider"
-      >
-        {images ? (
-          loadedImagesUrls.map((image) => (
+      <div className="menu-item_slider-container">
+        <Slider
+          infinite={images.length > 1 ? true : false}
+          arrows={false}
+          dots={true}
+          className="menu-item_slider"
+        >
+          {images ? (
+            loadedImagesUrls.map((image) => (
+              <img
+                key={image}
+                className="menu-item_slider_img"
+                src={`${baseImagesURL}/${image}`}
+                alt="product_image"
+              />
+            ))
+          ) : (
             <img
-              key={image}
               className="menu-item_slider_img"
-              src={`${baseImagesURL}/${image}`}
+              src={`${baseImagesURL}/no-photo.png`}
               alt="product_image"
             />
-          ))
-        ) : (
-          <img
-            className="menu-item_slider_img"
-            src={`${baseImagesURL}/no-photo.png`}
-            alt="product_image"
-          />
-        )}
-      </Slider>
+          )}
+        </Slider>
+      </div>
       <div className="menu-item_info">
         <p className="menu-item_info_title">{title}</p>
         <p className="menu-item_info_price">

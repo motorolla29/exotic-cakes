@@ -1,12 +1,47 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
 import LocationPageMap from '../../location-page-map/location-page-map';
+
 import './location-page.sass';
 
 const LocationPage = () => {
   window.scrollTo(0, 0);
+  const firstBlockAnimation = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.75,
+      },
+    },
+  };
+  const blockAnimation = {
+    hidden: {
+      y: 50,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        bounce: 0.4,
+        duration: 2,
+      },
+    },
+  };
   return (
     <div className="location-page">
-      <div className="store">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={firstBlockAnimation}
+        viewport={{ once: true }}
+        className="store"
+      >
         <img
           src="/images/exotic_cakes_is_a_confectionery_shop_with_a_handwritten_italics_logo_the_photo_was_taken_from_outsi_qv9rzco5s1wcp2rf3vhq_1.png"
           className="store_img"
@@ -37,13 +72,23 @@ const LocationPage = () => {
             <p>SUN: 12pm-6pm</p>
           </div>
         </div>
-      </div>
+      </motion.div>
       <div className="menu">
-        <img
+        <motion.img
+          initial="hidden"
+          whileInView="visible"
+          variants={blockAnimation}
+          viewport={{ once: true }}
           className="menu_img"
           src="/images/confectionery_with_the_exotic_cakes__the_photo_was_taken_from_outside_where_the_sign_logo_written_i_bkvxqywrpc3muqkb1bvo_3.png"
         />
-        <div className="menu_info">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={blockAnimation}
+          viewport={{ once: true }}
+          className="menu_info"
+        >
           <p className="menu_info_title">THIS WEEK'S MENU AT EXOTIC CAKES</p>
           <p className="menu_info_date">W/C 23rd October</p>
           <div className="menu_info_items">
@@ -114,9 +159,15 @@ const LocationPage = () => {
               </span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-      <div className="location-page-map">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={blockAnimation}
+        viewport={{ once: true }}
+        className="location-page-map"
+      >
         <LocationPageMap />
         <Link
           target="_blank"
@@ -125,7 +176,7 @@ const LocationPage = () => {
         >
           GET DIRECTIONS
         </Link>
-      </div>
+      </motion.div>
     </div>
   );
 };

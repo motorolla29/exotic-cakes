@@ -1,23 +1,74 @@
+import { motion } from 'framer-motion';
 import './about-page.sass';
+import { delay } from 'lodash';
+import { useEffect } from 'react';
 
 const AboutPage = () => {
   window.scrollTo(0, 0);
+  const firstBlockAnimation = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.75,
+      },
+    },
+  };
+  const blockAnimation = {
+    hidden: {
+      y: 50,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        bounce: 0.4,
+        duration: 2,
+      },
+    },
+  };
   return (
     <div className="about-page">
-      <img
+      <motion.img
+        initial="hidden"
+        whileInView="visible"
+        variants={firstBlockAnimation}
+        viewport={{ once: true }}
         src="/images/Runway 2024-09-19T08_55_52.985Z Upscale Image Upscaled Image 3360 x 1920.jpg"
         className="about-page_top-image"
       />
-      <div className="about-page_heading-container">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={blockAnimation}
+        viewport={{ once: true }}
+        className="about-page_heading-container"
+      >
         <h1 className="about-page_heading-container_title">
           The Story of <span>Exotic</span> <span>Cakes</span>: A Legacy of
           Imagination and Craftsmanship
         </h1>
-      </div>
+      </motion.div>
+
       <div className="about-page_history">
         <div className="about-page_history_block">
-          <img src="/images/PhotoFunia-1726820039.jpg"></img>
-          <div>
+          <motion.img
+            initial="hidden"
+            whileInView="visible"
+            variants={blockAnimation}
+            viewport={{ once: true }}
+            src="/images/PhotoFunia-1726820039.jpg"
+          ></motion.img>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={blockAnimation}
+            viewport={{ once: true }}
+          >
             <h1>• 1875 - The Beginning</h1>
             <p>
               In a quaint European village, Exotic Cakes was founded by master
@@ -27,10 +78,15 @@ const AboutPage = () => {
               quickly gained a reputation for creating elaborate confections
               that pushed the boundaries of traditional cake-making.
             </p>
-          </div>
+          </motion.div>
         </div>
         <div className="about-page_history_block">
-          <div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={blockAnimation}
+            viewport={{ once: true }}
+          >
             <h1>• 1920 - The Revolution of Design</h1>
             <p>
               By the 1920s, the Motorolla family had expanded their business,
@@ -42,12 +98,29 @@ const AboutPage = () => {
               introduced the idea that cakes could be theatrical, full of
               imagination and storytelling.
             </p>
-          </div>
-          <img src="/images/photo_of_a_confectionery_shop_with_the_name_exotic_cakes_in_black_and_white_style_of_the_19th_centu_ldgxyyr83kh73bt2b3jb_2.png"></img>
+          </motion.div>
+          <motion.img
+            initial="hidden"
+            whileInView="visible"
+            variants={blockAnimation}
+            viewport={{ once: true }}
+            src="/images/photo_of_a_confectionery_shop_with_the_name_exotic_cakes_in_black_and_white_style_of_the_19th_centu_ldgxyyr83kh73bt2b3jb_2.png"
+          ></motion.img>
         </div>
         <div className="about-page_history_block">
-          <img src="/images/EC1920.jpg"></img>
-          <div>
+          <motion.img
+            initial="hidden"
+            whileInView="visible"
+            variants={blockAnimation}
+            viewport={{ once: true }}
+            src="/images/EC1920.jpg"
+          ></motion.img>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={blockAnimation}
+            viewport={{ once: true }}
+          >
             <h1>• 1978 - The Era of Pop Culture</h1>
             <p>
               In the late 20th century, Exotic Cakes embraced modern influences,
@@ -58,10 +131,15 @@ const AboutPage = () => {
               cupcakes captured the hearts of children and adults alike,
               bringing a new wave of creativity to the baking world.
             </p>
-          </div>
+          </motion.div>
         </div>
         <div className="about-page_history_block">
-          <div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={blockAnimation}
+            viewport={{ once: true }}
+          >
             <h1>• 2024 - A New Chapter</h1>
             <p>
               Today, Exotic Cakes continues to innovate under the leadership of
@@ -72,8 +150,14 @@ const AboutPage = () => {
               celebrated for blending tradition with bold, modern designs,
               continuing a legacy of wonder that started nearly 150 years ago.
             </p>
-          </div>
-          <img src="/images/confectionery_shop_with_the_name_exotic_cakes_name_of_the_shop_is_handwritten_yellow_cursive_script_nentejkycuprbmg2fo5v_1.png"></img>
+          </motion.div>
+          <motion.img
+            initial="hidden"
+            whileInView="visible"
+            variants={blockAnimation}
+            viewport={{ once: true }}
+            src="/images/confectionery_shop_with_the_name_exotic_cakes_name_of_the_shop_is_handwritten_yellow_cursive_script_nentejkycuprbmg2fo5v_1.png"
+          ></motion.img>
         </div>
       </div>
     </div>

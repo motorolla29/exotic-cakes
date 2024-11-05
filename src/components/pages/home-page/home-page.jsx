@@ -1,21 +1,59 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
+import { motion } from 'framer-motion';
 
 import LogoSpinner from '../../logo-spinner/logo-spinner';
 import PlayIcon from '../../../icons/play.svg';
 import PauseIcon from '../../../icons/pause.svg';
 
 import './home-page.sass';
-import { Link } from 'react-router-dom';
+import { GiDuration } from 'react-icons/gi';
+import { delay } from 'lodash';
 
 const HomePage = () => {
   const [videoPlaying, setVideoPlaying] = useState(true);
 
   window.scrollTo(0, 0);
 
+  const MotionLink = motion(Link);
+
+  const firstBlockAnimation = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.75,
+      },
+    },
+  };
+  const blockAnimation = {
+    hidden: {
+      y: 50,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        bounce: 0.4,
+        duration: 2,
+      },
+    },
+  };
+
   return (
     <div className="home-page">
-      <div className="player-wrapper">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={firstBlockAnimation}
+        viewport={{ once: true }}
+        className="player-wrapper"
+      >
         <ReactPlayer
           className="react-player"
           url="/video/main video bit2.mp4"
@@ -24,7 +62,11 @@ const HomePage = () => {
           playing={videoPlaying}
           loop={true}
           muted={true}
-          fallback={<LogoSpinner />}
+          fallback={
+            <div style={{ height: '100vh' }}>
+              <LogoSpinner />
+            </div>
+          }
         />
         {videoPlaying ? (
           <PauseIcon
@@ -37,9 +79,15 @@ const HomePage = () => {
             className="play-icon"
           />
         )}
-      </div>
+      </motion.div>
 
-      <div className="meet-chef-promo">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={blockAnimation}
+        viewport={{ once: true }}
+        className="meet-chef-promo"
+      >
         <h1>Meet Chef Luca Moretti, the Master of Imagination and Taste</h1>
         <p>
           <span>Chef Luca Moretti</span> has a unique vision for the world of
@@ -51,8 +99,14 @@ const HomePage = () => {
           flavors and forms that are as wild as your imagination.
         </p>
         <div className="meet-chef-promo_cover"></div>
-      </div>
-      <div className="merch-promo-wrapper">
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={blockAnimation}
+        viewport={{ once: true }}
+        className="merch-promo-wrapper"
+      >
         <div className="merch-promo">
           <img className="merch-promo_image" src="/images/merch-promo.png" />
           <div className="merch-promo_info">
@@ -70,15 +124,46 @@ const HomePage = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </motion.div>
       <div className="categories-links">
-        <Link to="/menus/cheesecakes">Cheesecakes</Link>
-        <Link to="/menus/wedding-cakes">Wedding Cakes</Link>
-        <Link to="/menus/cupcakes">Cupcakes</Link>
+        <MotionLink
+          initial="hidden"
+          whileInView="visible"
+          variants={blockAnimation}
+          viewport={{ once: true }}
+          to="/menus/cheesecakes"
+        >
+          Cheesecakes
+        </MotionLink>
+        <MotionLink
+          initial="hidden"
+          whileInView="visible"
+          variants={blockAnimation}
+          viewport={{ once: true }}
+          to="/menus/wedding-cakes"
+        >
+          Wedding Cakes
+        </MotionLink>
+        <MotionLink
+          initial="hidden"
+          whileInView="visible"
+          variants={blockAnimation}
+          viewport={{ once: true }}
+          to="/menus/cupcakes"
+        >
+          Cupcakes
+        </MotionLink>
       </div>
-      <Link to="/location" className="promo-location">
-        <div className="promo-location"></div>
-      </Link>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={blockAnimation}
+        viewport={{ once: true }}
+      >
+        <Link to="/location" className="promo-location">
+          <div className="promo-location"></div>
+        </Link>
+      </motion.div>
     </div>
   );
 };

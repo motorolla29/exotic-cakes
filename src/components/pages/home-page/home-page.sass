@@ -39,9 +39,9 @@
         display: flex
         justify-content: space-between
         width: 100%
-        max-width: 850px
+        max-width: 1000px
         height: fit-content
-        margin: 2em 4em
+        margin: 4em
         border-radius: 2em
         background: #ffaed680
         -webkit-box-shadow: 0 0 3em -1em rgba(0, 0, 0, 0.5)
@@ -88,10 +88,100 @@
                 &:hover
                     background: #C5B7FF
         
+    & .categories-links
+        width: 100%
+        display: flex
+        a
+            min-height: 500px
+            position: relative
+            font-family: Slime Box, Arial, sans-serif
+            aspect-ratio: 1/1
+            text-align: center
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 33.333333%
+            z-index: 1
+            font-size: 200%
+            background: #454545
+            text-shadow: 2px 2px 2px #454545
+            overflow: hidden
+            transition: all 0.5s ease
+            &:hover
+                background: #481E5C
+                &::after
+                    transform: scale(1.1)
+            
+            &:nth-child(1)
+                color: #fffbe8
+                &::after
+                    background: no-repeat url(/public/images/cheesecakeslinkback.png)
+            &:nth-child(2)
+                color: #C5B7FF
+                &::after
+                    background: no-repeat url(/public/images/weddingcakeslinkback.jpg)
+            &:nth-child(3)
+                color: #ffaed7
+                &::after
+                    background: no-repeat url(/public/images/cupcakeslinkback.png)
+                    
+            &:nth-child(1), &:nth-child(2), &:nth-child(3)
+                &::after
+                    content: ""
+                    background-size: cover
+                    background-position: center
+                    opacity: 0.5
+                    top: 0
+                    left: 0
+                    bottom: 0
+                    right: 0
+                    position: absolute
+                    z-index: -1
+                    transition: all 0.5s ease
+    & .promo-location
+        width: 100%
+        min-height: 220px
+        aspect-ratio: 16/9
+        background: no-repeat url(/public/images/promo-location-page.png)
+        background-size: cover
+        background-position: left
+    & .meet-chef-promo
+        font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
+        background: #541a8bef
+        text-align: center
+        
+        h1
+            color: #ffaed7
+            padding: 1em 25% 0.5em 25%
+            transition: 0.2s ease
+
+        p
+            color: #f7f49ddd
+            font-size: 1.5em
+            padding: 0 20% 1em 20%
+            text-indent: 0em
+            transition: 0.2s ease
+            span
+                color: #C5B7FF
+        &_cover
+            width: 100%
+            min-height: 145px
+            aspect-ratio: 2710/1024
+            background: no-repeat url(/public/images/d3e5fd57-531b-4b7a-a423-e42b84a8d7e4.png)
+            background-size: cover
+            background-position: left
+                
+                
 @media (max-width: 1280px)
     .home-page
         & .play-icon
             font-size: 14px
+        & .meet-chef-promo
+            font-size: 14px
+            h1
+                padding: 1em 10% 0.5em 10%
+            p
+                padding: 0 5% 1em 5%
 @media (max-width: 1024px)
     .home-page
         & .play-icon
@@ -99,6 +189,9 @@
         & .merch-promo
             font-size: 14px
             margin: 2em
+        & .meet-chef-promo
+            font-size: 12px
+
             
 @media (max-width: 768px)
     .home-page
@@ -119,4 +212,16 @@
                 padding: 0 2em 2em 2em
                 &_title
                     margin-top: 0
+        & .categories-links
+            flex-direction: column
+            a
+                width: 100%
+                min-height: auto
+        & .meet-chef-promo
+            font-size: 10px
+@media ( max-width: 480px )
+    .home-page
+        & .meet-chef-promo
+            font-size: 8px
+    
         

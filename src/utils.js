@@ -3,6 +3,25 @@ export const customScrollController = {
   disableScroll() {
     customScrollController.scroll =
       window.scrollY || document.documentElement.scrollTop;
+
+    document.body.style.setProperty('position', 'fixed');
+    document.body.style.setProperty(
+      'top',
+      `${-customScrollController.scroll}px`
+    );
+    document.querySelector('.header-drip').classList.remove('hidden');
+    setTimeout(() => {
+      document.body.style.setProperty('top', `0px`);
+    }, 350);
+  },
+  enableScroll() {
+    document.body.style.removeProperty('position');
+    document.body.style.removeProperty('top');
+  },
+  disableScrollWithRetention() {
+    customScrollController.scroll =
+      window.scrollY || document.documentElement.scrollTop;
+
     document.body.style.setProperty('position', 'fixed');
     document.body.style.setProperty(
       'top',
@@ -10,7 +29,7 @@ export const customScrollController = {
     );
     document.querySelector('.header-drip').classList.remove('hidden');
   },
-  enableScroll() {
+  enableScrollWithRetention() {
     document.body.style.removeProperty('position');
     document.body.style.removeProperty('top');
     window.scrollTo(0, customScrollController.scroll);

@@ -37,7 +37,8 @@ const MenuItems = observer(({ category }) => {
           : null;
         setItems(arr);
         setFirstLoading(false);
-      });
+      })
+      .catch((err) => console.log(err));
   }, [category]);
 
   const onSeeMoreButtonClickHandler = () => {

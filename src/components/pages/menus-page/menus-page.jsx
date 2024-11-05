@@ -5,6 +5,7 @@ import './menus-page.sass';
 
 const MenusPage = () => {
   const { category } = useParams();
+  window.scrollTo(0, 0);
 
   return (
     <div className="menus-page">

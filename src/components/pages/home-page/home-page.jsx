@@ -38,6 +38,20 @@ const HomePage = () => {
           />
         )}
       </div>
+
+      <div className="meet-chef-promo">
+        <h1>Meet Chef Luca Moretti, the Master of Imagination and Taste</h1>
+        <p>
+          <span>Chef Luca Moretti</span> has a unique vision for the world of
+          desserts. With every creation, he combines artistry with innovation,
+          transforming cakes, cookies, and pastries into edible masterpieces.
+          From a car-shaped birthday cake to Australia-shaped cheesecake, every
+          Exotic Cakes design is crafted to surprise, delight, and make every
+          occasion unforgettable. Join him on this delicious journey to explore
+          flavors and forms that are as wild as your imagination.
+        </p>
+        <div className="meet-chef-promo_cover"></div>
+      </div>
       <div className="merch-promo-wrapper">
         <div className="merch-promo">
           <img className="merch-promo_image" src="/images/merch-promo.png" />
@@ -57,6 +71,14 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <div className="categories-links">
+        <Link to="/menus/cheesecakes">Cheesecakes</Link>
+        <Link to="/menus/wedding-cakes">Wedding Cakes</Link>
+        <Link to="/menus/cupcakes">Cupcakes</Link>
+      </div>
+      <Link to="/location" className="promo-location">
+        <div className="promo-location"></div>
+      </Link>
     </div>
   );
 };

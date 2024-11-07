@@ -193,6 +193,14 @@ const CartItem = observer(({ item }) => {
           <RiDeleteBin5Line onClick={onDeleteBinClick} />
         </div>
       </div>
+      <div className="cart-item_cancel-delete-button-container">
+        <div className="cart-item_cancel-delete-button">
+          <svg>
+            <rect></rect>
+          </svg>
+          <span>Cancel</span>
+        </div>
+      </div>
     </motion.div>
   );
 });

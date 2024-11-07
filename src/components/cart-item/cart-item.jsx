@@ -1,5 +1,7 @@
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
+import { motion } from 'framer-motion';
 
 import { TbPencilHeart } from 'react-icons/tb';
 import { LuCake } from 'react-icons/lu';
@@ -10,6 +12,7 @@ import { TiMinusOutline } from 'react-icons/ti';
 import useWindowSize from '../../hooks/use-window-size';
 import store from '../../store/store';
 import { baseImagesURL, baseMerchImagesURL } from '../../const';
+import { cartItemExitAnimationSequence } from '../../animations';
 
 import './cart-item.sass';
 
@@ -32,6 +35,7 @@ const CartItem = observer(({ item }) => {
     merchVariants,
   } = item;
   const [ww] = useWindowSize();
+  const cartItemRef = useRef();
 
   const onQuantityInputHandler = (e) => {
     e.target.value = ~~e.target.value;
@@ -43,8 +47,16 @@ const CartItem = observer(({ item }) => {
     }
   };
 
+  const onDeleteBinClick = () => {
+    store.removeItemFromCart(item);
+  };
+
   return (
-    <div className="cart-item">
+    <motion.div
+      ref={cartItemRef}
+      exit={cartItemExitAnimationSequence(cartItemRef)}
+      className="cart-item"
+    >
       <div className="cart-item_main">
         <Link
           to={
@@ -178,14 +190,10 @@ const CartItem = observer(({ item }) => {
       <div className="cart-item_total">
         <div>
           ${price * quantity}
-          <RiDeleteBin5Line
-            onClick={() => {
-              store.removeItemFromCart(item);
-            }}
-          />
+          <RiDeleteBin5Line onClick={onDeleteBinClick} />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 });
 

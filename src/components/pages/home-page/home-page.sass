@@ -33,6 +33,7 @@
         background: no-repeat url(/public/images/logo-background.png)
         background-size: cover
         background-position: center
+        margin-top: -1px
     & .merch-promo
         font-size: 16px
         user-select: none
@@ -99,11 +100,11 @@
             aspect-ratio: 1/1
             text-align: center
             width: 35%
-            margin: -1%
+            margin: 0 -1px
             display: flex
             justify-content: center
             align-items: center
-            z-index: 1
+            z-index: 0
             font-size: 200%
             overflow: hidden
             text-shadow: 2px 2px 2px #454545
@@ -157,10 +158,12 @@
         background: no-repeat url(/public/images/promo-location-page.png)
         background-size: cover
         background-position: left
+        margin-top: -1px
     & .meet-chef-promo
         font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
         background: #541a8bef
         text-align: center
+        margin-top: -1px
         
         h1
             color: #ffaed7
@@ -207,6 +210,8 @@
             
 @media (max-width: 768px)
     .home-page
+        & .player-wrapper
+            min-height: 675px
         & .react-player
             video
                 width: auto!important
@@ -228,12 +233,17 @@
             flex-direction: column
             a
                 width: 100%
+                margin: 0
                 min-height: auto
         & .meet-chef-promo
             font-size: 10px
 @media ( max-width: 480px )
     .home-page
+        & .player-wrapper
+            aspect-ratio: 0.7111111111111111111
+            min-height: auto
         & .meet-chef-promo
             font-size: 8px
+
     
         

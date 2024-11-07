@@ -35,6 +35,7 @@
                 background-position: center
                 width: 50%
                 padding: 0 6em
+                margin-bottom: -1px
                 h1
                     display: flex
                     color: #551A8B
@@ -53,6 +54,7 @@
                 object-fit: cover
                 pointer-events: none
                 width: 50%
+                margin-bottom: -1px
 
 @media (max-width: 1440px)
     .about-page
@@ -70,6 +72,7 @@
                     padding: 0 1em
 @media (max-width: 930px)
     .about-page
+        font-size: 14px
         &_history
             font-size: 14px
             &_block
@@ -77,6 +80,8 @@
                     width: 100%
                 div
                     padding: 10vh 10vw
+                img
+                    aspect-ratio: 4/3
                 &:nth-child(odd)
                     flex-direction: column
                 &:nth-child(even)
@@ -86,9 +91,17 @@
         &_history
             &_block
                 div
-                    padding: 5vh 5vw
+                    padding: 1em 5vw 2em 5vw
+                    
 @media (max-width: 480px)
     .about-page
+        font-size: 12px
         &_history
             font-size: 12px
+
+@media (max-width: 360px)
+    .about-page
+        font-size: 10px
+        &_history
+            font-size: 10px
                     

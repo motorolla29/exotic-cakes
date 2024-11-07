@@ -10,18 +10,28 @@ import './header.sass';
 
 const Header = observer(() => {
   const [ww] = useWindowSize();
+  const onHeaderLinksClick = () => {
+    store.hamburgerMenu ? store.toggleHamburgerMenu(false) : null;
+  };
+  const getHamburgerIconSize = (width) => {
+    if (width > 480) return 30;
+    if (width <= 480 && width > 360) return 26;
+    if (width <= 360) return 24;
+    return 32;
+  };
+
   return (
     <div className="header">
       {ww <= 1024 ? (
         <Hamburger
           toggled={store.hamburgerMenu}
           toggle={() => store.toggleHamburgerMenu(!store.hamburgerMenu)}
-          size={ww > 480 ? 30 : 26}
+          size={getHamburgerIconSize(ww)}
           color="#551A8B"
           rounded
         />
       ) : null}
-      <Link to="/" className="header_logo">
+      <Link to="/" onClick={onHeaderLinksClick} className="header_logo">
         <img src="/images/EC-logo-8bit.png" alt="logo" />
       </Link>
       <div className="header_right-side">
@@ -29,27 +39,33 @@ const Header = observer(() => {
           <div className="header_right-side_navbar">
             <div className="header_right-side_navbar_link">
               <div className="header_right-side_navbar_link">
-                <NavLink to={'/'}>Home</NavLink>
+                <NavLink onClick={onHeaderLinksClick} to={'/'}>
+                  Home
+                </NavLink>
               </div>
-              <NavLink to={'/menus'}>Menus</NavLink>
+              <NavLink onClick={onHeaderLinksClick} to={'/menus'}>
+                Menus
+              </NavLink>
             </div>
             <div className="header_right-side_navbar_link">
-              <NavLink to={'/about'}>About</NavLink>
+              <NavLink onClick={onHeaderLinksClick} to={'/about'}>
+                About
+              </NavLink>
             </div>
             <div className="header_right-side_navbar_link">
-              <NavLink to={'/location'}>Location</NavLink>
+              <NavLink onClick={onHeaderLinksClick} to={'/location'}>
+                Location
+              </NavLink>
             </div>
             <div className="header_right-side_navbar_link">
-              <NavLink to={'/merch'}>Merch</NavLink>
+              <NavLink onClick={onHeaderLinksClick} to={'/merch'}>
+                Merch
+              </NavLink>
             </div>
           </div>
         ) : null}
         <Link to="/cart" className="header_right-side_cart-icon">
-          <CartIcon
-            onClick={() =>
-              store.hamburgerMenu ? store.toggleHamburgerMenu(false) : null
-            }
-          />
+          <CartIcon onClick={onHeaderLinksClick} />
           {store.cartItems.length ? (
             <div className="header_right-side_cart-icon_counter">
               <span>

@@ -52,8 +52,8 @@ const ImageGallery = ({ item, images, slideIndex, setSlideIndex }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: true,
-    nextArrow: images && images.length > 1 ? <CustomNextArrow /> : null,
-    prevArrow: images && images.length > 1 ? <CustomPrevArrow /> : null,
+    nextArrow: images && images.length > 1 ? <CustomNextArrow /> : <></>,
+    prevArrow: images.length > 1 ? <CustomPrevArrow /> : <></>,
     beforeChange: (current, next) => {
       setSlideIndex(next);
     },

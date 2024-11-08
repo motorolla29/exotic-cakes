@@ -16,10 +16,10 @@ const ImageGallerySkeleton = (props) => {
       <rect x="0" y="0" rx="5" ry="5" width="400" height="400" />
       {ww < 768 ? (
         <>
-          <circle cx="45%" cy="415" r="4" />
-          <circle cx="48.333%" cy="415" r="4" />
-          <circle cx="51.666%" cy="415" r="4" />
-          <circle cx="55%" cy="415" r="4" />
+          <circle cx="44%" cy="415" r="5" />
+          <circle cx="48%" cy="415" r="5" />
+          <circle cx="52%" cy="415" r="5" />
+          <circle cx="56%" cy="415" r="5" />
           <rect x="0" y="430" rx="0" ry="0" width="100%" height="1" />
         </>
       ) : (

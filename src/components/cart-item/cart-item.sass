@@ -1,3 +1,10 @@
+
+.cart-item-container
+    display: flex
+    width: 100%
+    &.deletion
+        opacity: 0.2
+    
 .cart-item
     display: flex
     position: relative
@@ -128,7 +135,7 @@
                 stroke: #cbcbcb
                 stroke-width: 4
                 stroke-dasharray: 334.4269714355469 0
-                stroke-dashoffset: -59
+                stroke-dashoffset: -60
                 stroke-linecap: round
                 rx: 10px
                 ry: 10px
@@ -146,10 +153,14 @@
 @keyframes strokeRect
     0%
         stroke-dasharray: 334.4269714355469 0 
-        stroke-dashoffset: -60 // Offset amount
+        stroke-dashoffset: -60
 	
-    100%
+    99.99%
+        stroke-width: 4
         stroke-dasharray: 0 334.4269714355469
+    
+    100%
+        stroke-width: 0
 	
 
 

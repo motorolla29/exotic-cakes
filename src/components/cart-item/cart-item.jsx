@@ -96,7 +96,7 @@ const CartItem = observer(({ item }) => {
             >
               <p className="cart-item_main_info_title">{title}</p>
             </Link>
-            {ww <= 768 ? (
+            {ww <= 768 && ww > 480 && ww <= 480 && !deletion ? (
               <div className="cart-item_sm-price-quantity">
                 <span className="cart-item_price">
                   Price:<span>${price}</span>
@@ -129,48 +129,52 @@ const CartItem = observer(({ item }) => {
                 </div>
               </div>
             ) : null}
-            {option ? (
-              <p className="cart-item_main_info_options">
-                {`${optionName}: `}
-                <span>{option}</span>
-              </p>
-            ) : null}
-            {spongeVariant ? (
-              <p className="cart-item_main_info_sponge">
-                Sponge: <span>{spongeVariant}</span>
-              </p>
-            ) : null}
-            {fillVariant ? (
-              <p className="cart-item_main_info_filling">
-                Filling Icing: <span>{fillVariant}</span>
-              </p>
-            ) : null}
-            {merchVariants
-              ? Object.entries(merchVariants).map((it) => {
-                  return (
-                    <p key={it} className="cart-item_main_info_filling">
-                      {it[0]}: <span>{it[1]}</span>
-                    </p>
-                  );
-                })
-              : null}
-            {cakeSign ? (
-              <div className="cart-item_main_info_cake-sign">
-                <span>
-                  <LuCake />
-                  Write on cake:
-                </span>
-                <p>{cakeSign}</p>
-              </div>
-            ) : null}
-            {cartMessage ? (
-              <div className="cart-item_main_info_card-message">
-                <span>
-                  <TbPencilHeart />
-                  Card with handwritten text:
-                </span>
-                <p>{cartMessage}</p>
-              </div>
+            {ww > 480 || !deletion ? (
+              <>
+                {option ? (
+                  <p className="cart-item_main_info_options">
+                    {`${optionName}: `}
+                    <span>{option}</span>
+                  </p>
+                ) : null}
+                {spongeVariant ? (
+                  <p className="cart-item_main_info_sponge">
+                    Sponge: <span>{spongeVariant}</span>
+                  </p>
+                ) : null}
+                {fillVariant ? (
+                  <p className="cart-item_main_info_filling">
+                    Filling Icing: <span>{fillVariant}</span>
+                  </p>
+                ) : null}
+                {merchVariants
+                  ? Object.entries(merchVariants).map((it) => {
+                      return (
+                        <p key={it} className="cart-item_main_info_filling">
+                          {it[0]}: <span>{it[1]}</span>
+                        </p>
+                      );
+                    })
+                  : null}
+                {cakeSign ? (
+                  <div className="cart-item_main_info_cake-sign">
+                    <span>
+                      <LuCake />
+                      Write on cake:
+                    </span>
+                    <p>{cakeSign}</p>
+                  </div>
+                ) : null}
+                {cartMessage ? (
+                  <div className="cart-item_main_info_card-message">
+                    <span>
+                      <TbPencilHeart />
+                      Card with handwritten text:
+                    </span>
+                    <p>{cartMessage}</p>
+                  </div>
+                ) : null}
+              </>
             ) : null}
           </div>
         </div>
@@ -211,7 +215,7 @@ const CartItem = observer(({ item }) => {
           </div>
         </div>
       </div>
-      {deletion && (
+      {deletion && ww > 480 && (
         <div className="cart-item_cancel-delete-button-container">
           <div
             onClick={onCancelDeletionButtonClick}
@@ -221,6 +225,15 @@ const CartItem = observer(({ item }) => {
               <rect></rect>
             </svg>
             <span>Cancel</span>
+          </div>
+        </div>
+      )}
+      {deletion && ww <= 480 && (
+        <div className="cart-item_cancel-delete-progressbar-sm-container">
+          <div className="cart-item_cancel-delete-progressbar-sm">
+            <div className="back-line"></div>
+            <div className="front-line"></div>
+            <span onClick={onCancelDeletionButtonClick}>Cancel</span>
           </div>
         </div>
       )}

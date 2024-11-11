@@ -48,7 +48,8 @@ const ItemPage = () => {
       .then((arr) => {
         setLoadedImagesUrls(arr);
         setLoading(false);
-      });
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   return (

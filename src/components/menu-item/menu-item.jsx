@@ -11,10 +11,11 @@ import './menu-item.sass';
 
 const MenuItem = ({ category, id, title, minPrice, price, images }) => {
   const [loadedImagesUrls, setLoadedImagesUrls] = useState([]);
+  console.log(loadedImagesUrls);
   useEffect(() => {
     Promise.all(
       images.map((image) => {
-        return loadImagePromise(baseImagesURL, image)
+        return loadImagePromise(`${baseImagesURL}/preview`, image)
           .then((url) => {
             return url;
           })
@@ -40,7 +41,7 @@ const MenuItem = ({ category, id, title, minPrice, price, images }) => {
               <img
                 key={image}
                 className="menu-item_slider_img"
-                src={`${baseImagesURL}/${image}`}
+                src={`${baseImagesURL}/preview/${image}`}
                 alt="product_image"
               />
             ))

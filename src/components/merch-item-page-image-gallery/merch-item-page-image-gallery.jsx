@@ -1,13 +1,12 @@
 import Slider from 'react-slick';
 import { useEffect, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import { BiSolidLeftArrow } from 'react-icons/bi';
 import { BiSolidRightArrow } from 'react-icons/bi';
 import { baseMerchImagesURL } from '../../const';
 
 import './merch-item-page-image-gallery.sass';
-import { useSearchParams } from 'react-router-dom';
-import { option } from 'framer-motion/client';
 
 const MerchItemPageImageGallery = ({
   item,

@@ -8,6 +8,7 @@ import MerchInfoSkeleton from '../../skeletons/merch-info-skeleton';
 
 import { loadImagePromise } from '../../../utils';
 import { baseMerchImagesURL } from '../../../const';
+import useWindowSize from '../../../hooks/use-window-size';
 
 import './merch-item-page.sass';
 
@@ -18,6 +19,7 @@ const MerchItemPage = () => {
     useState(undefined);
   const [loadedImagesUrls, setLoadedImagesUrls] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [ww] = useWindowSize();
 
   useEffect(() => window.scrollTo(0, 0), []);
 
@@ -49,6 +51,20 @@ const MerchItemPage = () => {
         setLoading(false);
       });
   }, []);
+
+  useEffect(() => {
+    if (ww <= 768) {
+      document
+        .querySelector('.header-drip')
+        .style.setProperty('display', 'none');
+    }
+    return () => {
+      if (ww <= 768)
+        document
+          .querySelector('.header-drip')
+          .style.setProperty('display', 'block');
+    };
+  });
 
   return (
     <div className="merch-item-page-cover">

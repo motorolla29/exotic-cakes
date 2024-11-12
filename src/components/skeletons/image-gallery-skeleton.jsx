@@ -13,7 +13,14 @@ const ImageGallerySkeleton = (props) => {
       foregroundColor="#c5b7ff3e"
       {...props}
     >
-      <rect x="0" y="0" rx="5" ry="5" width="400" height="400" />
+      <rect
+        x="0"
+        y="0"
+        rx={`${ww < 768 ? 0 : 5}`}
+        ry={`${ww < 768 ? 0 : 5}`}
+        width="400"
+        height="400"
+      />
       {ww < 768 ? (
         <>
           <circle cx="44%" cy="415" r="5" />

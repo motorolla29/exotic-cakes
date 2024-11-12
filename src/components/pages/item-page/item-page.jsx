@@ -8,6 +8,7 @@ import ProductInfoSkeleton from '../../skeletons/product-info-skeleton';
 
 import { loadImagePromise } from '../../../utils';
 import { baseImagesURL } from '../../../const';
+import useWindowSize from '../../../hooks/use-window-size';
 
 import './item-page.sass';
 
@@ -19,8 +20,25 @@ const ItemPage = () => {
     useState(undefined);
   const [loadedImagesUrls, setLoadedImagesUrls] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [ww] = useWindowSize();
 
-  useEffect(() => window.scrollTo(0, 0), []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    if (ww <= 768) {
+      document
+        .querySelector('.header-drip')
+        .style.setProperty('display', 'none');
+    }
+    return () => {
+      if (ww <= 768)
+        document
+          .querySelector('.header-drip')
+          .style.setProperty('display', 'block');
+    };
+  });
 
   useEffect(() => {
     setLoading(true);

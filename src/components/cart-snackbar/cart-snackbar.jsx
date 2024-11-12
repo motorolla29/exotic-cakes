@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import store from '../../store/store';
 import { baseImagesURL, baseMerchImagesURL } from '../../const';
-import { loadImagePromise } from '../../utils';
 
 import './cart-snackbar.sass';
 
@@ -19,7 +18,6 @@ const CartSnackbar = observer(() => {
   const cartItemsTotalCost = store.cartItems.reduce((acc, it) => {
     return acc + it.quantity * it.price;
   }, 0);
-  const [productImageUrl, setProductImageUrl] = useState('');
 
   const [timerPaused, setTimerPaused] = useState(false);
   const [timerOver, setTimerOver] = useState(false);
@@ -52,16 +50,6 @@ const CartSnackbar = observer(() => {
 
   useEffect(() => {
     reset();
-    loadImagePromise(
-      snackbar.item?.type === 'merch' ? baseMerchImagesURL : baseImagesURL,
-      snackbar.item?.image
-    )
-      .then((url) => {
-        setProductImageUrl(url);
-      })
-      .catch((defaultUrl) => {
-        setProductImageUrl(defaultUrl);
-      });
   }, [snackbar.item]);
 
   return (
@@ -83,7 +71,7 @@ const CartSnackbar = observer(() => {
                   snackbar.item.type === 'merch'
                     ? baseMerchImagesURL
                     : baseImagesURL
-                }/${productImageUrl}`}
+                }/${snackbar.item.image}`}
               />
               <div>
                 <span>ADDED TO CART</span>

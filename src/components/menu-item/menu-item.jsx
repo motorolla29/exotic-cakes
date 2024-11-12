@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import { baseImagesURL } from '../../const';
-import { loadImagePromise } from '../../utils';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -10,22 +8,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import './menu-item.sass';
 
 const MenuItem = ({ category, id, title, minPrice, price, images }) => {
-  // const [loadedImagesUrls, setLoadedImagesUrls] = useState([]);
-  // useEffect(() => {
-  //   Promise.all(
-  //     images.map((image) => {
-  //       return loadImagePromise(`${baseImagesURL}/preview`, image)
-  //         .then((url) => {
-  //           return url;
-  //         })
-  //         .catch((defaultUrl) => {
-  //           return defaultUrl;
-  //         });
-  //     })
-  //   ).then((arr) => {
-  //     setLoadedImagesUrls(arr);
-  //   });
-  // }, []);
   return (
     <Link className="menu-item" to={`/menus/${category}/${id}`}>
       <div className="menu-item_slider-container">

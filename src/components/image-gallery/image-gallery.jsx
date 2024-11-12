@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import Slider from 'react-slick';
 
 import useWindowSize from '../../hooks/use-window-size';
@@ -6,7 +7,6 @@ import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
 import { baseImagesURL } from '../../const';
 
 import './image-gallery.sass';
-import { useSearchParams } from 'react-router-dom';
 
 const ImageGallery = ({ item, images, slideIndex, setSlideIndex }) => {
   const sliderRef = useRef(null);

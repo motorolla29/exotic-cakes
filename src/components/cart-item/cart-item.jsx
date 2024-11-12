@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
-import { motion } from 'framer-motion';
+import { animate, motion } from 'framer-motion';
 
 import { TbPencilHeart } from 'react-icons/tb';
 import { LuCake } from 'react-icons/lu';
@@ -38,6 +38,7 @@ const CartItem = observer(({ item }) => {
   const cartItemRef = useRef();
   const [deletion, setDeletion] = useState(false);
   const [deletionTimeout, setDeletionTimeout] = useState(null);
+  const [animateDeletionTimeout, setAnimateDeletionTimeout] = useState(null);
 
   const onQuantityInputHandler = (e) => {
     e.target.value = ~~e.target.value;
@@ -51,26 +52,29 @@ const CartItem = observer(({ item }) => {
 
   const onDeleteBinClick = () => {
     setDeletion(true);
+    setAnimateDeletionTimeout(
+      setTimeout(() => {
+        animate(cartItemExitAnimationSequence(cartItemRef.current));
+      }, 4000)
+    );
     setDeletionTimeout(
       setTimeout(() => {
         store.removeItemFromCart(item);
-      }, 4000)
+      }, 4600)
     );
   };
 
   const onCancelDeletionButtonClick = () => {
     if (deletionTimeout) {
+      clearTimeout(animateDeletionTimeout);
       clearTimeout(deletionTimeout);
     }
     setDeletion(false);
   };
 
+  console.log('comp');
   return (
-    <motion.div
-      ref={cartItemRef}
-      exit={cartItemExitAnimationSequence(cartItemRef)}
-      className="cart-item"
-    >
+    <motion.div ref={cartItemRef} className="cart-item">
       <div className={`cart-item-container ${deletion && 'deletion'}`}>
         <div className="cart-item_main">
           <Link
@@ -79,14 +83,16 @@ const CartItem = observer(({ item }) => {
                 ? `/merch/${id}?${stringParams ? stringParams : ''}`
                 : `/menus/${category}/${id}?${stringParams ? stringParams : ''}`
             }
-            className="cart-item_main_img"
+            className="cart-item_main_img-link"
           >
-            <img
-              src={`${
-                type === 'merch' ? baseMerchImagesURL : baseImagesURL
-              }/${image}`}
-              alt="product-image"
-            />
+            <div className="cart-item_main_img-container">
+              <img
+                src={`${
+                  type === 'merch' ? baseMerchImagesURL : baseImagesURL
+                }/preview/${image}`}
+                alt="product-image"
+              />
+            </div>
           </Link>
           <div className="cart-item_main_info">
             <Link
@@ -96,7 +102,7 @@ const CartItem = observer(({ item }) => {
             >
               <p className="cart-item_main_info_title">{title}</p>
             </Link>
-            {ww <= 768 && ww > 480 && ww <= 480 && !deletion ? (
+            {(ww <= 768 && ww > 480) || (ww <= 480 && !deletion) ? (
               <div className="cart-item_sm-price-quantity">
                 <span className="cart-item_price">
                   Price:<span>${price}</span>

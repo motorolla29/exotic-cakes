@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
-import { AnimatePresence } from 'framer-motion';
 
 import useWindowSize from '../../../hooks/use-window-size';
 import CartItem from '../../cart-item/cart-item';
@@ -10,30 +9,13 @@ import store from '../../../store/store';
 import './cart-page.sass';
 
 const CartPage = observer(() => {
-  const [cartItemsOnPage, setCartItemsOnPage] = useState(
-    store.cartItems.length
-  );
-
   const [ww] = useWindowSize();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  useEffect(() => {
-    if (store.cartItems.length > 0) {
-      setCartItemsOnPage(store.cartItems.length);
-      return;
-    }
-    if (store.cartItems.length === 0) {
-      setTimeout(() => {
-        setCartItemsOnPage(0);
-      }, 500);
-      // таймаут перехода на экран пустой корзины при удалении последнего элемента корзины для пропуска анимации
-    }
-  }, [store.cartItems.length]);
-
-  return cartItemsOnPage ? (
+  return store.cartItems.length ? (
     <div className="cart-page">
       <h1 className="cart-page_title">YOUR ORDER</h1>
       <div className="cart-page_heading">
@@ -46,13 +28,13 @@ const CartPage = observer(() => {
         ) : null}
         <span className="cart-page_heading_total">Total</span>
       </div>
+
       <div className="cart-page_items">
-        <AnimatePresence>
-          {store.cartItems.map((it) => (
-            <CartItem key={JSON.stringify(it)} item={it} />
-          ))}
-        </AnimatePresence>
+        {store.cartItems.map((it) => (
+          <CartItem key={JSON.stringify(it)} item={it} />
+        ))}
       </div>
+
       <div className="cart-page_order-summary">
         <h2 className="cart-page_order-summary_title">ORDER SUMMARY</h2>
         <div className="cart-page_order-summary_notes">

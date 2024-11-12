@@ -65,14 +65,18 @@
                 
     &_main
         width: 50%
-        &_img
+        &_img-link
             max-width: 7em
+        &_img-container
+            position: relative
+            width: 7em
+            background: #f3f3f3
             img
                 display: flex
                 width: 100%
                 border-radius: 5px
                 aspect-ratio: 1/1
-                background: #fff
+                //background: #fff
                 object-fit: cover
         &_info
             padding-left: 1em
@@ -236,6 +240,18 @@
                 min-width: 2.5em
 @media (max-width: 360px)
     .cart-item
+        &_counter
+            padding: 0.5em 0 0 0
+            align-items: flex-start
+            flex-direction: column
+            &_input
+                padding: 0.5em 0 0 0
+@media (max-width: 320px)
+    .cart-item
+        &_main
+            flex-direction: column
+            &_info
+                padding: 1em 0 0 0
         &_counter
             padding: 0.5em 0 0 0
             flex-wrap: wrap

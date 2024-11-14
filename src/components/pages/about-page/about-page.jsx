@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { blockAnimation, firstBlockAnimation } from '../../../animations';
+import BlurhashImage from '../../blurhash-image/blurhash-image';
 
 import './about-page.sass';
-import BlurhashImage from '../../blurhash-image/blurhash-image';
 
 const AboutPage = () => {
   window.scrollTo(0, 0);

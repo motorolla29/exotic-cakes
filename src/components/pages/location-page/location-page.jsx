@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import moment from 'moment/moment';
 
 import LocationPageMap from '../../location-page-map/location-page-map';
 import { blockAnimation, firstBlockAnimation } from '../../../animations';
+import BlurhashImage from '../../blurhash-image/blurhash-image';
 
 import './location-page.sass';
-import BlurhashImage from '../../blurhash-image/blurhash-image';
 
 const LocationPage = () => {
   window.scrollTo(0, 0);
@@ -75,7 +76,9 @@ const LocationPage = () => {
           className="menu_info"
         >
           <p className="menu_info_title">THIS WEEK'S MENU AT EXOTIC CAKES</p>
-          <p className="menu_info_date">W/C 23rd October</p>
+          <p className="menu_info_date">
+            W/C {moment().day(1).format('Do MMMM')}
+          </p>
           <div className="menu_info_items">
             <div className="menu_info_item">
               <p>TROPICAL SUNSET CAKE</p>

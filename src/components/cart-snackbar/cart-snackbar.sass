@@ -16,14 +16,20 @@
         &_info
             display: flex
             align-items: flex-start
-            img
+            &_img
+                display: flex
+                position: relative
                 border-radius: 4px
                 width: 4em
                 height: auto
                 aspect-ratio: 1/1
+                overflow: hidden
                 background: #f3f3f370
-                object-fit: cover
-            div
+                img
+                    display: flex
+                    width: 100%
+                    object-fit: cover
+            &_main
                 display: flex
                 flex-direction: column
                 font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
@@ -71,11 +77,6 @@
                     text-align: end
                     
                     
-@media ( max-width: 1280px )
-    .cart-snackbar
-@media ( max-width: 1024px )
-    .cart-snackbar
-        &_inner
 @media ( max-width: 768px )
     .cart-snackbar
         top: 7em

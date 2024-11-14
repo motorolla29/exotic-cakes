@@ -4,19 +4,21 @@
     align-items: flex-start
     width: 100%
     margin-bottom: -5em
-    &.image-gallery-skeleton
-    &.product-info-skeleton
+    & .merch-info-skeleton
+        margin: 0
+        padding: 0 2em
 
 .menu-item-skeleton
     position: relative
-.merch-item-skeleton
-.merch-item-page-image-gallery-skeleton
-.merch-info
+
 
 @media (max-width: 1024px) 
     .item-page-skeletons, .merch-item-page-skeletons
         margin-bottom: 0
         flex-direction: column
+        & .merch-info-skeleton
+            padding: 0
+
         .image-gallery-skeleton
             padding-bottom: 2em
 @media (max-width: 768px) 

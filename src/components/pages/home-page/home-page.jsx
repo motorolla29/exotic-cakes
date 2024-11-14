@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import { motion } from 'framer-motion';
@@ -13,7 +13,9 @@ import './home-page.sass';
 const HomePage = () => {
   const [videoPlaying, setVideoPlaying] = useState(true);
 
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const MotionLink = motion(Link);
 

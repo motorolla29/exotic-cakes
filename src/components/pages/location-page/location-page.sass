@@ -5,8 +5,11 @@
     font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
     &_img
         width: 50%
-        pointer-events: none
-        object-fit: cover
+        aspect-ratio: 4/3
+        img
+            user-select: none
+            pointer-events: none
+            object-fit: cover
     &_info
         width: 50%
         text-align: center
@@ -50,8 +53,11 @@
     font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
     &_img
         width: 50%
-        pointer-events: none
-        object-fit: cover
+        aspect-ratio: 4/3
+        img
+            user-select: none
+            pointer-events: none
+            object-fit: cover
     &_info
         padding: 1em 2em
         width: 50%
@@ -137,7 +143,6 @@
         flex-direction: column
         &_img
             width: 100%
-            aspect-ratio: 4/3
         &_info
             width: 100%
             &_items

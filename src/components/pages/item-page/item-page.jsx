@@ -5,9 +5,6 @@ import ImageGallery from '../../image-gallery/image-gallery';
 import ProductInfo from '../../product-info/product-info';
 import ImageGallerySkeleton from '../../skeletons/image-gallery-skeleton';
 import ProductInfoSkeleton from '../../skeletons/product-info-skeleton';
-
-import { loadImagePromise } from '../../../utils';
-import { baseImagesURL } from '../../../const';
 import useWindowSize from '../../../hooks/use-window-size';
 
 import './item-page.sass';
@@ -18,7 +15,6 @@ const ItemPage = () => {
   const [item, setItem] = useState({});
   const [gallerySlideImageIndex, setGallerySlideImageIndex] =
     useState(undefined);
-  const [loadedImagesUrls, setLoadedImagesUrls] = useState([]);
   const [loading, setLoading] = useState(true);
   const [ww] = useWindowSize();
 
@@ -48,26 +44,28 @@ const ItemPage = () => {
       })
       .then((item) => {
         setItem(item);
-        return item;
-      })
-      .then((item) => {
-        return Promise.all(
-          item.images.map((image) => {
-            return loadImagePromise(baseImagesURL, image)
-              .then((url) => {
-                return url;
-              })
-              .catch((defaultUrl) => {
-                return defaultUrl;
-              });
-          })
-        );
-      })
-      .then((arr) => {
-        setLoadedImagesUrls(arr);
         setLoading(false);
       })
       .catch((err) => console.log(err));
+    // PRELOADING IMAGES
+    // .then((item) => {
+    //   return Promise.all(
+    //     item.images.map((image) => {
+    //       return loadImagePromise(baseImagesURL, image)
+    //         .then((url) => {
+    //           return url;
+    //         })
+    //         .catch((defaultUrl) => {
+    //           return defaultUrl;
+    //         });
+    //     })
+    //   );
+    // })
+    // .then((arr) => {
+    //   setLoadedImagesUrls(arr);
+    //   setLoading(false);
+    // })
+    // .catch((err) => console.log(err));
   }, []);
 
   return (
@@ -81,14 +79,12 @@ const ItemPage = () => {
         <>
           <ImageGallery
             item={item}
-            images={loadedImagesUrls}
             slideIndex={gallerySlideImageIndex}
             setSlideIndex={setGallerySlideImageIndex}
           />
           <ProductInfo
             category={category}
             item={item}
-            images={loadedImagesUrls}
             setPhotoIndex={setGallerySlideImageIndex}
           />
         </>

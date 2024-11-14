@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import { baseImagesURL } from '../../const';
+import BlurhashImage from '../blurhash-image/blurhash-image';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -15,24 +16,21 @@ const MenuItem = ({ category, id, title, minPrice, price, images }) => {
           infinite={images.length > 1 ? true : false}
           arrows={false}
           dots={true}
-          lazyLoad
           className="menu-item_slider"
         >
           {images ? (
             images.map((image) => (
-              <img
-                key={image}
-                className="menu-item_slider_img"
-                src={`${baseImagesURL}/preview/${image}`}
-                alt="product_image"
-              />
+              <div key={image} className="menu-item_slider_img">
+                <BlurhashImage
+                  src={`${baseImagesURL}/preview/${image.src}`}
+                  hash={image.hash}
+                />
+              </div>
             ))
           ) : (
-            <img
-              className="menu-item_slider_img"
-              src={`${baseImagesURL}/no-photo.png`}
-              alt="product_image"
-            />
+            <div className="menu-item_slider_img">
+              <img src={`${baseImagesURL}/no-photo.png`} alt="no_image" />
+            </div>
           )}
         </Slider>
       </div>

@@ -21,7 +21,6 @@ $sliderDotSize: 14px
         background-size: cover
         background-position: center
 
-
     &_slider
         max-width: 100%
         border-top-radius: 1em
@@ -29,12 +28,14 @@ $sliderDotSize: 14px
         & .slick-slide
             div
                 display: flex
-                padding-bottom: 21px
         &_img
+            display: flex
             aspect-ratio: 1/1
-            object-fit: cover
+            img
+                object-fit: cover       
+
         & .slick-dots
-            bottom: 0
+            bottom: -21px
             & li
                 width: $sliderDotSize
                 height: $sliderDotSize
@@ -58,6 +59,7 @@ $sliderDotSize: 14px
         width: 100%
         display: flex
         flex-direction: column
+        margin-top: 21px
         &_title
             font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
             width: 100%

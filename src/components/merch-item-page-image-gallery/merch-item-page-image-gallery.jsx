@@ -5,15 +5,11 @@ import { useSearchParams } from 'react-router-dom';
 import { BiSolidLeftArrow } from 'react-icons/bi';
 import { BiSolidRightArrow } from 'react-icons/bi';
 import { baseMerchImagesURL } from '../../const';
+import BlurhashImage from '../blurhash-image/blurhash-image';
 
 import './merch-item-page-image-gallery.sass';
 
-const MerchItemPageImageGallery = ({
-  item,
-  images,
-  slideIndex,
-  setSlideIndex,
-}) => {
+const MerchItemPageImageGallery = ({ item, slideIndex, setSlideIndex }) => {
   const [searchParams] = useSearchParams();
   const currentOption = searchParams.get('option');
   const currentVariants = searchParams.get('variants');
@@ -93,12 +89,12 @@ const MerchItemPageImageGallery = ({
             setSlideIndex(next);
           }}
         >
-          {images.map((it) => {
+          {item.images.map((it) => {
             return (
-              <img
+              <BlurhashImage
                 key={it}
-                src={`${baseMerchImagesURL}/${it}`}
-                alt="merch_image"
+                src={`${baseMerchImagesURL}/${it.src}`}
+                hash={it.hash}
               />
             );
           })}
@@ -109,17 +105,17 @@ const MerchItemPageImageGallery = ({
           ref={(slider) => (sliderRef2 = slider)}
           nextArrow={<NextArrow />}
           prevArrow={<PrevArrow />}
-          slidesToShow={images.length === 2 ? 2 : 3}
+          slidesToShow={item.images.length === 2 ? 2 : 3}
           swipeToSlide={true}
           focusOnSelect={true}
           infinite={item.images.length > 1}
         >
-          {images.map((it) => {
+          {item.images.map((it) => {
             return (
-              <img
+              <BlurhashImage
                 key={it}
-                src={`${baseMerchImagesURL}/${it}`}
-                alt="merch_image"
+                src={`${baseMerchImagesURL}/${it.src}`}
+                hash={it.hash}
               />
             );
           })}

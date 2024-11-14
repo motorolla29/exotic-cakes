@@ -7,10 +7,11 @@ import AboutPage from '../pages/about-page/about-page';
 import LocationPage from '../pages/location-page/location-page';
 import MerchPage from '../pages/merch-page/merch-page';
 import CartPage from '../pages/cart-page/cart-page';
-
-import './app.sass';
 import ItemPage from '../pages/item-page/item-page';
 import MerchItemPage from '../pages/merch-item-page/merch-item-page';
+import Util from '../pages/util/util';
+
+import './app.sass';
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="merch/:merchItemId" element={<MerchItemPage />} />
           <Route path="something-else" element={<div />} />
           <Route path="cart" element={<CartPage />} />
+          <Route path="util" element={<Util />} />
         </Route>
       </Routes>
     </BrowserRouter>

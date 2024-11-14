@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import store from '../../store/store';
 import { baseImagesURL, baseMerchImagesURL } from '../../const';
+import BlurhashImage from '../blurhash-image/blurhash-image';
 
 import './cart-snackbar.sass';
 
@@ -66,14 +67,17 @@ const CartSnackbar = observer(() => {
         >
           <div className="cart-snackbar_inner">
             <div className="cart-snackbar_inner_info">
-              <img
-                src={`${
-                  snackbar.item.type === 'merch'
-                    ? baseMerchImagesURL
-                    : baseImagesURL
-                }/${snackbar.item.image}`}
-              />
-              <div>
+              <div className="cart-snackbar_inner_info_img">
+                <BlurhashImage
+                  src={`${
+                    snackbar.item.type === 'merch'
+                      ? baseMerchImagesURL
+                      : baseImagesURL
+                  }/preview/${snackbar.item.image.src}`}
+                  hash={snackbar.item.image.hash}
+                />
+              </div>
+              <div className="cart-snackbar_inner_info_main">
                 <span>ADDED TO CART</span>
                 <p>1 x {snackbar.item.title}</p>
               </div>

@@ -5,6 +5,7 @@ import LocationPageMap from '../../location-page-map/location-page-map';
 import { blockAnimation, firstBlockAnimation } from '../../../animations';
 
 import './location-page.sass';
+import BlurhashImage from '../../blurhash-image/blurhash-image';
 
 const LocationPage = () => {
   window.scrollTo(0, 0);
@@ -18,10 +19,13 @@ const LocationPage = () => {
         viewport={{ once: true }}
         className="store"
       >
-        <img
-          src="/images/exotic_cakes_is_a_confectionery_shop_with_a_handwritten_italics_logo_the_photo_was_taken_from_outsi_qv9rzco5s1wcp2rf3vhq_1.png"
-          className="store_img"
-        />
+        <div className="store_img">
+          <BlurhashImage
+            src="/images/exotic_cakes_is_a_confectionery_shop_with_a_handwritten_italics_logo_the_photo_was_taken_from_outsi_qv9rzco5s1wcp2rf3vhq_1.png"
+            hash="UAF5]SNy4TD%00?GIAM|~UMytlkAD*o}-:s;"
+            transitionDuration={0.75}
+          />
+        </div>
         <div className="store_info">
           <p>EXOTIC CAKES - A PLACE WHERE IMAGINATION MEETS BAKING</p>
           <p>
@@ -50,14 +54,19 @@ const LocationPage = () => {
         </div>
       </motion.div>
       <div className="menu">
-        <motion.img
+        <motion.div
           initial="hidden"
           whileInView="visible"
           variants={blockAnimation}
           viewport={{ once: true }}
           className="menu_img"
-          src="/images/confectionery_with_the_exotic_cakes__the_photo_was_taken_from_outside_where_the_sign_logo_written_i_bkvxqywrpc3muqkb1bvo_3.png"
-        />
+        >
+          <BlurhashImage
+            src="/images/confectionery_with_the_exotic_cakes__the_photo_was_taken_from_outside_where_the_sign_logo_written_i_bkvxqywrpc3muqkb1bvo_3.png"
+            hash="UIF5dBT}En~TOq={-oS~-?x]kW$+JCxakVa#"
+            transitionDuration={0.75}
+          />
+        </motion.div>
         <motion.div
           initial="hidden"
           whileInView="visible"

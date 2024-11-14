@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import MerchItemPageImageGallery from '../../merch-item-page-image-gallery/merch-item-page-image-gallery';
 import MerchInfo from '../../merch-info/merch-info';
 import MerchItemPageImageGallerySkeleton from '../../skeletons/merch-item-page-image-gallery-skeleton';
 import MerchInfoSkeleton from '../../skeletons/merch-info-skeleton';
 
-import { loadImagePromise } from '../../../utils';
-import { baseMerchImagesURL } from '../../../const';
 import useWindowSize from '../../../hooks/use-window-size';
 
 import './merch-item-page.sass';
@@ -17,7 +15,6 @@ const MerchItemPage = () => {
   const [item, setItem] = useState({});
   const [gallerySlideImageIndex, setGallerySlideImageIndex] =
     useState(undefined);
-  const [loadedImagesUrls, setLoadedImagesUrls] = useState([]);
   const [loading, setLoading] = useState(true);
   const [ww] = useWindowSize();
 
@@ -31,25 +28,27 @@ const MerchItemPage = () => {
       })
       .then((item) => {
         setItem(item);
-        return item;
-      })
-      .then((item) => {
-        return Promise.all(
-          item.images.map((image) => {
-            return loadImagePromise(baseMerchImagesURL, image)
-              .then((url) => {
-                return url;
-              })
-              .catch((defaultUrl) => {
-                return defaultUrl;
-              });
-          })
-        );
-      })
-      .then((arr) => {
-        setLoadedImagesUrls(arr);
         setLoading(false);
-      });
+      })
+      .catch((err) => console.log(err));
+    // PRELOADING IMAGES
+    // .then((item) => {
+    //   return Promise.all(
+    //     item.images.map((image) => {
+    //       return loadImagePromise(baseMerchImagesURL, image)
+    //         .then((url) => {
+    //           return url;
+    //         })
+    //         .catch((defaultUrl) => {
+    //           return defaultUrl;
+    //         });
+    //     })
+    //   );
+    // })
+    // .then((arr) => {
+    //   setLoadedImagesUrls(arr);
+    //   setLoading(false);
+    // });
   }, []);
 
   useEffect(() => {
@@ -78,15 +77,10 @@ const MerchItemPage = () => {
           <>
             <MerchItemPageImageGallery
               item={item}
-              images={loadedImagesUrls}
               slideIndex={gallerySlideImageIndex}
               setSlideIndex={setGallerySlideImageIndex}
             />
-            <MerchInfo
-              item={item}
-              images={loadedImagesUrls}
-              setPhotoIndex={setGallerySlideImageIndex}
-            />
+            <MerchInfo item={item} setPhotoIndex={setGallerySlideImageIndex} />
           </>
         )}
       </div>

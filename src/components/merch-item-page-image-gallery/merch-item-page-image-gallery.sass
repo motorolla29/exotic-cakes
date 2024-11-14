@@ -21,46 +21,43 @@
                     cursor: grabbing
                 
                 & .slick-slide
-                    
-                    // & .image-container
-                    //     position: relative
-                    //     background: #000
-                    //     aspect-ratio: 1/1
-                    //     text-align: center
                     div
                         display: flex
+                        aspect-ratio: 1/1
+                        width: 100%
+                        outline: none
+                        display: flex
+                        background: #fff
                         img
-                            aspect-ratio: 1/1
-                            background: #fff
                             object-fit: contain
-
 
     & .nav-slider
         & .slick-list
             margin: 0 5em
             & .slick-track
                 & .slick-slide
+                    display: flex
+                    justify-content: center
                     cursor: pointer
                     width: 6em
                     padding: 1em
                     opacity: 0.75
                     width: fit-content
                     div
+                        width: 100%
+                        max-height: 118px
+                        max-width: 118px
                         display: flex
-                        justify-content: center
+                        border-radius: 5px
+                        overflow: hidden
+                        aspect-ratio: 1/1
+                        background: #fff
                         img
-                            max-height: 118px
-                            max-width: 118px
-                            display: flex
-                            width: fit-content
-                            border-radius: 5px
-                            aspect-ratio: 1/1
-                            background: #fff
                             object-fit: contain
                     &.slick-current
                         opacity: 1
-                        img
-                            border: 1px solid #481E5C
+                        div
+                            outline: 1px solid #481E5C
                     &:hover
                         opacity: 1
         & .next-arrow, & .prev-arrow
@@ -104,26 +101,16 @@
             & .slick-list
                 margin: 0 70px
                 & .slick-track
-                    
                     & .slick-slide
                         padding: 5px
-                        div
-                            img
-                        &.slick-current
-                            img
-                        &:hover
             & .next-arrow, & .prev-arrow
                 top: 5px
                 width: 50px
                 height: calc(100% - 10px)
-                svg
-                    //font-size: 1.5em
             & .next-arrow
                 right: 10px
-                &:hover
             & .prev-arrow
                 left: 10px
-                &:hover
 @media (max-width: 480px)
     .merch-item-page-image-gallery
         & .nav-slider

@@ -8,7 +8,7 @@ import store from '../../store/store';
 import './merch-info.sass';
 import { object } from 'framer-motion/client';
 
-const MerchInfo = ({ item, images, setPhotoIndex }) => {
+const MerchInfo = ({ item, setPhotoIndex }) => {
   let [searchParams, setSearchParams] = useSearchParams();
   const optionsName = item.options ? Object.entries(item.options)[0][0] : null;
   const options = item.options ? Object.entries(item.options)[0][1] : null;
@@ -53,7 +53,7 @@ const MerchInfo = ({ item, images, setPhotoIndex }) => {
       stringParams: searchParams.toString(),
       id: item.id,
       title: item.title,
-      image: images[currentOption?.photoIndex || 0],
+      image: item.images[currentOption?.photoIndex || 0],
       price: currentOption ? currentOption.price : item.price,
       optionName: optionsName,
       option: currentOption ? currentOption.name : null,

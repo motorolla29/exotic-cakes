@@ -2,20 +2,26 @@ import { motion } from 'framer-motion';
 import { blockAnimation, firstBlockAnimation } from '../../../animations';
 
 import './about-page.sass';
+import BlurhashImage from '../../blurhash-image/blurhash-image';
 
 const AboutPage = () => {
   window.scrollTo(0, 0);
 
   return (
     <div className="about-page">
-      <motion.img
+      <motion.div
         initial="hidden"
         whileInView="visible"
         variants={firstBlockAnimation}
         viewport={{ once: true }}
-        src="/images/Runway 2024-09-19T08_55_52.985Z Upscale Image Upscaled Image 3360 x 1920.jpg"
         className="about-page_top-image"
-      />
+      >
+        <BlurhashImage
+          src="/images/Runway 2024-09-19T08_55_52.985Z Upscale Image Upscaled Image 3360 x 1920.jpg"
+          hash="rCLyZy4;5Lt9XY^*s?${D.?FRkR+R:WVt5t6xUE3~UNL9vt2NGxU$_R.N1ISt6xwRja#ocWAogNH9+j=${ayada{s+oLRlxdj=Iot7Rns:$~RkbI"
+          transitionDuration={0.75}
+        />
+      </motion.div>
       <motion.div
         initial="hidden"
         whileInView="visible"

@@ -13,6 +13,7 @@ import useWindowSize from '../../hooks/use-window-size';
 import store from '../../store/store';
 import { baseImagesURL, baseMerchImagesURL } from '../../const';
 import { cartItemExitAnimationSequence } from '../../animations';
+import BlurhashImage from '../blurhash-image/blurhash-image';
 
 import './cart-item.sass';
 
@@ -85,11 +86,11 @@ const CartItem = observer(({ item }) => {
             className="cart-item_main_img-link"
           >
             <div className="cart-item_main_img-container">
-              <img
+              <BlurhashImage
                 src={`${
                   type === 'merch' ? baseMerchImagesURL : baseImagesURL
-                }/preview/${image}`}
-                alt="product-image"
+                }/preview/${image.src}`}
+                hash={image.hash}
               />
             </div>
           </Link>

@@ -5,10 +5,22 @@
     "title": "Bike Lover Cake",
     "description": "Do you love cycling or want to give a cake to a cyclist? We can make one in the best possible way",
     "images": [
-      "OIG1 (3).jpg",
-      "OIG1 (4).jpg",
-      "OIG1.LfYInJVlj..jpg",
-      "OIG1.47XKfwRue_pxe_l.jpg"
+      {
+        "src": "OIG1 (3).jpg",
+        "hash": "UQIEhK%M?wt7%1R%IUV@t8tRRjahROnhE2bI"
+      },
+      {
+        "src": "OIG1 (4).jpg",
+        "hash": "UJF}l]~q-:%M$jM{IoV@MxxDV@M{%1kDWUt7"
+      },
+      {
+        "src": "OIG1.LfYInJVlj..jpg",
+        "hash": "UMGbCr~p_3x[b^9ZE1e,KQRpNIW?Z~enRioJ"
+      },
+      {
+        "src": "OIG1.47XKfwRue_pxe_l.jpg",
+        "hash": "UKHU^C~q?v-;.SMxNHNHt-t7VtRPn}oxM{t7"
+      }
     ],
     "options": {
       "Size": [
@@ -38,10 +50,22 @@
     "title": "Mouse Cheese Fest Cake",
     "description": "Cheese shaped cake with a cluster of edible fondant mice",
     "images": [
-      "OIG3 (2).jpg",
-      "OIG3 (3).jpg",
-      "OIG3 (4).jpg",
-      "OIG3.cE9xxfayoeDOq1NXm.jpg"
+      {
+        "src": "OIG3 (2).jpg",
+        "hash": "URLDJM~Vcaxu^$IVEQjFAdW=NGNH4ps8xBR."
+      },
+      {
+        "src": "OIG3 (3).jpg",
+        "hash": "UMIW=g~VI]t7ROE19aRk0ORkskWB0MWB%Lt7"
+      },
+      {
+        "src": "OIG3 (4).jpg",
+        "hash": "UaLy[q01yDM{~VnhR.jsOtRjRjfkN1RkWWR*"
+      },
+      {
+        "src": "OIG3.cE9xxfayoeDOq1NXm.jpg",
+        "hash": "UUKwd.~pk?bcTJE1IVWB0%kWaJoy4.xrxtfl"
+      }
     ],
     "options": {
       "Size": [
@@ -77,7 +101,16 @@
     "category": "classic-cakes",
     "title": "Lavender Dreams Cake",
     "description": "Cake in the shape of French lavender fields",
-    "images": ["OIG1.RDb9vYqFs1Lw7W95xH.jpg", "OIG1 (5).jpg"],
+    "images": [
+      {
+        "src": "OIG1.RDb9vYqFs1Lw7W95xH.jpg",
+        "hash": "UXHxpW~q%fxutmR+t5s:pHR*M{RjR$%Mt7WB"
+      },
+      {
+        "src": "OIG1 (5).jpg",
+        "hash": "UVH_om_NouxuR-M_Rit7x[WUIBRjjDt8R.WA"
+      }
+    ],
     "options": {
       "Size": [
         {
@@ -105,7 +138,16 @@
     "category": "classic-cakes",
     "title": "Winni Pie",
     "description": "Winnie the Pooh, Honey the Pie",
-    "images": ["OIG2.jpg", "OIG2.njocvyUL.jpg"],
+    "images": [
+      {
+        "src": "OIG2.jpg",
+        "hash": "UTKJ0h~BS$ay%0NHWBt610n%niRkNbWWX7s."
+      },
+      {
+        "src": "OIG2.njocvyUL.jpg",
+        "hash": "UPIV@,}?EkNa-TWCWEkV0$I;xDofNKf+Szn%"
+      }
+    ],
     "options": {
       "Weight": [
         {
@@ -137,7 +179,20 @@
     "category": "classic-cakes",
     "title": "Winni's Barrel Cake",
     "description": "Cake in the shape of Winnie the Pooh sitting on a huge barrel of honey",
-    "images": ["OIG4.jpg", "OIG4 (1).jpg", "OIG4 (2).jpg"],
+    "images": [
+      {
+        "src": "OIG4.jpg",
+        "hash": "UPJGl[~Vt9ni=^M|WYsm58M}n$xZ9ws;-Ux["
+      },
+      {
+        "src": "OIG4 (1).jpg",
+        "hash": "UfMr[0~VkXof?FNHM|j[XSW.ngocNbxtt6kC"
+      },
+      {
+        "src": "OIG4 (2).jpg",
+        "hash": "USMivJ4ps+o#_M%2IpRkJCRiVsIVt6IUw[kB"
+      }
+    ],
     "options": {
       "Size": [
         {
@@ -170,10 +225,22 @@
     "title": "Strawberry Dream Tram",
     "description": "Strawberry cake in the form of a tram will take you to a sweet world of delights",
     "images": [
-      "OIG2 (7).jpg",
-      "OIG2 (8).jpg",
-      "OIG2 (9).jpg",
-      "OIG2.91c3C.jpg"
+      {
+        "src": "OIG2 (7).jpg",
+        "hash": "UEIE9E}@Tx9Gu6MIMwwH.TrD#jt7^*s;Mdxa"
+      },
+      {
+        "src": "OIG2 (8).jpg",
+        "hash": "UGIqT000ys#6-qkWEfxE0MSLIVnkIUWo#ks:"
+      },
+      {
+        "src": "OIG2 (9).jpg",
+        "hash": "UOHU5,~B%gS2R7IBE2IVOZNHS$bIV=IoNGxZ"
+      },
+      {
+        "src": "OIG2.91c3C.jpg",
+        "hash": "UKJjl2~B_NrX=|IUniIUYQxuR+EiM{R%9aoz"
+      }
     ],
     "options": {
       "Size": [
@@ -206,10 +273,22 @@
     "title": "White House Cake",
     "description": "For true patriots of the united states. Cake in the form of the white house",
     "images": [
-      "OIG1 (13).jpg",
-      "OIG1 (14).jpg",
-      "OIG1.4vbLEn.jpg",
-      "OIG1 (15).jpg"
+      {
+        "src": "OIG1 (13).jpg",
+        "hash": "UPJG[@~Vj;i_OGEMoy%L01V@x[%LIU-ot7M{"
+      },
+      {
+        "src": "OIG1 (14).jpg",
+        "hash": "UWNvYx~VxtR*%MNHRjofa0WBW=t7DO%0j?V@"
+      },
+      {
+        "src": "OIG1.4vbLEn.jpg",
+        "hash": "URIqZB~BIUMxt-I;M{e.01IoNut79F$%s:jZ"
+      },
+      {
+        "src": "OIG1 (15).jpg",
+        "hash": "UIJt9o~A9vMy150fIooe0hIpr;-:Mx-TxDRk"
+      }
     ],
     "options": {
       "Size": [
@@ -245,7 +324,12 @@
     "category": "classic-cakes",
     "title": "Cake of the Soviet Parlament House 1984",
     "description": "A house in the form of the USSR government building. This will definitely turn your grandparents on, causing nostalgia for Soviet times",
-    "images": ["OIG1.6kJ4kvTL.jpg"],
+    "images": [
+      {
+        "src": "OIG1.6kJ4kvTL.jpg",
+        "hash": "UKJHs__3p{-;C,XSKOI:qFkVeTIoF{t7#,$*"
+      }
+    ],
     "options": {
       "Size": [
         {
@@ -270,10 +354,22 @@
     "title": "Drum'n'Cake",
     "description": "Drum shaped cake. A great gift for any musician",
     "images": [
-      "OIG1 (16).jpg",
-      "OIG1 (17).jpg",
-      "OIG1.p2qLZp0wNWnqZ.jpg",
-      "OIG1 (18).jpg"
+      {
+        "src": "OIG1 (16).jpg",
+        "hash": "UOIqM:~V_3x]%ME1RPkCb]RjE1RkDis,M_ni"
+      },
+      {
+        "src": "OIG1 (17).jpg",
+        "hash": "UUJt-p01?^RP_3%MbcWB%~V@M{bHb^RjR5WB"
+      },
+      {
+        "src": "OIG1.p2qLZp0wNWnqZ.jpg",
+        "hash": "UPIqovDh?bIA~qRPM|s.s+RPIpW?f5V@t7oz"
+      },
+      {
+        "src": "OIG1 (18).jpg",
+        "hash": "UKH1i1~V%MbwE39GMxodS#R,IVM|9ZxsxYxa"
+      }
     ],
     "options": {
       "Size": [
@@ -302,7 +398,20 @@
     "category": "classic-cakes",
     "title": "Cubic Magic Cake",
     "description": "Mystery cake in the form of a luxurious cube with various decorations",
-    "images": ["OIG3.P0RwufWoEx.mXODs32.jpg", "OIG3 (17).jpg", "OIG3 (18).jpg"],
+    "images": [
+      {
+        "src": "OIG3.P0RwufWoEx.mXODs32.jpg",
+        "hash": "ULI50u~qEk4oVWD$RiRiRPx]%2?bVrozRkoz"
+      },
+      {
+        "src": "OIG3 (17).jpg",
+        "hash": "UCH-uq%$00008^D%E2M{OHNH%1~pD%IVWqxZ"
+      },
+      {
+        "src": "OIG3 (18).jpg",
+        "hash": "UMH.A;_N9vDiDNIAIUWBEMxu%1%fR5V@ozf6"
+      }
+    ],
     "options": {
       "Size": [
         {
@@ -344,10 +453,22 @@
     "title": "Sea Themed Cake",
     "description": "A sea-themed cake with decorations in the form of shells, starfish, seaweed, etc.",
     "images": [
-      "OIG2 (15).jpg",
-      "OIG2 (16).jpg",
-      "OIG2 (17).jpg",
-      "OIG2 (18).jpg"
+      {
+        "src": "OIG2 (15).jpg",
+        "hash": "UIHfL?_M-=IVtl4nMxk9w4jGR4xtIpx]#+$*"
+      },
+      {
+        "src": "OIG2 (16).jpg",
+        "hash": "UFFZWp_MM{Hr7gE2EM%M9ws8t6-;GG%g-Bni"
+      },
+      {
+        "src": "OIG2 (17).jpg",
+        "hash": "UOJR:M_M%NM{_NIBMxxD#SxaIUo#bI%M$fah"
+      },
+      {
+        "src": "OIG2 (18).jpg",
+        "hash": "UHI5oI~VsARi^+DjIUxtE2xu9ENGbw?bxVtR"
+      }
     ],
     "options": {
       "Weight": [
@@ -377,11 +498,26 @@
     "title": "Romantic Heart Cake",
     "description": "Decorated heart shaped cake for any romantic occasion",
     "images": [
-      "6218354347_upscale (23).png",
-      "6218354347_upscale (21).png",
-      "6218354347_upscale (19).png",
-      "6218354347_upscale (20).png",
-      "6218354347_upscale (22).png"
+      {
+        "src": "6218354347_upscale (23).png",
+        "hash": "U7IW=t0000#?#l~WtS000K?HIA-nEO0x#l^l"
+      },
+      {
+        "src": "6218354347_upscale (21).png",
+        "hash": "UFI4bJ~W00NeEKIU-p?H01IoRiInW;%3RPNE"
+      },
+      {
+        "src": "6218354347_upscale (19).png",
+        "hash": "UBHnEN~q00IUr?IU-:-p02RjbDITT0%MV[NY"
+      },
+      {
+        "src": "6218354347_upscale (20).png",
+        "hash": "UAHwr,?w00IpIAD$-;?v00IUnNRO5*x^rdDi"
+      },
+      {
+        "src": "6218354347_upscale (22).png",
+        "hash": "U7H-480000=~.Q=}^R0K00?HbsxtIt9Yiw~q"
+      }
     ],
     "options": {
       "Size": [
@@ -406,7 +542,12 @@
     "category": "classic-cakes",
     "title": "Mushroom Trip Heart",
     "description": "Cake in the style of a not-so-bad mushroom trip",
-    "images": ["6218354347_upscale (24).png"],
+    "images": [
+      {
+        "src": "6218354347_upscale (24).png",
+        "hash": "UBHx4?0001t-;^~WF3EL7f-p+uWUAGIo={xZ"
+      }
+    ],
     "options": {
       "Weight": [
         {
@@ -430,7 +571,12 @@
     "category": "classic-cakes",
     "title": "[Blue/Black]berry Lux",
     "description": "Luxurious cake with blueberries and blackberries with gold leaf",
-    "images": ["6218354347_upscale (30).png"],
+    "images": [
+      {
+        "src": "6218354347_upscale (30).png",
+        "hash": "UVIq}y?b~qt8?cRkWAoe_3ayM{WBocayM{ay"
+      }
+    ],
     "options": {
       "Size": [
         {
@@ -459,9 +605,18 @@
     "title": "New Balance Shoe Cake",
     "description": "True fans of this brand will be delighted with this cake of the highest detail work from our confectionery company",
     "images": [
-      "6218354347_upscale (47).png",
-      "6218354347_upscale (46).png",
-      "6218354347_upscale (86).png"
+      {
+        "src": "6218354347_upscale (47).png",
+        "hash": "UWK-5w_4yDM{.TX9o#RPb{R+ofsmogkCW;t7"
+      },
+      {
+        "src": "6218354347_upscale (46).png",
+        "hash": "UGLgng?c?wx^t-IUNGW=*0WVIAjYxYx]RPM{"
+      },
+      {
+        "src": "6218354347_upscale (86).png",
+        "hash": "UBHBYnIU01kX01E1Io%M03RjxZ%2aIt6~Vae"
+      }
     ],
     "options": {
       "Size": [
@@ -491,7 +646,12 @@
     "category": "classic-cakes",
     "title": "Confetti Pastry Burger",
     "description": "A real sweet pastry layered burger made by Exotic Cakes",
-    "images": ["6218354347_upscale (58).png"],
+    "images": [
+      {
+        "src": "6218354347_upscale (58).png",
+        "hash": "UKKT[4D%*0My?GtRIpayX:o0xukB9bRjRPWB"
+      }
+    ],
     "options": {
       "Weight": [
         {
@@ -527,7 +687,16 @@
     "category": "classic-cakes",
     "title": "Burger Styled Cake",
     "description": "For burger lovers and those with a sweet tooth. Cake in the form of a large burger with vanilla layers covered in chocolate",
-    "images": ["6218354347_upscale (57).png", "6218354347_upscale (55).png"],
+    "images": [
+      {
+        "src": "6218354347_upscale (57).png",
+        "hash": "UfKT_EM{%$o1%2ayS1jZ?wt7ofayj=ofWDae"
+      },
+      {
+        "src": "6218354347_upscale (55).png",
+        "hash": "UjN9:;-:.SNe%NM|W;jr*0WYRPoJk8ocV@jv"
+      }
+    ],
     "options": {
       "Size": [
         {
@@ -551,7 +720,12 @@
     "category": "classic-cakes",
     "title": "Ruined Biscuit Building",
     "description": "A cake made in the form of a collapsing five-story building made of biscuit and white chocolate",
-    "images": ["6218354347_upscale (78).png"],
+    "images": [
+      {
+        "src": "6218354347_upscale (78).png",
+        "hash": "U6HBoF000O00_N4mtR%MIT-;H=x]%MD%tS-;"
+      }
+    ],
     "options": {
       "Size": [
         {
@@ -579,7 +753,24 @@
     "category": "classic-cakes",
     "title": "Old Slavic Palace Cake",
     "description": "Cake in the form of a rich Slavic country house",
-    "images": ["OIG1.jpg", "OIG1 (1).jpg", "OIG1 (2).jpg", "OIG1.Y.jpg"],
+    "images": [
+      {
+        "src": "OIG1.jpg",
+        "hash": "UGG8l%~WD%-UIVE1Nexa4nE1WAaeE2tRw[RQ"
+      },
+      {
+        "src": "OIG1 (1).jpg",
+        "hash": "UGI5JN~p4:IB5TD%NaovY7Si%2x]EK%LniMy"
+      },
+      {
+        "src": "OIG1 (2).jpg",
+        "hash": "UBHUtd0L4o9uY7?wRj-oK,-;-pjF$j.8o|M{"
+      },
+      {
+        "src": "OIG1.Y.jpg",
+        "hash": "U8H1ud0001?F5t~C0Ksl4?oyt5R6.TVs-6Nb"
+      }
+    ],
     "options": {
       "Size": [
         {
@@ -612,9 +803,18 @@
     "title": "Blue Whale Cake",
     "description": "Cake with a big whale on top with a filling of your choice, the filling in the whale is the same as in the cake itself",
     "images": [
-      "6218354347_upscale (74).png",
-      "6218354347_upscale (73).png",
-      "6218354347_upscale (79).png"
+      {
+        "src": "6218354347_upscale (74).png",
+        "hash": "U7BW9:XT0L^*9v9GD*?GH=ad9we:EN-:~ARP"
+      },
+      {
+        "src": "6218354347_upscale (73).png",
+        "hash": "U3BDNI.T02~V01M|-ns+00$w^%02.7W9DOXA"
+      },
+      {
+        "src": "6218354347_upscale (79).png",
+        "hash": "U8B3j2kCIAo#0MM|t7j?00xtN{Mx~ptQivxt"
+      }
     ],
     "options": {
       "Size": [
@@ -649,9 +849,18 @@
     "title": "Nike Shoe Cake",
     "description": "If you want a cake shaped like a Nike sneaker, no problem. We'll just do it.",
     "images": [
-      "6218354347_upscale (65).png",
-      "6218354347_upscale (80).png",
-      "6218354347_upscale (81).png"
+      {
+        "src": "6218354347_upscale (65).png",
+        "hash": "UOHo2fRjXAxu?wxux]adIpkWnhV?.8MxIUtR"
+      },
+      {
+        "src": "6218354347_upscale (80).png",
+        "hash": "U7FP4?~q4ot5D$M{%gV@004n4nM{?GRi-:.8"
+      },
+      {
+        "src": "6218354347_upscale (81).png",
+        "hash": "UDEo#._44:Rk009FIT%1T1M{jZx]n2%M?ckC"
+      }
     ],
     "options": {
       "Size": [
@@ -685,10 +894,22 @@
     "title": "Children's Party Cake",
     "description": "The brightest and most colorful cake that will please any child",
     "images": [
-      "6218354347_upscale (28).png",
-      "6218354347_upscale (27).png",
-      "6218354347_upscale (91).png",
-      "6218354347_upscale (92).png"
+      {
+        "src": "6218354347_upscale (28).png",
+        "hash": "UQMGhw4nPqnURrxuM}Rk%ft8flR+xqWCRjkC"
+      },
+      {
+        "src": "6218354347_upscale (27).png",
+        "hash": "UOIhgb?w0:R$iZR-EMxZC8tR,ot7b_r=%1S5"
+      },
+      {
+        "src": "6218354347_upscale (91).png",
+        "hash": "UZMG*M-=.TW9-UROX9t7TKa$nNt6XmW=nOen"
+      },
+      {
+        "src": "6218354347_upscale (92).png",
+        "hash": "UVMj5Q%gysr=%eWCa$ovbyV[bEW:o$s;VsRk"
+      }
     ],
     "options": {
       "Size": [
@@ -723,9 +944,18 @@
     "title": "Children's Party Sea Styled Cake",
     "description": "Children's party cake in a sea style with confectionery decorations in the form of shells, starfish and other small things in a sea theme",
     "images": [
-      "6218354347_upscale (26).png",
-      "6218354347_upscale (25).png",
-      "6218354347_upscale (93).png"
+      {
+        "src": "6218354347_upscale (26).png",
+        "hash": "UAIX%C~90000yCMcT2I:mRIWKP.9wjM{TIaJ"
+      },
+      {
+        "src": "6218354347_upscale (25).png",
+        "hash": "UCGawb~q008_Ee9bMf-SDiIo%N-;#9xttkRk"
+      },
+      {
+        "src": "6218354347_upscale (93).png",
+        "hash": "UHJZ*x~q0nIBDhE0Rk$*6,NG$fs=v$%2pGI;"
+      }
     ],
     "options": {
       "Size": [
@@ -760,11 +990,26 @@
     "title": "Exotic Beds Brand Bed-Cake",
     "description": "A Bed-Cake made with classic design by our sister company ©Exotic Beds",
     "images": [
-      "HzEhCGrxq_x9gofxElYO-.jpg",
-      "nMLzcHrUDHm8xBNjLjPEi.jpg",
-      "V-LRteKuH33IqhHa8d-C5.jpg",
-      "KhB4LUso5f6tuoA4pK1xq.jpg",
-      "v3ZvgEAF1qJg7Ut6z7rxn.jpg"
+      {
+        "src": "HzEhCGrxq_x9gofxElYO-.jpg",
+        "hash": "UHIqS;?G589HZ~VrM{t701Rk=_xZ~U-;x]IV"
+      },
+      {
+        "src": "nMLzcHrUDHm8xBNjLjPEi.jpg",
+        "hash": "UMI53vRj0Moz_NRPI9WBE-s:?EWB-;xuRjj["
+      },
+      {
+        "src": "V-LRteKuH33IqhHa8d-C5.jpg",
+        "hash": "UOKwXW~98xIB02xC%KayHsE3tm%MS_M{$%tR"
+      },
+      {
+        "src": "KhB4LUso5f6tuoA4pK1xq.jpg",
+        "hash": "UBGbIq0003?ZGH-.Q-XA00_2^%My{u9c.mr;"
+      },
+      {
+        "src": "v3ZvgEAF1qJg7Ut6z7rxn.jpg",
+        "hash": "UGKKvB00A1ob_4MxRixu9%ob^%Rk-2j^J;ad"
+      }
     ],
     "options": {
       "Size": [
@@ -799,9 +1044,18 @@
     "title": "Exotic Beds Brand Bed-Cake (Rounded Headboard)",
     "description": "A Bed-Cake made with classic design by our sister company ©Exotic Beds. This is made with rounded headboard in the form of a recognizable cat's face, which is on the company's corporate logo",
     "images": [
-      "sWIZ_s9a1HCaCixC4gQr9.jpg",
-      "bTvhDBvpLnCJcUseg75DR.jpg",
-      "Q5qwztYu2Kxxb5JTnIp0w.jpg"
+      {
+        "src": "sWIZ_s9a1HCaCixC4gQr9.jpg",
+        "hash": "ULIOza?aHtR.1hD*vMx[8}xu%Joz|qozPAM}"
+      },
+      {
+        "src": "bTvhDBvpLnCJcUseg75DR.jpg",
+        "hash": "UBJaru0002?]00X;Ty+Y5wwZ?YI]0y=swIAJ"
+      },
+      {
+        "src": "Q5qwztYu2Kxxb5JTnIp0w.jpg",
+        "hash": "UCLzG*~P0DxGFz024rr:0GIA^aER=w$^~ltS"
+      }
     ],
     "options": {
       "Size": [
@@ -836,9 +1090,18 @@
     "title": "Exotic Fruits Cake",
     "description": "Cake with exotic fruits with our company's brand name",
     "images": [
-      "JKQJD3kwYrVu_4Q-DY_Lh.jpg",
-      "cxkwc_B9DLTn1nHvznOX6.jpg",
-      "QuS1ZxxEDKQFDWfcYL-bJ.jpg"
+      {
+        "src": "JKQJD3kwYrVu_4Q-DY_Lh.jpg",
+        "hash": "ULK1O4x]?wRO=|I;D%RP8{S3IU%1NZt6s8-:"
+      },
+      {
+        "src": "cxkwc_B9DLTn1nHvznOX6.jpg",
+        "hash": "UsNv_Pt7?^s:%fR-Rjs.T0n%MxbajcsnV@SN"
+      },
+      {
+        "src": "QuS1ZxxEDKQFDWfcYL-bJ.jpg",
+        "hash": "UHH-oV~q0$RPrCIVOZ%10LNHoLxt9tx@M{M|"
+      }
     ],
     "options": {
       "Weight": [
@@ -873,10 +1136,22 @@
     "title": "[Blue/Straw]berry Italy",
     "description": "Classic strawberry and blueberry cheesecake with a top crust in the shape of Italy",
     "images": [
-      "OIG4 (7).jpg",
-      "OIG4.NuRGl.jpg",
-      "OIG4 (8).jpg",
-      "OIG4 (9).jpg"
+      {
+        "src": "OIG4 (7).jpg",
+        "hash": "UDINK+9ZE59a~WyC9GaiPBx[E2tS%3NHNES0"
+      },
+      {
+        "src": "OIG4.NuRGl.jpg",
+        "hash": "UOINgm_2.S%M~WRio#M|_NxutmS4x^RjnhxZ"
+      },
+      {
+        "src": "OIG4 (8).jpg",
+        "hash": "UIHwZC_2Te-W~BslOERRtmxGb]NGTKRQ$Mt3"
+      },
+      {
+        "src": "OIG4 (9).jpg",
+        "hash": "UIHAqs~VJB?H~CbvRk$*KOShJUS4bbRkn%tk"
+      }
     ],
     "options": {
       "Weight": [
@@ -902,10 +1177,22 @@
     "title": "Airy Mood Cheesecake",
     "description": "Cheesecake with balloons floating in the air. Truly magical and unusual appearance",
     "images": [
-      "OIG4 (10).jpg",
-      "OIG4 (11).jpg",
-      "OIG4 (12).jpg",
-      "OIG4 (13).jpg"
+      {
+        "src": "OIG4 (10).jpg",
+        "hash": "UVJI2|~qJpMykYIpD%VsRjxuV@ae%Lofxvt7"
+      },
+      {
+        "src": "OIG4 (11).jpg",
+        "hash": "UTJH5O~VXmtRM{$%IUjE%M-:-pt7^*oet7kW"
+      },
+      {
+        "src": "OIG4 (12).jpg",
+        "hash": "UbFrnu~pS%IpkWogV@jY-;-;%LbHxZf6RkWB"
+      },
+      {
+        "src": "OIG4 (13).jpg",
+        "hash": "UKM6et~WNeIBQnM{MxoJyD-;%MR*?GRPI.nh"
+      }
     ],
     "options": {
       "Size": [
@@ -931,10 +1218,22 @@
     "title": "Tropical Vacation Cheesecake",
     "description": "Cheesecake decorated to look like the most wonderful tropical island from your dream vacation",
     "images": [
-      "6218354347_upscale (50).png",
-      "6218354347_upscale (49).png",
-      "6218354347_upscale (48).png",
-      "6218354347_upscale (85).png"
+      {
+        "src": "6218354347_upscale (50).png",
+        "hash": "UBIXma9G1A~Uys.9xH-q5J%2yYS$}syEE1M{"
+      },
+      {
+        "src": "6218354347_upscale (49).png",
+        "hash": "UBHUdkER04=xxCt6NbjZ01aKDkaK~pM}Iobb"
+      },
+      {
+        "src": "6218354347_upscale (48).png",
+        "hash": "UKK1dmH?x^IUNFtRj]ax%%R:-:t7p0xYR4M|"
+      },
+      {
+        "src": "6218354347_upscale (85).png",
+        "hash": "USL41oo#.S%Mk@M_RjWEysWUtRRmt6RkM_tQ"
+      }
     ],
     "options": {
       "Size": [
@@ -960,10 +1259,22 @@
     "title": "Exotic Beds Creamy Bed-Cheesecake",
     "description": "Special edition bed-styled cheesecake with design from our sister company ©Exotic Beds",
     "images": [
-      "V5adKL8FY-h25mWbPRhOP.jpg",
-      "5HWg-SwZd4fmRE7VhAba6.jpg",
-      "iiNiFiKPK6mGeo0hc6E9M.jpg",
-      "lVav1_Qhnwi8_opCOLsHV.jpg"
+      {
+        "src": "V5adKL8FY-h25mWbPRhOP.jpg",
+        "hash": "UHI#fN_ND*V@4TDiRk%M4nx]_3-:xutRWBRj"
+      },
+      {
+        "src": "5HWg-SwZd4fmRE7VhAba6.jpg",
+        "hash": "UFGbk#~q0001008_R*x]IVkC_2%fr;%MaeM{"
+      },
+      {
+        "src": "iiNiFiKPK6mGeo0hc6E9M.jpg",
+        "hash": "UIGuwF.89aRi8_H?R+tR00V@?bxu~qtRV?WX"
+      },
+      {
+        "src": "lVav1_Qhnwi8_opCOLsHV.jpg",
+        "hash": "UEGl3F8^0LtRrq~p9FWX00s:?bIU%MD%xuWX"
+      }
     ],
     "options": {
       "Size": [
@@ -992,9 +1303,18 @@
     "title": "Australian Trip Cheesecake",
     "description": "Classic cream cheese on a biscuit crust and shaped like the continent of australia, meet our new version of cheesecake - Australian Trip",
     "images": [
-      "7VNZmYXMeGn0Ez7AyM2Hl.jpg",
-      "TsQD2schfznFwF0TX2NL2.jpg",
-      "WLdAg-Gmtq8GcZUaLm-q2.jpg"
+      {
+        "src": "7VNZmYXMeGn0Ez7AyM2Hl.jpg",
+        "hash": "URLW;L_3F4%L00M|f,R+GdNHwGRPD%ofr=xt"
+      },
+      {
+        "src": "TsQD2schfznFwF0TX2NL2.jpg",
+        "hash": "UBKTex0001E08w%LOt-;03-;#OxG9FM{~qDj"
+      },
+      {
+        "src": "WLdAg-Gmtq8GcZUaLm-q2.jpg",
+        "hash": "UMNS[[%gF}?v00IVENMx2|IArVxa4naJwHtl"
+      }
     ],
     "options": {
       "Size": [
@@ -1016,10 +1336,22 @@
     "title": "Brand Logo Signed Cheesecake",
     "description": "If you don't need anything extremely exotic and unusual from what you could find on our website, we offer you a regular cheesecake with the signature of our confectionery",
     "images": [
-      "Og_eHxB3uShOvjl5nAaXx.jpg",
-      "49Z3jhHLg0N9eOikx--6V.jpg",
-      "9m8FoNTdHDmeX9BOj_1vj.jpg",
-      "Fyn0gaolVDpt7_55rcg59.jpg"
+      {
+        "src": "Og_eHxB3uShOvjl5nAaXx.jpg",
+        "hash": "UGI4nO0102_K.7xaM{s,02.7-mDkEnadS$NI"
+      },
+      {
+        "src": "49Z3jhHLg0N9eOikx--6V.jpg",
+        "hash": "UAJj*U005vL#?@%L9HIt00-;%Jo}00Xo?F=^"
+      },
+      {
+        "src": "9m8FoNTdHDmeX9BOj_1vj.jpg",
+        "hash": "UCIgW28_01pIK7yDD%M{04.7}js,LLR5rs%f"
+      },
+      {
+        "src": "Fyn0gaolVDpt7_55rcg59.jpg",
+        "hash": "UBLpZ@~1TOHv00ten3m.0CD,$]^#03Dr.7?s"
+      }
     ],
     "options": {
       "Weight": [
@@ -1041,11 +1373,26 @@
     "title": "Sport Car Cheesecake",
     "description": "Classic cheesecake with cheese cream topped with caramel topping for speed lovers. Made in the form of a sports car",
     "images": [
-      "k1DyyfOeMHJwGXZYwP_h2.jpg",
-      "7T1XDyScJNutCCXqEX2c9.jpg",
-      "3p0_piFYvq1zi7hzo73Fj.jpg",
-      "zMVtYGa0hOB_FSU3KCpo3.jpg",
-      "sJMEhrFgzJGB6vhTLeKhp.jpg"
+      {
+        "src": "k1DyyfOeMHJwGXZYwP_h2.jpg",
+        "hash": "U8IXW~0LCmMe00_NwG?H18v|+vN@u%D%0M4o"
+      },
+      {
+        "src": "7T1XDyScJNutCCXqEX2c9.jpg",
+        "hash": "UEG8M*4n5tRiWWtRoJxt02%L~9e.s8-:xCI="
+      },
+      {
+        "src": "3p0_piFYvq1zi7hzo73Fj.jpg",
+        "hash": "UBFOM#9G0hS000xa%KkC04x[}qe=?qI:ICae"
+      },
+      {
+        "src": "zMVtYGa0hOB_FSU3KCpo3.jpg",
+        "hash": "UIIzq%Vs0,E2~Cs;kCR*0?oN^ht5WAxGsmS#"
+      },
+      {
+        "src": "sJMEhrFgzJGB6vhTLeKhp.jpg",
+        "hash": "UOLW|j00pJkD~qMw9FtS0$tRR4V@00o}IpV@"
+      }
     ],
     "options": {
       "Size": [
@@ -1067,9 +1414,18 @@
     "title": "Mini Submarine Cheesecake",
     "description": "Cheesecake in the form of a small submarine. As always unusual and still delicious",
     "images": [
-      "IODE1oPrJ-9l909gN1eI8.jpg",
-      "UzDyX3Bixtu2mfqyzkdxP.jpg",
-      "82MwhBbavu5IJoAXhKgRh.jpg"
+      {
+        "src": "IODE1oPrJ-9l909gN1eI8.jpg",
+        "hash": "UAMGkf0e1Q-o4T4:KhI^0oD4@r?^3=1RD6zn"
+      },
+      {
+        "src": "UzDyX3Bixtu2mfqyzkdxP.jpg",
+        "hash": "UAC$Go9w0NxFwHIpSgoe01%K}?NHFf?EnPag"
+      },
+      {
+        "src": "82MwhBbavu5IJoAXhKgRh.jpg",
+        "hash": "UKKnr7xT$+Ip-;9FDjWX%jIWXmxtI9-mxus:"
+      }
     ],
     "options": {
       "Quantity": [
@@ -1091,10 +1447,22 @@
     "title": "Zodiac Cupcakes",
     "description": "Random set of zodiac cupcakes",
     "images": [
-      "6218354347_upscale (59).png",
-      "6218354347_upscale (60).png",
-      "6218354347_upscale (61).png",
-      "6218354347_upscale (82).png"
+      {
+        "src": "6218354347_upscale (59).png",
+        "hash": "UCE36fo#ESM_~AWXIVt7-Uxt$%NGa}ngt6WX"
+      },
+      {
+        "src": "6218354347_upscale (60).png",
+        "hash": "UNIhT:4o?H9F~qxZR+of%hwcs,oz?bj[aet7"
+      },
+      {
+        "src": "6218354347_upscale (61).png",
+        "hash": "U9EV{JRia*Mx%%bw$xIU~XEmXA?G~BRjM|I9"
+      },
+      {
+        "src": "6218354347_upscale (82).png",
+        "hash": "UXI=P$Dh%$IU%MxvRjjF~qofx]NztRoeR*WB"
+      }
     ],
     "options": {
       "Quantity": [
@@ -1115,7 +1483,24 @@
     "category": "cupcakes",
     "title": "Sweet Tooth Coder Cupcakes",
     "description": "Cupcakes in the shape of keyboard keys. It doesn't matter if you're a gamer or a programmer, we guarantee you'll love them",
-    "images": ["OIG4 (3).jpg", "OIG4 (4).jpg", "OIG4 (5).jpg", "OIG4 (6).jpg"],
+    "images": [
+      {
+        "src": "OIG4 (3).jpg",
+        "hash": "UJIzM8%zbU%M~B9_NGwb0yS%S%s+IVwIRQOs"
+      },
+      {
+        "src": "OIG4 (4).jpg",
+        "hash": "UKI}Io^*v*%M~pJBV[t6q^XT-.Ri#l-UIVNd"
+      },
+      {
+        "src": "OIG4 (5).jpg",
+        "hash": "UHHK^L}]-q}s?uE2jEr?ROO:n#IU]jk7MxwZ"
+      },
+      {
+        "src": "OIG4 (6).jpg",
+        "hash": "UCF=s@%f01^OT{#9wIK}00xa9]5s{+PAInvk"
+      }
+    ],
     "options": {
       "Size": [
         {
@@ -1136,10 +1521,22 @@
     "title": "Patrick Star Cupcakes",
     "description": "Cupcakes in the form of Patrick Star from the Spongebob cartoon",
     "images": [
-      "0HhYqakFbG-epPa7L5-pd.jpg",
-      "feLPWy7vK-pE3eIGjwfYT.jpg",
-      "HAdAGSXCRvbgZ9XjiMcy1.jpg",
-      "VSvZcsXvpoqanJRdwEgtd.jpg"
+      {
+        "src": "0HhYqakFbG-epPa7L5-pd.jpg",
+        "hash": "UBFEcXH?00^+57^O={E30exu}tIUXn9vJ,$#"
+      },
+      {
+        "src": "feLPWy7vK-pE3eIGjwfYT.jpg",
+        "hash": "UJK0.;~TD#D$BqIU%M%K71wJsDxHPA-oRjsD"
+      },
+      {
+        "src": "HAdAGSXCRvbgZ9XjiMcy1.jpg",
+        "hash": "UKHxQc~p1NNH02D*e-smp_xu=cof$fkBxuof"
+      },
+      {
+        "src": "VSvZcsXvpoqanJRdwEgtd.jpg",
+        "hash": "UaN00O4:K%aK.T%LxZtRtlozrsWBR*s:aeM|"
+      }
     ],
     "options": {
       "Quantity": [
@@ -1165,11 +1562,26 @@
     "title": "Grinning Monsters Cupcakes",
     "description": "Cupcakes in the form of grinning but very cute monsters",
     "images": [
-      "6218354347_upscale (69).png",
-      "6218354347_upscale (70).png",
-      "6218354347_upscale (71).png",
-      "6218354347_upscale (72).png",
-      "6218354347_upscale (62).png"
+      {
+        "src": "6218354347_upscale (69).png",
+        "hash": "UAFh^x?[pbt-M|VER49a4-#W-pMw]1K4XTnN"
+      },
+      {
+        "src": "6218354347_upscale (70).png",
+        "hash": "UDHnZ:D4S[N5?uV@-;RPB=J}E8x[~Bbr%0M|"
+      },
+      {
+        "src": "6218354347_upscale (71).png",
+        "hash": "UBG8WHMt%N8_~CaKI.t7H@nTR*XTb;%LICoL"
+      },
+      {
+        "src": "6218354347_upscale (72).png",
+        "hash": "U4GI4I00vg0J00~C0RKI008|03~q5TYP:zQs"
+      },
+      {
+        "src": "6218354347_upscale (62).png",
+        "hash": "U5EV]401004n~q-U00ENUcSw9]xbyC9a?vR4"
+      }
     ],
     "options": {
       "Quantity": [
@@ -1190,7 +1602,12 @@
     "category": "cupcakes",
     "title": "Pokemon Cupcakes",
     "description": "Random pokemon set. There will always be a surprise",
-    "images": ["6218354347_upscale (64).png"],
+    "images": [
+      {
+        "src": "6218354347_upscale (64).png",
+        "hash": "U5Gb0O0002D#0=~oVBN200ETtR?HY+I{aSD}"
+      }
+    ],
     "options": {
       "Quantity": [
         {
@@ -1211,9 +1628,18 @@
     "title": "Teletubbies Cupcakes",
     "description": "Random assortment of teletubbies cupcakes. Available for orders of 8 pieces or more",
     "images": [
-      "6218354347_upscale (66).png",
-      "6218354347_upscale (67).png",
-      "6218354347_upscale (68).png"
+      {
+        "src": "6218354347_upscale (66).png",
+        "hash": "U8JGyN03rCw63f~Du3IA0CyVDP?uYkm,pJJ5"
+      },
+      {
+        "src": "6218354347_upscale (67).png",
+        "hash": "UIHUI3}jwJxftKE3M$M_NLPAOYxpE,xmISOt"
+      },
+      {
+        "src": "6218354347_upscale (68).png",
+        "hash": "UAI:~^MJ+-Mc+[?wIRxHGHRVTwrp1zkYM5pF"
+      }
     ],
     "options": {
       "Quantity": [
@@ -1235,10 +1661,22 @@
     "title": "Spongebob Squarepants Cupcake",
     "description": "Cupcakes with cream cheese filling in the shape of a character from a popular cartoon",
     "images": [
-      "OIG3 (19).jpg",
-      "OIG3 (20).jpg",
-      "OIG3.8Pd.jpg",
-      "OIG3.eLsDDDHQF.jpg"
+      {
+        "src": "OIG3 (19).jpg",
+        "hash": "UZL;Ns.7o%V[o{I.V[sqyZo#W8s:Iq%2xZf,"
+      },
+      {
+        "src": "OIG3 (20).jpg",
+        "hash": "UIJ7{$~WJD%K%gRQ$ioyAM%LoGIpiwtRo}WY"
+      },
+      {
+        "src": "OIG3.8Pd.jpg",
+        "hash": "UPM?#h?byZV]%fI;V@RjK,NIR3o|D%sSbYoy"
+      },
+      {
+        "src": "OIG3.eLsDDDHQF.jpg",
+        "hash": "UUI5Vn~qO^Ny.8M{RmofE.WrnMjED,t7s.oy"
+      }
     ],
     "options": {
       "Size": [
@@ -1268,10 +1706,22 @@
     "title": "Christmas Houses Cupcakes",
     "description": "Cupcakes with buttercream in the shape of Christmas houses",
     "images": [
-      "OIG3 (8).jpg",
-      "OIG3 (9).jpg",
-      "OIG3.lpxE09jH4DrI5kTas.jpg",
-      "OIG3.qPdMO8MZ.jpg"
+      {
+        "src": "OIG3 (8).jpg",
+        "hash": "U8Iqr--ntROXys004or?0nE2r=rr0i$Ns+t5"
+      },
+      {
+        "src": "OIG3 (9).jpg",
+        "hash": "UEH_V:^ksAow*0bIxFoc15S~bbsD9wkWs=n,"
+      },
+      {
+        "src": "OIG3.lpxE09jH4DrI5kTas.jpg",
+        "hash": "URKKA?^+tRba~CM|R*oepco|s:RjJ-NFIokC"
+      },
+      {
+        "src": "OIG3.qPdMO8MZ.jpg",
+        "hash": "UCHUqV~UsoI:.7Z~X8s:0%w^R%of58RP%2Ip"
+      }
     ],
     "options": {
       "Quantity": [
@@ -1293,10 +1743,22 @@
     "title": "Retro Car Bento Cake",
     "description": "Mini cake in the form of a small cute retro car",
     "images": [
-      "OIG1 (11).jpg",
-      "OIG1.QpCj.jpg",
-      "OIG1.p1JbeXlW.G.jpg",
-      "OIG1 (12).jpg"
+      {
+        "src": "OIG1 (11).jpg",
+        "hash": "UbH-[S~qt7tSxuWURPt7t7RkaKayk9o}kWaz"
+      },
+      {
+        "src": "OIG1.QpCj.jpg",
+        "hash": "UVJQ~B?b_4oz.8NGayV@o~t6jFWBDioLD%kD"
+      },
+      {
+        "src": "OIG1.p1JbeXlW.G.jpg",
+        "hash": "UPHdv#~Wrqs+r;M_D%t6rWM{M{niaKXStmxG"
+      },
+      {
+        "src": "OIG1 (12).jpg",
+        "hash": "USHdQy~V%Mt8$*RjIojEV@RjWCn+V[Ndt7xt"
+      }
     ],
     "price": 10,
     "variants": {
@@ -1320,12 +1782,30 @@
     "title": "Spongebob Squarepants Bento Cake",
     "description": "Mini cake in the form of the main character from the cartoon spongebob squarepants",
     "images": [
-      "6218354347_upscale (41).png",
-      "6218354347_upscale (38).png",
-      "6218354347_upscale (37).png",
-      "6218354347_upscale (36).png",
-      "6218354347_upscale (89).png",
-      "6218354347_upscale (90).png"
+      {
+        "src": "6218354347_upscale (41).png",
+        "hash": "UGGRks_M4[w}?vxvjwkC04n..7xu-6TKPCt8"
+      },
+      {
+        "src": "6218354347_upscale (38).png",
+        "hash": "UJK1BdosW^RP?]j=MyWXD=Rkx]bIrqawpIW="
+      },
+      {
+        "src": "6218354347_upscale (37).png",
+        "hash": "UJGI7E~VET%NN^ITRjM{02M}x]X9rpRkM|ni"
+      },
+      {
+        "src": "6218354347_upscale (36).png",
+        "hash": "U9HKwZ_N01yE^kI=rWNw00Rn%%aQMv=rOtV@"
+      },
+      {
+        "src": "6218354347_upscale (89).png",
+        "hash": "UHG8Z9~p4?xJt-b_kqbL0NI^%g%2$et7T1xs"
+      },
+      {
+        "src": "6218354347_upscale (90).png",
+        "hash": "UIGk%M_M5V%Mt8SdS0ox01IV%Lox%DR$NFRi"
+      }
     ],
     "price": 12,
     "variants": {
@@ -1345,10 +1825,22 @@
     "title": "Mini Gift Box Bento Cake",
     "description": "Small cake in the form of a gift box. excellent and original choice if you do not know what to give a person",
     "images": [
-      "6218354347_upscale (99).png",
-      "6218354347_upscale (100).png",
-      "6218354347_upscale (101).png",
-      "6218354347_upscale (102).png"
+      {
+        "src": "6218354347_upscale (99).png",
+        "hash": "UMFPBE_NNLD%WGM{X8t7NfNGM_xto|xus,ay"
+      },
+      {
+        "src": "6218354347_upscale (100).png",
+        "hash": "UKFPNo_4IqDiI9D$o}xvIBahjXx[T0tRr?V@"
+      },
+      {
+        "src": "6218354347_upscale (101).png",
+        "hash": "UDF=%Q004:~qX:%MtQIoI^t7%LDj.8E0R5-q"
+      },
+      {
+        "src": "6218354347_upscale (102).png",
+        "hash": "UFG[.,4TT1_N%O%NXSIUyFoyMwM|tTRj%2xG"
+      }
     ],
     "price": 10,
     "variants": {
@@ -1368,10 +1860,22 @@
     "title": "Exotic Beds Mini Bed-Cake",
     "description": "A mini cake made with design by ©Exotic Beds company",
     "images": [
-      "efcfc77e-164e-48da-afe8-5359bc23bf2f.png",
-      "6b9d09b9-63cf-4061-8321-2fff03ef4340.png",
-      "mzl1-9Mmy1ayM-KUeiK_i.png",
-      "Oohymh888MI2ByjQQlr44.jpg"
+      {
+        "src": "efcfc77e-164e-48da-afe8-5359bc23bf2f.png",
+        "hash": "UVL|fb.T9}Mx9GM{V@k99[WV-UX8$%x]xaa~"
+      },
+      {
+        "src": "6b9d09b9-63cf-4061-8321-2fff03ef4340.png",
+        "hash": "UDG*{5tm00Mw4TIT%g%M00X8~pkX.7tSjFRP"
+      },
+      {
+        "src": "mzl1-9Mmy1ayM-KUeiK_i.png",
+        "hash": "UDHBSe~V0L570101#8=|Eyn~?bX9}[%M9te-"
+      },
+      {
+        "src": "Oohymh888MI2ByjQQlr44.jpg",
+        "hash": "UAK^jM~q00005OEfDO%20zWq^Qxuw5$*kSNF"
+      }
     ],
     "price": 16,
     "variants": {
@@ -1391,10 +1895,22 @@
     "title": "Tropic Flowers Mini Cake",
     "description": "This cake is in a small form in a floral tropical style",
     "images": [
-      "Q0GBmdtN_RMsj52O9rP99.jpg",
-      "UVl5kr415rPYAPV9phetF.jpg",
-      "6DzdVM_UGNK6uGH1aftEj.jpg",
-      "4zGq1Lb9NIcYZhyE4OvjK.jpg"
+      {
+        "src": "Q0GBmdtN_RMsj52O9rP99.jpg",
+        "hash": "UKJHEc~WGKKO00IVsT%cKSxv-O%KIAt3R-Mz"
+      },
+      {
+        "src": "UVl5kr415rPYAPV9phetF.jpg",
+        "hash": "UJLfz5ThE:pHR|-W%3J-ELSxZ#rso#OXxunT"
+      },
+      {
+        "src": "6DzdVM_UGNK6uGH1aftEj.jpg",
+        "hash": "UFLga}00_4H=?w_34:9FIAx^AIMwV?xu%MM{"
+      },
+      {
+        "src": "4zGq1Lb9NIcYZhyE4OvjK.jpg",
+        "hash": "UCJ7py0400RM;l_2BT8{D~xG%4TJ1P9Z}8%g"
+      }
     ],
     "price": 10,
     "variants": {
@@ -1413,10 +1929,22 @@
     "title": "Sea Styled Mini Cake",
     "description": "This cake in a small form in a sea style with confectionery decoration in the form of seaweed, shells and everything else that emphasizes the theme of the sea",
     "images": [
-      "6eBGA9Vv5_B94FwomUUyi.jpg",
-      "azjpBMXPpf7TgHB8_aXaB.jpg",
-      "eCOWOu0m8lPJymomnHMno.jpg",
-      "tQQLmQwAhDAxjf9Bo2rSa.jpg"
+      {
+        "src": "6eBGA9Vv5_B94FwomUUyi.jpg",
+        "hash": "UfMHDMD%%1o#?wt6XARjwHozM{n$S%aysloe"
+      },
+      {
+        "src": "azjpBMXPpf7TgHB8_aXaB.jpg",
+        "hash": "UsM7onIoRPxZ~qoex]Rj%Mj?R*WqNGWVV@of"
+      },
+      {
+        "src": "eCOWOu0m8lPJymomnHMno.jpg",
+        "hash": "UDKU4aD$#R-p9^?co~4.Z~aK%$IARPD%~WRj"
+      },
+      {
+        "src": "tQQLmQwAhDAxjf9Bo2rSa.jpg",
+        "hash": "UTHCv9?wRPM{tRaJjcXTS6RPbvs:nkkDaxn#"
+      }
     ],
     "price": 12,
     "variants": {
@@ -1435,10 +1963,22 @@
     "title": "Wagon Bento Cake",
     "description": "Mini cake in the shape of a small cute train wagon with vanilla sponge and filling of your choice",
     "images": [
-      "SK5jcHk-ddVR3J2Y3yZKq.jpg",
-      "EUNn4Rnk3VaJTlZWVCC7B.jpg",
-      "rlcTeoW9rTTnonTSo15jP.jpg",
-      "aFyIVo7X1p5DUrlkkjENI.jpg"
+      {
+        "src": "SK5jcHk-ddVR3J2Y3yZKq.jpg",
+        "hash": "UINJg,~V.T9boY4mD%bc%gx^E0s8Mxa0-p%M"
+      },
+      {
+        "src": "EUNn4Rnk3VaJTlZWVCC7B.jpg",
+        "hash": "UQLp]jJ:D%x^%$.9tRt6.T%LM_of.8nhIVIU"
+      },
+      {
+        "src": "rlcTeoW9rTTnonTSo15jP.jpg",
+        "hash": "U9J7:O0000-mQEKP00%00?rp~99HD4?aOs9v"
+      },
+      {
+        "src": "aFyIVo7X1p5DUrlkkjENI.jpg",
+        "hash": "UCNmf-00u69G5P?v?HIABZsA-nyD~AD%9GxU"
+      }
     ],
     "price": 8,
     "variants": {
@@ -1456,7 +1996,16 @@
     "category": "mini-cakes",
     "title": "Confetti Mini Cake",
     "description": "A small cake with vanilla sponge, funfetti icing and confectionery sprinkles",
-    "images": ["zMz_BQuGyvIVO-gZr9sh0.jpg", "_suC-AIp7wjAQLy9uWhHO.jpg"],
+    "images": [
+      {
+        "src": "zMz_BQuGyvIVO-gZr9sh0.jpg",
+        "hash": "UEJP-;0100~ppc-TRiIq0L-:x[D%EKIr#?t5"
+      },
+      {
+        "src": "_suC-AIp7wjAQLy9uWhHO.jpg",
+        "hash": "UeL}4|XBRj%M~qxv-oNGnPowIVadx^NFMetR"
+      }
+    ],
     "price": 7,
     "abilities": ["card-message"]
   },
@@ -1466,9 +2015,18 @@
     "title": "Bright Fun Bento Cake",
     "description": "Mini cake with marmalade and soufflé with bright streaks",
     "images": [
-      "i6ezIgAm0BQBD8xS_bFoD.jpg",
-      "bA4xr40YsZGuD1XgdPfmF.jpg",
-      "b1piZN5yznZ3VZ29kJYTL.jpg"
+      {
+        "src": "i6ezIgAm0BQBD8xS_bFoD.jpg",
+        "hash": "UFM~9BUX2O?Z4TTLNitZy0V#a-X0IMt0x+N6"
+      },
+      {
+        "src": "bA4xr40YsZGuD1XgdPfmF.jpg",
+        "hash": "UDLofT.40|IW0GVeNWbpFSS4VJR-xjtK~ARn"
+      },
+      {
+        "src": "b1piZN5yznZ3VZ29kJYTL.jpg",
+        "hash": "UgQR|Z-o.TN{%hM|aJkRkXofMxoMjDkSX7j0"
+      }
     ],
     "price": 8,
     "abilities": ["card-message"]
@@ -1479,10 +2037,22 @@
     "title": "Easter Bunny Cookies",
     "description": "Easter bunny and egg shaped sugar cookies..",
     "images": [
-      "6218354347_upscale (32).png",
-      "6218354347_upscale (33).png",
-      "6218354347_upscale (34).png",
-      "6218354347_upscale (35).png"
+      {
+        "src": "6218354347_upscale (32).png",
+        "hash": "U6HeE^004:tl0LI@b_ENAE^*~A^ND%RkIpDj"
+      },
+      {
+        "src": "6218354347_upscale (33).png",
+        "hash": "UJG[$f~WE1R*?^t7V[aykWb^xvV@#lWVNbRP"
+      },
+      {
+        "src": "6218354347_upscale (34).png",
+        "hash": "UCIE%|~DNHt7I9ITInRjOsKOI9IANZIUwI%g"
+      },
+      {
+        "src": "6218354347_upscale (35).png",
+        "hash": "UDJt^;9u?cn%~Xs,NaRjt-Md?cf,M{Io8^Mx"
+      }
     ],
     "options": {
       "Quantity": [
@@ -1504,10 +2074,22 @@
     "title": "Bright Pokemon Cookies with Marmelade",
     "description": "Pokemon glazed cookies in a bowl (4 pcs) with assorted gummies",
     "images": [
-      "6218354347_upscale (39).png",
-      "6218354347_upscale (40).png",
-      "6218354347_upscale (42).png",
-      "6218354347_upscale (88).png"
+      {
+        "src": "6218354347_upscale (39).png",
+        "hash": "UFGk~:D4GI0L_KRRwHs=9RD$%4$ev#-U9uTd"
+      },
+      {
+        "src": "6218354347_upscale (40).png",
+        "hash": "UPHn$i?wJFx]~ptnkrt7EUo~-Ui{OFtRi|R*"
+      },
+      {
+        "src": "6218354347_upscale (42).png",
+        "hash": "UBEe#xyE1kot_NSdo{v}0oxT-iRR^zaLIUOq"
+      },
+      {
+        "src": "6218354347_upscale (88).png",
+        "hash": "UAG8J+_N0hn2zqD$%M%M0jm++b9wu3xtxvRN"
+      }
     ],
     "options": {
       "Size": [
@@ -1529,10 +2111,22 @@
     "title": "Hearts Cookies",
     "description": "Sugar heart cookies with icing",
     "images": [
-      "6218354347_upscale (43).png",
-      "6218354347_upscale (44).png",
-      "6218354347_upscale (45).png",
-      "6218354347_upscale (87).png"
+      {
+        "src": "6218354347_upscale (43).png",
+        "hash": "UBK0{S4mK0pH~D-;S~Rj7yr=f-%2t,xbMxOX"
+      },
+      {
+        "src": "6218354347_upscale (44).png",
+        "hash": "USL4ECt7.9of?cWXWBof.TWWt7oL%MoeRij["
+      },
+      {
+        "src": "6218354347_upscale (45).png",
+        "hash": "UAJ7]#=zTyNF-qj^Rjx]ysXSo}D%o|XPNFt8"
+      },
+      {
+        "src": "6218354347_upscale (87).png",
+        "hash": "U8KT*{4T38u1w0xuS5sDD3S{-Ca1Xnt8afNZ"
+      }
     ],
     "options": {
       "Quantity": [
@@ -1554,9 +2148,18 @@
     "title": "Sea Themed Cookies",
     "description": "Seashell and star shaped cookies",
     "images": [
-      "6218354347_upscale (51).png",
-      "6218354347_upscale (52).png",
-      "6218354347_upscale (84).png"
+      {
+        "src": "6218354347_upscale (51).png",
+        "hash": "UKI;@l~q.SoM%MtRo#oM%$Rka$Mx-;jZM{t6"
+      },
+      {
+        "src": "6218354347_upscale (52).png",
+        "hash": "U4J@|3VD00?w%g4o?vs8Iq-oMwoy?v00%hIA"
+      },
+      {
+        "src": "6218354347_upscale (84).png",
+        "hash": "U3HLSW0K?^0000~q?b%h0M-;o}%M%2bbM|00"
+      }
     ],
     "options": {
       "Quantity": [
@@ -1578,9 +2181,18 @@
     "title": "Cartoon Princess Cookies",
     "description": "Random set of princesses",
     "images": [
-      "6218354347_upscale (53).png",
-      "6218354347_upscale (54).png",
-      "6218354347_upscale (83).png"
+      {
+        "src": "6218354347_upscale (53).png",
+        "hash": "UOLzgTv-?vE1%~bKibS#?^OXS#xC-oxFIonh"
+      },
+      {
+        "src": "6218354347_upscale (54).png",
+        "hash": "USN0VUkXp{oyyDN_kDad-?xCtQW=$QxHjEbw"
+      },
+      {
+        "src": "6218354347_upscale (83).png",
+        "hash": "UJLDrq%N*0.8x]RkO@xsOu$es*OHxDrEr;b["
+      }
     ],
     "options": {
       "Quantity": [
@@ -1605,7 +2217,20 @@
     "category": "sugar-cookies",
     "title": "Bears Cookies",
     "description": "Gingerbread cookies in the shape of cute bears",
-    "images": ["OIG1 (8).jpg", "OIG1 (9).jpg", "OIG1.UDWg8xJNPy34.jpg"],
+    "images": [
+      {
+        "src": "OIG1 (8).jpg",
+        "hash": "UQLDPl_NE5R-?bS#i_aKA0bvskaJ?GkWVsIV"
+      },
+      {
+        "src": "OIG1 (9).jpg",
+        "hash": "UHLf~,~AE+pI.SQ-xCkD4onh%Mxu#Q={s,NH"
+      },
+      {
+        "src": "OIG1.UDWg8xJNPy34.jpg",
+        "hash": "UYL:W3?GIps:~oRjR+oLE,RjtQt6x]jYnhWV"
+      }
+    ],
     "options": {
       "Quantity": [
         {
@@ -1625,7 +2250,20 @@
     "category": "sugar-cookies",
     "title": "Hagi Wagi Cookies",
     "description": "Cookies in the shape of children's favorite hagi wagi",
-    "images": ["OIG2 (2).jpg", "OIG2 (3).jpg", "OIG2 (4).jpg"],
+    "images": [
+      {
+        "src": "OIG2 (2).jpg",
+        "hash": "UJM$GQ~XY5-:*IS~,@xuL2TIo{EM=gM{R%Ip"
+      },
+      {
+        "src": "OIG2 (3).jpg",
+        "hash": "UCK,aF~V1c;U_3ICTIJ~EeYi,@oh^jTwbI=z"
+      },
+      {
+        "src": "OIG2 (4).jpg",
+        "hash": "UQLDMx.7Boai~p-VN3xbTBv~-Wognh$$JjJT"
+      }
+    ],
     "options": {
       "Quantity": [
         {
@@ -1645,7 +2283,20 @@
     "category": "sugar-cookies",
     "title": "Kangaroo Cookies",
     "description": "Brightly glazed sugar cookies in the shape of kangaroos",
-    "images": ["OIG2 (5).jpg", "OIG2 (6).jpg", "OIG2.u.jpg"],
+    "images": [
+      {
+        "src": "OIG2 (5).jpg",
+        "hash": "UNLpRFLKFx7f~W,tw}S0S{xGrYs+,qNaT0XQ"
+      },
+      {
+        "src": "OIG2 (6).jpg",
+        "hash": "UaOMNn?bgNoz~qWrRkt7O@oeX8axoza#V?R*"
+      },
+      {
+        "src": "OIG2.u.jpg",
+        "hash": "UQN]e5%Nb]n$~Vb_t7x]O[t5p0RQ$%ocNbn%"
+      }
+    ],
     "options": {
       "Quantity": [
         {
@@ -1666,11 +2317,26 @@
     "title": "Flower Tower",
     "description": "A wedding is an important day in your life and we can decorate it to the maximum, this unusual but beautiful bright and huge cake decorated with flowers will make your celebration truly unique and unlike any other",
     "images": [
-      "6218354347_upscale (9).png",
-      "6218354347_upscale (10).png",
-      "6218354347_upscale (11).png",
-      "6218354347_upscale (12).png",
-      "6218354347_upscale (13).png"
+      {
+        "src": "6218354347_upscale (9).png",
+        "hash": "UgOWEGIUuPs,o}tRjcn+o~kBadjFrsofX5WD"
+      },
+      {
+        "src": "6218354347_upscale (10).png",
+        "hash": "URN0*lIVT}?unox]g2VtTKRPnhaeaHt8WGox"
+      },
+      {
+        "src": "6218354347_upscale (11).png",
+        "hash": "UZMj%R9FT}%2tlt7jZR*xuaejZX8RPofa_ae"
+      },
+      {
+        "src": "6218354347_upscale (12).png",
+        "hash": "UdN^9;MyYR%LbqtRsDV@TLWAnMa#rrt7X8WX"
+      },
+      {
+        "src": "6218354347_upscale (13).png",
+        "hash": "UbNd5fRkT}%fxcxtg2RkXSRknOn$WAoej[bb"
+      }
     ],
     "options": {
       "Size": [
@@ -1701,11 +2367,26 @@
     "title": "Berry Fruit Tower",
     "description": "A wedding is an important day in your life and we can decorate it to the maximum, this unusual but beautiful bright and huge cake decorated with variety of different berries and exotic fruits will make your celebration truly unique and unlike any other",
     "images": [
-      "6218354347_upscale (14).png",
-      "6218354347_upscale (15).png",
-      "6218354347_upscale (16).png",
-      "6218354347_upscale (17).png",
-      "6218354347_upscale (18).png"
+      {
+        "src": "6218354347_upscale (14).png",
+        "hash": "UVM@1KM{uP-Vt7xbogR%u4Rjm,S2R6ozSwo3"
+      },
+      {
+        "src": "6218354347_upscale (15).png",
+        "hash": "UMN0xOE1uP-Vs;t8oxWByrV?Z$NwMvt8Siae"
+      },
+      {
+        "src": "6218354347_upscale (16).png",
+        "hash": "UZNA9pD%uP%1x]t7flWBl9V@n3R-R6t7g1jb"
+      },
+      {
+        "src": "6218354347_upscale (17).png",
+        "hash": "UQN0o1f,UH?Hovxut8WAY6RirCNHVbtQXMai"
+      },
+      {
+        "src": "6218354347_upscale (18).png",
+        "hash": "UYN,b:Ioys%2ozt7o2WAyDaKR5S3RRofoaj]"
+      }
     ],
     "options": {
       "Size": [
@@ -1736,14 +2417,38 @@
     "title": "Brand & Wishes Wedding Cake",
     "description": "Cake with wedding wishes from our brand and corporate design and signature",
     "images": [
-      "4N04xl4iMpCEmcJzL76Ku.jpg",
-      "4y8pkQXIZXWzxD-mO2wif.jpg",
-      "Brrx90xYGwoaMmBZu5aOv.jpg",
-      "JBGqZoekWUUeRoN94iA2K.jpg",
-      "-kFpzThIlLbS5ssr-gvcU.jpg",
-      "oF-ZsWjB9UDsn41Urcai4.jpg",
-      "rcmt-VutQUcKXAgt9P5Tl.jpg",
-      "SEVCMlyghwqwryCy9UBHD.jpg"
+      {
+        "src": "4N04xl4iMpCEmcJzL76Ku.jpg",
+        "hash": "UGPiCZR4.TNF%%aexBRlxBaxNLoIIVWE%Kt6"
+      },
+      {
+        "src": "4y8pkQXIZXWzxD-mO2wif.jpg",
+        "hash": "UCKTlZtn?]4m01i]--tn~ebu9KnUIce:xpou"
+      },
+      {
+        "src": "Brrx90xYGwoaMmBZu5aOv.jpg",
+        "hash": "USHn89~W9?D$E0jYr@xut5RiohWEM{s;WBs:"
+      },
+      {
+        "src": "JBGqZoekWUUeRoN94iA2K.jpg",
+        "hash": "UZO2~xoe_Mt7x]ofi^a}kVj]RladoKj?WBfl"
+      },
+      {
+        "src": "-kFpzThIlLbS5ssr-gvcU.jpg",
+        "hash": "USLgeD?G_NNFR5SOVrt7?us+S6e:MxWYRjoe"
+      },
+      {
+        "src": "oF-ZsWjB9UDsn41Urcai4.jpg",
+        "hash": "UNNcZ*WFKg8^~St5R=%4XTtRi^jZWHxb%0kV"
+      },
+      {
+        "src": "rcmt-VutQUcKXAgt9P5Tl.jpg",
+        "hash": "U8KJf50HL#0:00?6u6~p0JMK0VQ.ImsmR6Rh"
+      },
+      {
+        "src": "SEVCMlyghwqwryCy9UBHD.jpg",
+        "hash": "UAOxUl0_8qS%*K2nD5I:+EbX=2O=#^Q,X,EL"
+      }
     ],
     "options": {
       "Size": [
@@ -1773,7 +2478,16 @@
     "category": "wedding-cakes",
     "title": "Retro Car Wedding Cake",
     "description": "Wedding cake for those who love something unusual. This one is made in the form of a retro car (one or two to choose from)",
-    "images": ["OIG1 (6).jpg", "OIG1 (7).jpg"],
+    "images": [
+      {
+        "src": "OIG1 (6).jpg",
+        "hash": "UQLNMf?wx^R5*0nhkCRi%NV?M|Rjs+RPVrxZ"
+      },
+      {
+        "src": "OIG1 (7).jpg",
+        "hash": "UFK1H~00R5_44U~qr;ofSl-pXVVrDhICxVIU"
+      }
+    ],
     "options": {
       "Size": [
         {
@@ -1802,7 +2516,20 @@
     "category": "wedding-cakes",
     "title": "Marvel Wedding Cake",
     "description": "Cake with heroes from the Marvel universe..",
-    "images": ["OIG1 (19).jpg", "OIG1 (20).jpg", "OIG1.GDlKCoZw9knuq0.jpg"],
+    "images": [
+      {
+        "src": "OIG1 (19).jpg",
+        "hash": "UCJQc#MvJg-?0J~XIB-o01s%$jMxMungt2I["
+      },
+      {
+        "src": "OIG1 (20).jpg",
+        "hash": "UDH^^u?wO7D$H;4mD%Iorp%N=}?IDiWAI@jY"
+      },
+      {
+        "src": "OIG1.GDlKCoZw9knuq0.jpg",
+        "hash": "UBIg+d4,x.}]Hq%N4nX8HqXTb_R%00rqr;M_"
+      }
+    ],
     "options": {
       "Size": [
         {
@@ -1836,7 +2563,12 @@
     "category": "wedding-cakes",
     "title": "Cuban Style Wedding Cake",
     "description": "A cake for lovers and admirers of Cuba. Simply imbued with the spirit of this Caribbean country",
-    "images": ["OIG2 (10).jpg"],
+    "images": [
+      {
+        "src": "OIG2 (10).jpg",
+        "hash": "UHI|,j_MMeD*y@9GIUNa:kR.ozx]rCxtoMof"
+      }
+    ],
     "options": {
       "Size": [
         {
@@ -1866,10 +2598,22 @@
     "title": "Hawaiian Wedding Cake",
     "description": "Hawaiian style cake decorated with flowers with 2 figures of newlyweds made of fondant, available in mini and regular two-tier size",
     "images": [
-      "OIG2 (11).jpg",
-      "OIG2 (12).jpg",
-      "OIG2 (13).jpg",
-      "OIG2 (14).jpg"
+      {
+        "src": "OIG2 (11).jpg",
+        "hash": "UiLqRyS6yDVr*0e,NHR*tRM{RPR*-Woeniax"
+      },
+      {
+        "src": "OIG2 (12).jpg",
+        "hash": "UQKKyTNhRj.8c[%NR*j^4;I;RPNHr^V?afj?"
+      },
+      {
+        "src": "OIG2 (13).jpg",
+        "hash": "UVIN]X?]bwbII-j;M{oexstR?Hx]o}kC%2e."
+      },
+      {
+        "src": "OIG2 (14).jpg",
+        "hash": "UUL|$8_No#ogXkn4IAtRX5%2RP%M-=oboJni"
+      }
     ],
     "options": {
       "Size": [
@@ -1899,7 +2643,20 @@
     "category": "wedding-cakes",
     "title": "Huggy Wuggy Wedding Cake",
     "description": "Cake made with Huggy Wuggy cute toys",
-    "images": ["OIG3 (5).jpg", "OIG3 (6).jpg", "OIG3 (7).jpg"],
+    "images": [
+      {
+        "src": "OIG3 (5).jpg",
+        "hash": "UEH^*B~WNKNH00Mc9GbF~CTy-pxa9GM_kWVs"
+      },
+      {
+        "src": "OIG3 (6).jpg",
+        "hash": "UAJje,tS9E~900Vs4ns9U]%1.95A+ERjxu5S"
+      },
+      {
+        "src": "OIG3 (7).jpg",
+        "hash": "UGJtVW9FEM?a00_1rpWV~V?F-onOMbs.yC?a"
+      }
+    ],
     "options": {
       "Size": [
         {
@@ -1929,10 +2686,22 @@
     "title": "Pokemon Wedding Cake",
     "description": "Wedding cake with different random pokemons. Filling and sponge cake of your choice",
     "images": [
-      "OIG3 (10).jpg",
-      "OIG3 (11).jpg",
-      "OIG3 (12).jpg",
-      "OIG3 (13).jpg"
+      {
+        "src": "OIG3 (10).jpg",
+        "hash": "U8JGpCEl4=Tc8wDj01}=^QIU-p%1?EEg%3JX"
+      },
+      {
+        "src": "OIG3 (11).jpg",
+        "hash": "UJJHK@~VXBEkNz9aE1V?E0NIT0%3wGjExBxa"
+      },
+      {
+        "src": "OIG3 (12).jpg",
+        "hash": "UKL37k_39+v$xzNIN$wJw9+]xvOt$--WelXQ"
+      },
+      {
+        "src": "OIG3 (13).jpg",
+        "hash": "U5He5t0006.700~WA0Or01yEnIVX:|00.6Q-"
+      }
     ],
     "options": {
       "Size": [
@@ -1963,7 +2732,20 @@
     "category": "wedding-cakes",
     "title": "Cyberpunk Wedding Cake",
     "description": "Wedding cake for people who love cyberpunk themes",
-    "images": ["OIG3 (14).jpg", "OIG3 (15).jpg", "OIG3 (16).jpg"],
+    "images": [
+      {
+        "src": "OIG3 (14).jpg",
+        "hash": "U7EeQQs._%z_H;no6^S~MxOZix$jDhadxwW@"
+      },
+      {
+        "src": "OIG3 (15).jpg",
+        "hash": "U5B{=}5E00^H0c$_%QNNu%%MO}9Z#@ES#a${"
+      },
+      {
+        "src": "OIG3 (16).jpg",
+        "hash": "UDE2k,{Iv2TJ-OK5I,NZMHwJ%NrYM_R.nMXS"
+      }
+    ],
     "options": {
       "Size": [
         {
@@ -1995,10 +2777,22 @@
     "title": "Finest Matte Lace Wedding Cake",
     "description": "Matte wedding cake made with the finest pastry lace as thin and perfect as possible",
     "images": [
-      "OIG4 (16).jpg",
-      "OIG4 (17).jpg",
-      "OIG4 (18).jpg",
-      "OIG4.ZW9UTV0u980G4LNNNy.jpg"
+      {
+        "src": "OIG4 (16).jpg",
+        "hash": "USK,{c~qMxD%%LbIWXj[t7WBt8xuWBa|WBWB"
+      },
+      {
+        "src": "OIG4 (17).jpg",
+        "hash": "UJL:+O00My~q=dx[sSRiSPD%%gMx$ir?Ipof"
+      },
+      {
+        "src": "OIG4 (18).jpg",
+        "hash": "UKN0PB~qs:D%-AbIxtbci{oLR5xubvW;O?WC"
+      },
+      {
+        "src": "OIG4.ZW9UTV0u980G4LNNNy.jpg",
+        "hash": "UWLD=D~qM{nh%gbIkCs:ozxutRofxvX9WXRj"
+      }
     ],
     "options": {
       "Size": [

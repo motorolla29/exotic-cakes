@@ -72,7 +72,7 @@ const Util = () => {
     //   })
     // ).then((arr) => console.log(arr));
     // ВЫВЕСТИ БЛЮРХЭШ КАРТИНКИ ПО ССЫЛКЕ
-    //getBlurhash(`${baseImagesURL}/no-photo.png`);
+    //getBlurhash(`${baseImagesURL}/eeeee.png`);
   };
 
   return (

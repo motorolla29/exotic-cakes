@@ -1,4 +1,6 @@
+import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
+
 import { blockAnimation, firstBlockAnimation } from '../../../animations';
 import BlurhashImage from '../../blurhash-image/blurhash-image';
 
@@ -9,6 +11,9 @@ const AboutPage = () => {
 
   return (
     <div className="about-page">
+      <Helmet>
+        <title>Exotic Cakes - About The Bakery</title>
+      </Helmet>
       <motion.div
         initial="hidden"
         whileInView="visible"

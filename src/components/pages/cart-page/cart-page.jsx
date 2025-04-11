@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
+import { Helmet } from 'react-helmet';
 
 import useWindowSize from '../../../hooks/use-window-size';
 import CartItem from '../../cart-item/cart-item';
@@ -17,6 +18,9 @@ const CartPage = observer(() => {
 
   return store.cartItems.length ? (
     <div className="cart-page">
+      <Helmet>
+        <title>Exotic Cakes - Cart</title>
+      </Helmet>
       <h1 className="cart-page_title">YOUR ORDER</h1>
       <div className="cart-page_heading">
         <span className="cart-page_heading_item">Item</span>
@@ -60,6 +64,9 @@ const CartPage = observer(() => {
     </div>
   ) : (
     <div className="empty-cart">
+      <Helmet>
+        <title>Exotic Cakes - Cart</title>
+      </Helmet>
       <img className="empty-cart_image" src="/images/empty-cart.png" />
       <h1 className="empty-cart_title">YOUR CART IS EMPTY</h1>
       <p className="empty-cart_subtitle">

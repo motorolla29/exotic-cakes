@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import moment from 'moment/moment';
+import { Helmet } from 'react-helmet';
 
 import LocationPageMap from '../../location-page-map/location-page-map';
 import { blockAnimation, firstBlockAnimation } from '../../../animations';
@@ -13,6 +14,9 @@ const LocationPage = () => {
 
   return (
     <div className="location-page">
+      <Helmet>
+        <title>Exotic Cakes - Location and Week's menu</title>
+      </Helmet>
       <motion.div
         initial="hidden"
         whileInView="visible"

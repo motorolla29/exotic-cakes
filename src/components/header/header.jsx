@@ -32,7 +32,7 @@ const Header = observer(() => {
         />
       ) : null}
       <Link to="/" onClick={onHeaderLinksClick} className="header_logo">
-        <img src="/images/EC-logo-8bit.png" alt="logo" />
+        <img src="/images/EC-logo-fullsize-optimized.webp" alt="logo" />
       </Link>
       <div className="header_right-side">
         {ww > 1024 ? (

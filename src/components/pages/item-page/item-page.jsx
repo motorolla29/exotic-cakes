@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import ImageGallery from '../../image-gallery/image-gallery';
 import ProductInfo from '../../product-info/product-info';
@@ -70,6 +71,9 @@ const ItemPage = () => {
 
   return (
     <div className="item-page">
+      <Helmet>
+        <title>{item?.title ? item.title : 'Exotic Cakes'}</title>
+      </Helmet>
       {loading ? (
         <div className="item-page-skeletons">
           <ImageGallerySkeleton className="image-gallery image-gallery-skeleton" />

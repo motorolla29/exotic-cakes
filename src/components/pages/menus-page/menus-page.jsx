@@ -1,4 +1,6 @@
+import { Helmet } from 'react-helmet';
 import { NavLink, useParams } from 'react-router-dom';
+
 import MenuItems from '../../menu-items/menu-items';
 
 import './menus-page.sass';
@@ -9,6 +11,9 @@ const MenusPage = () => {
 
   return (
     <div className="menus-page">
+      <Helmet>
+        <title>Exotic Cakes - Menu</title>
+      </Helmet>
       <div className="menus-page_nav">
         <NavLink className={`${category ? '' : 'active'}`} to="/menus/all">
           All Menu

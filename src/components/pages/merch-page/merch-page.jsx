@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
+
 import MerchItem from '../../merch-item/merch-item';
 import MerchItemSkeleton from '../../skeletons/merch-item-skeleton';
 
@@ -22,6 +24,9 @@ const MerchPage = () => {
   }, []);
   return (
     <div className="merch-page">
+      <Helmet>
+        <title>Exotic Cakes - Merch</title>
+      </Helmet>
       <h1 className="merch-page_title">Merch Shop</h1>
       <div className="merch-items">
         {firstLoading

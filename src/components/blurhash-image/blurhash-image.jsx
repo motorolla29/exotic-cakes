@@ -3,7 +3,6 @@ import { Blurhash } from 'react-blurhash';
 import { motion } from 'framer-motion';
 
 import './blurhash-image.sass';
-import { delay } from 'lodash';
 
 const BlurhashImage = ({
   src,

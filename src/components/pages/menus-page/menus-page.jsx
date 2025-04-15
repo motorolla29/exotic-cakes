@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { NavLink, useParams } from 'react-router-dom';
 
 import MenuItems from '../../menu-items/menu-items';

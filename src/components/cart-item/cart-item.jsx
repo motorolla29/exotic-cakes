@@ -72,7 +72,6 @@ const CartItem = observer(({ item }) => {
     }
     setDeletion(false);
   };
-
   return (
     <motion.div ref={cartItemRef} className="cart-item">
       <div className={`cart-item-container ${deletion && 'deletion'}`}>

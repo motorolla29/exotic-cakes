@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 import useWindowSize from '../../../hooks/use-window-size';
 import CartItem from '../../cart-item/cart-item';
@@ -10,6 +10,7 @@ import store from '../../../store/store';
 import './cart-page.sass';
 
 const CartPage = observer(() => {
+  const navigate = useNavigate();
   const [ww] = useWindowSize();
 
   useEffect(() => {
@@ -41,10 +42,6 @@ const CartPage = observer(() => {
 
       <div className="cart-page_order-summary">
         <h2 className="cart-page_order-summary_title">ORDER SUMMARY</h2>
-        <div className="cart-page_order-summary_notes">
-          <span>NOTES</span>
-          <textarea />
-        </div>
         <div className="cart-page_order-summary_count">
           <span>SUBTOTAL</span>
           <span>
@@ -54,7 +51,10 @@ const CartPage = observer(() => {
             }, 0)}
           </span>
         </div>
-        <button className="cart-page_order-summary_checkout-btn">
+        <button
+          onClick={() => navigate('/checkout')}
+          className="cart-page_order-summary_checkout-btn"
+        >
           CHECKOUT
         </button>
         <p className="cart-page_order-summary_description">

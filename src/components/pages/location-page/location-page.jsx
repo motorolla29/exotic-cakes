@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import moment from 'moment/moment';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 import LocationPageMap from '../../location-page-map/location-page-map';
 import { blockAnimation, firstBlockAnimation } from '../../../animations';

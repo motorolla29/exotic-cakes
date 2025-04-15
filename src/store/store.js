@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 
-var _ = require('lodash');
+import isEqualWith from 'lodash/isEqualWith';
+import omit from 'lodash/omit';
 
 class Store {
   cartItems = JSON.parse(localStorage.getItem('cart')) || [];
@@ -31,7 +32,7 @@ class Store {
 
   addItemToCart(item) {
     const cartItem = this.cartItems.find((it) =>
-      _.isEqualWith(_.omit(it, ['quantity']), _.omit(item, ['quantity']))
+      isEqualWith(omit(it, ['quantity']), omit(item, ['quantity']))
     );
     if (cartItem) {
       cartItem.quantity += 1;
@@ -49,7 +50,7 @@ class Store {
 
   setItemCountInCart(item, count) {
     const cartItem = this.cartItems.find((it) =>
-      _.isEqualWith(_.omit(it, ['quantity']), _.omit(item, ['quantity']))
+      isEqualWith(omit(it, ['quantity']), omit(item, ['quantity']))
     );
     cartItem.quantity = +count;
     localStorage.setItem('cart', JSON.stringify(this.cartItems));
@@ -57,7 +58,7 @@ class Store {
 
   incrementItemCountInCart(item) {
     const cartItem = this.cartItems.find((it) =>
-      _.isEqualWith(_.omit(it, ['quantity']), _.omit(item, ['quantity']))
+      isEqualWith(omit(it, ['quantity']), omit(item, ['quantity']))
     );
     cartItem.quantity < 99
       ? (cartItem.quantity = cartItem.quantity += 1)
@@ -67,7 +68,7 @@ class Store {
 
   decrementItemCountInCart(item) {
     const cartItem = this.cartItems.find((it) =>
-      _.isEqualWith(_.omit(it, ['quantity']), _.omit(item, ['quantity']))
+      isEqualWith(omit(it, ['quantity']), omit(item, ['quantity']))
     );
     cartItem.quantity > 1 ? (cartItem.quantity = cartItem.quantity -= 1) : null;
     localStorage.setItem('cart', JSON.stringify(this.cartItems));

@@ -10,6 +10,7 @@ import CartPage from '../pages/cart-page/cart-page';
 import ItemPage from '../pages/item-page/item-page';
 import MerchItemPage from '../pages/merch-item-page/merch-item-page';
 import Util from '../pages/util/util';
+import CheckoutPage from '../pages/checkout-page/checkout-page';
 
 import './app.sass';
 
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="cart" element={<CartPage />} />
           <Route path="util" element={<Util />} />
         </Route>
+        <Route path="checkout" element={<CheckoutPage />} />
       </Routes>
     </BrowserRouter>
   );

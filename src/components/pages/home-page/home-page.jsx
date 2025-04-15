@@ -30,7 +30,7 @@ const HomePage = () => {
       >
         <ReactPlayer
           className="react-player"
-          url="/video/main video bit2.mp4"
+          url="/video/main_video_bit2.mp4"
           width="100%"
           height="100%"
           playing={videoPlaying}

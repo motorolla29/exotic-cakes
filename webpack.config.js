@@ -1,5 +1,18 @@
 const path = require('path');
+const webpack = require('webpack');
+const dotenv = require('dotenv');
+const fs = require('fs');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+
+// Загружаем переменные из .env
+const envFile = path.resolve(__dirname, '.env');
+const env = dotenv.parse(fs.readFileSync(envFile));
+
+// Преобразуем переменные в формат для DefinePlugin
+const envKeys = Object.keys(env).reduce((acc, key) => {
+  acc[`process.env.${key}`] = JSON.stringify(env[key]);
+  return acc;
+}, {});
 
 module.exports = {
   output: {
@@ -76,5 +89,6 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './src/index.html',
     }),
+    new webpack.DefinePlugin(envKeys),
   ],
 };

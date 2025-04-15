@@ -1,0 +1,346 @@
+
+
+.checkout-page
+  font-size: 16px 
+  min-height: 100vh
+  background: #fffbe8
+  font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
+  &_header
+    height: 6em
+    border-bottom: 1px solid #cccccc
+    display: flex
+    align-items: center
+    justify-content: center
+    > a
+      display: flex
+      > img
+        width: 16em
+  &_content
+    display: flex
+    flex-direction: column
+    max-width: 1200px
+    margin: 0 auto
+    padding: 2em
+    gap: 2em
+    &_title 
+      text-align: center
+      font-size: 3em
+
+    &_order, &_shipping
+      background-color: #fff
+      padding: 1.5em
+      border: 1px solid #eee
+      border-radius: 1em
+      flex: 1
+    &_order
+      display: flex
+      &_items
+        padding-right: 1.5em
+        flex: 1
+        h2
+          padding-bottom: 0.5em
+          border-bottom: 1px solid #eee
+        &_item
+          display: flex
+          border-bottom: 1px solid #eee
+          padding: 1em 0
+          &_image
+            border-radius: 0.5em
+            overflow: hidden
+            aspect-ratio: 1/1
+            width: 5em
+            height: fit-content
+            object-fit: cover
+          &_title
+            color: #481E5C
+            margin-bottom: 0.75em
+          &_details
+            display: flex
+            flex: 1
+            justify-content: space-between
+            font-size: 0.9em
+            color: #555
+            &_main
+              padding: 0 1em
+            &_price
+              color: #481E5C
+
+      &_summary-section
+        width: 20em
+        padding: 0.5em
+        border: 1px solid #ccc
+        border-radius: 0.5em
+        justify-self: flex-end
+        height: fit-content
+        position: sticky
+        top: 1.5em
+        &_counts
+          display: flex
+          flex-direction: column
+          &_subtotal, &_shipping, &_total
+            display: flex
+            justify-content: space-between
+            margin-top: 0.5em
+            > span
+              font-size: 1em
+          &_subtotal, &_shipping
+            color: #555
+          &_total
+            margin-top: 0.75em
+            > span
+              font-size: 1.2em
+        &_notes
+          width: 100%
+          position: relative
+          display: flex
+          flex-direction: column
+          margin-bottom: 1em
+          span
+            font-size: 1em
+            padding-bottom: 0.25em
+          textarea
+            padding: 0.25em 0.5em
+            font-family: Klyakson, Arial, sans-serif
+            font-size: 1em
+            resize: none
+            height: 6em
+            width: 100%
+            outline: none
+            border-radius: 5px
+            border: 1px solid #ccc
+            color: #481E5C
+            transition: border-color 0.2s ease
+            &:focus
+              border-color: #d2b183
+
+    &_shipping
+      display: flex
+      flex-direction: column
+      h2
+          padding-bottom: 0.5em
+          border-bottom: 1px solid #eee
+      &_main
+        display: flex
+        
+        h3
+          width: fit-content
+          font-size: 1.25em
+          margin: 0.72em
+          color: #555
+        &_info
+          width: 100%
+          &_customer, &_delivery
+            &_fields
+              display: flex
+              justify-content: space-between
+              flex-wrap: wrap
+          &_customer
+            &_fields
+              & .main-field.name, & .main-field.email, & .main-field.phone
+                width: 32%
+          &_delivery
+            &_fields
+              & .main-field.address
+                width: 100%
+                & .address-input-container
+                  width: 100%
+                  position: relative
+                  & > input
+                    width: 100%
+                & .loading-indicator, & .no-results-message
+                  position: absolute
+                  top: 100%
+                  left: 0
+                  width: 100%
+                  background-color: #fffdf8
+                  font-size: 0.9em
+                  color: #555
+                  padding: 1em
+                  border-radius: 1em
+                  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1)
+                & .address-suggestions-list
+                  position: absolute
+                  top: 100%
+                  left: 0
+                  width: 100%
+                  background-color: #fffdf8
+                  border-top: none
+                  border-radius: 1em
+                  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1)
+                  overflow-y: auto
+                  animation: fadeIn 0.25s ease-in-out
+                  z-index: 1
+                  max-height: 16em
+                  &_item
+                    font-size: 0.9em
+                    color: #555
+                    cursor: pointer
+                    user-select: none
+                    white-space: nowrap
+                    min-width: fit-content
+                    padding: 1em
+                    transition: background-color 0.2s ease
+                    &:hover
+                      background-color: #eee
+              & .main-field.apartment, & .main-field.postcode, & .main-select.city, & .main-select.country
+                width: 48%
+            & .show-map
+              user-select: none
+              cursor: pointer
+              width: fit-content
+              display: flex
+              align-items: center
+              font-size: 0.8em
+              color: #555
+              border-bottom: 1px solid
+              margin: 0.5em 0 0 1em
+              svg
+                margin-right: 0.25em
+              span
+
+              &:hover
+                opacity: 0.8
+
+                
+          &_error 
+            color: #d9534f
+            font-size: 0.9em
+        
+
+    &_checkout-btn 
+      display: block
+      width: 100%
+      max-width: 400px
+      margin: 1em auto 1em
+      padding: 1em
+      background-color: #481E5C
+      color: #fff
+      border: none
+      border-radius: 0.5em
+      font-size: 1.2em
+      cursor: pointer
+      transition: background-color 0.2s ease
+
+      &:hover 
+        background-color: #57296d
+    
+.main-field
+  display: flex
+  flex-direction: column
+  margin-bottom: 1.5em
+  > label
+    margin: 0 0 0.25em 1em
+    font-size: 0.9em
+  > input, > .address-input-container > input
+    outline: none
+    padding: 1em
+    border: 1px solid #ccc
+    border-radius: 2em
+    font-weight: 600
+    color: #555
+    font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
+    font-size: 0.9em
+    &::placeholder
+      opacity: 0.5
+    &.error
+      border-color: red
+    &:focus:not(.error)
+      border-color: #d2b183
+  > .error-text
+    color: red
+    padding-top: 0.2em
+    margin-left: 1.2em
+    font-size: 0.75em
+
+.main-select
+  position: relative
+  margin-bottom: 1em
+  &_label
+    display: flex
+    margin: 0 0 0.25em 1em
+    font-size: 0.9em
+  &_selected
+    cursor: pointer
+    color: #555
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 1em
+    border-radius: 2em
+    border: 1px solid #ccc
+    font-size: 0.9em
+    > span
+    > svg
+    &:hover
+      border-color: #d2b183
+
+  &_list
+      position: absolute
+      top: 100%
+      left: 0
+      width: 100%
+      background-color: #fffdf8
+      border-top: none
+      border-radius: 1em
+      box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1)
+      overflow-y: auto
+      animation: fadeIn 0.25s ease-in-out
+      z-index: 1
+      max-height: 16em
+  &_item
+      font-size: 0.9em
+      color: #555
+      cursor: pointer
+      user-select: none
+      white-space: nowrap
+      min-width: fit-content
+      padding: 1em
+      transition: background-color 0.2s ease
+      &:hover
+          background-color: #eee
+
+.map-modal-overlay
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, 0.65)
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 1000
+  > .map-modal-content
+    position: relative
+    width: 90%
+    max-width: 800px
+    height: 80vh
+    background: white
+    border-radius: 1em
+    overflow: hidden
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3)
+    > .map-container
+      width: 100%
+      height: 100%
+  > .close-map-btn
+    position: absolute
+    top: 0.375em
+    right: 1em
+    background: transparent
+    color: #aeaeae
+    border: none
+    font-size: 2em
+    cursor: pointer
+    z-index: 10
+    &:hover
+      color: #d2d2d2
+
+
+@keyframes fadeIn
+    from
+        opacity: 0
+        transform: translateY(-0.5em)
+    to
+        opacity: 1
+        transform: translateY(0)
+    

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 import ImageGallery from '../../image-gallery/image-gallery';
 import ProductInfo from '../../product-info/product-info';

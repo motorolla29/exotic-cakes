@@ -5,7 +5,12 @@ import { Helmet } from 'react-helmet-async';
 import store from '../../../store/store';
 import './checkout-page.sass';
 import BlurhashImage from '../../blurhash-image/blurhash-image';
-import { baseImagesURL, baseMerchImagesURL } from '../../../const';
+import {
+  baseImagesURL,
+  baseMerchImagesURL,
+  LONDON_BOUNDS,
+  LONDON_SHOP_COORDS,
+} from '../../../const';
 import { TbPencilHeart } from 'react-icons/tb';
 import { LuCake } from 'react-icons/lu';
 import { PiMapPinAreaBold } from 'react-icons/pi';
@@ -17,14 +22,22 @@ import { validateFields } from './validate-fields';
 import { COUNTRIES, CITIES } from '../../../const';
 import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
+import { calculateShippingCost, isInDeliveryZone } from '../../../utils';
+
 const CheckoutPage = observer(() => {
   const navigate = useNavigate();
   const addressInputContainerRef = useRef();
   const [mapModalOpen, setMapModalOpen] = useState(false);
+  const debounceSuggestionsRef = useRef();
 
   const [notes, setNotes] = useState('');
-  const [shippingCost, setShippingCost] = useState(0);
 
+  const [shippingMethod, setShippingMethod] = useState({
+    offset: null,
+    type: '',
+    date: null,
+    cost: 0,
+  });
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -49,15 +62,45 @@ const CheckoutPage = observer(() => {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
-  const orderTotal = orderSubtotal + shippingCost;
+  const orderTotal = orderSubtotal + shippingMethod.cost;
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    if (deliveryCoords && isInDeliveryZone(deliveryCoords, LONDON_BOUNDS)) {
+      const defaultOffset = 1;
+      const deliveryDate = new Date();
+      deliveryDate.setDate(deliveryDate.getDate() + defaultOffset);
+
+      const cost = calculateShippingCost(
+        deliveryCoords,
+        LONDON_SHOP_COORDS,
+        deliveryDate
+      );
+
+      setShippingMethod({
+        offset: defaultOffset,
+        type: 'London Hand Delivery',
+        date: deliveryDate,
+        cost,
+      });
+    }
+  }, [deliveryCoords]);
+
   const onAddressSuggestionSelect = (place) => {
+    setShippingMethod({
+      offset: null,
+      type: '',
+      date: null,
+      cost: 0,
+    });
+
     setDeliveryAddress(place.formatted);
     setAddressSuggestions([]);
+    setAddressSuggestionsLoading(false);
+    setNoAddressResultsFound(false);
     setDeliveryCoords({
       lat: place.geometry.lat,
       lng: place.geometry.lng,
@@ -70,39 +113,62 @@ const CheckoutPage = observer(() => {
   const onAddressChange = async (e) => {
     const value = e.target.value;
     setDeliveryCoords(null);
-    setDeliveryAddress(value);
     setDeliveryAddressError('');
     setPostalCodeError('');
-
-    if (value.length < 3) return;
-
+    setDeliveryAddress(value);
     setAddressSuggestionsLoading(true);
     setNoAddressResultsFound(false);
+    setShippingMethod({
+      offset: null,
+      type: '',
+      date: null,
+      cost: 0,
+    });
 
-    try {
-      const res = await axios.get(
-        'https://api.opencagedata.com/geocode/v1/json',
-        {
-          params: {
-            q: value,
-            key: process.env.OPENCAGE_KEY,
-            limit: 5,
-            countrycode: 'gb',
-            language: 'en',
-            no_annotations: true,
-          },
-        }
-      );
+    clearTimeout(debounceSuggestionsRef.current);
 
-      setAddressSuggestions(res.data.results);
-      if (res.data.results.length === 0) {
-        setNoAddressResultsFound(true); // Set flag if no results found
+    debounceSuggestionsRef.current = setTimeout(async () => {
+      if (value.length < 3) {
+        setAddressSuggestions([]);
+        setAddressSuggestionsLoading(false);
+        return;
       }
-    } catch (error) {
-      console.error('Geocoding error', error);
-    } finally {
-      setAddressSuggestionsLoading(false);
-    }
+
+      try {
+        const res = await axios.get(
+          'https://api.geoapify.com/v1/geocode/autocomplete',
+          {
+            params: {
+              text: value,
+              apiKey: process.env.GEOAPIFY_KEY,
+              limit: 5,
+              filter: 'countrycode:gb',
+              lang: 'en',
+            },
+          }
+        );
+
+        const suggestions = res.data.features.map((feature) => ({
+          formatted: feature.properties.formatted,
+          geometry: {
+            lat: feature.properties.lat,
+            lng: feature.properties.lon,
+          },
+          components: {
+            postcode: feature.properties.postcode,
+          },
+        }));
+
+        setAddressSuggestions(suggestions);
+        if (suggestions.length === 0) {
+          setNoAddressResultsFound(true);
+        }
+      } catch (error) {
+        console.error('Geocoding error', error);
+      } finally {
+        setAddressSuggestionsLoading(false);
+      }
+    }, 300);
   };
 
   const handleCheckout = async () => {
@@ -114,7 +180,6 @@ const CheckoutPage = observer(() => {
       postalCode,
       deliveryCoords,
     });
-    console.log(errors);
 
     setNameError(errors.nameError || '');
     setEmailError(errors.emailError || '');
@@ -125,90 +190,48 @@ const CheckoutPage = observer(() => {
     if (!isValid) {
       return;
     }
-    console.log('order');
+    const orderData = {
+      items: store.cartItems,
+      subtotal: orderSubtotal,
+      shipping: {
+        method: shippingMethod.type,
+        date: shippingMethod.date?.toISOString(),
+        cost: shippingMethod.cost,
+      },
+      currency: 'usd',
+      notes,
+      customerInfo: {
+        name,
+        email,
+        phone: phoneNumber,
+      },
+      deliveryInfo: {
+        country,
+        city,
+        postalCode,
+        line1: deliveryAddress,
+        line2: apartment,
+        coords: deliveryCoords,
+      },
+    };
+    console.log(orderData);
 
-    // if (store.cartItems.length === 0) {
-    //   alert('Your cart is empty!');
-    //   return;
-    // }
-
-    // const orderData = {
-    //   items: store.cartItems,
-    //   total: orderTotal,
-    //   currency: 'usd',
-    //   notes,
-    //   customerInfo: {
-    //     name,
-    //     email,
-    //     phoneNumber,
-    //   },
-    //   deliveryInfo: {
-    //     country,
-    //     city,
-    //     postalCode,
-    //     deliveryAddress,
-    //     deliveryCoords,
-    //   },
-    // };
-
-    // // Переход к API создания заказа
-    // try {
-    //   const res = await fetch('/api/create-order', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(orderData),
-    //   });
-    //   const data = await res.json();
-
-    //   if (data.sessionId) {
-    //     // Если используется Stripe JS, здесь можно вызвать redirectToCheckout
-    //     // Например:
-    //     // const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
-    //     // stripe.redirectToCheckout({ sessionId: data.sessionId });
-    //     // Или выполнить редирект:
-    //     window.location.href = data.redirectUrl || '/checkout-success';
-    //   } else {
-    //     // Обработка ошибки от API
-    //     alert('Ошибка оформления заказа, попробуйте позже');
-    //   }
-    // } catch (error) {
-    //   console.error('Ошибка при оформлении заказа:', error);
-    //   alert('Ошибка при оформлении заказа');
-    // }
+    try {
+      const { data } = await axios.post('/api/create-order', orderData);
+      console.log(data);
+      if (data?.sessionId && data?.redirectUrl) {
+        // перенаправление в Stripe
+        window.location.href = data.redirectUrl;
+      } else {
+        console.error('Stripe session URL missing in response:', data);
+        alert('Order processing error, please try again later');
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+      alert('Failed to place your order.');
+    }
   };
 
-  const handlePhoneChange = (e) => {
-    let inputValue = e.target.value;
-
-    // Убираем все символы, кроме цифр
-    inputValue = inputValue.replace(/\D/g, '');
-
-    // Ограничиваем длину ввода до 11 цифр (потому что +44 занимает 3 символа)
-    if (inputValue.length > 11) {
-      inputValue = inputValue.slice(0, 11);
-    }
-
-    // Форматируем номер с пробелами
-    if (inputValue.length <= 4) {
-      inputValue = inputValue.slice(0, 4); // Максимум 4 цифры после +44
-    } else if (inputValue.length <= 7) {
-      inputValue = `${inputValue.slice(0, 4)} ${inputValue.slice(4, 7)}`; // 3 цифры + 3 цифры
-    } else {
-      inputValue = `${inputValue.slice(0, 4)} ${inputValue.slice(
-        4,
-        7
-      )} ${inputValue.slice(7, 11)}`; // 4 цифры + 3 цифры + 3 цифры
-    }
-
-    // Добавляем префикс +44
-    if (inputValue.length === 0) {
-      inputValue = '+44';
-    } else if (inputValue.length <= 3) {
-      inputValue = `+44 ${inputValue}`;
-    }
-
-    setPhoneNumber(inputValue); // Обновляем состояние
-  };
   return (
     <div
       className="checkout-page"
@@ -288,6 +311,7 @@ const CheckoutPage = observer(() => {
                         }
                       }}
                       onChange={(e) => {
+                        setPhoneNumberError('');
                         setPhoneNumber(e.target.value);
                       }}
                       value={phoneNumber}
@@ -399,6 +423,84 @@ const CheckoutPage = observer(() => {
                     />
                   </div>
                 </div>
+              </div>
+              <div className="checkout-page_content_shipping_main_info_methods">
+                <h3>Shipping Method</h3>
+                {!deliveryCoords ? (
+                  <div className="delivery-warning no-coords">
+                    <p>
+                      Please enter and confirm a delivery address to see
+                      available shipping options.
+                    </p>
+                  </div>
+                ) : !isInDeliveryZone(deliveryCoords, LONDON_BOUNDS) ? (
+                  <div className="delivery-warning outside">
+                    <p>Sorry, this address is outside our delivery zone.</p>
+                  </div>
+                ) : (
+                  <div className="delivery-options">
+                    {[1, 2, 3].map((offset) => {
+                      const deliveryDate = new Date();
+                      deliveryDate.setDate(deliveryDate.getDate() + offset);
+
+                      const shippingCost = calculateShippingCost(
+                        deliveryCoords,
+                        LONDON_SHOP_COORDS,
+                        deliveryDate
+                      ).toFixed(2);
+
+                      const label = `${deliveryDate.toLocaleDateString(
+                        'en-GB',
+                        {
+                          month: 'short',
+                        }
+                      )} ${deliveryDate.toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                      })}, 9AM - 5PM`;
+
+                      return (
+                        <div
+                          key={offset}
+                          onClick={() =>
+                            setShippingMethod({
+                              offset,
+                              type: 'London Hand Delivery',
+                              date: deliveryDate,
+                              cost: +shippingCost,
+                            })
+                          }
+                          className={`delivery-options_option ${
+                            shippingMethod.offset === offset ? 'active' : ''
+                          }`}
+                        >
+                          <div className="delivery-options_option_input">
+                            <input
+                              type="radio"
+                              id={`delivery-${offset}`}
+                              name="delivery-option"
+                              value={offset}
+                              checked={shippingMethod.offset === offset}
+                              onChange={() => {
+                                setShippingMethod({
+                                  offset,
+                                  type: 'London Hand Delivery',
+                                  date: deliveryDate,
+                                  cost: +shippingCost,
+                                });
+                              }}
+                            />
+                            <label htmlFor={`delivery-${offset}`}>
+                              {shippingMethod.type} - {label}
+                            </label>
+                          </div>
+                          <span className="delivery-options_option_cost">
+                            ${shippingCost}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -515,7 +617,7 @@ const CheckoutPage = observer(() => {
               </div>
               <div className="checkout-page_content_order_summary-section_counts_shipping">
                 <span>Shipping</span>
-                <span>${shippingCost.toFixed(2)}</span>
+                <span>${shippingMethod.cost.toFixed(2)}</span>
               </div>
               <div className="checkout-page_content_order_summary-section_counts_total">
                 <span>Total</span>
@@ -538,7 +640,7 @@ const CheckoutPage = observer(() => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="map-modal-overlay"
-              onClick={(e) => {
+              onMouseDown={(e) => {
                 if (e.target.classList.contains('map-modal-overlay')) {
                   setMapModalOpen(false);
                 }

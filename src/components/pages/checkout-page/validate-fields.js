@@ -1,4 +1,5 @@
 import { LONDON_BOUNDS } from '../../../const';
+import { isInDeliveryZone } from '../../../utils';
 
 const ukPostcodeRegex = /^(GIR 0AA|[A-Z]{1,2}\d[A-Z\d]? \d[A-Z]{2})$/i;
 
@@ -44,11 +45,7 @@ export function validateFields({
       errors.addressError = 'Select the delivery address from the list';
       isValid = false;
     } else {
-      const { lat, lng } = deliveryCoords;
-
-      const [[swLng, swLat], [neLng, neLat]] = LONDON_BOUNDS;
-      const isWithinLondon =
-        lat >= swLat && lat <= neLat && lng >= swLng && lng <= neLng;
+      const isWithinLondon = isInDeliveryZone(deliveryCoords, LONDON_BOUNDS);
 
       if (!isWithinLondon) {
         errors.addressError =

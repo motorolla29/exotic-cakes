@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import maplibregl from 'maplibre-gl';
 
-import { MAPTILER_KEY, LONDON_BOUNDS } from '../../const';
+import { MAPTILER_KEY, GEOAPIFY_KEY, LONDON_BOUNDS } from '../../const';
 
 import '@maptiler/sdk/dist/maptiler-sdk.css';
 import './checkout-shipping-map.sass';
@@ -23,6 +23,7 @@ const CheckoutShippingMap = ({
     const map = new maplibregl.Map({
       container: mapRef.current,
       style: `https://api.maptiler.com/maps/streets/style.json?key=${MAPTILER_KEY}`,
+      //style: `https://maps.geoapify.com/v1/styles/osm-carto/style.json?apiKey=${GEOAPIFY_KEY}`,
       center: [-0.1276, 51.5072], // London center
       zoom: 10,
     });
@@ -36,19 +37,29 @@ const CheckoutShippingMap = ({
         const response = await fetch(
           `https://api.maptiler.com/geocoding/${lng},${lat}.json?key=${MAPTILER_KEY}&language=en`
         );
+        // const response = await fetch(
+        //   `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lng}&apiKey=${GEOAPIFY_KEY}`
+        // );
         const data = await response.json();
 
         if (data.features && data.features.length > 0) {
           const place = data.features[0];
-          const postcodeObj = place.context?.find((ctx) =>
-            ctx.id?.startsWith('postal_code')
-          );
-          const postcode = postcodeObj?.text || '';
+          // const postcode = place.properties.postcode || '';
+          // const addressLabel =
+          //   place.properties.formatted || 'Selected location';
+
+          // setSelectedAddress({
+          //   label: addressLabel,
+          //   coords: { lat, lng },
+          //   postcode,
+          // });
 
           setSelectedAddress({
             label: place.place_name,
             coords: { lat, lng },
-            postcode,
+            postcode:
+              place.context?.find((ctx) => ctx.id?.startsWith('postal_code'))
+                ?.text || '',
           });
 
           // Проверка границ

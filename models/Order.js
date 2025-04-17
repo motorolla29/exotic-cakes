@@ -2,47 +2,60 @@ import mongoose from 'mongoose';
 
 const orderItemSchema = new mongoose.Schema({
   id: { type: String, required: true },
-  type: { type: String, enum: ['menu', 'merch'], required: true },
+  type: { type: String },
   title: { type: String, required: true },
   price: { type: Number, required: true },
   quantity: { type: Number, required: true },
   image: {
-    src: String,
-    hash: String,
+    src: { type: String },
+    hash: { type: String },
   },
-  category: String, // для меню
-  optionName: String,
-  option: String,
-  spongeVariant: String,
-  fillVariant: String,
-  cakeSign: String,
-  cartMessage: String,
-  merchVariants: mongoose.Schema.Types.Mixed, // объект с вариантами
-  stringParams: String, // чтобы потом можно было восстановить ссылки
+  category: { type: String }, // для меню (категория)
+  optionName: { type: String },
+  option: { type: String },
+  spongeVariant: { type: String },
+  fillVariant: { type: String },
+  cakeSign: { type: String },
+  cartMessage: { type: String },
+  merchVariants: { type: mongoose.Schema.Types.Mixed },
+  stringParams: { type: String },
 });
 
 const orderSchema = new mongoose.Schema(
   {
-    items: [orderItemSchema],
+    items: { type: [orderItemSchema], required: true },
     subtotal: { type: Number, required: true },
+    shipping: {
+      method: { type: String },
+      date: { type: Date },
+      cost: { type: Number },
+    },
     currency: { type: String, default: 'usd' },
-    status: { type: String, default: 'pending' }, // 'pending', 'paid', 'failed', 'cancelled'
-    paymentIntentId: String,
-    stripeSessionId: String,
-    createdAt: { type: Date, default: Date.now },
+    status: {
+      type: String,
+      default: 'pending',
+      enum: ['pending', 'paid', 'failed', 'cancelled'],
+    },
+    paymentIntentId: { type: String },
+    stripeSessionId: { type: String },
     customerInfo: {
-      name: String,
-      email: String,
-      phone: String,
-      address: {
-        country: String,
-        city: String,
-        postalCode: String,
-        line1: String,
-        line2: String,
+      name: { type: String, required: true },
+      email: { type: String, required: true },
+      phone: { type: String },
+    },
+    deliveryInfo: {
+      country: { type: String, required: true },
+      city: { type: String, required: true },
+      postalCode: { type: String },
+      line1: { type: String, required: true },
+      line2: { type: String },
+      coords: {
+        lat: { type: Number },
+        lng: { type: Number },
       },
     },
-    notes: String,
+    notes: { type: String },
+    createdAt: { type: Date, default: Date.now },
   },
   { timestamps: true }
 );

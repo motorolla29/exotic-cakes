@@ -193,6 +193,7 @@ const CheckoutPage = observer(() => {
     const orderData = {
       items: store.cartItems,
       subtotal: orderSubtotal,
+      total: orderTotal,
       shipping: {
         method: shippingMethod.type,
         date: shippingMethod.date?.toISOString(),
@@ -456,6 +457,8 @@ const CheckoutPage = observer(() => {
                         }
                       )} ${deliveryDate.toLocaleDateString('en-GB', {
                         day: 'numeric',
+                      })}, ${deliveryDate.toLocaleDateString('en-GB', {
+                        weekday: 'long',
                       })}, 9AM - 5PM`;
 
                       return (

@@ -1,0 +1,147 @@
+body {
+  font-family: Fredoka, Comic Sans MS, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #d8cef7a0;
+  color: #481e5c;
+}
+
+.order-mail {
+  background-color: #fffbe8;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 32px;
+}
+.order-mail_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  border-bottom: 1px solid #ccc;
+}
+.order-mail_header img {
+  width: 220px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.order-mail > h2,
+.order-mail > h3,
+.order-mail > p {
+  text-align: center;
+}
+.order-mail > h2 {
+  margin: 16px 0 8px 0;
+}
+.order-mail > p {
+  margin: 8px 0 0 8px;
+  color: #555;
+}
+.order-mail > h3 {
+  margin: 16px 0 8px 0;
+}
+.order-mail > h4 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+.order-mail_items_item {
+  display: flex;
+  padding: 10px 0;
+  border-bottom: 1px solid #cccccc50;
+}
+.order-mail_items_item_image {
+  border-radius: 5px;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  width: 70px;
+  min-width: 70px;
+  height: fit-content;
+}
+.order-mail_items_item_image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.order-mail_items_item_title {
+  color: #481e5c;
+  margin-bottom: 7px;
+  margin-right: 10px;
+}
+.order-mail_items_item_details {
+  font-size: 14px;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  color: #555;
+}
+.order-mail_items_item_details_main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 12px;
+}
+.order-mail_items_item_details_main_info_options,
+.order-mail_items_item_details_main_info_sponge,
+.order-mail_items_item_details_main_info_filling {
+  padding-bottom: 5px;
+}
+.order-mail_items_item_details_main_info_options span,
+.order-mail_items_item_details_main_info_sponge span,
+.order-mail_items_item_details_main_info_filling span {
+  opacity: 0.8;
+}
+.order-mail_items_item_details_main_info_card-message,
+.order-mail_items_item_details_main_info_cake-sign {
+  padding-top: 10px;
+}
+.order-mail_items_item_details_main_info_card-message span,
+.order-mail_items_item_details_main_info_cake-sign span {
+  display: flex;
+  align-items: center;
+}
+.order-mail_items_item_details_main_info_card-message span svg,
+.order-mail_items_item_details_main_info_cake-sign span svg {
+  margin-right: 5px;
+}
+.order-mail_items_item_details_main_info_card-message p,
+.order-mail_items_item_details_main_info_cake-sign p {
+  overflow-wrap: anywhere;
+  word-break: normal;
+  min-width: 0;
+  margin-top: 4px;
+  font-family: Klyakson, Arial, sans-serif;
+  opacity: 0.8;
+}
+.order-mail_items_item_details_price {
+  color: #481e5c;
+}
+.order-mail_shipping > h4 {
+  margin: 12px 0 8px 0;
+}
+.order-mail_shipping > p {
+  font-size: 14px;
+  color: #555;
+}
+.order-mail_shipping_address {
+  font-size: 14px;
+  color: #555;
+  margin: 8px 0;
+}
+.order-mail_total > h4 {
+  margin: 32px 0 64px 0;
+  padding: 16px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  font-size: larger;
+  font-weight: 600;
+}
+.order-mail_footer {
+  padding-top: 8px;
+  margin-top: 8px;
+  border-top: 1px solid #ccc;
+}
+.order-mail_footer > p {
+  text-align: center;
+}

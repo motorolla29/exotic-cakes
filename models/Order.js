@@ -25,6 +25,7 @@ const orderSchema = new mongoose.Schema(
   {
     items: { type: [orderItemSchema], required: true },
     subtotal: { type: Number, required: true },
+    total: { type: Number, required: true },
     shipping: {
       method: { type: String },
       date: { type: Date },

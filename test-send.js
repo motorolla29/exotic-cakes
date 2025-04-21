@@ -1,5 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import nodemailer from 'nodemailer';
-import generateOrderEmailContent from './generate-order-email-content.js';
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || 'smtp-relay.brevo.com',
@@ -16,18 +17,18 @@ const transporter = nodemailer.createTransport({
   socketTimeout: 30000,
 });
 
-export const sendOrderDetailsMail = async (order) => {
-  const mailOptions = {
+transporter.sendMail(
+  {
     from: `Exotic Cakes ${process.env.SMTP_MAIL_FROM}`,
-    to: order.customerInfo?.email,
+    to: 'eutyou@gmail.com',
     subject: 'Your Order with Exotic Cakes',
-    html: generateOrderEmailContent(order),
-  };
-
-  try {
-    const info = await transporter.sendMail(mailOptions);
-    console.log('Order confirmation email sent: ', info.response);
-  } catch (err) {
-    console.error('Error sending order confirmation email: ', err);
+    text: 'Проверка отправки почты через Nodemailer и Brevo',
+  },
+  (err, info) => {
+    if (err) {
+      console.error('❌ Ошибка отправки:', err);
+    } else {
+      console.log('✅ Успешно отправлено:', info.response);
+    }
   }
-};
+);

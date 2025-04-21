@@ -1,27 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-const fs = require('fs');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-
-let envKeys = {};
-
-// Подгружаем .env ТОЛЬКО если это не продакшен
-if (process.env.NODE_ENV !== 'production') {
-  try {
-    const dotenv = require('dotenv');
-    const envFile = path.resolve(__dirname, '.env');
-
-    if (fs.existsSync(envFile)) {
-      const env = dotenv.parse(fs.readFileSync(envFile));
-      envKeys = Object.keys(env).reduce((acc, key) => {
-        acc[`process.env.${key}`] = JSON.stringify(env[key]);
-        return acc;
-      }, {});
-    }
-  } catch (err) {
-    console.warn('⚠️ Could not load .env file:', err.message);
-  }
-}
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   output: {
@@ -98,6 +78,11 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './src/index.html',
     }),
-    new webpack.DefinePlugin(envKeys),
+    new Dotenv({
+      path: path.resolve(__dirname, '.env'), // локальный .env (игнорится, если нет)
+      safe: false, // проверка .env.example не нужна
+      systemvars: true, // подтягиваем process.env
+      silent: true, // без лишних warning'ов
+    }),
   ],
 };

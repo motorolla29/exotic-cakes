@@ -101,5 +101,5 @@ export const calculateShippingCost = (
     shippingCost += 5;
   }
 
-  return shippingCost;
+  return Math.round(shippingCost * 100) / 100;
 };

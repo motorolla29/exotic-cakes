@@ -31,6 +31,7 @@ const App = () => {
           <Route path="util" element={<Util />} />
         </Route>
         <Route path="checkout" element={<CheckoutPage />} />
+        {/* <Route path="mail" element={<MailPage />} /> */}
       </Routes>
     </BrowserRouter>
   );

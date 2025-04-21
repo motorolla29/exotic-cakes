@@ -18,6 +18,7 @@ export default async function handler(req, res) {
     const {
       items,
       subtotal,
+      total,
       shipping,
       currency = 'usd',
       customerInfo,
@@ -39,6 +40,7 @@ export default async function handler(req, res) {
     const order = new Order({
       items,
       subtotal,
+      total,
       shipping, // { method, date, cost }
       currency,
       customerInfo, // { name, email, phone }

@@ -1,6 +1,3 @@
-import { TbPencilHeart } from 'react-icons/tb';
-import { LuCake } from 'react-icons/lu';
-
 import './mail-page.sass';
 
 const MailPage = (o) => {
@@ -183,7 +180,27 @@ const MailPage = (o) => {
                     {cakeSign ? (
                       <div className="order-mail_items_item_details_main_info_cake-sign">
                         <span>
-                          <LuCake />
+                          <svg
+                            stroke="currentColor"
+                            fill="none"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            height="1em"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"></path>
+                            <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"></path>
+                            <path d="M2 21h20"></path>
+                            <path d="M7 8v2"></path>
+                            <path d="M12 8v2"></path>
+                            <path d="M17 8v2"></path>
+                            <path d="M7 4h.01"></path>
+                            <path d="M12 4h.01"></path>
+                            <path d="M17 4h.01"></path>
+                          </svg>
                           Write on cake:
                         </span>
                         <p>{cakeSign}</p>
@@ -192,7 +209,21 @@ const MailPage = (o) => {
                     {cartMessage ? (
                       <div className="order-mail_items_item_details_main_info_card-message">
                         <span>
-                          <TbPencilHeart />
+                          <svg
+                            stroke="currentColor"
+                            fill="none"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            height="1em"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M17 11l1.5 -1.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4h4l2 -2"></path>
+                            <path d="M13.5 6.5l4 4"></path>
+                            <path d="M18 22l3.35 -3.284a2.143 2.143 0 0 0 .005 -3.071a2.242 2.242 0 0 0 -3.129 -.006l-.224 .22l-.223 -.22a2.242 2.242 0 0 0 -3.128 -.006a2.143 2.143 0 0 0 -.006 3.071l3.355 3.296z"></path>
+                          </svg>
                           Card with handwritten text:
                         </span>
                         <p>{cartMessage}</p>

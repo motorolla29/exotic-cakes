@@ -215,11 +215,10 @@ const CheckoutPage = observer(() => {
         coords: deliveryCoords,
       },
     };
-    console.log(orderData);
 
     try {
       const { data } = await axios.post('/api/create-order', orderData);
-      console.log(data);
+
       if (data?.sessionId && data?.redirectUrl) {
         // перенаправление в Stripe
         window.location.href = data.redirectUrl;

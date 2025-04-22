@@ -9,11 +9,11 @@ const transporter = nodemailer.createTransport({
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASSWORD,
   },
-  logger: true,
-  debug: true,
-  connectionTimeout: 5000, // Тайм-аут на подключение
-  greetingTimeout: 3000, // Тайм-аут на ответ от сервера
-  socketTimeout: 30000,
+  // logger: true,
+  // debug: true,
+  // connectionTimeout: 5000, // Тайм-аут на подключение
+  // greetingTimeout: 3000, // Тайм-аут на ответ от сервера
+  // socketTimeout: 30000,
 });
 
 export const sendOrderDetailsMail = async (order) => {

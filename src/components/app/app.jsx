@@ -13,6 +13,8 @@ import Util from '../pages/util/util';
 import CheckoutPage from '../pages/checkout-page/checkout-page';
 
 import './app.sass';
+import CheckoutSuccess from '../pages/checkout-success/checkout-success';
+import CheckoutFailure from '../pages/checkout-failure/checkout-failure';
 
 const App = () => {
   return (
@@ -29,9 +31,10 @@ const App = () => {
           <Route path="something-else" element={<div />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="util" element={<Util />} />
+          <Route path="checkout-success" element={<CheckoutSuccess />} />
+          <Route path="checkout-failure" element={<CheckoutFailure />} />
         </Route>
         <Route path="checkout" element={<CheckoutPage />} />
-        {/* <Route path="mail" element={<MailPage />} /> */}
       </Routes>
     </BrowserRouter>
   );

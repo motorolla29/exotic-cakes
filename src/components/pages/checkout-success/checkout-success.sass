@@ -1,0 +1,112 @@
+.checkout-success
+    position: relative
+    width: 100%   
+    min-height: calc(100vh - 6em)
+    display: flex
+    align-items: center
+    justify-content: center
+    &_loader
+        width: 100%   
+        height: fit-content
+        display: flex
+        align-items: center
+        justify-content: center
+        > div
+            width: 6em
+            position: absolute
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            svg
+                width: 100%
+                height: auto
+                margin-bottom: 0.75em
+                animation: blinking 1.25s ease-in-out infinite
+    &_error
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        padding: 1em
+        border: 1px solid #ff5b5b7d
+        background: #ff5b5b0e
+        border-radius: 1em
+        margin: 0 3em
+        p
+            text-align: center
+            font-family: Fredoka, Comic Sans MS, Arial, sans-serif
+            color: #ff5b5b
+        svg
+            width: 2em
+            height: auto
+            color: #ff5b5b
+            margin-bottom: 0.5em
+    &_main
+        font-family: Fredoka, Comic Sans MS, Arial, sans-serif
+        margin: 4em 0
+        > h1
+            display: flex
+            flex-direction: column
+            align-items: center
+            margin-bottom: 0.5em
+            svg
+                vertical-align: baseline
+                color: #149e0d8e
+                width: 1em
+                height: auto
+        > p
+            text-align: center
+            margin: 0 0 0.25em 0
+            color: #555
+            font-size: 1em
+            & > span.order-id
+                color: #481E5C
+                text-decoration: underline
+
+        &_summary
+            position: relative
+            justify-self: center
+            width: 90%
+            > h2
+                margin: 0.5em 0
+                text-align: center
+            &_items
+                
+                max-height: 350px
+                overflow-y: auto
+                &_item
+                    font-size: 0.75em
+                    display: flex
+                    border-bottom: 1px solid #eee
+                    padding: 0.5em 0
+                    &_image
+                        border-radius: 0.5em
+                        overflow: hidden
+                        aspect-ratio: 1/1
+                        width: 4em
+                        height: fit-content
+                        object-fit: cover
+                    &_title
+                        color: #481E5C
+                        margin-bottom: 0.5em
+                    &_details
+                        display: flex
+                        flex: 1
+                        justify-content: space-between
+                        color: #555
+                        &_main
+                          padding: 0 1em
+                        &_price
+                          color: #481E5C
+                        
+        &_shipping
+        &_total
+
+@keyframes blinking 
+    0%
+        opacity: 0.6
+    50%
+        opacity: 1
+    100%
+        opacity: 0.6

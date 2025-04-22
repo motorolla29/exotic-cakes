@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import './checkout-failure.sass';
 
-export default function CheckoutFailure() {
+const CheckoutFailure = () => {
   return (
     <div className="checkout-failure">
       <h1>Payment Failed</h1>
@@ -13,4 +13,6 @@ export default function CheckoutFailure() {
       </Link>
     </div>
   );
-}
+};
+
+export default CheckoutFailure;

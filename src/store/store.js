@@ -74,6 +74,11 @@ class Store {
     localStorage.setItem('cart', JSON.stringify(this.cartItems));
   }
 
+  clearCart() {
+    this.cartItems = [];
+    localStorage.removeItem('cart');
+  }
+
   setSnackbar(config) {
     this.snackbar = config;
   }

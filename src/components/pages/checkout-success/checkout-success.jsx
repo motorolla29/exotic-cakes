@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 
+import store from '../../../store/store';
 import BlurhashImage from '../../blurhash-image/blurhash-image';
 import { baseImagesURL, baseMerchImagesURL } from '../../../const';
 
@@ -67,7 +68,7 @@ export default function CheckoutSuccess() {
 
   useEffect(() => {
     if (order?.status === 'paid') {
-      localStorage.removeItem('cart');
+      store.clearCart();
     }
   }, [order]);
 

@@ -101,7 +101,7 @@ export default function CheckoutSuccess() {
               <p>Thank you for your order, {order.customerInfo.name}.</p>
               <p>
                 Your order{' '}
-                <span className="order-id">#{order.orderMumber}</span> has been
+                <span className="order-id">#{order.orderNumber}</span> has been
                 placed and successfully paid.
               </p>
               <p>

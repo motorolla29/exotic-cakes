@@ -38,7 +38,7 @@ const generateOrderEmailContent = (order) => {
                   order.customerInfo.name || 'Customer'
                 },</p>
                 <p style="font-size: 14px; color: #555; text-align: center; margin: 8px 0 16px;">We have received your order and it is being processed. Below are the details:</p>
-                <h3 style="text-align: center; margin: 24px 0 8px;">Order Number: ${
+                <h3 style="text-align: center; margin: 24px 0 8px;">Order №: ${
                   order.orderNumber
                 }</h3>
   

@@ -114,27 +114,29 @@
                             margin-top: 0.25em
                             opacity: 0.8
                 &::-webkit-scrollbar
-                    width: 20px
+                    width: 14px
                 &::-webkit-scrollbar-track
                     cursor: default
                     background: transparent
                 &::-webkit-scrollbar-thumb
                     cursor: grab
-                    background-color: lightgrey
+                    background-color: #ccc
                     border-radius: 10px
-                    border: 7px solid transparent
+                    border: 5px solid transparent
                     background-clip: content-box
                     &:hover
-                        background-color: darkgrey
+                        background-color: #bfbfbf
                     &:active
-                        background-color: grey
+                        background-color: #afafaf
+            &_shipping, &_total
+                display: flex
+                justify-content: space-between
+                padding: 0.5em 0
+                border-bottom: 1px solid #eee
             &_shipping
-                text-align: center
                 font-size: 0.9em
-                margin: 1em 0 0.5em 0
             &_total
-                text-align: center
-                margin: 0.5em 0
+                font-size: 1.1em
     &_home-page-link
         display: flex
         justify-self: center

@@ -15,7 +15,7 @@ import './checkout-success.sass';
 
 export default function CheckoutSuccess() {
   const [order, setOrder] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [searchParams] = useSearchParams();
 
@@ -197,10 +197,12 @@ export default function CheckoutSuccess() {
                   })}
                 </div>
                 <p className="checkout-success_main_summary_shipping">
-                  Shipping: ${order.shipping.cost}
+                  <span>Shipping</span>
+                  <span>${order.shipping.cost}</span>
                 </p>
                 <p className="checkout-success_main_summary_total">
-                  Total: ${order.total.toFixed(2)}
+                  <span>Total</span>
+                  <span>${order.total.toFixed(2)}</span>
                 </p>
               </div>
 

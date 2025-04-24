@@ -1,0 +1,40 @@
+.checkout-failure
+    position: relative
+    width: 100%   
+    min-height: calc(100vh - 6em)
+    display: flex
+    align-items: center
+    justify-content: center
+    font-family: Fredoka, Comic Sans MS, Arial, sans-serif
+    > div
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        border-radius: 1em
+        padding: 1em
+        border: 1px solid #ff5b5b7d
+        background: #ff5b5b0e
+        margin: 2em
+        > div
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            color: #ff4646
+            > p
+                font-size: 1.2em
+                margin-bottom: 0.5em
+            > svg
+                width: 2em
+                height: auto
+                margin-bottom: 0.25em
+        > p
+            text-align: center
+            font-family: Fredoka, Comic Sans MS, Arial, sans-serif
+            color: #ff5b5b
+        > a
+            margin-top: 1em
+            text-decoration: underline
+            &:hover
+                opacity: 0.8

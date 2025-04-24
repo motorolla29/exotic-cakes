@@ -1,33 +1,37 @@
 import { useState, useEffect, useRef } from 'react';
 import { observer } from 'mobx-react-lite';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { motion, AnimatePresence } from 'framer-motion';
+import axios from 'axios';
+
 import store from '../../../store/store';
-import './checkout-page.sass';
 import BlurhashImage from '../../blurhash-image/blurhash-image';
 import {
   baseImagesURL,
   baseMerchImagesURL,
   LONDON_BOUNDS,
   LONDON_SHOP_COORDS,
+  COUNTRIES,
+  CITIES,
 } from '../../../const';
+import CheckoutShippingMap from '../../checkout-shipping-map/checkout-shipping-map';
+import { calculateShippingCost, isInDeliveryZone } from '../../../utils';
+import { validateFields } from './validate-fields';
+
 import { TbPencilHeart } from 'react-icons/tb';
 import { LuCake } from 'react-icons/lu';
 import { PiMapPinAreaBold } from 'react-icons/pi';
 import MainSelect from '../../../ui/main-select';
-import CheckoutShippingMap from '../../checkout-shipping-map/checkout-shipping-map';
-import axios from 'axios';
+import { ImpulseSpinner } from 'react-spinners-kit';
+
 import 'maplibre-gl/dist/maplibre-gl.css';
-import { validateFields } from './validate-fields';
-import { COUNTRIES, CITIES } from '../../../const';
-import { AnimatePresence } from 'framer-motion';
-import { motion } from 'framer-motion';
-import { calculateShippingCost, isInDeliveryZone } from '../../../utils';
+import './checkout-page.sass';
 
 const CheckoutPage = observer(() => {
-  const navigate = useNavigate();
   const addressInputContainerRef = useRef();
   const [mapModalOpen, setMapModalOpen] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const debounceSuggestionsRef = useRef();
 
   const [notes, setNotes] = useState('');
@@ -217,6 +221,7 @@ const CheckoutPage = observer(() => {
     };
 
     try {
+      setSubmitting(true);
       const { data } = await axios.post('/api/create-order', orderData);
 
       if (data?.sessionId && data?.redirectUrl) {
@@ -227,6 +232,7 @@ const CheckoutPage = observer(() => {
         alert('Order processing error, please try again later');
       }
     } catch (error) {
+      setSubmitting(false);
       console.error('Checkout error:', error);
       alert('Failed to place your order.');
     }
@@ -630,10 +636,20 @@ const CheckoutPage = observer(() => {
         </div>
 
         <button
+          disabled={submitting}
           onClick={handleCheckout}
           className="checkout-page_content_checkout-btn"
         >
-          Proceed to Payment
+          {submitting ? (
+            <ImpulseSpinner
+              frontColor="#ae9cf6"
+              backColor="#C5B7FF"
+              size={2}
+              sizeUnit="em"
+            />
+          ) : (
+            'Proceed to Payment'
+          )}
         </button>
         <AnimatePresence>
           {mapModalOpen && (

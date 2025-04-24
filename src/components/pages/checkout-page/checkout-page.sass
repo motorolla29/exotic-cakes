@@ -1,7 +1,8 @@
 
 
 .checkout-page
-  font-size: 16px 
+  font-size: 16px
+  position: relative
   min-height: 100vh
   background: #fffbe8
   font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
@@ -70,7 +71,6 @@
         padding: 0.5em
         border: 1px solid #ccc
         border-radius: 0.5em
-        justify-self: flex-end
         height: fit-content
         position: sticky
         top: 1.5em
@@ -279,11 +279,13 @@
         
 
     &_checkout-btn 
-      display: block
+      display: flex
+      justify-content: center
+      align-items: center
       width: 100%
       max-width: 400px
+      height: 3em
       margin: 1em auto 1em
-      padding: 1em
       background-color: #481E5C
       color: #fff
       border: none
@@ -291,15 +293,22 @@
       font-size: 1.2em
       cursor: pointer
       transition: background-color 0.2s ease
-
       &:hover 
         background-color: #57296d
+      &:disabled
+        cursor: default
+        opacity: 0.5
+        
     
 .main-field
   display: flex
   flex-direction: column
   margin-bottom: 1.5em
   > label
+    max-width: calc(100% - 2em)
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
     margin: 0 0 0.25em 1em
     font-size: 0.9em
   > input, > .address-input-container > input
@@ -415,3 +424,44 @@
         opacity: 1
         transform: translateY(0)
     
+@media (max-width: 1280px)
+    .checkout-page
+      font-size: 15px
+@media (max-width: 1024px)
+    .checkout-page
+      font-size: 14px
+@media (max-width: 768px)
+    .checkout-page
+      font-size: 12px
+@media (max-width: 650px)
+    .checkout-page
+      &_content
+        &_order
+          flex-direction: column
+          &_items
+            padding-right: 0
+          &_summary-section
+            margin-top: 1.5em
+            width: 100%
+            position: static
+@media (max-width: 480px)
+    .checkout-page
+      font-size: 10px
+      &_content
+        &_shipping
+          &_main
+            &_info
+              &_customer
+                &_fields
+                  & .main-field.name
+                    width: 100%,
+                  & .main-field.email, & .main-field.phone
+                    width: 48%
+              &_delivery
+                &_fields
+                  & .main-field.apartment, & .main-field.postcode
+                    width: 100%
+                  
+@media (max-width: 360px)
+    .checkout-page
+      font-size: 8px

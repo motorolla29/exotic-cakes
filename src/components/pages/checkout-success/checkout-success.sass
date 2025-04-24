@@ -44,8 +44,8 @@
             margin-bottom: 0.5em
     &_main
         font-family: Fredoka, Comic Sans MS, Arial, sans-serif
-        margin: 4em 0
-        > h1
+        margin: 4em 2em
+        > h2
             display: flex
             flex-direction: column
             align-items: center
@@ -68,12 +68,11 @@
             position: relative
             justify-self: center
             width: 90%
-            > h2
+            > h3
                 margin: 0.5em 0
                 text-align: center
             &_items
-                
-                max-height: 350px
+                max-height: 375px
                 overflow-y: auto
                 &_item
                     font-size: 0.75em
@@ -99,9 +98,67 @@
                           padding: 0 1em
                         &_price
                           color: #481E5C
-                        
-        &_shipping
-        &_total
+                    &_options, &_sponge, &_filling
+                        > span
+                            opacity: 0.8
+                    &_cake-sign, &_card-message
+                        margin-top: 0.25em
+                        > span
+                            display: flex
+                            align-items: center
+                            > svg 
+                                width: 1em
+                                margin-right: 0.25em
+                        > p
+                            font-family: Klyakson, Arial, sans-serif
+                            margin-top: 0.25em
+                            opacity: 0.8
+                &::-webkit-scrollbar
+                    width: 20px
+                &::-webkit-scrollbar-track
+                    cursor: default
+                    background: transparent
+                &::-webkit-scrollbar-thumb
+                    cursor: grab
+                    background-color: lightgrey
+                    border-radius: 10px
+                    border: 7px solid transparent
+                    background-clip: content-box
+                    &:hover
+                        background-color: darkgrey
+                    &:active
+                        background-color: grey
+            &_shipping
+                text-align: center
+                font-size: 0.9em
+                margin: 1em 0 0.5em 0
+            &_total
+                text-align: center
+                margin: 0.5em 0
+    &_home-page-link
+        display: flex
+        justify-self: center
+        border-radius: 2em
+        margin: 1em 0
+        > button
+            cursor: pointer
+            font-size: 0.875em
+            font-family: Fredoka, Comic Sans MS, Arial, sans-serif
+            color: #481E5C
+            outline: none
+            background: #C5B7FF
+            border: 1px solid
+            padding: 0.75em 1.25em
+            line-height: 1.2
+            border-radius: 2em
+            box-shadow: 0.2em 0.2em 0
+            transition: all 0.2s ease
+            &:hover
+                background: #FFAED7
+            &:active
+                box-shadow: 0em 0 0
+                transform: translateX(0.2em) translateY(0.2em)
+            
 
 @keyframes blinking 
     0%

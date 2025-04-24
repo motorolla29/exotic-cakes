@@ -1,116 +1,21 @@
 import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import ECLogoCake from '../../../icons/cake-svg.svg';
 
-import './checkout-success.sass';
+import BlurhashImage from '../../blurhash-image/blurhash-image';
+import { baseImagesURL, baseMerchImagesURL } from '../../../const';
+
 import { ImpulseSpinner } from 'react-spinners-kit';
 import { TiWarning } from 'react-icons/ti';
 import { FaMoneyCheckAlt } from 'react-icons/fa';
-import BlurhashImage from '../../blurhash-image/blurhash-image';
-import { baseImagesURL, baseMerchImagesURL } from '../../../const';
+import ECLogoCake from '../../../icons/cake-svg.svg';
 import { LuCake } from 'react-icons/lu';
 import { TbPencilHeart } from 'react-icons/tb';
 
+import './checkout-success.sass';
+
 export default function CheckoutSuccess() {
-  const [order, setOrder] = useState({
-    _id: 'sdgijjgpo',
-    items: [
-      {
-        stringParams: '',
-        id: 'ea3a67dc-abe4-4c12-a3ee-aaadb84f7643',
-        category: 'all',
-        title: 'Mouse Cheese Fest Cake',
-        image: {
-          src: 'OIG3.cE9xxfayoeDOq1NXm.jpg',
-          hash: 'UUKwd.~pk?bcTJE1IVWB0%kWaJoy4.xrxtfl',
-        },
-        price: 39,
-        optionName: 'Size',
-        option: '6-inch',
-        spongeVariant: 'Funfetti',
-        fillVariant: 'Cream Cheese Icing',
-        cartMessage: null,
-        cakeSign: null,
-        quantity: 2,
-      },
-      {
-        type: 'merch',
-        stringParams: '',
-        id: 'branded-lilac-umbrella',
-        title: 'Branded Lilac Umbrella',
-        image: {
-          src: 'umbrella.png',
-          hash: 'UaOf.rM__Jt8ozjuaxfP_Ls;xrWVWAa{j]ju',
-        },
-        price: 20,
-        optionName: null,
-        option: null,
-        merchVariants: null,
-        quantity: 1,
-      },
-      {
-        stringParams: 'option=8-inch',
-        id: 'ea3a67dc-abe4-4c12-a3ee-aaadb84f7643',
-        category: 'all',
-        title: 'Mouse Cheese Fest Cake',
-        image: {
-          src: 'OIG3(4).jpg',
-          hash: 'UaLy[q01yDM{~VnhR.jsOtRjRjfkN1RkWWR*',
-        },
-        price: 69,
-        optionName: 'Size',
-        option: '8-inch',
-        spongeVariant: 'Funfetti',
-        fillVariant: 'Cream Cheese Icing',
-        cartMessage: 'wegweg',
-        cakeSign: 'sdg gfddsss sssss sssss sssss dfffffffffffsew',
-        quantity: 1,
-      },
-      {
-        type: 'merch',
-        stringParams: 'variants=%7B%22Size%22%3A%22L%22%7D',
-        id: "branded-black-women's-sweatpants",
-        title: "Branded Black Women's Sweatpants",
-        image: {
-          src: 'womens-sweatpants-front.png',
-          hash: 'UtQvqCWB~qt7IUayx]j[s:juR*ayj[j[ayay',
-        },
-        price: 20,
-        optionName: null,
-        option: null,
-        merchVariants: {
-          Size: 'L',
-        },
-        quantity: 1,
-      },
-    ],
-    subtotal: 187,
-    total: 193.03,
-    shipping: {
-      method: 'London Hand Delivery',
-      date: '2025-04-21T10:16:53.854Z',
-      cost: 7.08,
-    },
-    currency: 'usd',
-    notes: 'jjjjjjjjjj',
-    customerInfo: {
-      name: 'dsf',
-      email: 'dsf@fdd.r',
-      phone: '+44 3455555555',
-    },
-    deliveryInfo: {
-      country: 'United Kingdom',
-      city: 'London',
-      postalCode: 'SE10 9LG',
-      line1: '6 Old Pearson Street, Greenwich, SE10 9LG, United Kingdom',
-      line2: '65',
-      coords: {
-        lat: 51.4791461,
-        lng: -0.0154588,
-      },
-    },
-  });
-  const [loading, setLoading] = useState(false);
+  const [order, setOrder] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [searchParams] = useSearchParams();
 
@@ -119,40 +24,40 @@ export default function CheckoutSuccess() {
   useEffect(() => {
     let attempts = 0;
     const maxAttempts = 5;
-    const delay = 2000; // 2 seconds
+    const delay = 2000;
 
-    // const pollOrderStatus = async () => {
-    //   try {
-    //     const res = await fetch(`/api/order-status?orderId=${orderId}`);
-    //     const data = await res.json();
+    const pollOrderStatus = async () => {
+      try {
+        const res = await fetch(`/api/order-status?orderId=${orderId}`);
+        const data = await res.json();
 
-    //     if (!res.ok) throw new Error(data.error || 'Failed to fetch order');
+        if (!res.ok) throw new Error(data.error || 'Failed to fetch order');
 
-    //     if (data.order.status === 'paid') {
-    //       setOrder(data.order);
-    //       setLoading(false);
-    //     } else {
-    //       if (attempts < maxAttempts - 1) {
-    //         attempts++;
-    //         setTimeout(pollOrderStatus, delay);
-    //       } else {
-    //         throw new Error(
-    //           'Payment not confirmed yet. Try refreshing the page or contact support.'
-    //         );
-    //       }
-    //     }
-    //   } catch (err) {
-    //     setError(err.message);
-    //     setLoading(false);
-    //   }
-    // };
+        if (data.order.status === 'paid') {
+          setOrder(data.order);
+          setLoading(false);
+        } else {
+          if (attempts < maxAttempts - 1) {
+            attempts++;
+            setTimeout(pollOrderStatus, delay);
+          } else {
+            throw new Error(
+              'Payment not confirmed yet. Try refreshing the page or contact support.'
+            );
+          }
+        }
+      } catch (err) {
+        setError(err.message);
+        setLoading(false);
+      }
+    };
 
-    // if (orderId) {
-    //   pollOrderStatus();
-    // } else {
-    //   setError('Order ID not found in URL');
-    //   setLoading(false);
-    // }
+    if (orderId) {
+      pollOrderStatus();
+    } else {
+      setError('Order ID not found in URL');
+      setLoading(false);
+    }
 
     // Cleanup on unmount
     return () => {
@@ -162,7 +67,7 @@ export default function CheckoutSuccess() {
 
   return (
     <div className="checkout-success">
-      {loading ? (
+      {loading || !order ? (
         <div className="checkout-success_loader">
           <div>
             <ECLogoCake />
@@ -183,10 +88,10 @@ export default function CheckoutSuccess() {
             </div>
           ) : (
             <div className="checkout-success_main">
-              <h1>
+              <h2>
                 <FaMoneyCheckAlt />
                 Payment Successful!
-              </h1>
+              </h2>
               <p>Thank you for your order, {order.customerInfo.name}.</p>
               <p>
                 Your order <span className="order-id">#{order._id}</span> has
@@ -197,7 +102,7 @@ export default function CheckoutSuccess() {
                 email.
               </p>
               <div className="checkout-success_main_summary">
-                <h2>Order Summary</h2>
+                <h3>Order Summary</h3>
                 <div className="checkout-success_main_summary_items">
                   {order.items.map((item, i) => {
                     const {
@@ -299,10 +204,8 @@ export default function CheckoutSuccess() {
                 </p>
               </div>
 
-              <Link to="/">
-                <button className="checkout-success_home-page-btn">
-                  Home Page
-                </button>
+              <Link className="checkout-success_home-page-link" to="/">
+                <button>Home Page</button>
               </Link>
             </div>
           )}

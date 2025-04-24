@@ -65,6 +65,12 @@ export default function CheckoutSuccess() {
     };
   }, [orderId]);
 
+  useEffect(() => {
+    if (order?.status === 'paid') {
+      localStorage.removeItem('cart');
+    }
+  }, [order]);
+
   return (
     <div className="checkout-success">
       {loading || !order ? (
@@ -94,8 +100,9 @@ export default function CheckoutSuccess() {
               </h2>
               <p>Thank you for your order, {order.customerInfo.name}.</p>
               <p>
-                Your order <span className="order-id">#{order._id}</span> has
-                been placed and successfully paid.
+                Your order{' '}
+                <span className="order-id">#{order.orderMumber}</span> has been
+                placed and successfully paid.
               </p>
               <p>
                 We have also sent detailed information about the order to your

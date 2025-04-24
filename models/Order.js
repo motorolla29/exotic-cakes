@@ -23,6 +23,7 @@ const orderItemSchema = new mongoose.Schema({
 
 const orderSchema = new mongoose.Schema(
   {
+    orderNumber: { type: Number, unique: true },
     items: { type: [orderItemSchema], required: true },
     subtotal: { type: Number, required: true },
     total: { type: Number, required: true },
@@ -60,5 +61,18 @@ const orderSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+// Middleware: перед .save() для новых документов
+orderSchema.pre('save', async function (next) {
+  if (this.isNew) {
+    const counter = await Counter.findByIdAndUpdate(
+      'order', // имя последовательности
+      { $inc: { seq: 1 } }, // инкремент
+      { new: true, upsert: true }
+    );
+    this.orderNumber = counter.seq;
+  }
+  next();
+});
 
 export default mongoose.models.Order || mongoose.model('Order', orderSchema);

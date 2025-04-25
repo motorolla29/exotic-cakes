@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import maplibregl from 'maplibre-gl';
 
-import { MAPTILER_KEY, GEOAPIFY_KEY, LONDON_BOUNDS } from '../../const';
+import { LONDON_BOUNDS } from '../../const';
 
 import '@maptiler/sdk/dist/maptiler-sdk.css';
 import './checkout-shipping-map.sass';
@@ -22,7 +22,7 @@ const CheckoutShippingMap = ({
     setSelectedAddress(confirmedAddress);
     const map = new maplibregl.Map({
       container: mapRef.current,
-      style: `https://api.maptiler.com/maps/streets/style.json?key=${MAPTILER_KEY}`,
+      style: `https://api.maptiler.com/maps/streets/style.json?key=${process.env.MAPTILER_KEY}`,
       //style: `https://maps.geoapify.com/v1/styles/osm-carto/style.json?apiKey=${GEOAPIFY_KEY}`,
       center: [-0.1276, 51.5072], // London center
       zoom: 10,
@@ -35,7 +35,7 @@ const CheckoutShippingMap = ({
 
       try {
         const response = await fetch(
-          `https://api.maptiler.com/geocoding/${lng},${lat}.json?key=${MAPTILER_KEY}&language=en`
+          `https://api.maptiler.com/geocoding/${lng},${lat}.json?key=${process.env.MAPTILER_KEY}&language=en`
         );
         // const response = await fetch(
         //   `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lng}&apiKey=${GEOAPIFY_KEY}`

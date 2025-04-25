@@ -9,6 +9,3 @@ export const LONDON_BOUNDS = [
   [0.3340155, 51.6918741], // Northeast
 ];
 export const LONDON_SHOP_COORDS = { lat: 51.508386, lng: -0.126229 };
-
-export const MAPTILER_KEY = process.env.MAPTILER_KEY;
-export const GEOAPIFY_KEY = process.env.GEOAPIFY_KEY;

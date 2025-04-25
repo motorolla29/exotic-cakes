@@ -46,7 +46,7 @@ const LocationPageMap = () => {
     <Map
       id="location-page-map"
       ref={mapRef}
-      mapStyle="https://api.maptiler.com/maps/uk-openzoomstack-light/style.json?key=JiORwzpLecOFb1wih0mU"
+      mapStyle={`https://api.maptiler.com/maps/uk-openzoomstack-light/style.json?key=${process.env.MAPTILER_KEY}`}
       attributionControl={false}
       initialViewState={{
         longitude: -0.126229,

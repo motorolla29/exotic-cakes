@@ -22,7 +22,7 @@ const AboutPage = () => {
         className="about-page_top-image"
       >
         <BlurhashImage
-          src="/images/Runway 2024-09-19T08_55_52.985Z Upscale Image Upscaled Image 3360 x 1920.jpg"
+          src="/images/Runway2024-09-19T08_55_52.985ZUpscaledImage3360x1920.jpg"
           hash="rCLyZy4;5Lt9XY^*s?${D.?FRkR+R:WVt5t6xUE3~UNL9vt2NGxU$_R.N1ISt6xwRja#ocWAogNH9+j=${ayada{s+oLRlxdj=Iot7Rns:$~RkbI"
           transitionDuration={0.75}
         />

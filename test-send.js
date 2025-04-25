@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import nodemailer from 'nodemailer';
-import generateOrderEmailContent from './services/send-order-details/generate-order-email-content.js';
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || 'smtp-relay.brevo.com',
@@ -116,6 +115,7 @@ const order = {
     },
   },
 };
+
 const orderDate = order.shipping?.date ? new Date(order.shipping.date) : null;
 
 transporter.sendMail(

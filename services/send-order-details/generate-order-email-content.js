@@ -69,7 +69,7 @@ const generateOrderEmailContent = (order) => {
                     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
                       <tr>
                         <td style="width:70px; height:70px; vertical-align: top;">
-                          <img src="${imageUrl}" alt="product_img" width="70" height="70" style="width:70px; height:70px; border-radius:5px; display:block;" />
+                          <img src="${imageUrl}" alt="product_img" width="70" height="70" style="width:70px; height:70px; border-radius:5px; display:block; object-fit: cover;" />
                         </td>
                         <td style="padding-left:12px; vertical-align: top;">
                           <p style="margin:0 0 6px; font-weight:500; color:#481e5c;">${quantity} x ${title}</p>

@@ -2,7 +2,6 @@
     display: flex
     flex-direction: column
     justify-content: center
-    font-size: 16px
     margin: 0 auto
     padding: 0 4em
     max-width: 1420px
@@ -129,18 +128,12 @@
         padding: 0 2em
         &_title
             font-size: 2em    
-            margin-top: 2em
+            margin-top: 2.5em
             margin-bottom: 0.25em
         &_heading
             &_item, &_total
-                width: auto 
+                width: auto
+@media (max-width: 650px)
+    .cart-page
         &_order-summary
             margin-left: 0
-@media (max-width: 410px)
-    .cart-page
-        font-size: 14px
-
-@media (max-width: 360px)
-    .cart-page
-        &_title
-            margin-top: 1.5em

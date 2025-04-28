@@ -1,0 +1,45 @@
+.not-found-page
+    font-family: Slime Box, Arial, sans-serif
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    height: calc( 100vh - 6em )
+    &_inner
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        margin: 2em 4em
+        svg
+            width: 12em
+            height: auto
+            margin-bottom: 1em
+        &_text
+            text-align: center
+            font-size: 1.5em
+            margin: 0 0 0.5em 0
+            line-height: 1.2
+        &_link
+            display: flex
+            justify-self: center
+            border-radius: 2em
+            margin: 0.5em 0 1em 0
+            > button
+                cursor: pointer
+                font-size: 0.875em
+                font-family: Fredoka Semi Bold, Comic Sans MS, sans-serif
+                color: #481E5C
+                outline: none
+                background: #C5B7FF
+                border: 1px solid
+                padding: 0.75em 1.25em
+                line-height: 1.2
+                border-radius: 2em
+                box-shadow: 0.2em 0.2em 0
+                transition: all 0.2s ease
+                &:hover
+                    background: #FFAED7
+                &:active
+                    box-shadow: 0em 0 0
+                    transform: translateX(0.2em) translateY(0.2em)

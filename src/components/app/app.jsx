@@ -11,10 +11,11 @@ import ItemPage from '../pages/item-page/item-page';
 import MerchItemPage from '../pages/merch-item-page/merch-item-page';
 import Util from '../pages/util/util';
 import CheckoutPage from '../pages/checkout-page/checkout-page';
-
-import './app.sass';
 import CheckoutSuccess from '../pages/checkout-success/checkout-success';
 import CheckoutFailure from '../pages/checkout-failure/checkout-failure';
+import NotFoundPage from '../pages/not-found-page/not-found-page';
+
+import './app.sass';
 
 const App = () => {
   return (
@@ -33,8 +34,10 @@ const App = () => {
           <Route path="util" element={<Util />} />
           <Route path="checkout-success" element={<CheckoutSuccess />} />
           <Route path="checkout-failure" element={<CheckoutFailure />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
         <Route path="checkout" element={<CheckoutPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

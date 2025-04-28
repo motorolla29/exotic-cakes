@@ -11,8 +11,7 @@ import useWindowSize from '../../../hooks/use-window-size';
 import './item-page.sass';
 
 const ItemPage = () => {
-  const { category } = useParams();
-  const { id } = useParams();
+  const { category, id } = useParams();
   const [item, setItem] = useState({});
   const [gallerySlideImageIndex, setGallerySlideImageIndex] =
     useState(undefined);
@@ -38,35 +37,23 @@ const ItemPage = () => {
   });
 
   useEffect(() => {
-    setLoading(true);
-    fetch(`https://66e43448d2405277ed137dfc.mockapi.io/items/${id}`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((item) => {
+    async function fetchItem() {
+      try {
+        setLoading(true);
+        const res = await fetch(`/api/items/${id}`);
+        if (!res.ok) throw new Error('Failed to fetch item');
+        const { item } = await res.json();
         setItem(item);
+      } catch (error) {
+        console.error('Error loading item:', error);
+      } finally {
         setLoading(false);
-      })
-      .catch((err) => console.log(err));
-    // PRELOADING IMAGES
-    // .then((item) => {
-    //   return Promise.all(
-    //     item.images.map((image) => {
-    //       return loadImagePromise(baseImagesURL, image)
-    //         .then((url) => {
-    //           return url;
-    //         })
-    //         .catch((defaultUrl) => {
-    //           return defaultUrl;
-    //         });
-    //     })
-    //   );
-    // })
-    // .then((arr) => {
-    //   setLoadedImagesUrls(arr);
-    //   setLoading(false);
-    // })
-    // .catch((err) => console.log(err));
+      }
+    }
+
+    if (id) {
+      fetchItem();
+    }
   }, []);
 
   return (

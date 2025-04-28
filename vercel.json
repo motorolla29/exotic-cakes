@@ -5,6 +5,14 @@
       "destination": "/api/stripe-webhook"
     },
     {
+      "source": "/api/merch/:id",
+      "destination": "/api/merch/id.js"
+    },
+    {
+      "source": "/api/items/:id",
+      "destination": "/api/items/id.js"
+    },
+    {
       "source": "/api/(.*)",
       "destination": "/api/$1"
     },

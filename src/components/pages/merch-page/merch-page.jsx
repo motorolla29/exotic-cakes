@@ -8,19 +8,24 @@ import './merch-page.sass';
 
 const MerchPage = () => {
   const [items, setItems] = useState([]);
-  const [firstLoading, setFirstLoading] = useState(true);
+  const [initialLoading, setInitialLoading] = useState(true);
   window.scrollTo(0, 0);
 
   useEffect(() => {
-    setFirstLoading(true);
-    fetch(`https://66e43448d2405277ed137dfc.mockapi.io/merch`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((arr) => {
-        setItems(arr);
-        setFirstLoading(false);
-      });
+    async function fetchMerch() {
+      setInitialLoading(true);
+      try {
+        const res = await fetch(`/api/merch`);
+        const { items: dataItems } = await res.json();
+        setItems(dataItems);
+      } catch (err) {
+        console.error('Failed to fetch merch items:', err);
+      } finally {
+        setInitialLoading(false);
+      }
+    }
+
+    fetchMerch();
   }, []);
   return (
     <div className="merch-page">
@@ -29,7 +34,7 @@ const MerchPage = () => {
       </Helmet>
       <h1 className="merch-page_title">Merch Shop</h1>
       <div className="merch-items">
-        {firstLoading
+        {initialLoading
           ? [...new Array(12)].map((_, index) => (
               <MerchItemSkeleton className="merch-item-skeleton" key={index} />
             ))

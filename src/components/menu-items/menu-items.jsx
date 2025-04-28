@@ -11,61 +11,55 @@ import './menu-items.sass';
 
 const MenuItems = observer(({ category }) => {
   const [items, setItems] = useState([]);
-  const [firstLoading, setFirstLoading] = useState(true);
   const [totalItems, setTotalItems] = useState(0);
+  const [page, setPage] = useState(1);
+  const [initialLoading, setInitialLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
 
   const location = useLocation();
+  const limit = 24;
 
   useEffect(() => {
-    if (store.locationKey !== location.key) {
-      store.setMenuItemsLimit(24);
-      store.setLocationKey(location.key);
-    }
-    setFirstLoading(true);
-    fetch(
-      `https://66e43448d2405277ed137dfc.mockapi.io/items${
-        category === 'all' ? '' : `?category=${category}`
-      }`
-    )
-      .then((res) => {
-        return res.json();
-      })
-      .then((arr) => {
-        setTotalItems(arr.length);
-        arr.length > store.menuItemsLimit
-          ? (arr.length = store.menuItemsLimit)
-          : null;
-        setItems(arr);
-        setFirstLoading(false);
-      })
-      .catch((err) => console.log(err));
-  }, [category]);
+    setItems([]);
+    setPage(1);
+    setTotalItems(0);
+  }, [category, location.pathname]);
 
-  const onSeeMoreButtonClickHandler = () => {
-    store.setOverlaySpinner(true);
-    fetch(
-      `https://66e43448d2405277ed137dfc.mockapi.io/items${
-        category === 'all' ? '' : `?category=${category}`
-      }`
-    )
-      .then((res) => {
-        return res.json();
-      })
-      .then((arr) => {
-        setTotalItems(arr.length);
-        if (totalItems > store.menuItemsLimit + 24) {
-          arr.length = store.menuItemsLimit + 24;
-        }
-        setItems(arr);
-        store.setOverlaySpinner(false);
-        store.setMenuItemsLimit(store.menuItemsLimit + 24);
-      });
+  useEffect(() => {
+    async function fetchItems() {
+      if (page === 1) setInitialLoading(true);
+      else setLoadingMore(true);
+
+      try {
+        const res = await fetch(
+          `/api/items?category=${encodeURIComponent(
+            category
+          )}&page=${page}&limit=${limit}`
+        );
+        const { items: newItems, totalCount } = await res.json();
+        setTotalItems(totalCount);
+        setItems((prev) => (page === 1 ? newItems : [...prev, ...newItems]));
+      } catch (err) {
+        console.error('Failed to fetch items:', err);
+      } finally {
+        setInitialLoading(false);
+        setLoadingMore(false);
+      }
+    }
+
+    fetchItems();
+  }, [category, page, location.pathname]);
+
+  const handleSeeMore = () => {
+    if (items.length < totalItems) {
+      setPage((prev) => prev + 1);
+    }
   };
 
   return (
     <div className="menu-items-container">
       <div className="menu-items">
-        {firstLoading
+        {initialLoading
           ? [...new Array(store.menuItemsLimit)].map((_, index) => (
               <MenuItemSkeleton key={index} />
             ))
@@ -83,15 +77,12 @@ const MenuItems = observer(({ category }) => {
               />
             ))}
       </div>
-      {totalItems > store.menuItemsLimit && (
-        <button
-          onClick={onSeeMoreButtonClickHandler}
-          className="see-more-button"
-        >
+      {items.length < totalItems && (
+        <button onClick={handleSeeMore} className="see-more-button">
           SEE MORE
         </button>
       )}
-      {store.overlaySpinner && <OverlayLogoSpinner />}
+      {loadingMore && <OverlayLogoSpinner />}
     </div>
   );
 });

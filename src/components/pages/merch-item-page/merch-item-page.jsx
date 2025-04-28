@@ -21,34 +21,23 @@ const MerchItemPage = () => {
   useEffect(() => window.scrollTo(0, 0), []);
 
   useEffect(() => {
-    setLoading(true);
-    fetch(`https://66e43448d2405277ed137dfc.mockapi.io/merch/${merchItemId}`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((item) => {
-        setItem(item);
+    async function fetchMerchItem() {
+      try {
+        setLoading(true);
+        const res = await fetch(`/api/merch/${merchItemId}`);
+        if (!res.ok) throw new Error('Failed to fetch merch item');
+        const { merch } = await res.json();
+        setItem(merch);
+      } catch (error) {
+        console.error('Error loading merch item:', error);
+      } finally {
         setLoading(false);
-      })
-      .catch((err) => console.log(err));
-    // PRELOADING IMAGES
-    // .then((item) => {
-    //   return Promise.all(
-    //     item.images.map((image) => {
-    //       return loadImagePromise(baseMerchImagesURL, image)
-    //         .then((url) => {
-    //           return url;
-    //         })
-    //         .catch((defaultUrl) => {
-    //           return defaultUrl;
-    //         });
-    //     })
-    //   );
-    // })
-    // .then((arr) => {
-    //   setLoadedImagesUrls(arr);
-    //   setLoading(false);
-    // });
+      }
+    }
+
+    if (merchItemId) {
+      fetchMerchItem();
+    }
   }, []);
 
   useEffect(() => {

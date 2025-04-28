@@ -28,7 +28,7 @@ const Footer = () => {
           <h3>CAKE BEYOND IMAGINATION ®</h3>
           <p>HANDCRAFTED & DESIGNED BY</p>
           <p>EXOTIC CAKES BAKERY, LLC</p>
-          <p>© 2024 EXOTIC CAKES</p>
+          <p>© 2025 EXOTIC CAKES</p>
         </div>
         <div className="footer_top_second">
           <h3>QUICK LINKS</h3>
@@ -101,7 +101,7 @@ const Footer = () => {
 
       <div className="footer_basement">
         <Link target="_blank" to="https://github.com/motorolla29">
-          Powered by Motorolla29 © 2024
+          Powered by Motorolla29 © 2025
         </Link>
       </div>
     </div>

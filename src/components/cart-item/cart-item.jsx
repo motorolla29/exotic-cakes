@@ -55,7 +55,9 @@ const CartItem = observer(({ item }) => {
     setDeletion(true);
     setAnimateDeletionTimeout(
       setTimeout(() => {
-        animate(cartItemExitAnimationSequence(cartItemRef.current));
+        if (cartItemRef.current) {
+          animate(cartItemExitAnimationSequence(cartItemRef.current));
+        }
       }, 4000)
     );
     setDeletionTimeout(

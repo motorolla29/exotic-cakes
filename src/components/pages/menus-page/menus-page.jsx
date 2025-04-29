@@ -23,7 +23,7 @@ const MenusPage = () => {
         <NavLink to="/menus/wedding-cakes">Wedding Cakes</NavLink>
         <NavLink to="/menus/mini-cakes">Mini Cakes</NavLink>
         <NavLink to="/menus/cupcakes">Cupcakes</NavLink>
-        <NavLink to="/menus/cookies">Sugar Cookies</NavLink>
+        <NavLink to="/menus/sugar-cookies">Sugar Cookies</NavLink>
       </div>
       <MenuItems category={category || 'all'} />
     </div>

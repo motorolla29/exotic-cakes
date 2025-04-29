@@ -56,11 +56,9 @@ const ProductInfo = ({ item, category, setPhotoIndex }) => {
       ],
       [counterRef, { transform: ['scale(1)', 'scale(1.25)', 'scale(1)'] }],
     ];
-    if (store.snackbar.open && snackbarRef) {
-      animate(sequence);
-    }
 
-    store.addItemToCart({
+    const cartItem = {
+      type: 'menu-item',
       stringParams: searchParams.toString(),
       id: item.id,
       category: category,
@@ -75,7 +73,18 @@ const ProductInfo = ({ item, category, setPhotoIndex }) => {
         cardSignOption && cardMessageText.length > 0 ? cardMessageText : null,
       cakeSign: cakeSignOption && cakeSignText.length > 0 ? cakeSignText : null,
       quantity: 1,
-    });
+    };
+
+    store.addItemToCart(cartItem);
+
+    if (
+      store.snackbar.open &&
+      snackbarRef &&
+      store.snackbar.item.id === cartItem.id &&
+      store.snackbar.item.stringParams === cartItem.stringParams
+    ) {
+      animate(sequence);
+    }
   };
 
   return (

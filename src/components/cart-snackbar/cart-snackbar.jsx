@@ -57,10 +57,18 @@ const CartSnackbar = observer(() => {
     <AnimatePresence>
       {snackbar.item && !timerOver && (
         <motion.div
+          key={`${snackbar.item.title}-${snackbar.item.image.src}`}
           ref={snackbarRef}
           initial={{ opacity: 0, transform: 'translateY(-2em)' }}
           animate={{ opacity: 1, transform: 'translateY(0)' }}
-          exit={{ opacity: 0, transform: 'translateY(-2em)' }}
+          exit={
+            time < 1
+              ? {
+                  opacity: 0,
+                  transform: 'translateY(-2em)',
+                }
+              : { opacity: 0, transition: { duration: 0 } }
+          }
           onMouseEnter={() => setTimerPaused(true)}
           onMouseLeave={() => reset()}
           className="cart-snackbar"

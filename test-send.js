@@ -186,7 +186,6 @@ transporter.sendMail(
                     type === 'merch'
                       ? `https://ik.imagekit.io/motorolla29/exotic-cakes/merch/${image.src}?tr=w-150`
                       : `https://ik.imagekit.io/motorolla29/exotic-cakes/catalog/${image.src}?tr=w-150`;
-                  console.log(imageUrl);
                   return `
                   <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
                     <tr>

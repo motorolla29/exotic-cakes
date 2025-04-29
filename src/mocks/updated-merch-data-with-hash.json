@@ -232,8 +232,7 @@
       }
     ],
     "price": 25,
-    "variants": {
-      "Size": ["XS", "S", "M", "L", "XL"],
+    "options": {
       "Color": [
         {
           "name": "White with Full Logo",
@@ -244,6 +243,9 @@
           "photoIndex": 0
         }
       ]
+    },
+    "variants": {
+      "Size": ["XS", "S", "M", "L", "XL"]
     }
   },
   {

@@ -6,7 +6,6 @@ import { CiShoppingCart } from 'react-icons/ci';
 import store from '../../store/store';
 
 import './merch-info.sass';
-import { object } from 'framer-motion/client';
 
 const MerchInfo = ({ item, setPhotoIndex }) => {
   let [searchParams, setSearchParams] = useSearchParams();
@@ -44,22 +43,40 @@ const MerchInfo = ({ item, setPhotoIndex }) => {
       ],
       [counterRef, { transform: ['scale(1)', 'scale(1.25)', 'scale(1)'] }],
     ];
-    if (store.snackbar.open && snackbarRef) {
-      animate(sequence);
-    }
 
-    store.addItemToCart({
+    const cartItem = {
       type: 'merch',
       stringParams: searchParams.toString(),
       id: item.id,
       title: item.title,
-      image: item.images[currentOption?.photoIndex || 0],
+      image:
+        item.images[
+          currentOption?.photoIndex ??
+            Object.entries(variants || {}).reduce(
+              (acc, [name, opts]) =>
+                acc ??
+                opts.find((o) => o.name === currentVariants[name])?.photoIndex,
+              undefined
+            ) ??
+            0
+        ],
       price: currentOption ? currentOption.price : item.price,
       optionName: optionsName,
       option: currentOption ? currentOption.name : null,
       merchVariants: currentVariants,
       quantity: 1,
-    });
+    };
+
+    store.addItemToCart(cartItem);
+
+    if (
+      store.snackbar.open &&
+      snackbarRef &&
+      store.snackbar.item.id === cartItem.id &&
+      store.snackbar.item.stringParams === cartItem.stringParams
+    ) {
+      animate(sequence);
+    }
   };
 
   return (

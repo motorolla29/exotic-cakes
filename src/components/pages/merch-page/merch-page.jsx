@@ -4,11 +4,15 @@ import { Helmet } from 'react-helmet-async';
 import MerchItem from '../../merch-item/merch-item';
 import MerchItemSkeleton from '../../skeletons/merch-item-skeleton';
 
+import { TiWarning } from 'react-icons/ti';
+
 import './merch-page.sass';
 
 const MerchPage = () => {
   const [items, setItems] = useState([]);
   const [initialLoading, setInitialLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   window.scrollTo(0, 0);
 
   useEffect(() => {
@@ -16,10 +20,19 @@ const MerchPage = () => {
       setInitialLoading(true);
       try {
         const res = await fetch(`/api/merch`);
-        const { items: dataItems } = await res.json();
+        const data = await res.json();
+
+        if (!res.ok) {
+          throw new Error(data.message || `Error status ${res.status}`);
+        }
+
+        // безопасная проверка
+        const dataItems = Array.isArray(data.items) ? data.items : [];
+
         setItems(dataItems);
       } catch (err) {
         console.error('Failed to fetch merch items:', err);
+        setError(err.message);
       } finally {
         setInitialLoading(false);
       }
@@ -33,6 +46,13 @@ const MerchPage = () => {
         <title>Exotic Cakes - Merch</title>
       </Helmet>
       <h1 className="merch-page_title">Merch Shop</h1>
+      {error && (
+        <div className="merch-page_error">
+          <TiWarning />
+          <p>Failed to load items:</p>
+          <p>{error}</p>
+        </div>
+      )}
       <div className="merch-items">
         {initialLoading
           ? [...new Array(12)].map((_, index) => (

@@ -6,6 +6,7 @@ import MenuItemSkeleton from '../skeletons/menu-item-skeleton';
 import store from '../../store/store';
 import MenuItem from '../menu-item/menu-item';
 import OverlayLogoSpinner from '../overlay-logo-spinner/overlay-logo-spinner';
+import { TiWarning } from 'react-icons/ti';
 
 import './menu-items.sass';
 
@@ -15,6 +16,7 @@ const MenuItems = observer(({ category }) => {
   const [page, setPage] = useState(1);
   const [initialLoading, setInitialLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
+  const [error, setError] = useState(null);
 
   const location = useLocation();
   const limit = 24;
@@ -23,12 +25,14 @@ const MenuItems = observer(({ category }) => {
     setItems([]);
     setPage(1);
     setTotalItems(0);
+    setError(null);
+    setInitialLoading(true);
+    setLoadingMore(false);
   }, [category, location.pathname]);
 
   useEffect(() => {
     async function fetchItems() {
       if (page === 1) setInitialLoading(true);
-      else setLoadingMore(true);
 
       try {
         const res = await fetch(
@@ -36,11 +40,21 @@ const MenuItems = observer(({ category }) => {
             category
           )}&page=${page}&limit=${limit}`
         );
-        const { items: newItems, totalCount } = await res.json();
-        setTotalItems(totalCount);
+        const data = await res.json();
+
+        if (!res.ok) {
+          throw new Error(data.message || `Error ${res.status}`);
+        }
+
+        // безопасная деструктуризация
+        const newItems = Array.isArray(data.items) ? data.items : [];
+        const count = typeof data.totalCount === 'number' ? data.totalCount : 0;
+
+        setTotalItems(count);
         setItems((prev) => (page === 1 ? newItems : [...prev, ...newItems]));
       } catch (err) {
         console.error('Failed to fetch items:', err);
+        setError(err.message);
       } finally {
         setInitialLoading(false);
         setLoadingMore(false);
@@ -52,12 +66,20 @@ const MenuItems = observer(({ category }) => {
 
   const handleSeeMore = () => {
     if (items.length < totalItems) {
+      setLoadingMore(true);
       setPage((prev) => prev + 1);
     }
   };
 
   return (
     <div className="menu-items-container">
+      {error && (
+        <div className="menu-items-container_error">
+          <TiWarning />
+          <p>Error loading products:</p>
+          <p>{error}</p>
+        </div>
+      )}
       <div className="menu-items">
         {initialLoading
           ? [...new Array(store.menuItemsLimit)].map((_, index) => (

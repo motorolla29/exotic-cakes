@@ -5,7 +5,7 @@ import './skeletons.sass';
 const MenuItemSkeleton = (props) => (
   <ContentLoader
     className="menu-item-skeleton"
-    speed={2}
+    speed={1}
     viewBox="0 0 400 520"
     backgroundColor="#f3f3f3"
     foregroundColor="#c5b7ff3e"

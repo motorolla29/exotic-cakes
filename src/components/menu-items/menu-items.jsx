@@ -85,7 +85,8 @@ const MenuItems = observer(({ category }) => {
           ? [...new Array(store.menuItemsLimit)].map((_, index) => (
               <MenuItemSkeleton key={index} />
             ))
-          : items.map((it) => (
+          : items.length > 0 &&
+            items.map((it) => (
               <MenuItem
                 key={it.id}
                 category={category}
@@ -99,7 +100,7 @@ const MenuItems = observer(({ category }) => {
               />
             ))}
       </div>
-      {items.length < totalItems && (
+      {!initialLoading && items.length > 0 && items.length < totalItems && (
         <button onClick={handleSeeMore} className="see-more-button">
           SEE MORE
         </button>

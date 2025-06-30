@@ -15,6 +15,7 @@ const MenuItems = observer(({ category }) => {
   const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
   const [initialLoading, setInitialLoading] = useState(true);
+  const [firstPageLoaded, setFirstPageLoaded] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState(null);
 
@@ -28,11 +29,15 @@ const MenuItems = observer(({ category }) => {
     setError(null);
     setInitialLoading(true);
     setLoadingMore(false);
+    setFirstPageLoaded(false);
   }, [category, location.pathname]);
 
   useEffect(() => {
     async function fetchItems() {
-      if (page === 1) setInitialLoading(true);
+      if (page === 1) {
+        setFirstPageLoaded(false);
+        setInitialLoading(true);
+      }
 
       try {
         const res = await fetch(
@@ -52,9 +57,11 @@ const MenuItems = observer(({ category }) => {
 
         setTotalItems(count);
         setItems((prev) => (page === 1 ? newItems : [...prev, ...newItems]));
+        if (page === 1) setFirstPageLoaded(true);
       } catch (err) {
         console.error('Failed to fetch items:', err);
         setError(err.message);
+        if (page === 1) setFirstPageLoaded(true);
       } finally {
         setInitialLoading(false);
         setLoadingMore(false);
@@ -81,7 +88,7 @@ const MenuItems = observer(({ category }) => {
         </div>
       )}
       <div className="menu-items">
-        {initialLoading
+        {!firstPageLoaded
           ? [...new Array(store.menuItemsLimit)].map((_, index) => (
               <MenuItemSkeleton key={index} />
             ))

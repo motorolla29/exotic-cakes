@@ -14,7 +14,6 @@ const MenuItems = observer(({ category }) => {
   const [items, setItems] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
   const [page, setPage] = useState(1);
-  const [initialLoading, setInitialLoading] = useState(true);
   const [firstPageLoaded, setFirstPageLoaded] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState(null);
@@ -27,17 +26,13 @@ const MenuItems = observer(({ category }) => {
     setPage(1);
     setTotalItems(0);
     setError(null);
-    setInitialLoading(true);
     setLoadingMore(false);
     setFirstPageLoaded(false);
   }, [category, location.pathname]);
 
   useEffect(() => {
     async function fetchItems() {
-      if (page === 1) {
-        setFirstPageLoaded(false);
-        setInitialLoading(true);
-      }
+      if (page === 1) setFirstPageLoaded(false);
 
       try {
         const res = await fetch(
@@ -57,13 +52,11 @@ const MenuItems = observer(({ category }) => {
 
         setTotalItems(count);
         setItems((prev) => (page === 1 ? newItems : [...prev, ...newItems]));
-        if (page === 1) setFirstPageLoaded(true);
       } catch (err) {
         console.error('Failed to fetch items:', err);
         setError(err.message);
-        if (page === 1) setFirstPageLoaded(true);
       } finally {
-        setInitialLoading(false);
+        if (page === 1) setFirstPageLoaded(true);
         setLoadingMore(false);
       }
     }
@@ -107,7 +100,7 @@ const MenuItems = observer(({ category }) => {
               />
             ))}
       </div>
-      {!initialLoading && items.length > 0 && items.length < totalItems && (
+      {firstPageLoaded && items.length > 0 && items.length < totalItems && (
         <button onClick={handleSeeMore} className="see-more-button">
           SEE MORE
         </button>

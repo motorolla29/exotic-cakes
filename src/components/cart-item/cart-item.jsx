@@ -58,12 +58,12 @@ const CartItem = observer(({ item }) => {
         if (cartItemRef.current) {
           animate(cartItemExitAnimationSequence(cartItemRef.current));
         }
-      }, 4000)
+      }, 4000),
     );
     setDeletionTimeout(
       setTimeout(() => {
         store.removeItemFromCart(item);
-      }, 4600)
+      }, 4600),
     );
   };
 

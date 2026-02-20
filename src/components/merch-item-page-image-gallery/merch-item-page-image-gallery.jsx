@@ -114,7 +114,7 @@ const MerchItemPageImageGallery = ({ item, slideIndex, setSlideIndex }) => {
             return (
               <BlurhashImage
                 key={it}
-                src={`${baseMerchImagesURL}/${it.src}`}
+                src={`${baseMerchImagesURL}/preview/${it.src}`}
                 hash={it.hash}
               />
             );

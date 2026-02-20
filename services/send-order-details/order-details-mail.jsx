@@ -5,7 +5,7 @@ const OrderDetailsMail = (order) => {
       <div className="order-mail_header">
         <img
           alt="logo"
-          src="https://ik.imagekit.io/motorolla29/exotic-cakes/logo/EC-logo-fullsize.png?tr=w-300"
+          src="https://exotic-cakes.s3.cloud.ru/logo/md__EC-logo-fullsize.png"
         />
       </div>
       <h2>Thank you for your order!</h2>
@@ -38,9 +38,9 @@ const OrderDetailsMail = (order) => {
                 <img
                   src={`${
                     type === 'merch'
-                      ? 'https://ik.imagekit.io/motorolla29/exotic-cakes/merch'
-                      : 'https://ik.imagekit.io/motorolla29/exotic-cakes/catalog'
-                  }/${image.src}?tr=w-150`}
+                      ? 'https://exotic-cakes.s3.cloud.ru/merch'
+                      : 'https://exotic-cakes.s3.cloud.ru/catalog'
+                  }/sm__${image.src}`}
                 />
               </div>
               <div className="order-mail_items_item_details">

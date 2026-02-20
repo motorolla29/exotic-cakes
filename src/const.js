@@ -1,5 +1,7 @@
-export const baseImagesURL = '/images/catalog';
-export const baseMerchImagesURL = '/images/merch';
+const S3_BASE_URL = 'https://exotic-cakes.s3.cloud.ru';
+
+export const baseImagesURL = `${S3_BASE_URL}/catalog`;
+export const baseMerchImagesURL = `${S3_BASE_URL}/merch`;
 
 export const COUNTRIES = ['United Kingdom'];
 export const CITIES = ['London'];

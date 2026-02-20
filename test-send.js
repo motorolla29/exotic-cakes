@@ -151,7 +151,7 @@ transporter.sendMail(
 
               <!-- Logo -->
               <div style="text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 20px;">
-                <img alt="logo" src="https://ik.imagekit.io/motorolla29/exotic-cakes/logo/EC-logo-fullsize.png?tr=w-300" width="220" style="margin: 0 auto;" />
+                <img alt="logo" src="https://exotic-cakes.s3.cloud.ru/logo/md__EC-logo-fullsize.png" width="220" style="margin: 0 auto;" />
               </div>
 
               <!-- Header -->
@@ -184,8 +184,8 @@ transporter.sendMail(
                   } = item;
                   const imageUrl =
                     type === 'merch'
-                      ? `https://ik.imagekit.io/motorolla29/exotic-cakes/merch/${image.src}?tr=w-150`
-                      : `https://ik.imagekit.io/motorolla29/exotic-cakes/catalog/${image.src}?tr=w-150`;
+                      ? `https://exotic-cakes.s3.cloud.ru/merch/sm__${image.src}`
+                      : `https://exotic-cakes.s3.cloud.ru/catalog/sm__${image.src}`;
                   return `
                   <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
                     <tr>
@@ -214,7 +214,7 @@ transporter.sendMail(
                             ? Object.entries(merchVariants)
                                 .map(
                                   ([k, v]) =>
-                                    `<p style="margin:0 0 4px; font-size:14px;">${k}: <span style="opacity:0.8;">${v}</span></p>`
+                                    `<p style="margin:0 0 4px; font-size:14px;">${k}: <span style="opacity:0.8;">${v}</span></p>`,
                                 )
                                 .join('')
                             : ''
@@ -222,14 +222,14 @@ transporter.sendMail(
                         ${
                           cakeSign
                             ? `<p style="margin:12px 0 0; color:#481e5c; line-height:1;">
-                                <img src="https://ik.imagekit.io/motorolla29/exotic-cakes/icons/cake-icon.png" width="14" height="14" alt="Cake" style="display: inline-block; vertical-align:middle; margin-right:6px;" />Write on cake:</p>
+                                <img src="https://exotic-cakes.s3.cloud.ru/icons/cake-icon.png" width="14" height="14" alt="Cake" style="display: inline-block; vertical-align:middle; margin-right:6px;" />Write on cake:</p>
                             <p style="margin:4px 0 0; font-family:Klyakson,Arial,sans-serif; font-size:13px; opacity:0.8;">${cakeSign}</p>`
                             : ''
                         }
                         ${
                           cartMessage
                             ? `<p style="margin:8px 0 0; color:#481e5c; line-height:1;">
-                                <img src="https://ik.imagekit.io/motorolla29/exotic-cakes/icons/pencil-heart-icon.png" width="14" height="14" alt="Cake" style="display: inline-block; vertical-align:middle; margin-right:6px;" />Card with handwritten text:</p>
+                                <img src="https://exotic-cakes.s3.cloud.ru/icons/pencil-heart-icon.png" width="14" height="14" alt="Cake" style="display: inline-block; vertical-align:middle; margin-right:6px;" />Card with handwritten text:</p>
                             <p style="margin:4px 0 0; font-family:Klyakson,Arial,sans-serif; font-size:13px; opacity:0.8;">${cartMessage}</p>`
                             : ''
                         }
@@ -259,7 +259,7 @@ transporter.sendMail(
                 orderDate
                   ? `<p style="font-size:13px; color:#555; margin:0 0 12px;">${orderDate.toLocaleDateString(
                       'en-GB',
-                      { month: 'short', day: 'numeric', weekday: 'long' }
+                      { month: 'short', day: 'numeric', weekday: 'long' },
                     )}, 9AM - 5PM</p>`
                   : ''
               }
@@ -269,10 +269,10 @@ transporter.sendMail(
                 <p style="font-size:13px; color:#555; margin:0 0 4px;">${
                   order.deliveryInfo.line1
                 }${
-                      order.deliveryInfo.line2
-                        ? `, ${order.deliveryInfo.line2}`
-                        : ''
-                    }</p>
+                  order.deliveryInfo.line2
+                    ? `, ${order.deliveryInfo.line2}`
+                    : ''
+                }</p>
                 <p style="font-size:13px; color:#555; margin:0 0 4px;">${[
                   order.deliveryInfo.postalCode,
                   order.deliveryInfo.city,
@@ -314,5 +314,5 @@ transporter.sendMail(
     } else {
       console.log('✅ Успешно отправлено:', info.response);
     }
-  }
+  },
 );

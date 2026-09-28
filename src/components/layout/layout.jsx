@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import { AnimatePresence } from 'framer-motion';
 
@@ -12,21 +12,39 @@ import store from '../../store/store';
 import './layout.sass';
 
 const Layout = observer(() => {
-  const [scroll, setScroll] = useState(0);
   const headerDripRef = useRef();
-  const onScrollHandler = (e) => {
-    setScroll(window.scrollY);
-    if (scroll !== 0) {
-      headerDripRef.current.classList.remove('shown');
-      headerDripRef.current.classList.add('hidden');
-    }
-  };
+  const location = useLocation();
+
   useEffect(() => {
-    window.addEventListener('scroll', onScrollHandler);
-    return () => {
-      window.removeEventListener('scroll', onScrollHandler);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const headerDrip = headerDripRef.current;
+    const syncHeaderDrip = () => {
+      if (!headerDrip) return;
+      const atTop = window.scrollY === 0;
+      headerDrip.classList.toggle('shown', atTop);
+      headerDrip.classList.toggle('hidden', !atTop);
     };
-  });
+
+    syncHeaderDrip();
+    window.addEventListener('scroll', syncHeaderDrip, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', syncHeaderDrip);
+    };
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual';
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
+  }, []);
 
   return (
     <div className="layout">
@@ -35,7 +53,7 @@ const Layout = observer(() => {
         <svg
           ref={headerDripRef}
           id="_Слой_1"
-          className={`header-drip ${scroll === 0 ? 'shown' : 'hidden'}`}
+          className="header-drip shown"
           data-name="Слой 1"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 808 197"

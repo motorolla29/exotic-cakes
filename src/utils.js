@@ -2,39 +2,24 @@ import { useEffect, useState } from 'react';
 
 export const customScrollController = {
   scroll: 0,
+  shouldRestoreScroll: true,
+
   disableScroll() {
     customScrollController.scroll =
       window.scrollY || document.documentElement.scrollTop;
-
-    document.body.style.setProperty('position', 'fixed');
-    document.body.style.setProperty(
-      'top',
-      `${-customScrollController.scroll}px`
-    );
-    document.querySelector('.header-drip').classList.remove('hidden');
-    setTimeout(() => {
-      document.body.style.setProperty('top', `0px`);
-    }, 350);
+    document.body.style.setProperty('overflow', 'hidden');
   },
+
   enableScroll() {
-    document.body.style.removeProperty('position');
-    document.body.style.removeProperty('top');
+    document.body.style.removeProperty('overflow');
+    if (customScrollController.shouldRestoreScroll) {
+      window.scrollTo(0, customScrollController.scroll);
+    }
+    customScrollController.shouldRestoreScroll = true;
   },
-  disableScrollWithRetention() {
-    customScrollController.scroll =
-      window.scrollY || document.documentElement.scrollTop;
 
-    document.body.style.setProperty('position', 'fixed');
-    document.body.style.setProperty(
-      'top',
-      `${-customScrollController.scroll}px`
-    );
-    document.querySelector('.header-drip').classList.remove('hidden');
-  },
-  enableScrollWithRetention() {
-    document.body.style.removeProperty('position');
-    document.body.style.removeProperty('top');
-    window.scrollTo(0, customScrollController.scroll);
+  setShouldRestoreScroll(value) {
+    customScrollController.shouldRestoreScroll = value;
   },
 };
 

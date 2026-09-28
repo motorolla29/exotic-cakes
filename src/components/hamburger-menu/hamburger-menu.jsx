@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import { motion } from 'framer-motion';
 
@@ -11,7 +11,13 @@ import store from '../../store/store';
 import './hamburger-menu.sass';
 
 const HamburgerMenu = observer(() => {
-  const onMenuLinkClick = () => {
+  const location = useLocation();
+
+  const onMenuLinkClick = (targetPath) => {
+    const isNavigatingAway = location.pathname !== targetPath;
+    if (isNavigatingAway) {
+      customScrollController.setShouldRestoreScroll(false);
+    }
     store.toggleHamburgerMenu(false);
   };
 
@@ -27,19 +33,19 @@ const HamburgerMenu = observer(() => {
     return () => {
       customScrollController.enableScroll();
     };
-  });
+  }, []);
 
   return (
     <motion.div
-      initial={{ opacity: 0, transform: 'translateY(2em)' }}
-      animate={{ opacity: 1, transform: 'translateY(0)' }}
-      exit={{ opacity: 0, transform: 'translateY(2em)' }}
+      initial={{ opacity: 0, y: '2em' }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: '2em' }}
       className="hamburger-menu"
     >
       <NavLink
         onMouseEnter={onMenuLinkMouseEnter}
         onMouseLeave={onMenuLinkMouseLeave}
-        onClick={onMenuLinkClick}
+        onClick={() => onMenuLinkClick('/')}
         to="/"
       >
         <TbArrowBigRightLines />
@@ -48,7 +54,7 @@ const HamburgerMenu = observer(() => {
       <NavLink
         onMouseEnter={onMenuLinkMouseEnter}
         onMouseLeave={onMenuLinkMouseLeave}
-        onClick={onMenuLinkClick}
+        onClick={() => onMenuLinkClick('/menus')}
         to="/menus"
       >
         <TbArrowBigRightLines />
@@ -57,7 +63,7 @@ const HamburgerMenu = observer(() => {
       <NavLink
         onMouseEnter={onMenuLinkMouseEnter}
         onMouseLeave={onMenuLinkMouseLeave}
-        onClick={onMenuLinkClick}
+        onClick={() => onMenuLinkClick('/about')}
         to="/about"
       >
         <TbArrowBigRightLines />
@@ -66,7 +72,7 @@ const HamburgerMenu = observer(() => {
       <NavLink
         onMouseEnter={onMenuLinkMouseEnter}
         onMouseLeave={onMenuLinkMouseLeave}
-        onClick={onMenuLinkClick}
+        onClick={() => onMenuLinkClick('/location')}
         to="/location"
       >
         <TbArrowBigRightLines />
@@ -75,7 +81,7 @@ const HamburgerMenu = observer(() => {
       <NavLink
         onMouseEnter={onMenuLinkMouseEnter}
         onMouseLeave={onMenuLinkMouseLeave}
-        onClick={onMenuLinkClick}
+        onClick={() => onMenuLinkClick('/merch')}
         to="/merch"
       >
         <TbArrowBigRightLines />

@@ -29,8 +29,14 @@ const HamburgerMenu = observer(() => {
   };
 
   useEffect(() => {
+    const headerDrip = document.querySelector('.header-drip');
+    headerDrip?.classList.remove('hidden');
+    headerDrip?.classList.add('shown');
     customScrollController.disableScroll();
     return () => {
+      const atTop = window.scrollY === 0;
+      headerDrip?.classList.toggle('shown', atTop);
+      headerDrip?.classList.toggle('hidden', !atTop);
       customScrollController.enableScroll();
     };
   }, []);

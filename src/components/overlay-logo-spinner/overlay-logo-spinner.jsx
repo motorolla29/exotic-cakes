@@ -7,9 +7,9 @@ import './overlay-logo-spinner.sass';
 
 const OverlayLogoSpinner = () => {
   useEffect(() => {
-    customScrollController.disableScrollWithRetention();
-    return () => customScrollController.enableScrollWithRetention();
-  });
+    customScrollController.disableScroll();
+    return () => customScrollController.enableScroll();
+  }, []);
 
   return (
     <div className="overlay-logo-spinner_shadow">

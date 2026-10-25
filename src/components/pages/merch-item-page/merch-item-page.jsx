@@ -18,7 +18,9 @@ const MerchItemPage = () => {
   const [loading, setLoading] = useState(true);
   const [ww] = useWindowSize();
 
-  useEffect(() => window.scrollTo(0, 0), []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     async function fetchMerchItem() {
